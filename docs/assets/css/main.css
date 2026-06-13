@@ -558,6 +558,7 @@ body{
     align-items: center;
     text-align: center;
   }
+  .footer-info { flex: none; }
   .footer-info p {
     font-size: 0.65rem;
     line-height: 1.3;
@@ -576,7 +577,7 @@ body{
   .footer-col a {
     display: inline;
     font-size: 0.675rem;
-    margin: 0;
+    margin: 0 !important;
     padding: 0;
   }
   .footer-col a::after { content: " ·"; color: var(--text-muted); opacity: 0.3; margin-left: 0.08rem; }
@@ -942,8 +943,6 @@ pre{
   .download-grid { grid-template-columns: 1fr; }
   .filters-bar { flex-direction: column; align-items: stretch; }
   .entry-card { padding: 1.25rem; }
-  .site-footer .container { flex-direction: column; }
-  .footer-links { gap: 1.5rem; }
 }
 
 /* --- Header actions group (hamburger + mobile theme toggle) ------------ */
