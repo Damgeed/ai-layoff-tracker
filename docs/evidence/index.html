@@ -163,13 +163,94 @@
 <script src="assets/js/theme.js" defer></script>
 <script src="assets/js/mobile-nav.js" defer></script>
 
-<!-- Inline evidence page logic -->
+<!-- Evidence page data loading -->
 <script>
-    (function(){
-      var t=localStorage.getItem('ai-layoff-tracker-theme');
-      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
-    })();
-  </script>
+(function(){
+  'use strict';
+  var statsPrimary = document.getElementById('count-primary');
+  var statsSecondary = document.getElementById('count-secondary');
+  var statsTertiary = document.getElementById('count-tertiary');
+  var grid = document.getElementById('evidence-grid');
+
+  function tierLabel(t) {
+    return t === 'PRIMARY_SOURCE' ? 'Primary' : t === 'SECONDARY_SOURCE' ? 'Secondary' : 'Tertiary';
+  }
+
+  function tierBadge(t) {
+    var cls = t === 'PRIMARY_SOURCE' ? 'tier1' : t === 'SECONDARY_SOURCE' ? 'tier2' : 'tier4';
+    return '<span class="class-badge ' + cls + '"><span class="badge-dot ' + cls + '"></span>' + tierLabel(t) + '</span>';
+  }
+
+  function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  function render(entries) {
+    var primary = 0, secondary = 0, tertiary = 0;
+    var html = '';
+
+    entries.forEach(function(e) {
+      var sq = e.source_quality || 'TERTIARY_SOURCE';
+      if (sq === 'PRIMARY_SOURCE') primary++;
+      else if (sq === 'SECONDARY_SOURCE') secondary++;
+      else tertiary++;
+
+      var badge = '<span class="class-badge tier1"><span class="badge-dot tier1"></span>' + esc(e.classification.replace(/_/g,' ')) + '</span>';
+      if (e.classification === 'AI_DRIVEN_RESTRUCTURING') badge = '<span class="class-badge tier2"><span class="badge-dot tier2"></span>AI Restructuring</span>';
+      else if (e.classification === 'AI_REALLOCATION') badge = '<span class="class-badge tier3"><span class="badge-dot tier3"></span>AI Reallocation</span>';
+      else if (e.classification === 'MARKET_DISRUPTION') badge = '<span class="class-badge tier4"><span class="badge-dot tier4"></span>Market Disruption</span>';
+
+      var evidence = (e.evidence || []).map(function(ev) {
+        return '<li class="evidence-item"><strong>' + esc(ev.type.replace(/_/g,' ')) + ':</strong> ' + esc(ev.description) + '</li>';
+      }).join('');
+
+      var quote = e.ceo_quote ? '<blockquote class="card-quote"><p>' + esc(e.ceo_quote) + '</p></blockquote>' : '';
+      var sourceUrl = e.source && e.source.url ? e.source.url : '#';
+      var sourceTitle = e.source && e.source.title ? e.source.title : 'Source';
+
+      html += '<div class="evidence-card" role="listitem">' +
+        '<div class="evidence-card-header">' +
+          '<h3 class="evidence-card-company">' + esc(e.company) + '</h3>' +
+          badge +
+        '</div>' +
+        '<div class="evidence-card-meta">' +
+          '<span>' + esc(e.date) + '</span><span>' + esc(e.country) + '</span><span>' + esc(e.industry) + '</span>' +
+        '</div>' +
+        '<p class="evidence-card-summary">' + esc(e.summary || '') + '</p>' +
+        quote +
+        '<ul class="evidence-list">' + evidence + '</ul>' +
+        '<div class="evidence-card-footer">' +
+          tierBadge(sq) +
+          '<span class="evidence-jobs">' + e.jobs_lost.toLocaleString() + ' jobs</span>' +
+          '<a class="evidence-archive-link" href="' + esc(e.source.archive_url || sourceUrl) + '" target="_blank" rel="noopener">Archived Source</a>' +
+        '</div>' +
+        '<div class="evidence-source-row">' +
+          '<span>Confidence: ' + (e.confidence_score || '—') + '/100</span>' +
+          '<a href="' + esc(sourceUrl) + '" target="_blank" rel="noopener">' + esc(sourceTitle) + '</a>' +
+        '</div>' +
+      '</div>';
+    });
+
+    if (statsPrimary) statsPrimary.textContent = primary;
+    if (statsSecondary) statsSecondary.textContent = secondary;
+    if (statsTertiary) statsTertiary.textContent = tertiary;
+    if (grid) grid.innerHTML = html || '<div class="no-results">No evidence entries loaded.</div>';
+  }
+
+  // Load from API
+  var apiUrl = document.querySelector('base') ? '' : '/ai-layoff-tracker/';
+  apiUrl += 'api/entries.json';
+
+  fetch(apiUrl)
+    .then(function(r) { return r.json(); })
+    .then(function(data) { render(data.entries || data); })
+    .catch(function(err) {
+      console.error('Evidence load error:', err);
+      if (grid) grid.innerHTML = '<div class="no-results">Failed to load evidence data.</div>';
+      if (statsPrimary) statsPrimary.textContent = '—';
+      if (statsSecondary) statsSecondary.textContent = '—';
+      if (statsTertiary) statsTertiary.textContent = '—';
+    });
+})();
+</script>
 
 <!-- Evidence page specific styles -->
 <style>
@@ -415,6 +496,46 @@
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 0;
+}
+
+/* Evidence card: source row, meta, summary */
+.evidence-source-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  padding-top: 0.4rem;
+  margin-top: 0.4rem;
+  border-top: 1px solid var(--border);
+}
+.evidence-source-row a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.evidence-card-meta {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.evidence-card-summary {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0.4rem 0;
+}
+.evidence-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.3rem 0;
+  font-size: 0.76rem;
+}
+.evidence-item {
+  padding: 0.2rem 0;
+  color: var(--text-dim);
 }
 
 /* Responsive */
