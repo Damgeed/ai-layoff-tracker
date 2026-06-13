@@ -229,20 +229,46 @@ def generate_company_pages(data):
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
       <a href="data-dictionary.html">Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
         <span class="icon-sun">☀️</span>
         <span class="icon-moon">🌙</span>
       </button>
-    </nav>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">📋 Methodology</a>
+      <a href="data-dictionary.html">📖 Data Dictionary</a>
+      <a href="changelog.html">📝 Changelog</a>
+      <a href="corrections.html">✏️ Corrections</a>
+      <a href="api/entries.json">🔌 API</a>
+      <a href="api/entries.csv">📥 Download CSV</a>
+      <a href="api/feed.xml">📡 RSS Feed</a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <button class="mobile-nav-theme theme-toggle" aria-label="Toggle theme">
+      <span>Theme</span>
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+  </div>
+</div>
 <main class="container" id="main-content" role="main">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a></nav>
   <article class="entry-detail">
@@ -316,6 +342,7 @@ def generate_company_pages(data):
 </footer>
 <script src="assets/js/share.js" defer></script>
 <script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
 </body>
 </html>'''
         with open(page_dir / "index.html", "w") as f:
@@ -459,20 +486,46 @@ def generate_entry_pages(data):
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
       <a href="data-dictionary.html">Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
         <span class="icon-sun">☀️</span>
         <span class="icon-moon">🌙</span>
       </button>
-    </nav>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">📋 Methodology</a>
+      <a href="data-dictionary.html">📖 Data Dictionary</a>
+      <a href="changelog.html">📝 Changelog</a>
+      <a href="corrections.html">✏️ Corrections</a>
+      <a href="api/entries.json">🔌 API</a>
+      <a href="api/entries.csv">📥 Download CSV</a>
+      <a href="api/feed.xml">📡 RSS Feed</a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <button class="mobile-nav-theme theme-toggle" aria-label="Toggle theme">
+      <span>Theme</span>
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+  </div>
+</div>
 <main class="container" id="main-content" role="main">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a> · <a href="/company/{entry["slug"]}/">← {entry["company"]} page</a></nav>
   <article class="entry-detail">
@@ -543,6 +596,7 @@ def generate_entry_pages(data):
   </div>
 </footer>
 <script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
 </body>
 </html>'''
         with open(page_dir / "index.html", "w") as f:
@@ -626,20 +680,46 @@ def generate_industry_pages(data):
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
       <a href="data-dictionary.html">Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
         <span class="icon-sun">☀️</span>
         <span class="icon-moon">🌙</span>
       </button>
-    </nav>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">📋 Methodology</a>
+      <a href="data-dictionary.html">📖 Data Dictionary</a>
+      <a href="changelog.html">📝 Changelog</a>
+      <a href="corrections.html">✏️ Corrections</a>
+      <a href="api/entries.json">🔌 API</a>
+      <a href="api/entries.csv">📥 Download CSV</a>
+      <a href="api/feed.xml">📡 RSS Feed</a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <button class="mobile-nav-theme theme-toggle" aria-label="Toggle theme">
+      <span>Theme</span>
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+  </div>
+</div>
 <main class="container" id="main-content" role="main">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a></nav>
   <h1>{ind_data["industry"]} — AI Workforce Reductions</h1>
@@ -695,6 +775,7 @@ def generate_industry_pages(data):
   </div>
 </footer>
 <script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
 </body>
 </html>'''
         with open(page_dir / "index.html", "w") as f:
@@ -789,20 +870,46 @@ def generate_country_pages(data):
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
       <a href="data-dictionary.html">Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
         <span class="icon-sun">☀️</span>
         <span class="icon-moon">🌙</span>
       </button>
-    </nav>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">📋 Methodology</a>
+      <a href="data-dictionary.html">📖 Data Dictionary</a>
+      <a href="changelog.html">📝 Changelog</a>
+      <a href="corrections.html">✏️ Corrections</a>
+      <a href="api/entries.json">🔌 API</a>
+      <a href="api/entries.csv">📥 Download CSV</a>
+      <a href="api/feed.xml">📡 RSS Feed</a>
+    </nav>
+    <div class="mobile-nav-divider"></div>
+    <button class="mobile-nav-theme theme-toggle" aria-label="Toggle theme">
+      <span>Theme</span>
+      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">🌙</span>
+    </button>
+  </div>
+</div>
 <main class="container" id="main-content" role="main">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a></nav>
   <h1>{c_data["country"]} — AI Workforce Reductions</h1>
@@ -858,6 +965,7 @@ def generate_country_pages(data):
   </div>
 </footer>
 <script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
 </body>
 </html>'''
         with open(page_dir / "index.html", "w") as f:
