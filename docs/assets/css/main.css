@@ -715,6 +715,34 @@ tbody tr:last-child td { border-bottom: none; }
 .methodology h2:first-child{margin-top:0}
 .methodology h3{margin:2rem 0 0.75rem;font-size:1.25rem}
 .methodology p{margin-bottom:1.25rem;color:var(--text-dim);line-height:1.8}
+.methodology ul, .methodology ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+.methodology li { margin-bottom: 0.4rem; }
+.methodology blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  background: rgba(255,71,71,0.04);
+  border-radius: 0 var(--r) var(--r) 0;
+}
+.methodology blockquote p {
+  color: var(--text-dim);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Mobile: methodology — more breathing room */
+@media (max-width: 768px) {
+  .methodology { padding: 2rem 0; }
+  .methodology h2 { font-size: 1.35rem; margin: 2rem 0 0.85rem; }
+  .methodology h3 { font-size: 1.1rem; }
+  .methodology ul, .methodology ol { padding-left: 1.25rem; }
+  .methodology blockquote { padding: 0.65rem 1rem; margin: 1rem 0; }
+}
 .example-entry{
   background:rgba(255,255,255,0.025);border:1px solid var(--border);
   border-radius:var(--r);padding:1.5rem;margin:1.5rem 0;
@@ -898,7 +926,7 @@ pre{
 
 /* --- Responsive: Mobile Menu ------------------------------------------- */
 @media (max-width: 768px) {
-  .container { padding: 0 1rem; }
+  .container { padding: 0 1.25rem; }
   .hamburger { display: flex; align-items: center; justify-content: center; }
   .site-header nav { display: none; }           /* Hide desktop nav */
   .site-header .theme-toggle { display: none; } /* Hide desktop toggle */
