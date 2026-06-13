@@ -329,47 +329,6 @@ body{
   color:var(--text-muted);font-size:1.125rem;pointer-events:none;
 }
 
-/* Browse by — category cards on homepage ----------------------------- */
-.browse-by {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-}
-.browse-card {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  text-decoration: none;
-  color: var(--text);
-  transition: transform 0.2s var(--ease), border-color 0.2s, box-shadow 0.2s;
-}
-.browse-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255,255,255,0.15);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
-}
-.browse-icon {
-  font-size: 1.5rem;
-  line-height: 1;
-}
-.browse-label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  flex: 1;
-}
-.browse-count {
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: var(--mono);
-  color: var(--accent);
-  opacity: 0.7;
-}
-
 /* Filter chips — pill style ------------------------------------------ */
 .filters-bar{display:flex;gap:0.625rem;flex-wrap:wrap;align-items:center}
 .filter-chip{
@@ -632,10 +591,6 @@ body{
     opacity: 0.5;
     border-top: none;
   }
-
-  /* --- Browse-by mobile --- */
-  .browse-by { grid-template-columns: 1fr; gap: 0.5rem; }
-  .browse-card { padding: 0.75rem 1rem; }
 }
 
 /* ── Tables ─────────────────────────────────────────────────────────── */
