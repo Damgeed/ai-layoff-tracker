@@ -253,20 +253,12 @@ def generate_company_pages(data):
   <div class="mobile-nav-backdrop"></div>
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
-      <a href="methodology.html">📋 Methodology</a>
-      <a href="data-dictionary.html">📖 Data Dictionary</a>
-      <a href="changelog.html">📝 Changelog</a>
-      <a href="corrections.html">✏️ Corrections</a>
-      <a href="api/entries.json">🔌 API</a>
-      <a href="api/entries.csv">📥 Download CSV</a>
-      <a href="api/feed.xml">📡 RSS Feed</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
     </nav>
-    <div class="mobile-nav-divider"></div>
-    <button class="mobile-nav-theme theme-toggle" aria-label="Toggle theme">
-      <span>Theme</span>
-      <span class="icon-sun">☀️</span>
-      <span class="icon-moon">🌙</span>
-    </button>
   </div>
 </div>
 <main class="container" id="main-content" role="main">
@@ -510,20 +502,12 @@ def generate_entry_pages(data):
   <div class="mobile-nav-backdrop"></div>
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
-      <a href="methodology.html">📋 Methodology</a>
-      <a href="data-dictionary.html">📖 Data Dictionary</a>
-      <a href="changelog.html">📝 Changelog</a>
-      <a href="corrections.html">✏️ Corrections</a>
-      <a href="api/entries.json">🔌 API</a>
-      <a href="api/entries.csv">📥 Download CSV</a>
-      <a href="api/feed.xml">📡 RSS Feed</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
     </nav>
-    <div class="mobile-nav-divider"></div>
-    <button class="mobile-nav-theme theme-toggle" aria-label="Toggle theme">
-      <span>Theme</span>
-      <span class="icon-sun">☀️</span>
-      <span class="icon-moon">🌙</span>
-    </button>
   </div>
 </div>
 <main class="container" id="main-content" role="main">
@@ -704,20 +688,12 @@ def generate_industry_pages(data):
   <div class="mobile-nav-backdrop"></div>
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
-      <a href="methodology.html">📋 Methodology</a>
-      <a href="data-dictionary.html">📖 Data Dictionary</a>
-      <a href="changelog.html">📝 Changelog</a>
-      <a href="corrections.html">✏️ Corrections</a>
-      <a href="api/entries.json">🔌 API</a>
-      <a href="api/entries.csv">📥 Download CSV</a>
-      <a href="api/feed.xml">📡 RSS Feed</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
     </nav>
-    <div class="mobile-nav-divider"></div>
-    <button class="mobile-nav-theme theme-toggle" aria-label="Toggle theme">
-      <span>Theme</span>
-      <span class="icon-sun">☀️</span>
-      <span class="icon-moon">🌙</span>
-    </button>
   </div>
 </div>
 <main class="container" id="main-content" role="main">
@@ -894,20 +870,12 @@ def generate_country_pages(data):
   <div class="mobile-nav-backdrop"></div>
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
-      <a href="methodology.html">📋 Methodology</a>
-      <a href="data-dictionary.html">📖 Data Dictionary</a>
-      <a href="changelog.html">📝 Changelog</a>
-      <a href="corrections.html">✏️ Corrections</a>
-      <a href="api/entries.json">🔌 API</a>
-      <a href="api/entries.csv">📥 Download CSV</a>
-      <a href="api/feed.xml">📡 RSS Feed</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
     </nav>
-    <div class="mobile-nav-divider"></div>
-    <button class="mobile-nav-theme theme-toggle" aria-label="Toggle theme">
-      <span>Theme</span>
-      <span class="icon-sun">☀️</span>
-      <span class="icon-moon">🌙</span>
-    </button>
   </div>
 </div>
 <main class="container" id="main-content" role="main">
