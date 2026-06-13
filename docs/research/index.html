@@ -270,79 +270,11 @@
 <script src="assets/js/mobile-nav.js" defer></script>
 
 <script>
-(function(){
-  'use strict';
-
-  function updateFooterDate(meta) {
-    var el = document.getElementById('footer-updated');
-    if (el && meta && meta.last_updated) {
-      var d = new Date(meta.last_updated);
-      el.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-    }
-  }
-
-  function renderStatsSummary(data) {
-    var entries = data.entries || [];
-    var totalJobs = 0;
-    var companies = {};
-    var countries = {};
-    var industries = {};
-
-    entries.forEach(function(e) {
-      totalJobs += e.jobs_lost || 0;
-      companies[e.company] = true;
-      countries[e.country] = true;
-      industries[e.industry] = true;
-    });
-
-    var newest = '';
-    entries.forEach(function(e) {
-      if (e.date > newest) newest = e.date;
-    });
-
-    var summary = document.getElementById('stats-summary');
-    if (!summary) return;
-    summary.innerHTML =
-      '<div class="summary-card">' +
-        '<div class="val">' + totalJobs.toLocaleString() + '</div>' +
-        '<div class="lbl">Total Jobs Impacted</div>' +
-      '</div>' +
-      '<div class="summary-card">' +
-        '<div class="val">' + Object.keys(companies).length + '</div>' +
-        '<div class="lbl">Companies Tracked</div>' +
-      '</div>' +
-      '<div class="summary-card">' +
-        '<div class="val">' + Object.keys(countries).length + '</div>' +
-        '<div class="lbl">Countries</div>' +
-      '</div>' +
-      '<div class="summary-card">' +
-        '<div class="val">' + Object.keys(industries).length + '</div>' +
-        '<div class="lbl">Industries</div>' +
-      '</div>' +
-      '<div class="summary-card">' +
-        '<div class="val">' + entries.length + '</div>' +
-        '<div class="lbl">Total Entries</div>' +
-      '</div>';
-  }
-
-  fetch('api/entries.json')
-    .then(function(res) {
-      if (!res.ok) throw new Error('Failed to load data: ' + res.status);
-      return res.json();
-    })
-    .then(function(data) {
-      renderStatsSummary(data);
-      if (data.meta) updateFooterDate(data.meta);
-    })
-    .catch(function(err) {
-      console.error('Research Hub: ' + err.message);
-      var summary = document.getElementById('stats-summary');
-      if (summary) {
-        summary.innerHTML = '<p style="text-align:center;color:var(--accent);grid-column:1/-1;padding:2rem;">⚠ Failed to load dataset statistics. Please try again later.</p>';
-      }
-    });
-
-})();
-</script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
 </body>
+<!-- build:2026-06-13T13:34:08Z -->
 </html>

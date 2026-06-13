@@ -218,94 +218,11 @@
 <script src="assets/js/mobile-nav.js" defer></script>
 
 <script>
-(function(){
-  'use strict';
-
-  function escapeHTML(str) {
-    if (!str) return '';
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
-
-  function buildIndustryCard(ind) {
-    return '<a href="industry/' + ind.slug + '/" class="industry-card" role="listitem">' +
-      '<div class="industry-name">' + escapeHTML(ind.name) + '</div>' +
-      '<div class="industry-stats">' +
-        '<div class="industry-stat">' +
-          '<span class="val">' + ind.totalJobs.toLocaleString() + '</span>' +
-          '<span class="lbl">Jobs Impacted</span>' +
-        '</div>' +
-        '<div class="industry-stat">' +
-          '<span class="val">' + ind.companyCount + '</span>' +
-          '<span class="lbl">Compan' + (ind.companyCount === 1 ? 'y' : 'ies') + '</span>' +
-        '</div>' +
-        '<div class="industry-stat">' +
-          '<span class="val">' + ind.entryCount + '</span>' +
-          '<span class="lbl">Entr' + (ind.entryCount === 1 ? 'y' : 'ies') + '</span>' +
-        '</div>' +
-      '</div>' +
-    '</a>';
-  }
-
-  function updateFooterDate(meta) {
-    var el = document.getElementById('footer-updated');
-    if (el && meta && meta.last_updated) {
-      var d = new Date(meta.last_updated);
-      el.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-    }
-  }
-
-  fetch('api/entries.json')
-    .then(function(res) {
-      if (!res.ok) throw new Error('Failed to load data: ' + res.status);
-      return res.json();
-    })
-    .then(function(data) {
-      var entries = data.entries || [];
-
-      // Aggregate by industry
-      var industryMap = {};
-      entries.forEach(function(e) {
-        var slug = e.industry.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
-        if (!industryMap[slug]) {
-          industryMap[slug] = {
-            name: e.industry,
-            slug: slug,
-            totalJobs: 0,
-            companies: {},
-            entryCount: 0
-          };
-        }
-        industryMap[slug].totalJobs += e.jobs_lost || 0;
-        industryMap[slug].companies[e.company] = true;
-        industryMap[slug].entryCount += 1;
-      });
-
-      var industries = Object.values(industryMap).map(function(ind) {
-        ind.companyCount = Object.keys(ind.companies).length;
-        return ind;
-      });
-
-      // Sort by total jobs (largest first)
-      industries.sort(function(a, b) { return b.totalJobs - a.totalJobs; });
-
-      var grid = document.getElementById('industry-grid');
-      if (grid) {
-        grid.innerHTML = industries.map(buildIndustryCard).join('');
-      }
-
-      if (data.meta) updateFooterDate(data.meta);
-    })
-    .catch(function(err) {
-      console.error('Industries Hub: ' + err.message);
-      var grid = document.getElementById('industry-grid');
-      if (grid) {
-        grid.innerHTML = '<p class="no-results" style="color:var(--accent)">⚠ Failed to load industry data. Please try again later.</p>';
-      }
-    });
-
-})();
-</script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
 </body>
+<!-- build:2026-06-13T13:34:08Z -->
 </html>

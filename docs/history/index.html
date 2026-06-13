@@ -219,100 +219,11 @@
 
 <!-- Inline history page logic -->
 <script>
-(function(){
-  'use strict';
-
-  function formatDate(dateStr) {
-    if (!dateStr) return '—';
-    var d = new Date(dateStr + 'T00:00:00');
-    if (isNaN(d.getTime())) return dateStr;
-    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-  }
-
-  function escapeHTML(str) {
-    if (!str) return '';
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
-
-  function buildRow(entry) {
-    var company = escapeHTML(entry.company);
-    var id = escapeHTML(entry.id);
-    var created = formatDate(entry.created_date);
-    var updated = formatDate(entry.updated_date);
-
-    // Count changes: if created_date !== updated_date and both exist, count as 1+ changes.
-    // For v1.0 initial release, most entries have matching dates. Show change count.
-    var changes = 0;
-    if (entry.created_date && entry.updated_date && entry.created_date !== entry.updated_date) {
-      changes = 1; // At minimum one change. In future, this could come from a changes array.
-    }
-
-    var changesDisplay = changes > 0
-      ? '<span class="history-changes" style="color: var(--amber, #f39c12);">' + changes + '</span>'
-      : '<span class="history-changes" style="color: var(--text-muted);">0</span>';
-
-    return '<tr>' +
-      '<td><a href="entry/' + id + '/" class="history-company-link">' + company + '</a></td>' +
-      '<td style="font-family: var(--mono); font-size: 0.8rem; color: var(--text-muted);">' + id + '</td>' +
-      '<td>' + created + '</td>' +
-      '<td>' + updated + '</td>' +
-      '<td>' + changesDisplay + '</td>' +
-      '</tr>';
-  }
-
-  function updateStats(meta) {
-    var elEntries = document.getElementById('stat-entries');
-    var elUpdated = document.getElementById('stat-updated');
-    if (elEntries && meta && meta.total_entries != null) {
-      elEntries.textContent = meta.total_entries;
-    }
-    if (elUpdated && meta && meta.last_updated) {
-      var d = meta.last_updated.split('T')[0];
-      elUpdated.textContent = formatDate(d);
-      var footerEl = document.getElementById('footer-updated');
-      if (footerEl) footerEl.textContent = formatDate(d);
-    }
-  }
-
-  function renderHistory(entries) {
-    var tbody = document.getElementById('history-tbody');
-    if (!tbody) return;
-
-    if (entries.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="5" class="no-history">No entries found.</td></tr>';
-      return;
-    }
-
-    // Sort by date newest first
-    entries.sort(function(a, b) {
-      return (b.date || '').localeCompare(a.date || '');
-    });
-
-    tbody.innerHTML = entries.map(buildRow).join('');
-  }
-
-  // Fetch and render
-  fetch('api/entries.json')
-    .then(function(res) {
-      if (!res.ok) throw new Error('Failed to load entries: ' + res.status);
-      return res.json();
-    })
-    .then(function(data) {
-      var entries = data.entries || [];
-      updateStats(data.meta);
-      renderHistory(entries);
-    })
-    .catch(function(err) {
-      console.error('Entry History: ' + err.message);
-      var tbody = document.getElementById('history-tbody');
-      if (tbody) {
-        tbody.innerHTML = '<tr><td colspan="5" class="no-history-error">⚠ Failed to load entry history. Please try again later.</td></tr>';
-      }
-    });
-
-})();
-</script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
 </body>
+<!-- build:2026-06-13T13:34:08Z -->
 </html>

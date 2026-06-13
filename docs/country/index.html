@@ -219,113 +219,11 @@
 <script src="assets/js/mobile-nav.js" defer></script>
 
 <script>
-(function(){
-  'use strict';
-
-  var FLAGS = {
-    'United States': '🇺🇸',
-    'India': '🇮🇳',
-    'China': '🇨🇳',
-    'Sweden': '🇸🇪',
-    'United Kingdom': '🇬🇧',
-    'Germany': '🇩🇪',
-    'Canada': '🇨🇦',
-    'France': '🇫🇷',
-    'Japan': '🇯🇵',
-    'South Korea': '🇰🇷',
-    'Netherlands': '🇳🇱',
-    'Finland': '🇫🇮',
-    'Israel': '🇮🇱',
-    'Australia': '🇦🇺',
-    'Brazil': '🇧🇷',
-    'Singapore': '🇸🇬',
-    'Spain': '🇪🇸',
-    'Italy': '🇮🇹',
-    'Switzerland': '🇨🇭',
-    'Taiwan': '🇹🇼',
-  };
-
-  function escapeHTML(str) {
-    if (!str) return '';
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
-
-  function buildCountryCard(c) {
-    var flag = FLAGS[c.name] || '';
-    return '<a href="country/' + c.slug + '/" class="country-card" role="listitem">' +
-      (flag ? '<div class="country-flag">' + flag + '</div>' : '') +
-      '<div class="country-name">' + escapeHTML(c.name) + '</div>' +
-      '<div class="country-stats">' +
-        '<div class="country-stat">' +
-          '<span class="val">' + c.totalJobs.toLocaleString() + '</span>' +
-          '<span class="lbl">Jobs Impacted</span>' +
-        '</div>' +
-        '<div class="country-stat">' +
-          '<span class="val">' + c.companyCount + '</span>' +
-          '<span class="lbl">Compan' + (c.companyCount === 1 ? 'y' : 'ies') + '</span>' +
-        '</div>' +
-      '</div>' +
-    '</a>';
-  }
-
-  function updateFooterDate(meta) {
-    var el = document.getElementById('footer-updated');
-    if (el && meta && meta.last_updated) {
-      var d = new Date(meta.last_updated);
-      el.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-    }
-  }
-
-  fetch('api/entries.json')
-    .then(function(res) {
-      if (!res.ok) throw new Error('Failed to load data: ' + res.status);
-      return res.json();
-    })
-    .then(function(data) {
-      var entries = data.entries || [];
-
-      // Aggregate by country
-      var countryMap = {};
-      entries.forEach(function(e) {
-        var slug = e.country.toLowerCase().replace(/\s+/g, '-');
-        if (!countryMap[slug]) {
-          countryMap[slug] = {
-            name: e.country,
-            slug: slug,
-            totalJobs: 0,
-            companies: {}
-          };
-        }
-        countryMap[slug].totalJobs += e.jobs_lost || 0;
-        countryMap[slug].companies[e.company] = true;
-      });
-
-      var countries = Object.values(countryMap).map(function(c) {
-        c.companyCount = Object.keys(c.companies).length;
-        return c;
-      });
-
-      // Sort by total jobs (largest first)
-      countries.sort(function(a, b) { return b.totalJobs - a.totalJobs; });
-
-      var grid = document.getElementById('country-grid');
-      if (grid) {
-        grid.innerHTML = countries.map(buildCountryCard).join('');
-      }
-
-      if (data.meta) updateFooterDate(data.meta);
-    })
-    .catch(function(err) {
-      console.error('Countries Hub: ' + err.message);
-      var grid = document.getElementById('country-grid');
-      if (grid) {
-        grid.innerHTML = '<p class="no-results" style="color:var(--accent)">⚠ Failed to load country data. Please try again later.</p>';
-      }
-    });
-
-})();
-</script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
 </body>
+<!-- build:2026-06-13T13:34:08Z -->
 </html>
