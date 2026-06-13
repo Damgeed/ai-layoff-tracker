@@ -913,4 +913,52 @@ pre{
   transform: translateY(-30px) rotate(-90deg); opacity: 0;
 }
 
+/* ── Tables (mobile-friendly with horizontal scroll) ── */
+table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+thead { border-bottom: 2px solid var(--border); }
+th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(128,128,128,0.05); }
+
+/* Wrap any table in a scroll container — applied via JS or page author */
+.table-wrap, .methodology-table, .dd-table, .evidence-table,
+.changelog-table, .history-table, .version-table, .press-table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--surface);
+}
+
+/* Desktop: remove scroll wrapper behavior (native table layout) */
+@media (min-width: 769px) {
+  .table-wrap, .methodology-table, .dd-table, .evidence-table,
+  .changelog-table, .history-table, .version-table, .press-table {
+    display: table;
+    overflow-x: visible;
+    width: 100%;
+  }
+}
+
 /* --- Nothing here — handled by Responsive: Mobile Menu above ---------- */
