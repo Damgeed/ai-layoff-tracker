@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Dictionary — AI Layoff Tracker</title>
+  <meta name="description" content="Complete field-level documentation for every field in the AI Layoff Tracker entries.json database. Types, constraints, examples, and valid values.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/data-dictionary.html">
+
+  <meta property="og:title" content="Data Dictionary — AI Layoff Tracker">
+  <meta property="og:description" content="Complete field-level documentation for every field in the AI Layoff Tracker database. Types, constraints, examples, and valid values.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/data-dictionary.html">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/timeline.css">
+
+  <style>
+    /* Data Dictionary specific */
+    .data-dictionary { padding: 3rem 0; }
+    .data-dictionary h1 { margin-bottom: 1.5rem; }
+    .data-dictionary h2 { margin-top: 2.5rem; margin-bottom: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .data-dictionary h3 { margin-top: 1.75rem; margin-bottom: 0.75rem; }
+    .data-dictionary p { margin-bottom: 1rem; }
+    .data-dictionary ul, .data-dictionary ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1.25rem;
+      color: var(--text-secondary);
+    }
+    .data-dictionary li { margin-bottom: 0.5rem; line-height: 1.6; }
+
+    .dd-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+    }
+    .dd-table th, .dd-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+    .dd-table th {
+      font-weight: 600;
+      color: var(--text-primary);
+      background: var(--surface);
+    }
+    .dd-table td { color: var(--text-secondary); }
+    .dd-table td:first-child {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+    .dd-table td:nth-child(2) {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .dd-table td:nth-child(3) {
+      text-align: center;
+      white-space: nowrap;
+    }
+    .dd-table td:nth-child(5) {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      max-width: 200px;
+      word-break: break-all;
+    }
+
+    .required-yes {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .required-no {
+      color: var(--text-muted);
+    }
+    .required-conditional {
+      color: var(--amber);
+    }
+
+    /* Badge for valid values */
+    .valid-value-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.125rem 0.5rem;
+      margin: 0.125rem 0.25rem;
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .valid-value-tag:first-child { margin-left: 0; }
+
+    /* Status flow diagram */
+    .status-flow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.25rem 0;
+      justify-content: center;
+    }
+    .status-step {
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-align: center;
+      min-width: 100px;
+    }
+    .status-step.pending { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber); }
+    .status-step.verified-status { background: var(--green-bg); color: var(--green); border: 1px solid var(--green); }
+    .status-step.disputed { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange); }
+    .status-step.retracted { background: rgba(255, 68, 68, 0.12); color: var(--accent); border: 1px solid var(--accent); }
+    .status-arrow {
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/data-dictionary.html" aria-current="page">Data Dictionary</a>
+      <a href="/api/entries.json">API</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" class="data-dictionary">
+  <div class="container">
+
+    <h1>Data Dictionary</h1>
+    <p class="hero-subtitle" style="text-align:left; max-width:none;">Complete field-level reference for every field in <code style="background:var(--surface);padding:0.125rem 0.375rem;border-radius:var(--radius-sm);font-family:var(--font-mono);font-size:0.875rem;">entries.json</code>. Types, constraints, examples, and valid values. Use this reference when consuming the API or contributing data.</p>
+
+    <!-- Table of Contents -->
+    <nav aria-label="Table of contents" style="margin: 1.5rem 0;">
+      <h3 style="margin-bottom:0.5rem;border-top:none;padding-top:0;">On this page</h3>
+      <ul style="list-style:none;padding-left:0;">
+        <li><a href="#core-fields">1. Core Fields</a></li>
+        <li><a href="#classification">2. Classification</a></li>
+        <li><a href="#source">3. Source</a></li>
+        <li><a href="#content">4. Content</a></li>
+        <li><a href="#status-lifecycle">5. Status Lifecycle</a></li>
+        <li><a href="#classification-reference">6. Classification Reference</a></li>
+        <li><a href="#evidence-types">7. Evidence Types</a></li>
+        <li><a href="#valid-values">8. Valid Values</a></li>
+      </ul>
+    </nav>
+
+    <!-- 1. Core Fields -->
+    <h2 id="core-fields">1. Core Fields</h2>
+    <p>Every entry in the database must include all core fields. These fields identify the company, the event, and the magnitude of the workforce reduction.</p>
+
+    <table class="dd-table" aria-label="Core fields">
+      <thead>
+        <tr>
+          <th>Field Name</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Constraints</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Unique identifier for the entry, combining company slug and date (YYYY-MM).</td>
+          <td>klarna-2024-08</td>
+          <td>Pattern: <code>{slug}-{YYYY}-{MM}</code>. Must be unique across all entries.</td>
+        </tr>
+        <tr>
+          <td>company</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Full legal or public-facing company name.</td>
+          <td>Klarna</td>
+          <td>Must match a known public company. Case-sensitive.</td>
+        </tr>
+        <tr>
+          <td>slug</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>URL-safe company identifier. Used for routing and lookups.</td>
+          <td>klarna</td>
+          <td>Lowercase alphanumeric with hyphens. Must match <code>/company/{slug}/</code>.</td>
+        </tr>
+        <tr>
+          <td>date</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Primary date of the workforce reduction announcement or event.</td>
+          <td>2024-08-27</td>
+          <td>ISO 8601 date format (YYYY-MM-DD).</td>
+        </tr>
+        <tr>
+          <td>country</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Country where the affected workforce is primarily located.</td>
+          <td>Sweden</td>
+          <td>Must be a valid value from the <a href="#valid-countries">countries list</a>.</td>
+        </tr>
+        <tr>
+          <td>industry</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Primary industry classification for the company.</td>
+          <td>Fintech</td>
+          <td>Must be a valid value from the <a href="#valid-industries">industries list</a>.</td>
+        </tr>
+        <tr>
+          <td>jobs_lost</td>
+          <td>number</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Total number of jobs affected by the workforce reduction.</td>
+          <td>2000</td>
+          <td>Integer. Must be ≥ 1. For hiring freezes, this is the estimated roles affected.</td>
+        </tr>
+        <tr>
+          <td>workforce_before</td>
+          <td>number</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Company workforce headcount before the reduction.</td>
+          <td>5000</td>
+          <td>Integer. Must be ≥ jobs_lost. Used to calculate impact_percent.</td>
+        </tr>
+        <tr>
+          <td>workforce_after</td>
+          <td>number</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Company workforce headcount after the reduction.</td>
+          <td>3000</td>
+          <td>Integer. Should equal <code>workforce_before - jobs_lost</code> for layoffs. May differ for hiring freezes.</td>
+        </tr>
+        <tr>
+          <td>impact_percent</td>
+          <td>number</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Percentage of total workforce affected, rounded to nearest integer.</td>
+          <td>40</td>
+          <td>0–100. Calculated as <code>round((jobs_lost / workforce_before) × 100)</code>.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 2. Classification -->
+    <h2 id="classification">2. Classification</h2>
+    <p>These fields record the AI-attribution tier, verification status, and confidence assessment for each entry. They are the evidentiary backbone of the database.</p>
+
+    <table class="dd-table" aria-label="Classification fields">
+      <thead>
+        <tr>
+          <th>Field Name</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Constraints</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>classification</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>The classification tier indicating how directly AI was cited as a factor.</td>
+          <td>DIRECT_AI_REPLACEMENT</td>
+          <td>Must be one of: <code>DIRECT_AI_REPLACEMENT</code>, <code>AI_DRIVEN_RESTRUCTURING</code>, <code>AI_REALLOCATION</code>, <code>MARKET_DISRUPTION</code>.</td>
+        </tr>
+        <tr>
+          <td>confidence_score</td>
+          <td>number</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Evidence strength score reflecting how directly and unambiguously AI is linked to the workforce reduction.</td>
+          <td>95</td>
+          <td>Integer 0–100. Minimum 50 for publication. See <a href="#classification-reference">Classification Reference</a> for tier thresholds.</td>
+        </tr>
+        <tr>
+          <td>verified</td>
+          <td>boolean</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Whether the entry has passed verification review against primary sources.</td>
+          <td>true</td>
+          <td><code>true</code> for published entries. <code>false</code> indicates the entry is in a pre-verification state. See <a href="#status-lifecycle">Status Lifecycle</a>.</td>
+        </tr>
+        <tr>
+          <td>evidence</td>
+          <td>array</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Array of evidence objects documenting the types of source material supporting this entry.</td>
+          <td>[{"type":"CEO_STATEMENT","description":"..."}]</td>
+          <td>At least one evidence object required. Each object must have <code>type</code> (valid evidence type) and <code>description</code> (string).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 3. Source -->
+    <h2 id="source">3. Source</h2>
+    <p>The <code>source</code> object captures the primary reference used to validate the entry. Every published entry must have a complete source object with an accessible URL and retrieval metadata.</p>
+
+    <table class="dd-table" aria-label="Source object fields">
+      <thead>
+        <tr>
+          <th>Field Name</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Constraints</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>source.title</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Title of the news article, press release, filing, or source document.</td>
+          <td>BBC News</td>
+          <td>Should reflect the original publication's headline or a concise descriptive title.</td>
+        </tr>
+        <tr>
+          <td>source.url</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Direct URL to the original source document.</td>
+          <td>https://www.bbc.com/news/articles/c4gpqp4v4q2o</td>
+          <td>Must be a valid, publicly accessible HTTPS URL. Domain should be on the trusted-source whitelist.</td>
+        </tr>
+        <tr>
+          <td>source.publisher</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>The organization or entity that published the source.</td>
+          <td>BBC News</td>
+          <td>Should be a recognized news organization, company, or regulatory body.</td>
+        </tr>
+        <tr>
+          <td>source.published_date</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Publication date of the source document.</td>
+          <td>2024-08-27</td>
+          <td>ISO 8601 date format (YYYY-MM-DD).</td>
+        </tr>
+        <tr>
+          <td>source.retrieved_date</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Date the source was last accessed and verified by the maintainer.</td>
+          <td>2026-06-13</td>
+          <td>ISO 8601 date format (YYYY-MM-DD).</td>
+        </tr>
+        <tr>
+          <td>source.archive_url</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>Permalink to an archived copy of the source (e.g., Internet Archive Wayback Machine).</td>
+          <td>https://web.archive.org/web/*/https://www.bbc.com/…</td>
+          <td>Must be a valid URL. Ensures long-term citability even if the original page changes.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 4. Content -->
+    <h2 id="content">4. Content</h2>
+    <p>These fields provide the human-readable content, key quotes, and metadata tags that describe the workforce reduction in context.</p>
+
+    <table class="dd-table" aria-label="Content fields">
+      <thead>
+        <tr>
+          <th>Field Name</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Description</th>
+          <th>Example</th>
+          <th>Constraints</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>summary</td>
+          <td>string</td>
+          <td><span class="required-yes">Yes</span></td>
+          <td>A factual, editorial-free summary of the workforce reduction and its AI attribution.</td>
+          <td>Klarna CEO stated the company reduced its workforce from 5,000 to 3,000 by leveraging AI…</td>
+          <td>Should not contain opinion or speculation. Based solely on verified source material.</td>
+        </tr>
+        <tr>
+          <td>ceo_quote</td>
+          <td>string</td>
+          <td><span class="required-no">No</span></td>
+          <td>Direct verbatim quote from a company executive explicitly linking AI to the workforce reduction.</td>
+          <td>We can do the same amount of work with 2,000 employees that we previously did with 5,000 people.</td>
+          <td>Only included when a direct, attributable quote exists. May be null or empty string.</td>
+        </tr>
+        <tr>
+          <td>tags</td>
+          <td>array</td>
+          <td><span class="required-no">No</span></td>
+          <td>Array of lowercase keyword tags for filtering and discovery.</td>
+          <td>["customer-support", "generative-ai", "chatbots", "automation"]</td>
+          <td>Lowercase, hyphenated strings. No spaces. Common tags: automation, generative-ai, restructuring, chatbots, ai-pivot, etc.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 5. Status Lifecycle -->
+    <h2 id="status-lifecycle">5. Status Lifecycle</h2>
+    <p>Every entry moves through a defined lifecycle from initial submission to final state. The <code>verified</code> boolean field reflects the current stage.</p>
+
+    <div class="status-flow" aria-label="Entry status lifecycle flow">
+      <div class="status-step pending">PENDING</div>
+      <span class="status-arrow" aria-hidden="true">→</span>
+      <div class="status-step verified-status">VERIFIED</div>
+      <span class="status-arrow" aria-hidden="true">→</span>
+      <div class="status-step disputed">DISPUTED</div>
+      <span class="status-arrow" aria-hidden="true">→</span>
+      <div class="status-step retracted">RETRACTED</div>
+    </div>
+
+    <table class="dd-table" aria-label="Status lifecycle states">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>verified</th>
+          <th>Description</th>
+          <th>Transition Rules</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="class-badge" style="background:var(--amber-bg);color:var(--amber);">PENDING</span></td>
+          <td><code>false</code></td>
+          <td>Entry has been submitted or identified but has not yet undergone full verification. Not publicly visible.</td>
+          <td>Default state for new entries. Moves to VERIFIED upon passing verification.</td>
+        </tr>
+        <tr>
+          <td><span class="class-badge" style="background:var(--green-bg);color:var(--green);">VERIFIED</span></td>
+          <td><code>true</code></td>
+          <td>Entry has passed verification: primary source confirmed, cross-referenced, classification assigned, and confidence scored. Publicly visible.</td>
+          <td>Can be moved to DISPUTED if a credible challenge is raised. Cannot revert to PENDING.</td>
+        </tr>
+        <tr>
+          <td><span class="class-badge" style="background:var(--orange-bg);color:var(--orange);">DISPUTED</span></td>
+          <td><code>true</code></td>
+          <td>A credible challenge has been raised against the entry's classification, data, or evidence. Under re-review. Remains publicly visible with a dispute notice.</td>
+          <td>Can return to VERIFIED if challenge is resolved in favor of original entry, or move to RETRACTED if challenge is upheld.</td>
+        </tr>
+        <tr>
+          <td><span class="class-badge" style="background:rgba(255,68,68,0.12);color:var(--accent);">RETRACTED</span></td>
+          <td><code>false</code></td>
+          <td>Entry has been retracted due to discredited evidence, factual error, or withdrawal by the source. Not publicly visible. Retained for audit trail.</td>
+          <td>Final state. Once retracted, an entry cannot be re-published; a new entry ID must be created if warranted.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size:0.8125rem;color:var(--text-muted);margin-top:0.5rem;">
+      <strong>Note:</strong> The status is currently encoded via the <code>verified</code> boolean and contextual metadata. A future schema version may introduce an explicit <code>status</code> enum field for clarity.
+    </p>
+
+    <!-- 6. Classification Reference -->
+    <h2 id="classification-reference">6. Classification Reference</h2>
+    <p>Every entry is assigned to one of four classification tiers based on how directly and explicitly AI is cited as a factor in the workforce reduction.</p>
+
+    <table class="dd-table" aria-label="Classification tiers reference">
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Classification Value</th>
+          <th>Definition</th>
+          <th>Confidence Threshold</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="class-badge tier-1">Tier 1</span></td>
+          <td><code>DIRECT_AI_REPLACEMENT</code></td>
+          <td>Company explicitly states AI systems replaced specific human work, resulting in workforce reduction.</td>
+          <td>80+</td>
+        </tr>
+        <tr>
+          <td><span class="class-badge tier-2">Tier 2</span></td>
+          <td><code>AI_DRIVEN_RESTRUCTURING</code></td>
+          <td>Company cites AI efficiency or automation as a major factor in a restructuring that included layoffs.</td>
+          <td>70+</td>
+        </tr>
+        <tr>
+          <td><span class="class-badge tier-3">Tier 3</span></td>
+          <td><code>AI_REALLOCATION</code></td>
+          <td>Jobs cut while the company simultaneously announced increased investment in AI, with resources redirected toward AI priorities.</td>
+          <td>70+</td>
+        </tr>
+        <tr>
+          <td><span class="class-badge tier-4">Tier 4</span></td>
+          <td><code>MARKET_DISRUPTION</code></td>
+          <td>Company lost revenue or market position because customers switched to AI-powered alternatives, leading to workforce reductions.</td>
+          <td>80+</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 7. Evidence Types -->
+    <h2 id="evidence-types">7. Evidence Types</h2>
+    <p>Each entry's <code>evidence</code> array contains one or more objects with a <code>type</code> field. The following seven evidence types are valid:</p>
+
+    <table class="dd-table" aria-label="Evidence types">
+      <thead>
+        <tr>
+          <th>Type Value</th>
+          <th>Definition</th>
+          <th>Typical Source Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>CEO_STATEMENT</code></td>
+          <td>Public statement by the company's CEO or equivalent executive directly addressing AI's role in workforce changes.</td>
+          <td>Earnings call, media interview, company blog post by CEO</td>
+        </tr>
+        <tr>
+          <td><code>COMPANY_STATEMENT</code></td>
+          <td>Official company press release, blog post, or spokesperson statement.</td>
+          <td>Press release, official company blog, spokesperson quote to media</td>
+        </tr>
+        <tr>
+          <td><code>EARNINGS_REPORT</code></td>
+          <td>Quarterly or annual earnings filing, investor presentation, or shareholder letter.</td>
+          <td>Quarterly earnings call transcript, investor deck, annual report</td>
+        </tr>
+        <tr>
+          <td><code>SEC_FILING</code></td>
+          <td>Filing with the U.S. Securities and Exchange Commission.</td>
+          <td>10-K, 10-Q, 8-K, S-1, DEF 14A</td>
+        </tr>
+        <tr>
+          <td><code>MEDIA_REPORT</code></td>
+          <td>Verified reporting by a recognized news organization with named sources.</td>
+          <td>Reuters, Bloomberg, BBC, CNBC, The Verge, Ars Technica</td>
+        </tr>
+        <tr>
+          <td><code>REGULATORY_FILING</code></td>
+          <td>Filing with government agencies outside the U.S., including workforce reduction notifications.</td>
+          <td>WARN Act notice (U.S. states), EU collective redundancy notification, country-specific labor filings</td>
+        </tr>
+        <tr>
+          <td><code>TRAFFIC_ANALYSIS</code></td>
+          <td>Third-party web/app traffic data showing measurable decline linked to AI competition. Used primarily for Tier 4 entries.</td>
+          <td>SimilarWeb, Sensor Tower, App Annie, company-reported user metrics</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 8. Valid Values -->
+    <h2 id="valid-values">8. Valid Values</h2>
+
+    <h3 id="valid-industries">Industries</h3>
+    <p>The following six industry values are currently used in the database. The <code>industry</code> field must match one of these exact values.</p>
+    <p>
+      <span class="valid-value-tag">Education Technology</span>
+      <span class="valid-value-tag">Enterprise Software</span>
+      <span class="valid-value-tag">Fintech</span>
+      <span class="valid-value-tag">Healthcare</span>
+      <span class="valid-value-tag">Logistics</span>
+      <span class="valid-value-tag">Technology</span>
+    </p>
+
+    <h3 id="valid-countries">Countries</h3>
+    <p>The following three country values are currently used in the database. The <code>country</code> field must match one of these exact values.</p>
+    <p>
+      <span class="valid-value-tag">Germany</span>
+      <span class="valid-value-tag">Sweden</span>
+      <span class="valid-value-tag">United States</span>
+    </p>
+
+    <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); color: var(--text-muted); font-size: 0.8125rem;">
+      Schema version: 2.0.0. This data dictionary covers all fields present in <code>/api/entries.json</code>. For methodology and classification criteria, see <a href="/methodology.html">Methodology</a>.
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/data-dictionary.html" aria-current="page">Data Dictionary</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

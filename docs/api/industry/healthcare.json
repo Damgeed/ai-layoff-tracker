@@ -26,7 +26,9 @@
         "title": "The Wall Street Journal",
         "url": "https://www.wsj.com/business/healthcare/cvs-health-layoffs-5000-jobs-39752cdc",
         "published_date": "2024-03-15",
-        "publisher": "The Wall Street Journal"
+        "publisher": "The Wall Street Journal",
+        "archive_url": "https://web.archive.org/web/*/https://www.wsj.com/business/healthcare/cvs-health-layoffs-5000-jobs-39752cdc",
+        "retrieved_date": "2026-06-13"
       },
       "evidence": [
         {

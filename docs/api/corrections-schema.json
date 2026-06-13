@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Correction Submission",
+  "type": "object",
+  "properties": {
+    "entry_id": {
+      "type": "string",
+      "description": "ID of the entry being corrected"
+    },
+    "reporter_email": {
+      "type": "string",
+      "format": "email"
+    },
+    "reported_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "error_type": {
+      "type": "string",
+      "enum": ["DATA_ERROR", "CLASSIFICATION_ERROR", "SOURCE_ERROR", "OUTDATED"]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "supporting_source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["PENDING", "ACCEPTED", "REJECTED"]
+    },
+    "resolution_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "resolution_notes": {
+      "type": "string"
+    }
+  },
+  "required": ["entry_id", "reporter_email", "error_type", "description", "supporting_source_url"]
+}

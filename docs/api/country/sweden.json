@@ -26,7 +26,9 @@
         "title": "BBC News",
         "url": "https://www.bbc.com/news/articles/c4gpqp4v4q2o",
         "published_date": "2024-08-27",
-        "publisher": "BBC News"
+        "publisher": "BBC News",
+        "archive_url": "https://web.archive.org/web/*/https://www.bbc.com/news/articles/c4gpqp4v4q2o",
+        "retrieved_date": "2026-06-13"
       },
       "secondary_sources": [
         {

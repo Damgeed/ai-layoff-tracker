@@ -26,7 +26,9 @@
         "title": "Reuters",
         "url": "https://www.reuters.com/technology/chegg-shares-plunge-company-says-chatgpt-is-hurting-its-business-2024-06-17/",
         "published_date": "2024-06-17",
-        "publisher": "Reuters"
+        "publisher": "Reuters",
+        "archive_url": "https://web.archive.org/web/*/https://www.reuters.com/technology/chegg-shares-plunge-company-says-chatgpt-is-hurting-its-business-2024-06-17/",
+        "retrieved_date": "2026-06-13"
       },
       "secondary_sources": [
         {
@@ -83,7 +85,9 @@
         "title": "Bloomberg",
         "url": "https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation",
         "published_date": "2024-01-08",
-        "publisher": "Bloomberg"
+        "publisher": "Bloomberg",
+        "archive_url": "https://web.archive.org/web/*/https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation",
+        "retrieved_date": "2026-06-13"
       },
       "evidence": [
         {

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrections — AI Layoff Tracker</title>
+  <meta name="description" content="Report errors in the AI Layoff Tracker database. Learn how to submit corrections, evidence requirements, our review process, and the corrections JSON schema.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/corrections.html">
+
+  <meta property="og:title" content="Corrections — AI Layoff Tracker">
+  <meta property="og:description" content="Report errors and submit corrections to the AI Layoff Tracker database. Transparent review process with 72-hour acknowledgment.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/corrections.html">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/timeline.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/corrections.html" aria-current="page">Corrections</a>
+      <a href="/api/entries.json">API</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" class="methodology">
+  <div class="container">
+
+    <h1>Corrections</h1>
+    <p class="hero-subtitle" style="text-align:left; max-width:none;">We are committed to accuracy. If you find an error in the database, here is how to report it and what to expect.</p>
+
+    <!-- How to Report an Error -->
+    <h2>How to Report an Error</h2>
+    <p>To submit a correction, follow these steps:</p>
+    <ol>
+      <li><strong>Identify the entry ID.</strong> Each entry in the database has a unique ID (e.g., <code>klarna-2024-08</code>). You can find this in the entry's URL or in the JSON data under the <code>id</code> field.</li>
+      <li><strong>Describe the error.</strong> Explain what is incorrect and what the correct information should be. Be as specific as possible — include data points, dates, and figures.</li>
+      <li><strong>Provide a source URL.</strong> Include at least one publicly accessible source that supports the correction.</li>
+      <li><strong>Email us.</strong> Send your correction to <a href="mailto:corrections@ailayofftracker.com"><strong>corrections@ailayofftracker.com</strong></a> with all of the above information.</li>
+    </ol>
+
+    <!-- Evidence Requirements -->
+    <h2>Evidence Requirements</h2>
+    <p>All correction submissions must meet the following evidentiary standards:</p>
+    <ul>
+      <li><strong>Primary source required.</strong> The correction must be supported by at least one primary source — a company press release, SEC filing, earnings call transcript, verified media report, or official regulatory document.</li>
+      <li><strong>Publicly accessible URL.</strong> The source must be accessible without login, paywall exceptions apply for major news organizations.</li>
+      <li><strong>Directly contradicts existing entry.</strong> The source must clearly and specifically contradict the current entry data. General context or opinion pieces are not sufficient.</li>
+      <li><strong>Verifiable by our team.</strong> We will independently verify the source before accepting the correction.</li>
+    </ul>
+
+    <!-- Review Process -->
+    <h2>Review Process</h2>
+    <p>Every correction submission follows a standardized review workflow:</p>
+
+    <table class="methodology-table" aria-label="Correction review process">
+      <thead>
+        <tr><th>Stage</th><th>Description</th><th>Timeline</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Acknowledgment</strong></td>
+          <td>We confirm receipt of your correction and assign it a tracking identifier. You will receive an automated acknowledgment email.</td>
+          <td>Within 72 hours</td>
+        </tr>
+        <tr>
+          <td><strong>2. Source Verification</strong></td>
+          <td>Our review team locates and verifies the supporting source. We cross-reference the claimed correction against the original entry sources and any additional corroborating material.</td>
+          <td>1–5 business days</td>
+        </tr>
+        <tr>
+          <td><strong>3. Decision</strong></td>
+          <td>A decision is made based on the evidence. Possible outcomes: <strong>ACCEPT</strong> (correction applied, entry updated, changelog published), <strong>REJECT</strong> (evidence does not support the correction, explanation provided), or <strong>HOLD</strong> (pending additional evidence from submitter or team).</td>
+          <td>1–3 business days after verification</td>
+        </tr>
+        <tr>
+          <td><strong>4. Publication</strong></td>
+          <td>If accepted, the corrected entry is published with an update timestamp and a changelog entry documenting what was changed, when, and why. All corrections are logged in our public changelog.</td>
+          <td>Immediate upon acceptance</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="example-entry" style="margin-top:1.5rem;">
+      <h4>Decision Outcomes</h4>
+      <p><strong>ACCEPT</strong> — The correction has been verified and applied. The entry now reflects the corrected data, and the changelog records the change.</p>
+      <p><strong>REJECT</strong> — The submitted evidence does not support the correction. The entry remains unchanged. A detailed explanation is provided to the submitter.</p>
+      <p><strong>HOLD</strong> — The correction cannot be verified with the provided evidence alone. Additional sourcing is needed. The submitter is invited to provide further documentation.</p>
+    </div>
+
+    <!-- Response Times -->
+    <h2>Response Times</h2>
+    <p>We aim to process all correction submissions promptly:</p>
+    <ul>
+      <li><strong>Initial acknowledgment:</strong> Within 72 hours of submission.</li>
+      <li><strong>Resolution (accepted or rejected):</strong> Typically 1–2 weeks, depending on the complexity of the correction and availability of corroborating sources.</li>
+      <li><strong>Complex cases:</strong> Corrections involving multiple data points, ambiguous source language, or tier reclassification may take up to 3 weeks.</li>
+      <li><strong>Expedited review:</strong> Corrections for factual errors with immediate public significance (e.g., incorrect job-loss figures in active news coverage) are prioritized.</li>
+    </ul>
+    <p>If you have not received a response within the stated timeframe, please follow up at <a href="mailto:corrections@ailayofftracker.com">corrections@ailayofftracker.com</a>.</p>
+
+    <!-- Corrections JSON Schema -->
+    <h2>Corrections JSON Schema</h2>
+    <p>All correction submissions are structured as JSON objects conforming to the following schema. This schema is also available at <a href="/api/corrections-schema.json"><code>/api/corrections-schema.json</code></a>.</p>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; overflow-x: auto; margin-top: 1rem;">
+      <pre style="margin:0; font-size:0.8125rem; line-height:1.6;"><code>{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Correction Submission",
+  "type": "object",
+  "properties": {
+    "entry_id": {
+      "type": "string",
+      "description": "ID of the entry being corrected"
+    },
+    "reporter_email": {
+      "type": "string",
+      "format": "email"
+    },
+    "reported_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "error_type": {
+      "type": "string",
+      "enum": [
+        "DATA_ERROR",
+        "CLASSIFICATION_ERROR",
+        "SOURCE_ERROR",
+        "OUTDATED"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "supporting_source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "ACCEPTED",
+        "REJECTED"
+      ]
+    },
+    "resolution_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "resolution_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "entry_id",
+    "reporter_email",
+    "error_type",
+    "description",
+    "supporting_source_url"
+  ]
+}</code></pre>
+    </div>
+
+    <!-- Schema field reference -->
+    <h3>Field Reference</h3>
+    <table class="methodology-table" aria-label="Correction schema fields">
+      <thead>
+        <tr><th>Field</th><th>Type</th><th>Required</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>entry_id</code></td><td>string</td><td>Yes</td><td>ID of the entry being corrected (e.g., <code>klarna-2024-08</code>)</td></tr>
+        <tr><td><code>reporter_email</code></td><td>string (email)</td><td>Yes</td><td>Your email address for follow-up correspondence</td></tr>
+        <tr><td><code>reported_date</code></td><td>string (date)</td><td>No</td><td>Date the error was identified (ISO 8601)</td></tr>
+        <tr><td><code>error_type</code></td><td>string (enum)</td><td>Yes</td><td>One of: <code>DATA_ERROR</code>, <code>CLASSIFICATION_ERROR</code>, <code>SOURCE_ERROR</code>, <code>OUTDATED</code></td></tr>
+        <tr><td><code>description</code></td><td>string</td><td>Yes</td><td>Detailed description of the error (minimum 20 characters)</td></tr>
+        <tr><td><code>supporting_source_url</code></td><td>string (uri)</td><td>Yes</td><td>Publicly accessible URL supporting the correction</td></tr>
+        <tr><td><code>status</code></td><td>string (enum)</td><td>No</td><td>Review status: <code>PENDING</code>, <code>ACCEPTED</code>, or <code>REJECTED</code> (set by reviewer)</td></tr>
+        <tr><td><code>resolution_date</code></td><td>string (date)</td><td>No</td><td>Date the correction was resolved (ISO 8601, set by reviewer)</td></tr>
+        <tr><td><code>resolution_notes</code></td><td>string</td><td>No</td><td>Notes explaining the resolution outcome (set by reviewer)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Error Types</h3>
+    <ul>
+      <li><strong><code>DATA_ERROR</code></strong> — Factual error in entry data (incorrect job-loss count, wrong date, incorrect company name, etc.).</li>
+      <li><strong><code>CLASSIFICATION_ERROR</code></strong> — Entry is assigned to the wrong tier or has incorrect evidence type tags.</li>
+      <li><strong><code>SOURCE_ERROR</code></strong> — Cited source does not support the entry claims, link is broken, or source is misattributed.</li>
+      <li><strong><code>OUTDATED</code></strong> — Entry is factually outdated due to new information or subsequent developments.</li>
+    </ul>
+
+    <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); color: var(--text-muted); font-size: 0.8125rem;">
+      Last reviewed: June 13, 2026. Questions about the corrections process? <a href="mailto:corrections@ailayofftracker.com">corrections@ailayofftracker.com</a>
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/corrections.html" aria-current="page">Corrections</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

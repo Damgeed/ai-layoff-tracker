@@ -22,7 +22,9 @@
     "title": "Dropbox Blog",
     "url": "https://blog.dropbox.com/topics/company/a-message-from-drew",
     "published_date": "2023-04-27",
-    "publisher": "Dropbox"
+    "publisher": "Dropbox",
+    "archive_url": "https://web.archive.org/web/*/https://blog.dropbox.com/topics/company/a-message-from-drew",
+    "retrieved_date": "2026-06-13"
   },
   "evidence": [
     {

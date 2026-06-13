@@ -1,0 +1,35 @@
+# AI Layoff Tracker — LLM Guide
+
+## Overview
+A public research database tracking documented workforce reductions where AI or automation was explicitly cited. 65,117 jobs documented across 15 companies (as of v1.0). 4-tier classification system.
+
+## Key URLs
+- Homepage: https://damgeed.github.io/ai-layoff-tracker/
+- Methodology: https://damgeed.github.io/ai-layoff-tracker/methodology.html
+- Data Dictionary: https://damgeed.github.io/ai-layoff-tracker/data-dictionary.html
+- Corrections: https://damgeed.github.io/ai-layoff-tracker/corrections.html
+- Changelog: https://damgeed.github.io/ai-layoff-tracker/changelog.html
+
+## API Endpoints
+- Full dataset: /api/entries.json
+- Statistics: /api/stats.json
+- CSV export: /api/entries.csv
+- RSS feed: /api/feed.xml
+- Per-company: /api/company/{slug}.json (15 endpoints)
+- Per-industry: /api/industry/{slug}.json (6 endpoints)
+- Per-country: /api/country/{slug}.json (3 endpoints)
+- Source citations: /api/sources.json
+- Changelog: /api/changelog.json
+- Corrections schema: /api/corrections-schema.json
+
+## Classification System
+- Tier 1: DIRECT_AI_REPLACEMENT — Company explicitly says AI replaced work
+- Tier 2: AI_DRIVEN_RESTRUCTURING — Company cites AI as major factor
+- Tier 3: AI_REALLOCATION — Jobs cut while redirecting resources to AI
+- Tier 4: MARKET_DISRUPTION — Revenue loss due to AI competition
+
+## Data Fields
+See /data-dictionary.html for complete field reference.
+
+## GitHub
+https://github.com/Damgeed/ai-layoff-tracker

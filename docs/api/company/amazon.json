@@ -22,7 +22,9 @@
     "title": "Reuters",
     "url": "https://www.reuters.com/technology/amazon-cuts-jobs-alexa-unit-2023-11-17/",
     "published_date": "2023-11-17",
-    "publisher": "Reuters"
+    "publisher": "Reuters",
+    "archive_url": "https://web.archive.org/web/*/https://www.reuters.com/technology/amazon-cuts-jobs-alexa-unit-2023-11-17/",
+    "retrieved_date": "2026-06-13"
   },
   "secondary_sources": [
     {

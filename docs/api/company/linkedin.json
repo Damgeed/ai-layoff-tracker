@@ -22,7 +22,9 @@
     "title": "CNBC",
     "url": "https://www.cnbc.com/2023/10/16/linkedin-lays-off-more-than-700-employees.html",
     "published_date": "2023-10-16",
-    "publisher": "CNBC"
+    "publisher": "CNBC",
+    "archive_url": "https://web.archive.org/web/*/https://www.cnbc.com/2023/10/16/linkedin-lays-off-more-than-700-employees.html",
+    "retrieved_date": "2026-06-13"
   },
   "evidence": [
     {

@@ -1,0 +1,16 @@
+# humans.txt — AI Layoff Tracker
+
+/* TEAM */
+Creator: Bud
+Role: Data curator, developer, maintainer
+GitHub: https://github.com/Damgeed
+Project: https://github.com/Damgeed/ai-layoff-tracker
+
+/* THANKS */
+Built with vanilla HTML, CSS, JavaScript. Zero frameworks. Zero dependencies.
+Inspired by: ProPublica, Our World in Data, Layoffs.fyi
+
+/* SITE */
+Name: AI Layoff Tracker
+Purpose: Public research database tracking documented workforce reductions linked to AI.
+Last updated: June 13, 2026

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog — AI Layoff Tracker</title>
+  <meta name="description" content="Version history and changes for the AI Layoff Tracker project. Track every update to the database, site features, and methodology.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/changelog.html">
+
+  <meta property="og:title" content="Changelog — AI Layoff Tracker">
+  <meta property="og:description" content="Version history and changes for the AI Layoff Tracker project. Track every update.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/changelog.html">
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --border: #2a2a2a;
+      --text: #f5f5f5;
+      --text-muted: #999;
+      --accent: #ff4444;
+      --green: #2ecc71;
+      --amber: #f39c12;
+      --blue: #3498db;
+      --red: #e74c3c;
+      --radius: 8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute; top: -100px; left: 0;
+      background: var(--accent); color: #fff; padding: 0.5rem 1rem;
+      z-index: 1000; text-decoration: none; border-radius: 0 0 var(--radius) 0;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* Header */
+    .site-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .logo-accent { color: var(--accent); }
+    .site-header nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .site-header nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .site-header nav a:hover,
+    .site-header nav a[aria-current="page"] { color: var(--accent); }
+
+    /* Main */
+    main { flex: 1; padding: 3rem 0; }
+
+    .page-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .page-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+    }
+    .page-subtitle a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .page-subtitle a:hover { text-decoration: underline; }
+
+    /* Timeline */
+    .changelog-timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .changelog-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.6rem;
+      top: 0.25rem;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .version-block {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+    .version-block:last-child { margin-bottom: 0; }
+
+    .version-dot {
+      position: absolute;
+      left: -2.5rem;
+      top: 0.4rem;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      transform: translateX(-6px);
+      box-shadow: 0 0 8px rgba(255, 68, 68, 0.4);
+    }
+
+    .version-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+    .version-tag {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.75rem;
+      border-radius: var(--radius);
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+    .version-date {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .changes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .change-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.55rem 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      transition: border-color 0.2s;
+    }
+    .change-item:hover { border-color: var(--text-muted); }
+
+    .change-badge {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 1px;
+    }
+    .change-badge.added    { background: var(--green); }
+    .change-badge.changed  { background: var(--amber); }
+    .change-badge.fixed    { background: var(--blue); }
+    .change-badge.removed  { background: var(--red); }
+
+    .change-text { flex: 1; }
+    .change-text .change-type-label {
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.35rem;
+    }
+    .change-type-label.added   { color: var(--green); }
+    .change-type-label.changed { color: var(--amber); }
+    .change-type-label.fixed   { color: var(--blue); }
+    .change-type-label.removed { color: var(--red); }
+
+    .change-details {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* States */
+    .state-message {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--text-muted);
+    }
+    .state-message.error { color: var(--red); }
+    .state-message .state-icon { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+    .state-message .state-title { font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+    .state-message .retry-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.25rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .state-message .retry-btn:hover { opacity: 0.9; }
+
+    /* Skeleton */
+    .skeleton-version { margin-bottom: 2.5rem; }
+    .skeleton-line {
+      height: 1rem;
+      background: var(--surface);
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+      animation: shimmer 1.5s infinite;
+      background: linear-gradient(90deg, var(--surface) 25%, #1e1e1e 50%, var(--surface) 75%);
+      background-size: 200% 100%;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .skeleton-title { width: 40%; height: 1.25rem; margin-bottom: 1rem; }
+    .skeleton-line.w80 { width: 80%; }
+    .skeleton-line.w60 { width: 60%; }
+    .skeleton-line.w90 { width: 90%; }
+
+    /* Footer */
+    .site-footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-top: auto;
+    }
+    .site-footer p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .site-footer nav {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .site-footer nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8125rem;
+      transition: color 0.2s;
+    }
+    .site-footer nav a:hover { color: var(--accent); }
+
+    /* Accessibility */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    @media (max-width: 600px) {
+      .page-title { font-size: 1.5rem; }
+      .changelog-timeline { padding-left: 2rem; }
+      .version-dot { left: -2rem; width: 12px; height: 12px; transform: translateX(-5px); }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/changelog.json">API</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <div class="container">
+
+    <h1 class="page-title">Changelog</h1>
+    <p class="page-subtitle">
+      Every significant update to the database, site, and methodology — versioned and timestamped.
+      <a href="/api/changelog.json">View raw JSON →</a>
+    </p>
+
+    <!-- Skeleton loading state -->
+    <div id="changelog-skeleton" aria-hidden="true">
+      <div class="skeleton-version">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line w90"></div>
+        <div class="skeleton-line w80"></div>
+        <div class="skeleton-line w60"></div>
+      </div>
+      <div class="skeleton-version">
+        <div class="skeleton-line skeleton-title"></div>
+        <div class="skeleton-line w90"></div>
+        <div class="skeleton-line w80"></div>
+      </div>
+    </div>
+
+    <!-- Error state (hidden by default) -->
+    <div id="changelog-error" class="state-message error" hidden>
+      <span class="state-icon" aria-hidden="true">⚠</span>
+      <div class="state-title">Failed to load changelog</div>
+      <p>The changelog data could not be retrieved. The API may be temporarily unavailable.</p>
+      <button class="retry-btn" onclick="loadChangelog()">Try Again</button>
+    </div>
+
+    <!-- Empty state (hidden by default) -->
+    <div id="changelog-empty" class="state-message" hidden>
+      <span class="state-icon" aria-hidden="true">📋</span>
+      <div class="state-title">No changelog entries yet</div>
+      <p>Changes will be recorded here as new versions of the dataset are released.</p>
+    </div>
+
+    <!-- Changelog output -->
+    <div id="changelog-content" class="changelog-timeline" aria-live="polite" aria-label="Changelog timeline"></div>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/changelog.json">Changelog JSON</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  'use strict';
+
+  const BADGE_SYMBOLS = {
+    added:   '+',
+    changed: '~',
+    fixed:   '\u2713',
+    removed: '\u2212'
+  };
+
+  const BADGE_LABELS = {
+    added:   'Added',
+    changed: 'Changed',
+    fixed:   'Fixed',
+    removed: 'Removed'
+  };
+
+  async function loadChangelog() {
+    const skeleton = document.getElementById('changelog-skeleton');
+    const errorEl   = document.getElementById('changelog-error');
+    const emptyEl   = document.getElementById('changelog-empty');
+    const contentEl = document.getElementById('changelog-content');
+
+    // Reset state
+    skeleton.hidden = false;
+    errorEl.hidden  = true;
+    emptyEl.hidden  = true;
+    contentEl.innerHTML = '';
+
+    try {
+      const resp = await fetch('/api/changelog.json');
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+
+      const data = await resp.json();
+
+      // Hide skeleton
+      skeleton.hidden = true;
+
+      if (!data.entries || data.entries.length === 0) {
+        emptyEl.hidden = false;
+        return;
+      }
+
+      // Sort entries newest first
+      const entries = [...data.entries].sort((a, b) => {
+        if (a.date > b.date) return -1;
+        if (a.date < b.date) return 1;
+        return 0;
+      });
+
+      let html = '';
+      entries.forEach(function(entry) {
+        html += '<div class="version-block">';
+        html += '<div class="version-dot" aria-hidden="true"></div>';
+        html += '<div class="version-header">';
+        html += '<span class="version-tag">' + escapeHtml(entry.version) + '</span>';
+        html += '<span class="version-date">' + escapeHtml(entry.date) + '</span>';
+        html += '</div>';
+
+        if (entry.changes && entry.changes.length > 0) {
+          html += '<ul class="changes-list">';
+          entry.changes.forEach(function(change) {
+            const type = change.type || 'changed';
+            const sym = BADGE_SYMBOLS[type] || '~';
+            const label = BADGE_LABELS[type] || 'Changed';
+            html += '<li class="change-item">';
+            html += '<span class="change-badge ' + type + '" aria-hidden="true">' + sym + '</span>';
+            html += '<span class="change-text">';
+            html += '<span class="change-type-label ' + type + '">' + label + '</span>';
+            html += escapeHtml(change.item);
+            if (change.details) {
+              html += '<span class="change-details">' + escapeHtml(change.details) + '</span>';
+            }
+            html += '</span>';
+            html += '</li>';
+          });
+          html += '</ul>';
+        }
+
+        html += '</div>';
+      });
+
+      contentEl.innerHTML = html;
+
+    } catch (err) {
+      skeleton.hidden = true;
+      errorEl.hidden = false;
+      console.error('Changelog load error:', err);
+    }
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  // Kick off load
+  loadChangelog();
+</script>
+
+</body>
+</html>

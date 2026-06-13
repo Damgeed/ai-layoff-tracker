@@ -1,0 +1,70 @@
+{
+  "_comment": "╔══════════════════════════════════════════════════════════════════════════════╗\n║  STATUS LIFECYCLE DOCUMENTATION                                            ║\n║                                                                            ║\n║  Every entry (in entries.json) and submission (in this file) follows one   ║\n║  of three mutually-exclusive statuses:                                     ║\n║                                                                            ║\n║  ┌──────────┐     ┌───────────┐     ┌───────────┐                         ║\n║  │ PENDING   │────▶│ VERIFIED  │────▶│ DISPUTED  │────▶ (resolved)         ║\n║  │ (default  │     │ (published│     │ (flagged  │     or re-verified)      ║\n║  │  for new  │     │  entry)   │     │  for      │                         ║\n║  │  subs)    │     │           │     │  review)  │                         ║\n║  └──────────┘     └───────────┘     └───────────┘                         ║\n║                         │                                                   ║\n║                         │ (if proven false / company retracts)              ║\n║                         ▼                                                   ║\n║                    ┌───────────┐                                            ║\n║                    │ RETRACTED │  ◀── terminal state                        ║\n║                    │ (no longer│       entry kept for audit trail           ║\n║                    │  valid)   │       but excluded from statistics         ║\n║                    └───────────┘                                            ║\n║                                                                            ║\n║  STATUS DEFINITIONS:                                                       ║\n║  • PENDING   — New submission awaiting review. Not yet published.          ║\n║  • VERIFIED   — Reviewed and confirmed against at least one trusted        ║\n║                 source. Published in entries.json. CORRESPONDS TO          ║\n║                 entries.json \"verified\": true. This is the implicit         ║\n║                 default status for all live entries.                        ║\n║  • DISPUTED   — Entry has been challenged (by submitter, company, or       ║\n║                 third party). Remains in entries.json but flagged.          ║\n║                 May be resolved back to VERIFIED or escalated to RETRACTED.║\n║  • RETRACTED  — Entry has been definitively proven incorrect or the        ║\n║                 company has retracted its statement. PRESERVED in           ║\n║                 entries.json with \"verified\": false for full audit trail.   ║\n║                 Excluded from active statistics and timeline.               ║\n║                                                                            ║\n║  IMPLICIT STATUS RULE (for entries.json):                                  ║\n║  Every entry in entries.json implicitly has status VERIFIED unless         ║\n║  explicitly marked DISPUTED or RETRACTED. The existing \"verified\" boolean  ║\n║  maps as follows:                                                          ║\n║    • \"verified\": true  →  status VERIFIED  (normal, published)             ║\n║    • \"verified\": false →  check for explicit status field; if absent,       ║\n║                            treat as RETRACTED                               ║\n║                                                                            ║\n║  LIFECYCLE RULES:                                                          ║\n║  1. New submissions always start as PENDING.                               ║\n║  2. Only PENDING submissions can transition to VERIFIED.                   ║\n║  3. VERIFIED entries can be DISPUTED at any time.                          ║\n║  4. DISPUTED entries can resolve to VERIFIED or escalate to RETRACTED.     ║\n║  5. RETRACTED is terminal — entries are never deleted, only retracted.      ║\n║  6. All status transitions are logged with timestamp and reason.           ║\n╚══════════════════════════════════════════════════════════════════════════════╝",
+  "version": "1.0.0",
+  "submissions": [
+    {
+      "id": "sub-20241201-001",
+      "company": "Dropbox",
+      "date": "2024-12-01",
+      "jobs_lost": 528,
+      "classification": "AI_DRIVEN_RESTRUCTURING",
+      "source_url": "https://www.cnbc.com/2024/10/30/dropbox-layoffs-2024.html",
+      "submitter_email": "analyst@techwatch.example.com",
+      "status": "VERIFIED",
+      "submitted_date": "2024-12-01T14:22:00Z",
+      "notes": "Dropbox CEO Drew Houston cited AI investment shift. Verified against CNBC and SEC filing. Promoted to entries.json as dropbox-2024-11.",
+      "_validation": {
+        "valid": false,
+        "submission_id": "sub-20241201-001",
+        "errors": [
+          "Source URL does not resolve: HTTP 404: Not Found"
+        ],
+        "warnings": [],
+        "url_result": {
+          "url": "https://www.cnbc.com/2024/10/30/dropbox-layoffs-2024.html",
+          "resolves": false,
+          "status_code": 404,
+          "domain": "cnbc.com",
+          "domain_trusted": true,
+          "error": "HTTP 404: Not Found"
+        }
+      },
+      "_validated_at": "2026-06-13T06:47:54Z"
+    },
+    {
+      "id": "sub-20250613-002",
+      "company": "Cisco",
+      "date": "2025-06-13",
+      "jobs_lost": 4000,
+      "classification": "AI_DRIVEN_RESTRUCTURING",
+      "source_url": "https://www.reuters.com/technology/cisco-layoffs-2025-ai-shift-2025-06-13/",
+      "submitter_email": "tipster@layoffwatch.example.com",
+      "status": "PENDING",
+      "submitted_date": "2025-06-13T12:00:00Z",
+      "notes": "Submitted via public tip line. Awaiting source URL resolution and editorial review.",
+      "_validation": {
+        "valid": false,
+        "submission_id": "sub-20250613-002",
+        "errors": [
+          "Source URL does not resolve: HTTP 401: HTTP Forbidden"
+        ],
+        "warnings": [],
+        "url_result": {
+          "url": "https://www.reuters.com/technology/cisco-layoffs-2025-ai-shift-2025-06-13/",
+          "resolves": false,
+          "status_code": 401,
+          "domain": "reuters.com",
+          "domain_trusted": true,
+          "error": "HTTP 401: HTTP Forbidden"
+        }
+      },
+      "_validated_at": "2026-06-13T06:47:55Z"
+    }
+  ],
+  "_last_validated": "2026-06-13T06:47:55Z",
+  "_validation_summary": {
+    "total": 2,
+    "passed": 0,
+    "failed": 2
+  }
+}

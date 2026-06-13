@@ -26,7 +26,9 @@
         "title": "Bloomberg",
         "url": "https://www.bloomberg.com/news/articles/2024-05-20/ibm-to-pause-hiring-for-jobs-that-ai-could-do",
         "published_date": "2024-05-20",
-        "publisher": "Bloomberg"
+        "publisher": "Bloomberg",
+        "archive_url": "https://web.archive.org/web/*/https://www.bloomberg.com/news/articles/2024-05-20/ibm-to-pause-hiring-for-jobs-that-ai-could-do",
+        "retrieved_date": "2026-06-13"
       },
       "secondary_sources": [
         {
@@ -83,7 +85,9 @@
         "title": "Dropbox Blog",
         "url": "https://blog.dropbox.com/topics/company/a-message-from-drew",
         "published_date": "2023-04-27",
-        "publisher": "Dropbox"
+        "publisher": "Dropbox",
+        "archive_url": "https://web.archive.org/web/*/https://blog.dropbox.com/topics/company/a-message-from-drew",
+        "retrieved_date": "2026-06-13"
       },
       "evidence": [
         {
@@ -129,7 +133,9 @@
         "title": "The Verge",
         "url": "https://www.theverge.com/2023/10/16/23919004/stack-overflow-layoffs-ai-traffic-decline",
         "published_date": "2023-10-16",
-        "publisher": "The Verge"
+        "publisher": "The Verge",
+        "archive_url": "https://web.archive.org/web/*/https://www.theverge.com/2023/10/16/23919004/stack-overflow-layoffs-ai-traffic-decline",
+        "retrieved_date": "2026-06-13"
       },
       "secondary_sources": [
         {
@@ -186,7 +192,9 @@
         "title": "Google Blog (The Keyword)",
         "url": "https://blog.google/inside-google/message-ceo/january-update/",
         "published_date": "2023-01-20",
-        "publisher": "Google"
+        "publisher": "Google",
+        "archive_url": "https://web.archive.org/web/20260613065049/https://blog.google/company-news/inside-google/message-ceo/january-update/",
+        "retrieved_date": "2026-06-13"
       },
       "secondary_sources": [
         {
@@ -244,7 +252,9 @@
         "title": "Meta Newsroom",
         "url": "https://about.fb.com/news/2023/03/mark-zuckerberg-meta-year-of-efficiency/",
         "published_date": "2023-03-14",
-        "publisher": "Meta"
+        "publisher": "Meta",
+        "archive_url": "https://web.archive.org/web/20260613065240/https://about.fb.com/news/2023/03/mark-zuckerberg-meta-year-of-efficiency/",
+        "retrieved_date": "2026-06-13"
       },
       "secondary_sources": [
         {
@@ -302,7 +312,9 @@
         "title": "CNBC",
         "url": "https://www.cnbc.com/2023/10/16/linkedin-lays-off-more-than-700-employees.html",
         "published_date": "2023-10-16",
-        "publisher": "CNBC"
+        "publisher": "CNBC",
+        "archive_url": "https://web.archive.org/web/*/https://www.cnbc.com/2023/10/16/linkedin-lays-off-more-than-700-employees.html",
+        "retrieved_date": "2026-06-13"
       },
       "evidence": [
         {
@@ -348,7 +360,9 @@
         "title": "CNBC",
         "url": "https://www.cnbc.com/2024/02/14/cisco-layoffs-4000-jobs.html",
         "published_date": "2024-02-14",
-        "publisher": "CNBC"
+        "publisher": "CNBC",
+        "archive_url": "https://web.archive.org/web/*/https://www.cnbc.com/2024/02/14/cisco-layoffs-4000-jobs.html",
+        "retrieved_date": "2026-06-13"
       },
       "secondary_sources": [
         {
@@ -401,7 +415,9 @@
         "title": "Reuters",
         "url": "https://www.reuters.com/technology/amazon-cuts-jobs-alexa-unit-2023-11-17/",
         "published_date": "2023-11-17",
-        "publisher": "Reuters"
+        "publisher": "Reuters",
+        "archive_url": "https://web.archive.org/web/*/https://www.reuters.com/technology/amazon-cuts-jobs-alexa-unit-2023-11-17/",
+        "retrieved_date": "2026-06-13"
       },
       "secondary_sources": [
         {
