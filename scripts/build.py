@@ -372,11 +372,6 @@ def generate_entry_pages(data):
         <a href="/api/feed.xml">RSS Feed</a>
       </div>
       <div class="footer-col">
-        <h4>Project</h4>
-        <a href="/sitemap.xml">Sitemap</a>
-        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
-      </div>
-      <div class="footer-col">
         <h4>Resources</h4>
         <a href="/press/">Press Kit</a>
         <a href="/research/">Research</a>
