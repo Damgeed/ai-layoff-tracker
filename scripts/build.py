@@ -198,6 +198,13 @@ def generate_company_pages(data):
 <head>
 <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){{
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    }})();
+  </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{entry["company"]} — {entry["jobs_lost"]:,} Jobs Impacted | AI Layoff Tracker</title>
 <meta name="description" content="{entry["summary"]}">
@@ -224,10 +231,15 @@ def generate_company_pages(data):
   <div class="container">
     <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
-      <a href="/methodology.html">Methodology</a>
-      <a href="/api/entries.json">API</a>
-      <a href="/api/entries.csv">CSV</a>
-      <a href="/api/feed.xml">RSS</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -254,9 +266,9 @@ def generate_company_pages(data):
     </div>
     <div class="entry-meta">
       <span>📅 {entry["date"]}</span>
-      <span>📍 {entry["headquarters"]}</span>
+      <span>📍 {entry.get("headquarters", "N/A")}</span>
       <span>🏭 {entry["industry"]}</span>
-      <span>📊 {entry["public_trade_status"].title()}</span>
+      <span>📊 {entry.get("public_trade_status", "unknown").title()}</span>
     </div>
     <div class="entry-body">
       <p class="entry-summary">{entry["summary"]}</p>
@@ -303,6 +315,7 @@ def generate_company_pages(data):
   </div>
 </footer>
 <script src="assets/js/share.js" defer></script>
+<script src="assets/js/theme.js" defer></script>
 </body>
 </html>'''
         with open(page_dir / "index.html", "w") as f:
@@ -412,6 +425,13 @@ def generate_entry_pages(data):
 <head>
 <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){{
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    }})();
+  </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{entry["company"]}: {entry["jobs_lost"]:,} Jobs Impacted | AI Layoff Tracker</title>
 <meta name="description" content="{desc}">
@@ -441,10 +461,15 @@ def generate_entry_pages(data):
   <div class="container">
     <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
-      <a href="/methodology.html">Methodology</a>
-      <a href="/api/entries.json">API</a>
-      <a href="/api/entries.csv">CSV</a>
-      <a href="/api/feed.xml">RSS</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -517,6 +542,7 @@ def generate_entry_pages(data):
     </div>
   </div>
 </footer>
+<script src="assets/js/theme.js" defer></script>
 </body>
 </html>'''
         with open(page_dir / "index.html", "w") as f:
@@ -569,6 +595,13 @@ def generate_industry_pages(data):
 <head>
 <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){{
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    }})();
+  </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{ind_data["industry"]} — AI Workforce Reductions | AI Layoff Tracker</title>
 <meta name="description" content="{desc}">
@@ -595,10 +628,15 @@ def generate_industry_pages(data):
   <div class="container">
     <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
-      <a href="/methodology.html">Methodology</a>
-      <a href="/api/entries.json">API</a>
-      <a href="/api/entries.csv">CSV</a>
-      <a href="/api/feed.xml">RSS</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -656,6 +694,7 @@ def generate_industry_pages(data):
     </div>
   </div>
 </footer>
+<script src="assets/js/theme.js" defer></script>
 </body>
 </html>'''
         with open(page_dir / "index.html", "w") as f:
@@ -719,6 +758,13 @@ def generate_country_pages(data):
 <head>
 <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){{
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    }})();
+  </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{c_data["country"]} — AI Workforce Reductions | AI Layoff Tracker</title>
 <meta name="description" content="{desc}">
@@ -745,10 +791,15 @@ def generate_country_pages(data):
   <div class="container">
     <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
-      <a href="/methodology.html">Methodology</a>
-      <a href="/api/entries.json">API</a>
-      <a href="/api/entries.csv">CSV</a>
-      <a href="/api/feed.xml">RSS</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -806,6 +857,7 @@ def generate_country_pages(data):
     </div>
   </div>
 </footer>
+<script src="assets/js/theme.js" defer></script>
 </body>
 </html>'''
         with open(page_dir / "index.html", "w") as f:

@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Google — 12,000 Jobs Impacted | AI Layoff Tracker</title>
 <meta name="description" content="Google laid off 12,000 employees as part of a major restructuring that CEO Sundar Pichai framed as a pivot toward AI priorities. Pichai stated the company needed to redirect resources and talent toward artificial intelligence development, particularly in response to competitive pressure from OpenAI and Microsoft.">
@@ -29,10 +36,15 @@
   <div class="container">
     <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
-      <a href="/methodology.html">Methodology</a>
-      <a href="/api/entries.json">API</a>
-      <a href="/api/entries.csv">CSV</a>
-      <a href="/api/feed.xml">RSS</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -108,5 +120,6 @@
   </div>
 </footer>
 <script src="assets/js/share.js" defer></script>
+<script src="assets/js/theme.js" defer></script>
 </body>
 </html>

@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Changelog — AI Layoff Tracker</title>
   <meta name="description" content="Version history and changes for the AI Layoff Tracker project. Track every update to the database, site features, and methodology.">
@@ -314,9 +321,15 @@
   <div class="container">
     <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
-      <a href="/">Home</a>
-      <a href="/methodology.html">Methodology</a>
-      <a href="/api/changelog.json">API</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -484,6 +497,7 @@
   // Kick off load
   loadChangelog();
 </script>
+<script src="assets/js/theme.js" defer></script>
 
 </body>
 </html>

@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Methodology — AI Layoff Tracker</title>
   <meta name="description" content="How we classify, verify, and source every entry in the AI Layoff Tracker database. Transparent methodology for researchers and journalists.">
@@ -32,9 +39,15 @@
   <div class="container">
     <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
-      <a href="/">Home</a>
-      <a href="/methodology.html" aria-current="page">Methodology</a>
-      <a href="/api/entries.json">API</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -224,5 +237,6 @@
     </nav>
   </div>
 </footer>
+<script src="assets/js/theme.js" defer></script>
 </body>
 </html>

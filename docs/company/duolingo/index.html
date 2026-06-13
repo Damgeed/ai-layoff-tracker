@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Duolingo — 60 Jobs Impacted | AI Layoff Tracker</title>
 <meta name="description" content="Duolingo reduced its contractor workforce by approximately 10% as AI translation and content generation tools reduced the need for human translators and content creators. The company emphasized it was not replacing core employees but shifting toward AI-augmented content production.">
@@ -10,6 +17,8 @@
 <meta property="og:description" content="Duolingo reduced its contractor workforce by approximately 10% as AI translation and content generation tools reduced the need for human translators and content creators. The company emphasized it was">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ailayofftracker.com/company/duolingo/">
+<meta property="og:site_name" content="AI Layoff Tracker">
+<link rel="canonical" href="https://ailayofftracker.com/company/duolingo/">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/timeline.css">
 </head>
@@ -23,33 +32,41 @@
   <div class="particle"></div><div class="particle"></div><div class="particle"></div>
 </div>
 <a href="#main-content" class="skip-link">Skip to main content</a>
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
-    <nav><a href="/methodology.html">Methodology</a><a href="/api/stats.json">API</a></nav>
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+    </nav>
   </div>
 </header>
 <main class="container" id="main-content" role="main">
-  <nav class="breadcrumb"><a href="/">← Back to tracker</a></nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a></nav>
   <article class="entry-detail">
-    <div class="entry-header">
-      <div class="entry-classification" style="background:#ff8844">
-        AI-Driven Restructuring
-      </div>
+    <header class="entry-header">
+      <span class="class-badge tier2"><span class="badge-dot tier2"></span>AI-Driven Restructuring</span>
       <h1>Duolingo</h1>
-      <div class="entry-stats">
-        <div class="stat">
-          <span class="stat-value">60</span>
-          <span class="stat-label">Jobs Lost</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">8%</span>
-          <span class="stat-label">of Workforce</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">75/100</span>
-          <span class="stat-label">Confidence</span>
-        </div>
+    </header>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">60</div>
+        <div class="stat-label">Jobs Lost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">8%</div>
+        <div class="stat-label">of Workforce</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value"><span class="confidence-dot medium"></span>75/100</div>
+        <div class="stat-label">Confidence</div>
       </div>
     </div>
     <div class="entry-meta">
@@ -59,15 +76,15 @@
       <span>📊 Public</span>
     </div>
     <div class="entry-body">
-      <p class="summary">Duolingo reduced its contractor workforce by approximately 10% as AI translation and content generation tools reduced the need for human translators and content creators. The company emphasized it was not replacing core employees but shifting toward AI-augmented content production.</p>
+      <p class="entry-summary">Duolingo reduced its contractor workforce by approximately 10% as AI translation and content generation tools reduced the need for human translators and content creators. The company emphasized it was not replacing core employees but shifting toward AI-augmented content production.</p>
       
-      <div class="tags"><span class="tag">translation</span> <span class="tag">content-creation</span> <span class="tag">language</span> <span class="tag">contractors</span></div>
+      <div class="entry-tags"><span class="entry-tag">translation</span><span class="entry-tag">content-creation</span><span class="entry-tag">language</span><span class="entry-tag">contractors</span></div>
       <h2>Evidence</h2>
       <ul class="evidence-list"><li class="evidence-item"><strong>Company Statement:</strong> Company confirmed shift toward AI-generated content reduced need for human contractors.</li></ul>
       <h2>Sources</h2>
       <ul class="source-list">
-        <li><a href="https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation" target="_blank" rel="noopener">Bloomberg <span class="source-pub">(Bloomberg)</span></a></li>
-        <li>📦 <a href="https://web.archive.org/web/*/https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation" target="_blank" rel="noopener">Archived Source <span class="source-pub">(archive.org)</span></a></li>
+        <li><a href="https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation" target="_blank" rel="noopener" class="entry-source">Bloomberg <small>(Bloomberg)</small></a></li>
+        <li>📦 <a href="https://web.archive.org/web/*/https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation" target="_blank" rel="noopener" class="entry-source">Archived Source <small>(archive.org)</small></a></li>
         
       </ul>
       <h2>Departments Affected</h2>
@@ -75,15 +92,34 @@
     </div>
   </article>
   <div class="share-section">
-    <button onclick="shareEntry('Duolingo', 60, 'AI_DRIVEN_RESTRUCTURING')" class="btn-share">📤 Share This Entry</button>
+    <button onclick="shareEntry('Duolingo', 60, 'AI_DRIVEN_RESTRUCTURING')" class="btn btn-primary">📤 Share This Entry</button>
   </div>
 </main>
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <p><a href="/methodology.html">Methodology</a> · <a href="/api/entries.json">JSON API</a> · <a href="/api/entries.csv">Download CSV</a></p>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/api/entries.json">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
 <script src="assets/js/share.js" defer></script>
+<script src="assets/js/theme.js" defer></script>
 </body>
 </html>

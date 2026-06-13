@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UPS: 12,000 Jobs Impacted | AI Layoff Tracker</title>
 <meta name="description" content="UPS announced 12,000 job cuts as part of a cost-reduction plan that prominently featured AI-driven logistics optimization. CEO Carol Tomé stated the company was deploying AI tools for route optimizati">
@@ -10,6 +17,7 @@
 <meta property="og:description" content="UPS announced 12,000 job cuts as part of a cost-reduction plan that prominently featured AI-driven logistics optimization. CEO Carol Tomé stated the company was deploying AI tools for route optimizati">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ailayofftracker.com/entry/ups-2024-01/">
+<meta property="og:site_name" content="AI Layoff Tracker">
 <link rel="canonical" href="https://ailayofftracker.com/entry/ups-2024-01/">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/timeline.css">
@@ -29,31 +37,39 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
-    <nav role="navigation" aria-label="Main navigation"><a href="/methodology.html">Methodology</a><a href="/api/stats.json">API</a></nav>
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+    </nav>
   </div>
 </header>
 <main class="container" id="main-content" role="main">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a> · <a href="/company/ups/">← UPS page</a></nav>
   <article class="entry-detail">
-    <div class="entry-header">
-      <div class="entry-classification" style="background:#ff8844">
-        AI-Driven Restructuring
-      </div>
+    <header class="entry-header">
+      <span class="class-badge tier2"><span class="badge-dot tier2"></span>AI-Driven Restructuring</span>
       <h1>UPS: 12,000 Jobs Impacted</h1>
-      <div class="entry-stats">
-        <div class="stat">
-          <span class="stat-value">12,000</span>
-          <span class="stat-label">Jobs Lost</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">2%</span>
-          <span class="stat-label">of Workforce</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value"><span class="confidence-dot" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ffcc44;margin-right:6px;"></span>70/100</span>
-          <span class="stat-label">Confidence</span>
-        </div>
+    </header>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">12,000</div>
+        <div class="stat-label">Jobs Lost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">2%</div>
+        <div class="stat-label">of Workforce</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value"><span class="confidence-dot medium"></span>70/100</div>
+        <div class="stat-label">Confidence</div>
       </div>
     </div>
     <div class="entry-meta">
@@ -62,14 +78,14 @@
       <span>🏭 Logistics</span>
     </div>
     <div class="entry-body">
-      <p class="summary">UPS announced 12,000 job cuts as part of a cost-reduction plan that prominently featured AI-driven logistics optimization. CEO Carol Tomé stated the company was deploying AI tools for route optimization, package sorting, and back-office automation that would reduce the need for management and administrative staff.</p>
+      <p class="entry-summary">UPS announced 12,000 job cuts as part of a cost-reduction plan that prominently featured AI-driven logistics optimization. CEO Carol Tomé stated the company was deploying AI tools for route optimization, package sorting, and back-office automation that would reduce the need for management and administrative staff.</p>
       <blockquote class="ceo-quote"><p>"We are using AI to transform our network, making our operations more efficient and reducing our management layers."</p><cite>— UPS CEO</cite></blockquote>
       <h2>Evidence</h2>
       <ul class="evidence-list"><li class="evidence-item"><strong>Ceo Statement:</strong> CEO cited AI deployment as key driver of operational cost reduction and management cuts.</li></ul>
       <h2>Sources</h2>
       <ul class="source-list">
-        <li><a href="https://www.cnn.com/2024/01/30/business/ups-layoffs/index.html" target="_blank" rel="noopener">CNN Business <span class="source-pub">(CNN Business)</span></a></li>
-        <li>📦 <a href="https://web.archive.org/web/*/https://www.cnn.com/2024/01/30/business/ups-layoffs/index.html" target="_blank" rel="noopener">Archived Source <span class="source-pub">(archive.org)</span></a></li>
+        <li><a href="https://www.cnn.com/2024/01/30/business/ups-layoffs/index.html" target="_blank" rel="noopener" class="entry-source">CNN Business <small>(CNN Business)</small></a></li>
+        <li>📦 <a href="https://web.archive.org/web/*/https://www.cnn.com/2024/01/30/business/ups-layoffs/index.html" target="_blank" rel="noopener" class="entry-source">Archived Source <small>(archive.org)</small></a></li>
       </ul>
     </div>
   </article>
@@ -82,9 +98,28 @@
 </main>
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <p><a href="/methodology.html">Methodology</a> · <a href="/api/entries.json">JSON API</a> · <a href="/api/entries.csv">Download CSV</a></p>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/api/entries.json">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
+<script src="assets/js/theme.js" defer></script>
 </body>
 </html>

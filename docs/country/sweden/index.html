@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sweden — AI Workforce Reductions | AI Layoff Tracker</title>
 <meta name="description" content="AI workforce reductions in Sweden: 2,000 jobs impacted across 1 companies.">
@@ -10,6 +17,7 @@
 <meta property="og:description" content="AI workforce reductions in Sweden: 2,000 jobs impacted across 1 companies.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ailayofftracker.com/country/sweden/">
+<meta property="og:site_name" content="AI Layoff Tracker">
 <link rel="canonical" href="https://ailayofftracker.com/country/sweden/">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/timeline.css">
@@ -26,25 +34,35 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
-    <nav role="navigation" aria-label="Main navigation"><a href="/methodology.html">Methodology</a><a href="/api/stats.json">API</a></nav>
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+    </nav>
   </div>
 </header>
 <main class="container" id="main-content" role="main">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a></nav>
   <h1>Sweden — AI Workforce Reductions</h1>
-  <div class="entry-stats">
-    <div class="stat">
-      <span class="stat-value">2,000</span>
-      <span class="stat-label">Total Jobs Lost</span>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">2,000</div>
+      <div class="stat-label">Total Jobs Lost</div>
     </div>
-    <div class="stat">
-      <span class="stat-value">1</span>
-      <span class="stat-label">Companies</span>
+    <div class="stat-card">
+      <div class="stat-value">1</div>
+      <div class="stat-label">Companies</div>
     </div>
-    <div class="stat">
-      <span class="stat-value">1</span>
-      <span class="stat-label">Entries</span>
+    <div class="stat-card">
+      <div class="stat-value">1</div>
+      <div class="stat-label">Entries</div>
     </div>
   </div>
   <section aria-label="Industry breakdown">
@@ -62,9 +80,28 @@
 </main>
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <p><a href="/methodology.html">Methodology</a> · <a href="/api/entries.json">JSON API</a> · <a href="/api/entries.csv">Download CSV</a></p>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/api/entries.json">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
+<script src="assets/js/theme.js" defer></script>
 </body>
 </html>

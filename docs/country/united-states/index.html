@@ -3,13 +3,21 @@
 <head>
 <meta charset="UTF-8">
   <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>United States — AI Workforce Reductions | AI Layoff Tracker</title>
-<meta name="description" content="AI workforce reductions in United States: 55,117 jobs impacted across 13 companies.">
+<meta name="description" content="AI workforce reductions in United States: 66,767 jobs impacted across 23 companies.">
 <meta property="og:title" content="United States — AI Workforce Reductions">
-<meta property="og:description" content="AI workforce reductions in United States: 55,117 jobs impacted across 13 companies.">
+<meta property="og:description" content="AI workforce reductions in United States: 66,767 jobs impacted across 23 companies.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ailayofftracker.com/country/united-states/">
+<meta property="og:site_name" content="AI Layoff Tracker">
 <link rel="canonical" href="https://ailayofftracker.com/country/united-states/">
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/timeline.css">
@@ -26,34 +34,44 @@
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
-    <nav role="navigation" aria-label="Main navigation"><a href="/methodology.html">Methodology</a><a href="/api/stats.json">API</a></nav>
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="api/entries.json">API</a>
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+    </nav>
   </div>
 </header>
 <main class="container" id="main-content" role="main">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a></nav>
   <h1>United States — AI Workforce Reductions</h1>
-  <div class="entry-stats">
-    <div class="stat">
-      <span class="stat-value">55,117</span>
-      <span class="stat-label">Total Jobs Lost</span>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">66,767</div>
+      <div class="stat-label">Total Jobs Lost</div>
     </div>
-    <div class="stat">
-      <span class="stat-value">13</span>
-      <span class="stat-label">Companies</span>
+    <div class="stat-card">
+      <div class="stat-value">23</div>
+      <div class="stat-label">Companies</div>
     </div>
-    <div class="stat">
-      <span class="stat-value">13</span>
-      <span class="stat-label">Entries</span>
+    <div class="stat-card">
+      <div class="stat-value">23</div>
+      <div class="stat-label">Entries</div>
     </div>
   </div>
   <section aria-label="Industry breakdown">
     <h2>Industry Breakdown</h2>
-    <ul class="industry-list"><li>Education Technology — 501 jobs (2 entries)</li><li>Fintech — 2,000 jobs (1 entries)</li><li>Healthcare — 5,000 jobs (1 entries)</li><li>Logistics — 12,000 jobs (1 entries)</li><li>Technology — 35,616 jobs (8 entries)</li></ul>
+    <ul class="industry-list"><li>Education Technology — 501 jobs (2 entries)</li><li>Enterprise Software — 3,450 jobs (3 entries)</li><li>Fintech — 2,000 jobs (1 entries)</li><li>Healthcare — 5,000 jobs (1 entries)</li><li>Logistics — 12,000 jobs (1 entries)</li><li>Media — 200 jobs (2 entries)</li><li>Technology — 43,616 jobs (13 entries)</li></ul>
   </section>
   <section aria-label="Companies in this country">
     <h2>Companies</h2>
-    <ul class="company-list"><li><a href="/company/amazon/">Amazon</a> — 500 jobs</li><li><a href="/company/cvshealth/">CVS Health</a> — 5,000 jobs</li><li><a href="/company/chegg/">Chegg</a> — 441 jobs</li><li><a href="/company/cisco/">Cisco</a> — 4,000 jobs</li><li><a href="/company/dropbox/">Dropbox</a> — 500 jobs</li><li><a href="/company/duolingo/">Duolingo</a> — 60 jobs</li><li><a href="/company/google/">Google</a> — 12,000 jobs</li><li><a href="/company/ibm/">IBM</a> — 7,800 jobs</li><li><a href="/company/linkedin/">LinkedIn</a> — 716 jobs</li><li><a href="/company/meta/">Meta</a> — 10,000 jobs</li><li><a href="/company/paypal/">PayPal</a> — 2,000 jobs</li><li><a href="/company/stackoverflow/">Stack Overflow</a> — 100 jobs</li><li><a href="/company/ups/">UPS</a> — 12,000 jobs</li></ul>
+    <ul class="company-list"><li><a href="/company/amazon/">Amazon</a> — 500 jobs</li><li><a href="/company/autodesk/">Autodesk</a> — 1,350 jobs</li><li><a href="/company/buzzfeed/">BuzzFeed</a> — 180 jobs</li><li><a href="/company/cnet/">CNET</a> — 20 jobs</li><li><a href="/company/cvshealth/">CVS Health</a> — 5,000 jobs</li><li><a href="/company/chegg/">Chegg</a> — 441 jobs</li><li><a href="/company/cisco/">Cisco</a> — 4,000 jobs</li><li><a href="/company/dropbox/">Dropbox</a> — 500 jobs</li><li><a href="/company/duolingo/">Duolingo</a> — 60 jobs</li><li><a href="/company/google/">Google</a> — 12,000 jobs</li><li><a href="/company/ibm/">IBM</a> — 7,800 jobs</li><li><a href="/company/indeed/">Indeed</a> — 2,200 jobs</li><li><a href="/company/intuit/">Intuit</a> — 1,800 jobs</li><li><a href="/company/linkedin/">LinkedIn</a> — 716 jobs</li><li><a href="/company/meta/">Meta</a> — 10,000 jobs</li><li><a href="/company/microsoft/">Microsoft</a> — 1,900 jobs</li><li><a href="/company/paypal/">PayPal</a> — 2,000 jobs</li><li><a href="/company/salesforce/">Salesforce</a> — 300 jobs</li><li><a href="/company/spotify/">Spotify</a> — 1,500 jobs</li><li><a href="/company/stackoverflow/">Stack Overflow</a> — 100 jobs</li><li><a href="/company/twilio/">Twilio</a> — 600 jobs</li><li><a href="/company/ups/">UPS</a> — 12,000 jobs</li><li><a href="/company/unity/">Unity</a> — 1,800 jobs</li></ul>
   </section>
   <section aria-label="API access">
     <h2>API</h2>
@@ -62,9 +80,28 @@
 </main>
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <p><a href="/methodology.html">Methodology</a> · <a href="/api/entries.json">JSON API</a> · <a href="/api/entries.csv">Download CSV</a></p>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/api/entries.json">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
+<script src="assets/js/theme.js" defer></script>
 </body>
 </html>
