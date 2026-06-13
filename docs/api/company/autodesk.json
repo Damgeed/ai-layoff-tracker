@@ -11,6 +11,8 @@
   "impact_percent": 10,
   "classification": "AI_REALLOCATION",
   "confidence_score": 75,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Autodesk laid off 1,350 employees (~10% of workforce), explicitly stating the cuts were to redirect investment toward AI and cloud platform development.",
   "source": {
@@ -31,5 +33,7 @@
     "cad",
     "design-software",
     "cloud"
-  ]
+  ],
+  "created_date": "2024-02-27",
+  "updated_date": "2026-06-13"
 }

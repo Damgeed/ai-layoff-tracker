@@ -15,6 +15,8 @@
   "impact_percent": 2,
   "classification": "AI_DRIVEN_RESTRUCTURING",
   "confidence_score": 65,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "CVS Health announced 5,000 corporate job cuts as part of a cost-reduction initiative that included AI automation of claims processing, prior authorizations, and customer service operations. The company stated AI tools would absorb routine administrative work across its Aetna insurance and pharmacy benefit management businesses.",
   "ceo_quote": null,
@@ -44,5 +46,7 @@
     "Customer Service"
   ],
   "ai_technology": "AI claims processing and prior authorization automation",
-  "public_trade_status": "public"
+  "public_trade_status": "public",
+  "created_date": "2024-03-15",
+  "updated_date": "2026-06-13"
 }

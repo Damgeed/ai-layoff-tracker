@@ -19,6 +19,8 @@
       "impact_percent": 7,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 80,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "SAP announced plans to restructure 8,000 positions as part of a €2 billion transformation program focused on embedding AI across its enterprise software suite. The company stated it would retrain some employees for AI roles while others would depart through voluntary programs.",
       "ceo_quote": "SAP is opening the next chapter: with our transformation program, we are intensifying the shift of investments to strategic growth areas, above all AI.",
@@ -59,7 +61,9 @@
         "Operations"
       ],
       "ai_technology": "SAP Joule AI copilot, SAP Business AI",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-01-23",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "autodesk-2024-02",
@@ -74,6 +78,8 @@
       "impact_percent": 10,
       "classification": "AI_REALLOCATION",
       "confidence_score": 75,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Autodesk laid off 1,350 employees (~10% of workforce), explicitly stating the cuts were to redirect investment toward AI and cloud platform development.",
       "source": {
@@ -94,7 +100,9 @@
         "cad",
         "design-software",
         "cloud"
-      ]
+      ],
+      "created_date": "2024-02-27",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "intuit-2024-07",
@@ -109,6 +117,8 @@
       "impact_percent": 10,
       "classification": "AI_REALLOCATION",
       "confidence_score": 90,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Intuit laid off 1,800 employees (10% of workforce) while announcing plans to hire 1,800 new employees for AI-focused roles, explicitly citing AI restructuring.",
       "ceo_quote": "We are reallocating resources to accelerate innovation in AI.",
@@ -130,7 +140,9 @@
         "enterprise-software",
         "ai-reallocation",
         "restructuring"
-      ]
+      ],
+      "created_date": "2024-07-10",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "salesforce-2024-08",
@@ -145,6 +157,8 @@
       "impact_percent": 1,
       "classification": "AI_REALLOCATION",
       "confidence_score": 80,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Salesforce cut approximately 300 roles while simultaneously planning to hire 1,000+ new positions focused on AI agent sales, explicitly citing the shift to autonomous AI agents.",
       "ceo_quote": "We are hiring 1,000 new people to sell our AI agents.",
@@ -166,7 +180,9 @@
         "enterprise-software",
         "ai-agents",
         "sales"
-      ]
+      ],
+      "created_date": "2024-08-01",
+      "updated_date": "2026-06-13"
     }
   ],
   "total_jobs": 11450,

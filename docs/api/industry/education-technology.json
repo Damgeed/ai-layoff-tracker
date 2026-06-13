@@ -19,6 +19,8 @@
       "impact_percent": 8,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 75,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Duolingo reduced its contractor workforce by approximately 10% as AI translation and content generation tools reduced the need for human translators and content creators. The company emphasized it was not replacing core employees but shifting toward AI-augmented content production.",
       "ceo_quote": null,
@@ -47,7 +49,9 @@
         "Translation"
       ],
       "ai_technology": "GPT-4 for content generation and translation",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-01-08",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "chegg-2024-06",
@@ -66,6 +70,8 @@
       "impact_percent": 20,
       "classification": "MARKET_DISRUPTION",
       "confidence_score": 90,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Chegg laid off 441 employees (20% of workforce) after ChatGPT's launch significantly reduced demand for its homework help and tutoring services. CEO Dan Rosensweig directly attributed the revenue decline to students shifting to free AI tools.",
       "ceo_quote": "Since March we saw a significant spike in student interest in ChatGPT. We believe it's having an impact on our new customer growth rate.",
@@ -106,7 +112,9 @@
         "Sales"
       ],
       "ai_technology": "Competitive displacement by ChatGPT",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-06-17",
+      "updated_date": "2026-06-13"
     }
   ],
   "total_jobs": 501,

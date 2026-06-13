@@ -11,6 +11,8 @@
   "impact_percent": null,
   "classification": "DIRECT_AI_REPLACEMENT",
   "confidence_score": 85,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Teleperformance, one of the world's largest call center operators, announced AI would replace approximately 4,000 roles as customers increasingly prefer AI-powered customer service.",
   "source": {
@@ -31,5 +33,7 @@
     "customer-service",
     "call-center",
     "chatbots"
-  ]
+  ],
+  "created_date": "2024-01-30",
+  "updated_date": "2026-06-13"
 }

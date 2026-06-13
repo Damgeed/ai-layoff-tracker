@@ -15,6 +15,8 @@
   "impact_percent": 4,
   "classification": "AI_DRIVEN_RESTRUCTURING",
   "confidence_score": 75,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "LinkedIn laid off 716 employees in its second round of 2023 cuts, with the company citing the need to shift toward AI-powered recruiting tools and reduced demand for traditional HR services. The company simultaneously announced investments in AI features for recruiters.",
   "ceo_quote": null,
@@ -44,5 +46,7 @@
     "Sales"
   ],
   "ai_technology": "LinkedIn AI-powered recruiting assistant, collaborative articles",
-  "public_trade_status": "subsidiary"
+  "public_trade_status": "subsidiary",
+  "created_date": "2023-10-16",
+  "updated_date": "2026-06-13"
 }

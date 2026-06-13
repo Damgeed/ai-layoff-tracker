@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industries — AI Layoff Tracker</title>
+  <meta name="description" content="Browse AI workforce reductions by industry. See total jobs impacted, company counts, and individual entries for each sector.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/industry/">
+
+  <meta property="og:title" content="Industries — AI Layoff Tracker">
+  <meta property="og:description" content="Browse AI workforce reductions by industry.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/industry/">
+  <meta property="og:site_name" content="AI Layoff Tracker">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+
+  <style>
+    .hub-hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+    .hub-hero h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .hub-hero .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .industry-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .industry-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .industry-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .industry-stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 0.25rem;
+    }
+    .industry-stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .industry-stat .val {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: var(--mono);
+      color: var(--accent);
+    }
+    .industry-stat .lbl {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-muted);
+      grid-column: 1 / -1;
+    }
+    .skeleton-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      animation: shimmer 1.5s infinite;
+      background: linear-gradient(90deg, var(--surface) 25%, #1e1e1e 50%, var(--surface) 75%);
+      background-size: 200% 100%;
+      min-height: 130px;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content">
+  <div class="container">
+
+    <section class="hub-hero">
+      <h1>Industries</h1>
+      <p class="subtitle">Browse AI workforce reductions by industry sector. Click a card to see detailed entries and company breakdowns.</p>
+    </section>
+
+    <div class="industry-grid" id="industry-grid" role="list" aria-label="Industry cards">
+      <!-- Skeleton loading -->
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="methodology.html">Methodology</a>
+        <a href="api/entries.json">JSON API</a>
+        <a href="api/entries.csv">Download CSV</a>
+        <a href="api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="evidence/">Evidence</a>
+        <a href="sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+
+<script>
+(function(){
+  'use strict';
+
+  function escapeHTML(str) {
+    if (!str) return '';
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  function buildIndustryCard(ind) {
+    return '<a href="industry/' + ind.slug + '/" class="industry-card" role="listitem">' +
+      '<div class="industry-name">' + escapeHTML(ind.name) + '</div>' +
+      '<div class="industry-stats">' +
+        '<div class="industry-stat">' +
+          '<span class="val">' + ind.totalJobs.toLocaleString() + '</span>' +
+          '<span class="lbl">Jobs Impacted</span>' +
+        '</div>' +
+        '<div class="industry-stat">' +
+          '<span class="val">' + ind.companyCount + '</span>' +
+          '<span class="lbl">Compan' + (ind.companyCount === 1 ? 'y' : 'ies') + '</span>' +
+        '</div>' +
+        '<div class="industry-stat">' +
+          '<span class="val">' + ind.entryCount + '</span>' +
+          '<span class="lbl">Entr' + (ind.entryCount === 1 ? 'y' : 'ies') + '</span>' +
+        '</div>' +
+      '</div>' +
+    '</a>';
+  }
+
+  function updateFooterDate(meta) {
+    var el = document.getElementById('footer-updated');
+    if (el && meta && meta.last_updated) {
+      var d = new Date(meta.last_updated);
+      el.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+  }
+
+  fetch('api/entries.json')
+    .then(function(res) {
+      if (!res.ok) throw new Error('Failed to load data: ' + res.status);
+      return res.json();
+    })
+    .then(function(data) {
+      var entries = data.entries || [];
+
+      // Aggregate by industry
+      var industryMap = {};
+      entries.forEach(function(e) {
+        var slug = e.industry.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
+        if (!industryMap[slug]) {
+          industryMap[slug] = {
+            name: e.industry,
+            slug: slug,
+            totalJobs: 0,
+            companies: {},
+            entryCount: 0
+          };
+        }
+        industryMap[slug].totalJobs += e.jobs_lost || 0;
+        industryMap[slug].companies[e.company] = true;
+        industryMap[slug].entryCount += 1;
+      });
+
+      var industries = Object.values(industryMap).map(function(ind) {
+        ind.companyCount = Object.keys(ind.companies).length;
+        return ind;
+      });
+
+      // Sort by total jobs (largest first)
+      industries.sort(function(a, b) { return b.totalJobs - a.totalJobs; });
+
+      var grid = document.getElementById('industry-grid');
+      if (grid) {
+        grid.innerHTML = industries.map(buildIndustryCard).join('');
+      }
+
+      if (data.meta) updateFooterDate(data.meta);
+    })
+    .catch(function(err) {
+      console.error('Industries Hub: ' + err.message);
+      var grid = document.getElementById('industry-grid');
+      if (grid) {
+        grid.innerHTML = '<p class="no-results" style="color:var(--accent)">⚠ Failed to load industry data. Please try again later.</p>';
+      }
+    });
+
+})();
+</script>
+</body>
+</html>

@@ -11,6 +11,8 @@
   "impact_percent": 10,
   "classification": "AI_DRIVEN_RESTRUCTURING",
   "confidence_score": 75,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Twilio cut 600 employees across its software engineering and go-to-market teams, citing AI automation of internal processes.",
   "source": {
@@ -31,5 +33,7 @@
     "communications",
     "automation",
     "saas"
-  ]
+  ],
+  "created_date": "2024-03-04",
+  "updated_date": "2026-06-13"
 }

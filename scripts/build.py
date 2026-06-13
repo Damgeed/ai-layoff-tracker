@@ -235,6 +235,7 @@ def generate_company_pages(data):
       <a href="data-dictionary.html">Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
       <a href="api/entries.json">API</a>
     </nav>
     <div class="header-actions">
@@ -257,6 +258,7 @@ def generate_company_pages(data):
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
       <a href="api/entries.json">API</a>
     </nav>
   </div>
@@ -484,6 +486,7 @@ def generate_entry_pages(data):
       <a href="data-dictionary.html">Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
       <a href="api/entries.json">API</a>
     </nav>
     <div class="header-actions">
@@ -506,6 +509,7 @@ def generate_entry_pages(data):
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
       <a href="api/entries.json">API</a>
     </nav>
   </div>
@@ -670,6 +674,7 @@ def generate_industry_pages(data):
       <a href="data-dictionary.html">Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
       <a href="api/entries.json">API</a>
     </nav>
     <div class="header-actions">
@@ -692,6 +697,7 @@ def generate_industry_pages(data):
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
       <a href="api/entries.json">API</a>
     </nav>
   </div>
@@ -852,6 +858,7 @@ def generate_country_pages(data):
       <a href="data-dictionary.html">Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
       <a href="api/entries.json">API</a>
     </nav>
     <div class="header-actions">
@@ -874,6 +881,7 @@ def generate_country_pages(data):
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
       <a href="api/entries.json">API</a>
     </nav>
   </div>

@@ -15,6 +15,8 @@
   "impact_percent": 16,
   "classification": "AI_DRIVEN_RESTRUCTURING",
   "confidence_score": 80,
+  "source_quality": "PRIMARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Dropbox laid off 500 employees (16% of workforce) as part of a restructuring to focus on AI-powered products. CEO Drew Houston stated the company needed to redirect resources toward 'the next stage of growth driven by AI.'",
   "ceo_quote": "In an ideal world, we'd simply shift people from one team to another. And we've done that wherever possible. However, our next stage of growth requires a different mix of skill sets, particularly in AI and early-stage product development.",
@@ -44,5 +46,7 @@
     "Marketing"
   ],
   "ai_technology": "Dropbox Dash, Dropbox AI (internal AI products)",
-  "public_trade_status": "public"
+  "public_trade_status": "public",
+  "created_date": "2023-04-27",
+  "updated_date": "2026-06-13"
 }

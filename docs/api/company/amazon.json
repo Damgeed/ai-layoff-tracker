@@ -15,6 +15,8 @@
   "impact_percent": 0.03,
   "classification": "AI_REALLOCATION",
   "confidence_score": 80,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Amazon laid off several hundred employees in its Alexa voice assistant division as the company pivoted from the legacy Alexa service toward generative AI-powered capabilities. The cuts targeted teams working on older Alexa features while Amazon reinvested in building an LLM-powered Alexa.",
   "ceo_quote": null,
@@ -50,5 +52,7 @@
     "AI/ML"
   ],
   "ai_technology": "LLM-powered Alexa (internal generative AI project)",
-  "public_trade_status": "public"
+  "public_trade_status": "public",
+  "created_date": "2023-11-17",
+  "updated_date": "2026-06-13"
 }

@@ -11,6 +11,8 @@
   "impact_percent": 90,
   "classification": "DIRECT_AI_REPLACEMENT",
   "confidence_score": 95,
+  "source_quality": "PRIMARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "CEO Suumit Shah replaced 90% of customer support staff with an AI chatbot, reducing support resolution time from 2 hours to 3 minutes.",
   "ceo_quote": "We had to lay off 90% of our support team because of this AI chatbot.",
@@ -32,5 +34,7 @@
     "customer-support",
     "ai-chatbot",
     "small-business"
-  ]
+  ],
+  "created_date": "2023-07-10",
+  "updated_date": "2026-06-13"
 }

@@ -11,6 +11,8 @@
   "impact_percent": 1,
   "classification": "AI_REALLOCATION",
   "confidence_score": 80,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Salesforce cut approximately 300 roles while simultaneously planning to hire 1,000+ new positions focused on AI agent sales, explicitly citing the shift to autonomous AI agents.",
   "ceo_quote": "We are hiring 1,000 new people to sell our AI agents.",
@@ -32,5 +34,7 @@
     "enterprise-software",
     "ai-agents",
     "sales"
-  ]
+  ],
+  "created_date": "2024-08-01",
+  "updated_date": "2026-06-13"
 }

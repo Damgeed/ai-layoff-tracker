@@ -11,6 +11,8 @@
   "impact_percent": 15,
   "classification": "DIRECT_AI_REPLACEMENT",
   "confidence_score": 85,
+  "source_quality": "PRIMARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "BuzzFeed shut down BuzzFeed News and laid off 180 staff (15% of workforce). CEO Jonah Peretti cited AI content generation as a key part of the company's future strategy.",
   "ceo_quote": "AI will be used to enhance the quiz experience, inform our brainstorming, and personalize our content.",
@@ -32,5 +34,7 @@
     "media",
     "news",
     "content-generation"
-  ]
+  ],
+  "created_date": "2023-04-20",
+  "updated_date": "2026-06-13"
 }

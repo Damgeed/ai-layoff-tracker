@@ -11,6 +11,8 @@
   "impact_percent": 17,
   "classification": "AI_REALLOCATION",
   "confidence_score": 75,
+  "source_quality": "PRIMARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Spotify laid off 1,500 employees (~17% of workforce). CEO Daniel Ek cited the need to redirect resources toward AI and podcasting investments.",
   "source": {
@@ -31,5 +33,7 @@
     "streaming",
     "podcasting",
     "efficiency"
-  ]
+  ],
+  "created_date": "2024-12-04",
+  "updated_date": "2026-06-13"
 }

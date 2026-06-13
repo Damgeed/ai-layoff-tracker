@@ -15,6 +15,8 @@
   "impact_percent": 18,
   "classification": "MARKET_DISRUPTION",
   "confidence_score": 85,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Stack Overflow laid off approximately 100 employees (18% of workforce) following a significant decline in traffic after the launch of ChatGPT and GitHub Copilot, as developers increasingly turned to AI for coding answers instead of the Q&A platform.",
   "ceo_quote": null,
@@ -55,5 +57,7 @@
     "Sales"
   ],
   "ai_technology": "Competitive displacement by ChatGPT and GitHub Copilot",
-  "public_trade_status": "private"
+  "public_trade_status": "private",
+  "created_date": "2023-10-16",
+  "updated_date": "2026-06-13"
 }

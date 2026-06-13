@@ -15,6 +15,8 @@
   "impact_percent": 6,
   "classification": "AI_REALLOCATION",
   "confidence_score": 75,
+  "source_quality": "PRIMARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Google laid off 12,000 employees as part of a major restructuring that CEO Sundar Pichai framed as a pivot toward AI priorities. Pichai stated the company needed to redirect resources and talent toward artificial intelligence development, particularly in response to competitive pressure from OpenAI and Microsoft.",
   "ceo_quote": "We have a substantial opportunity in front of us with AI across our products and are prepared to approach it boldly and responsibly. This will mean making tough choices about how we allocate our resources.",
@@ -56,5 +58,7 @@
     "Product"
   ],
   "ai_technology": "Google Bard/Gemini, DeepMind integration",
-  "public_trade_status": "public"
+  "public_trade_status": "public",
+  "created_date": "2023-01-20",
+  "updated_date": "2026-06-13"
 }

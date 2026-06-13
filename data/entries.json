@@ -1,8 +1,8 @@
 {
   "meta": {
     "version": "3.0.0",
-    "last_updated": "2026-06-13T10:51:35Z",
-    "total_entries": 15,
+    "last_updated": "2026-06-13T11:59:43Z",
+    "total_entries": 27,
     "maintainer": "AI Layoff Tracker",
     "methodology_url": "/methodology.html"
   },
@@ -24,6 +24,8 @@
       "impact_percent": 6,
       "classification": "AI_REALLOCATION",
       "confidence_score": 75,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Google laid off 12,000 employees as part of a major restructuring that CEO Sundar Pichai framed as a pivot toward AI priorities. Pichai stated the company needed to redirect resources and talent toward artificial intelligence development, particularly in response to competitive pressure from OpenAI and Microsoft.",
       "ceo_quote": "We have a substantial opportunity in front of us with AI across our products and are prepared to approach it boldly and responsibly. This will mean making tough choices about how we allocate our resources.",
@@ -65,7 +67,9 @@
         "Product"
       ],
       "ai_technology": "Google Bard/Gemini, DeepMind integration",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2023-01-20",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "meta-2023-03",
@@ -84,6 +88,8 @@
       "impact_percent": 12,
       "classification": "AI_REALLOCATION",
       "confidence_score": 75,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Meta laid off 10,000 employees in its 'Year of Efficiency' restructuring, with CEO Mark Zuckerberg explicitly linking the cuts to increased AI investment. Meta simultaneously announced massive spending on AI infrastructure, including custom AI chips and generative AI research teams.",
       "ceo_quote": "Our single largest investment is advancing AI and building it into every one of our products. We have the infrastructure to do this at unprecedented scale.",
@@ -125,7 +131,9 @@
         "Engineering"
       ],
       "ai_technology": "LLaMA models, generative AI, custom AI chips (MTIA)",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2023-03-14",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "buzzfeed-2023-04",
@@ -140,6 +148,8 @@
       "impact_percent": 15,
       "classification": "DIRECT_AI_REPLACEMENT",
       "confidence_score": 85,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "BuzzFeed shut down BuzzFeed News and laid off 180 staff (15% of workforce). CEO Jonah Peretti cited AI content generation as a key part of the company's future strategy.",
       "ceo_quote": "AI will be used to enhance the quiz experience, inform our brainstorming, and personalize our content.",
@@ -161,7 +171,9 @@
         "media",
         "news",
         "content-generation"
-      ]
+      ],
+      "created_date": "2023-04-20",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "dropbox-2023-04",
@@ -180,6 +192,8 @@
       "impact_percent": 16,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 80,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Dropbox laid off 500 employees (16% of workforce) as part of a restructuring to focus on AI-powered products. CEO Drew Houston stated the company needed to redirect resources toward 'the next stage of growth driven by AI.'",
       "ceo_quote": "In an ideal world, we'd simply shift people from one team to another. And we've done that wherever possible. However, our next stage of growth requires a different mix of skill sets, particularly in AI and early-stage product development.",
@@ -209,7 +223,9 @@
         "Marketing"
       ],
       "ai_technology": "Dropbox Dash, Dropbox AI (internal AI products)",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2023-04-27",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "dukaan-2023-07",
@@ -224,6 +240,8 @@
       "impact_percent": 90,
       "classification": "DIRECT_AI_REPLACEMENT",
       "confidence_score": 95,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "CEO Suumit Shah replaced 90% of customer support staff with an AI chatbot, reducing support resolution time from 2 hours to 3 minutes.",
       "ceo_quote": "We had to lay off 90% of our support team because of this AI chatbot.",
@@ -245,7 +263,9 @@
         "customer-support",
         "ai-chatbot",
         "small-business"
-      ]
+      ],
+      "created_date": "2023-07-10",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "stackoverflow-2023-10",
@@ -264,6 +284,8 @@
       "impact_percent": 18,
       "classification": "MARKET_DISRUPTION",
       "confidence_score": 85,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Stack Overflow laid off approximately 100 employees (18% of workforce) following a significant decline in traffic after the launch of ChatGPT and GitHub Copilot, as developers increasingly turned to AI for coding answers instead of the Q&A platform.",
       "ceo_quote": null,
@@ -304,7 +326,9 @@
         "Sales"
       ],
       "ai_technology": "Competitive displacement by ChatGPT and GitHub Copilot",
-      "public_trade_status": "private"
+      "public_trade_status": "private",
+      "created_date": "2023-10-16",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "linkedin-2023-10",
@@ -323,6 +347,8 @@
       "impact_percent": 4,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 75,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "LinkedIn laid off 716 employees in its second round of 2023 cuts, with the company citing the need to shift toward AI-powered recruiting tools and reduced demand for traditional HR services. The company simultaneously announced investments in AI features for recruiters.",
       "ceo_quote": null,
@@ -352,7 +378,9 @@
         "Sales"
       ],
       "ai_technology": "LinkedIn AI-powered recruiting assistant, collaborative articles",
-      "public_trade_status": "subsidiary"
+      "public_trade_status": "subsidiary",
+      "created_date": "2023-10-16",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "amazon-alexa-2023-11",
@@ -371,6 +399,8 @@
       "impact_percent": 0.03,
       "classification": "AI_REALLOCATION",
       "confidence_score": 80,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Amazon laid off several hundred employees in its Alexa voice assistant division as the company pivoted from the legacy Alexa service toward generative AI-powered capabilities. The cuts targeted teams working on older Alexa features while Amazon reinvested in building an LLM-powered Alexa.",
       "ceo_quote": null,
@@ -406,7 +436,9 @@
         "AI/ML"
       ],
       "ai_technology": "LLM-powered Alexa (internal generative AI project)",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2023-11-17",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "duolingo-2024-01",
@@ -425,6 +457,8 @@
       "impact_percent": 8,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 75,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Duolingo reduced its contractor workforce by approximately 10% as AI translation and content generation tools reduced the need for human translators and content creators. The company emphasized it was not replacing core employees but shifting toward AI-augmented content production.",
       "ceo_quote": null,
@@ -453,7 +487,9 @@
         "Translation"
       ],
       "ai_technology": "GPT-4 for content generation and translation",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-01-08",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "unity-2024-01",
@@ -468,6 +504,8 @@
       "impact_percent": 25,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 75,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Unity laid off 1,800 employees (~25% of workforce), the largest round in company history. Restructuring was linked to AI-driven development tools reducing engine engineering needs.",
       "source": {
@@ -488,7 +526,9 @@
         "gaming",
         "game-engine",
         "developer-tools"
-      ]
+      ],
+      "created_date": "2024-01-08",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "cnet-2024-01",
@@ -503,6 +543,8 @@
       "impact_percent": 10,
       "classification": "DIRECT_AI_REPLACEMENT",
       "confidence_score": 80,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "CNET laid off journalists after it was revealed the publication had been using AI to write articles without clear disclosure, reducing the need for human writers.",
       "source": {
@@ -523,7 +565,9 @@
         "media",
         "journalism",
         "content-generation"
-      ]
+      ],
+      "created_date": "2024-01-18",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "sap-2024-01",
@@ -542,6 +586,8 @@
       "impact_percent": 7,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 80,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "SAP announced plans to restructure 8,000 positions as part of a €2 billion transformation program focused on embedding AI across its enterprise software suite. The company stated it would retrain some employees for AI roles while others would depart through voluntary programs.",
       "ceo_quote": "SAP is opening the next chapter: with our transformation program, we are intensifying the shift of investments to strategic growth areas, above all AI.",
@@ -582,7 +628,9 @@
         "Operations"
       ],
       "ai_technology": "SAP Joule AI copilot, SAP Business AI",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-01-23",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "microsoft-gaming-2024-01",
@@ -597,6 +645,8 @@
       "impact_percent": 9,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 75,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Microsoft Gaming laid off 1,900 employees from Activision Blizzard and Xbox divisions, citing AI integration and post-acquisition restructuring.",
       "source": {
@@ -617,7 +667,9 @@
         "gaming",
         "post-acquisition",
         "ai-integration"
-      ]
+      ],
+      "created_date": "2024-01-25",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "paypal-2024-01",
@@ -636,6 +688,8 @@
       "impact_percent": 7,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 70,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "PayPal announced 2,000 job cuts as part of a restructuring that CEO Alex Chriss framed around AI-driven efficiency. The company stated AI automation of routine payment processing and fraud detection tasks would reduce operational headcount needs.",
       "ceo_quote": "We are doing this to right-size our business, allowing us to move with the speed needed to deliver for our customers and drive profitable growth through AI-powered automation.",
@@ -665,7 +719,9 @@
         "Fraud Detection"
       ],
       "ai_technology": "AI-powered fraud detection and payment automation",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-01-30",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "ups-2024-01",
@@ -684,6 +740,8 @@
       "impact_percent": 2,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 70,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "UPS announced 12,000 job cuts as part of a cost-reduction plan that prominently featured AI-driven logistics optimization. CEO Carol Tomé stated the company was deploying AI tools for route optimization, package sorting, and back-office automation that would reduce the need for management and administrative staff.",
       "ceo_quote": "We are using AI to transform our network, making our operations more efficient and reducing our management layers.",
@@ -720,7 +778,9 @@
         "Operations"
       ],
       "ai_technology": "AI route optimization, automated sorting systems",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-01-30",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "teleperformance-2024-01",
@@ -735,6 +795,8 @@
       "impact_percent": null,
       "classification": "DIRECT_AI_REPLACEMENT",
       "confidence_score": 85,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Teleperformance, one of the world's largest call center operators, announced AI would replace approximately 4,000 roles as customers increasingly prefer AI-powered customer service.",
       "source": {
@@ -755,7 +817,9 @@
         "customer-service",
         "call-center",
         "chatbots"
-      ]
+      ],
+      "created_date": "2024-01-30",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "cisco-2024-02",
@@ -774,6 +838,8 @@
       "impact_percent": 5,
       "classification": "AI_REALLOCATION",
       "confidence_score": 75,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Cisco laid off 4,000 employees while announcing a strategic shift toward AI networking infrastructure. CEO Chuck Robbins stated the restructuring would free up resources for AI-focused product development and the company's $28 billion Splunk acquisition, which was positioned as a data platform for AI workloads.",
       "ceo_quote": null,
@@ -810,7 +876,9 @@
         "Sales"
       ],
       "ai_technology": "AI networking infrastructure, Splunk data platform",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-02-14",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "autodesk-2024-02",
@@ -825,6 +893,8 @@
       "impact_percent": 10,
       "classification": "AI_REALLOCATION",
       "confidence_score": 75,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Autodesk laid off 1,350 employees (~10% of workforce), explicitly stating the cuts were to redirect investment toward AI and cloud platform development.",
       "source": {
@@ -845,7 +915,9 @@
         "cad",
         "design-software",
         "cloud"
-      ]
+      ],
+      "created_date": "2024-02-27",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "twilio-2024-03",
@@ -860,6 +932,8 @@
       "impact_percent": 10,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 75,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Twilio cut 600 employees across its software engineering and go-to-market teams, citing AI automation of internal processes.",
       "source": {
@@ -880,7 +954,9 @@
         "communications",
         "automation",
         "saas"
-      ]
+      ],
+      "created_date": "2024-03-04",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "cvs-health-2024-03",
@@ -899,6 +975,8 @@
       "impact_percent": 2,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 65,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "CVS Health announced 5,000 corporate job cuts as part of a cost-reduction initiative that included AI automation of claims processing, prior authorizations, and customer service operations. The company stated AI tools would absorb routine administrative work across its Aetna insurance and pharmacy benefit management businesses.",
       "ceo_quote": null,
@@ -928,7 +1006,9 @@
         "Customer Service"
       ],
       "ai_technology": "AI claims processing and prior authorization automation",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-03-15",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "indeed-2024-05",
@@ -943,6 +1023,8 @@
       "impact_percent": 15,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 85,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Indeed laid off 2,200 employees (~15% of workforce). CEO Chris Hyams cited AI-powered job matching reducing the need for human recruiters.",
       "ceo_quote": "AI-powered job matching is transforming how we connect job seekers with employers, reducing the number of staffing roles we need.",
@@ -964,7 +1046,9 @@
         "recruiting",
         "job-matching",
         "staffing"
-      ]
+      ],
+      "created_date": "2024-05-13",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "ibm-2024-05",
@@ -983,6 +1067,8 @@
       "impact_percent": 3,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 85,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "IBM announced plans to pause hiring for roles it believes AI can perform, affecting approximately 7,800 back-office positions. CEO Arvind Krishna stated AI will replace many non-customer-facing roles over the next five years.",
       "ceo_quote": "I could easily see 30 percent of [back-office roles] getting replaced by AI and automation over a five-year period.",
@@ -1023,7 +1109,9 @@
         "Administration"
       ],
       "ai_technology": "Internal IBM watsonx AI platform",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-05-20",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "chegg-2024-06",
@@ -1042,6 +1130,8 @@
       "impact_percent": 20,
       "classification": "MARKET_DISRUPTION",
       "confidence_score": 90,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Chegg laid off 441 employees (20% of workforce) after ChatGPT's launch significantly reduced demand for its homework help and tutoring services. CEO Dan Rosensweig directly attributed the revenue decline to students shifting to free AI tools.",
       "ceo_quote": "Since March we saw a significant spike in student interest in ChatGPT. We believe it's having an impact on our new customer growth rate.",
@@ -1082,7 +1172,9 @@
         "Sales"
       ],
       "ai_technology": "Competitive displacement by ChatGPT",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-06-17",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "intuit-2024-07",
@@ -1097,6 +1189,8 @@
       "impact_percent": 10,
       "classification": "AI_REALLOCATION",
       "confidence_score": 90,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Intuit laid off 1,800 employees (10% of workforce) while announcing plans to hire 1,800 new employees for AI-focused roles, explicitly citing AI restructuring.",
       "ceo_quote": "We are reallocating resources to accelerate innovation in AI.",
@@ -1118,7 +1212,9 @@
         "enterprise-software",
         "ai-reallocation",
         "restructuring"
-      ]
+      ],
+      "created_date": "2024-07-10",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "salesforce-2024-08",
@@ -1133,6 +1229,8 @@
       "impact_percent": 1,
       "classification": "AI_REALLOCATION",
       "confidence_score": 80,
+      "source_quality": "SECONDARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Salesforce cut approximately 300 roles while simultaneously planning to hire 1,000+ new positions focused on AI agent sales, explicitly citing the shift to autonomous AI agents.",
       "ceo_quote": "We are hiring 1,000 new people to sell our AI agents.",
@@ -1154,7 +1252,9 @@
         "enterprise-software",
         "ai-agents",
         "sales"
-      ]
+      ],
+      "created_date": "2024-08-01",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "klarna-2024-08",
@@ -1173,6 +1273,8 @@
       "impact_percent": 40,
       "classification": "DIRECT_AI_REPLACEMENT",
       "confidence_score": 95,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Klarna CEO Sebastian Siemiatkowski stated the company reduced its workforce from 5,000 to 3,000 by leveraging AI for customer service operations, claiming AI agents now handle the work of 700 human agents.",
       "ceo_quote": "We can do the same amount of work with 2,000 employees that we previously did with 5,000 people.",
@@ -1212,7 +1314,9 @@
         "Operations"
       ],
       "ai_technology": "OpenAI-powered customer service AI assistant",
-      "public_trade_status": "private"
+      "public_trade_status": "private",
+      "created_date": "2024-08-27",
+      "updated_date": "2026-06-13"
     },
     {
       "id": "spotify-2024-12",
@@ -1227,6 +1331,8 @@
       "impact_percent": 17,
       "classification": "AI_REALLOCATION",
       "confidence_score": 75,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Spotify laid off 1,500 employees (~17% of workforce). CEO Daniel Ek cited the need to redirect resources toward AI and podcasting investments.",
       "source": {
@@ -1247,7 +1353,9 @@
         "streaming",
         "podcasting",
         "efficiency"
-      ]
+      ],
+      "created_date": "2024-12-04",
+      "updated_date": "2026-06-13"
     }
   ],
   "classifications": {

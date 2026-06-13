@@ -19,6 +19,8 @@
       "impact_percent": 7,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 80,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "SAP announced plans to restructure 8,000 positions as part of a €2 billion transformation program focused on embedding AI across its enterprise software suite. The company stated it would retrain some employees for AI roles while others would depart through voluntary programs.",
       "ceo_quote": "SAP is opening the next chapter: with our transformation program, we are intensifying the shift of investments to strategic growth areas, above all AI.",
@@ -59,7 +61,9 @@
         "Operations"
       ],
       "ai_technology": "SAP Joule AI copilot, SAP Business AI",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-01-23",
+      "updated_date": "2026-06-13"
     }
   ],
   "total_jobs": 8000,

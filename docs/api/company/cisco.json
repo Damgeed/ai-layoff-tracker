@@ -15,6 +15,8 @@
   "impact_percent": 5,
   "classification": "AI_REALLOCATION",
   "confidence_score": 75,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Cisco laid off 4,000 employees while announcing a strategic shift toward AI networking infrastructure. CEO Chuck Robbins stated the restructuring would free up resources for AI-focused product development and the company's $28 billion Splunk acquisition, which was positioned as a data platform for AI workloads.",
   "ceo_quote": null,
@@ -51,5 +53,7 @@
     "Sales"
   ],
   "ai_technology": "AI networking infrastructure, Splunk data platform",
-  "public_trade_status": "public"
+  "public_trade_status": "public",
+  "created_date": "2024-02-14",
+  "updated_date": "2026-06-13"
 }

@@ -11,6 +11,8 @@
   "impact_percent": 25,
   "classification": "AI_DRIVEN_RESTRUCTURING",
   "confidence_score": 75,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Unity laid off 1,800 employees (~25% of workforce), the largest round in company history. Restructuring was linked to AI-driven development tools reducing engine engineering needs.",
   "source": {
@@ -31,5 +33,7 @@
     "gaming",
     "game-engine",
     "developer-tools"
-  ]
+  ],
+  "created_date": "2024-01-08",
+  "updated_date": "2026-06-13"
 }

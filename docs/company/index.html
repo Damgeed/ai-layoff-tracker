@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Companies — AI Layoff Tracker</title>
+  <meta name="description" content="Browse all companies with documented AI-related workforce reductions. Sort by name, total jobs impacted, or number of entries.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/company/">
+
+  <meta property="og:title" content="Companies — AI Layoff Tracker">
+  <meta property="og:description" content="Browse all companies with documented AI-related workforce reductions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/company/">
+  <meta property="og:site_name" content="AI Layoff Tracker">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+
+  <style>
+    .hub-hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+    .hub-hero h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .hub-hero .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .sort-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+    .sort-bar label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .sort-btn {
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      border-radius: var(--r);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sort-btn:hover {
+      border-color: var(--text-dim);
+      color: var(--text);
+    }
+    .sort-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .company-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .company-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .company-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .company-meta {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      font-size: 0.8125rem;
+      color: var(--text-dim);
+    }
+    .company-meta span {
+      background: rgba(255,255,255,0.04);
+      padding: 0.2rem 0.65rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .company-stats {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 0.25rem;
+    }
+    .company-stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .company-stat .val {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: var(--mono);
+      color: var(--accent);
+    }
+    .company-stat .lbl {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-muted);
+      grid-column: 1 / -1;
+    }
+    .skeleton-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      animation: shimmer 1.5s infinite;
+      background: linear-gradient(90deg, var(--surface) 25%, #1e1e1e 50%, var(--surface) 75%);
+      background-size: 200% 100%;
+      min-height: 140px;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content">
+  <div class="container">
+
+    <section class="hub-hero">
+      <h1>Companies</h1>
+      <p class="subtitle">All companies with documented AI-related workforce reductions. Click a card to view detailed entries.</p>
+    </section>
+
+    <div class="sort-bar" role="group" aria-label="Sort companies">
+      <label>Sort by:</label>
+      <button class="sort-btn active" data-sort="name">Name A–Z</button>
+      <button class="sort-btn" data-sort="jobs">Most Jobs</button>
+      <button class="sort-btn" data-sort="entries">Most Entries</button>
+    </div>
+
+    <div class="company-grid" id="company-grid" role="list" aria-label="Company cards">
+      <!-- Skeleton loading -->
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="methodology.html">Methodology</a>
+        <a href="api/entries.json">JSON API</a>
+        <a href="api/entries.csv">Download CSV</a>
+        <a href="api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="evidence/">Evidence</a>
+        <a href="sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+
+<script>
+(function(){
+  'use strict';
+
+  var allCompanies = [];
+  var currentSort = 'name';
+
+  function escapeHTML(str) {
+    if (!str) return '';
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  function buildCompanyCard(company) {
+    return '<a href="company/' + company.slug + '/" class="company-card" role="listitem">' +
+      '<div class="company-name">' + escapeHTML(company.name) + '</div>' +
+      '<div class="company-meta">' +
+        '<span>🏭 ' + escapeHTML(company.industry) + '</span>' +
+        '<span>📍 ' + escapeHTML(company.country) + '</span>' +
+      '</div>' +
+      '<div class="company-stats">' +
+        '<div class="company-stat">' +
+          '<span class="val">' + company.totalJobs.toLocaleString() + '</span>' +
+          '<span class="lbl">Jobs Impacted</span>' +
+        '</div>' +
+        '<div class="company-stat">' +
+          '<span class="val">' + company.entryCount + '</span>' +
+          '<span class="lbl">Entr' + (company.entryCount === 1 ? 'y' : 'ies') + '</span>' +
+        '</div>' +
+      '</div>' +
+    '</a>';
+  }
+
+  function sortCompanies(sortBy) {
+    var sorted = allCompanies.slice();
+    if (sortBy === 'name') {
+      sorted.sort(function(a, b) { return a.name.localeCompare(b.name); });
+    } else if (sortBy === 'jobs') {
+      sorted.sort(function(a, b) { return b.totalJobs - a.totalJobs; });
+    } else if (sortBy === 'entries') {
+      sorted.sort(function(a, b) { return b.entryCount - a.entryCount; });
+    }
+    return sorted;
+  }
+
+  function renderGrid(companies) {
+    var grid = document.getElementById('company-grid');
+    if (!grid) return;
+    if (companies.length === 0) {
+      grid.innerHTML = '<p class="no-results">No companies found.</p>';
+      return;
+    }
+    grid.innerHTML = companies.map(buildCompanyCard).join('');
+  }
+
+  function updateSortButtons(activeSort) {
+    document.querySelectorAll('.sort-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.sort === activeSort);
+    });
+  }
+
+  function updateFooterDate(meta) {
+    var el = document.getElementById('footer-updated');
+    if (el && meta && meta.last_updated) {
+      var d = new Date(meta.last_updated);
+      el.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+  }
+
+  // Sort button handler
+  document.querySelector('.sort-bar').addEventListener('click', function(e) {
+    var btn = e.target.closest('.sort-btn');
+    if (!btn) return;
+    currentSort = btn.dataset.sort;
+    updateSortButtons(currentSort);
+    renderGrid(sortCompanies(currentSort));
+  });
+
+  // Fetch and render
+  fetch('api/entries.json')
+    .then(function(res) {
+      if (!res.ok) throw new Error('Failed to load data: ' + res.status);
+      return res.json();
+    })
+    .then(function(data) {
+      var entries = data.entries || [];
+
+      // Aggregate by company
+      var companyMap = {};
+      entries.forEach(function(e) {
+        var slug = e.slug || e.company.toLowerCase().replace(/\s+/g, '-');
+        if (!companyMap[slug]) {
+          companyMap[slug] = {
+            name: e.company,
+            slug: slug,
+            industry: e.industry,
+            country: e.country,
+            totalJobs: 0,
+            entryCount: 0
+          };
+        }
+        companyMap[slug].totalJobs += e.jobs_lost || 0;
+        companyMap[slug].entryCount += 1;
+      });
+
+      allCompanies = Object.values(companyMap);
+      renderGrid(sortCompanies(currentSort));
+
+      if (data.meta) updateFooterDate(data.meta);
+    })
+    .catch(function(err) {
+      console.error('Companies Hub: ' + err.message);
+      var grid = document.getElementById('company-grid');
+      if (grid) {
+        grid.innerHTML = '<p class="no-results" style="color:var(--accent)">⚠ Failed to load company data. Please try again later.</p>';
+      }
+    });
+
+})();
+</script>
+</body>
+</html>

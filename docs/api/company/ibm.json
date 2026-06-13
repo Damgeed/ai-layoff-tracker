@@ -15,6 +15,8 @@
   "impact_percent": 3,
   "classification": "AI_DRIVEN_RESTRUCTURING",
   "confidence_score": 85,
+  "source_quality": "PRIMARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "IBM announced plans to pause hiring for roles it believes AI can perform, affecting approximately 7,800 back-office positions. CEO Arvind Krishna stated AI will replace many non-customer-facing roles over the next five years.",
   "ceo_quote": "I could easily see 30 percent of [back-office roles] getting replaced by AI and automation over a five-year period.",
@@ -55,5 +57,7 @@
     "Administration"
   ],
   "ai_technology": "Internal IBM watsonx AI platform",
-  "public_trade_status": "public"
+  "public_trade_status": "public",
+  "created_date": "2024-05-20",
+  "updated_date": "2026-06-13"
 }

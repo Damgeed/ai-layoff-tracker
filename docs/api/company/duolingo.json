@@ -15,6 +15,8 @@
   "impact_percent": 8,
   "classification": "AI_DRIVEN_RESTRUCTURING",
   "confidence_score": 75,
+  "source_quality": "SECONDARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Duolingo reduced its contractor workforce by approximately 10% as AI translation and content generation tools reduced the need for human translators and content creators. The company emphasized it was not replacing core employees but shifting toward AI-augmented content production.",
   "ceo_quote": null,
@@ -43,5 +45,7 @@
     "Translation"
   ],
   "ai_technology": "GPT-4 for content generation and translation",
-  "public_trade_status": "public"
+  "public_trade_status": "public",
+  "created_date": "2024-01-08",
+  "updated_date": "2026-06-13"
 }

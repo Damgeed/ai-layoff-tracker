@@ -19,6 +19,8 @@
       "impact_percent": 2,
       "classification": "AI_DRIVEN_RESTRUCTURING",
       "confidence_score": 70,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "UPS announced 12,000 job cuts as part of a cost-reduction plan that prominently featured AI-driven logistics optimization. CEO Carol Tomé stated the company was deploying AI tools for route optimization, package sorting, and back-office automation that would reduce the need for management and administrative staff.",
       "ceo_quote": "We are using AI to transform our network, making our operations more efficient and reducing our management layers.",
@@ -55,7 +57,9 @@
         "Operations"
       ],
       "ai_technology": "AI route optimization, automated sorting systems",
-      "public_trade_status": "public"
+      "public_trade_status": "public",
+      "created_date": "2024-01-30",
+      "updated_date": "2026-06-13"
     }
   ],
   "total_jobs": 12000,

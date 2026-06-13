@@ -19,6 +19,8 @@
       "impact_percent": 40,
       "classification": "DIRECT_AI_REPLACEMENT",
       "confidence_score": 95,
+      "source_quality": "PRIMARY_SOURCE",
+      "research_notes": "",
       "verified": true,
       "summary": "Klarna CEO Sebastian Siemiatkowski stated the company reduced its workforce from 5,000 to 3,000 by leveraging AI for customer service operations, claiming AI agents now handle the work of 700 human agents.",
       "ceo_quote": "We can do the same amount of work with 2,000 employees that we previously did with 5,000 people.",
@@ -58,7 +60,9 @@
         "Operations"
       ],
       "ai_technology": "OpenAI-powered customer service AI assistant",
-      "public_trade_status": "private"
+      "public_trade_status": "private",
+      "created_date": "2024-08-27",
+      "updated_date": "2026-06-13"
     }
   ],
   "total_jobs": 2000,

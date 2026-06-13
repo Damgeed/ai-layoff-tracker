@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research & Analysis — AI Layoff Tracker</title>
+  <meta name="description" content="Research resources, methodology documentation, evidence library, data dictionary, and analysis tools for the AI Layoff Tracker project.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/research/">
+
+  <meta property="og:title" content="Research & Analysis — AI Layoff Tracker">
+  <meta property="og:description" content="Research resources for the AI Layoff Tracker project.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/research/">
+  <meta property="og:site_name" content="AI Layoff Tracker">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+
+  <style>
+    .hub-hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+    .hub-hero h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .hub-hero .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+
+    .stats-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .summary-card .val {
+      font-size: 1.75rem;
+      font-weight: 700;
+      font-family: var(--mono);
+      color: var(--accent);
+    }
+    .summary-card .lbl {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .research-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .research-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .research-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+    }
+    .research-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0;
+    }
+    .research-card p {
+      font-size: 0.875rem;
+      color: var(--text-dim);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .research-card.coming-soon {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .research-card.coming-soon .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      background: rgba(255,145,0,0.15);
+      color: #ff9100;
+      border: 1px solid rgba(255,145,0,0.3);
+    }
+
+    .skeleton-summary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.25rem;
+      text-align: center;
+      animation: shimmer 1.5s infinite;
+      background: linear-gradient(90deg, var(--surface) 25%, #1e1e1e 50%, var(--surface) 75%);
+      background-size: 200% 100%;
+      min-height: 80px;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content">
+  <div class="container">
+
+    <section class="hub-hero">
+      <h1>Research & Analysis</h1>
+      <p class="subtitle">Resources for researchers, journalists, and analysts investigating the impact of artificial intelligence on the global workforce.</p>
+    </section>
+
+    <!-- Stats Summary -->
+    <section class="stats-summary" id="stats-summary" aria-label="Dataset statistics">
+      <div class="skeleton-summary"></div>
+      <div class="skeleton-summary"></div>
+      <div class="skeleton-summary"></div>
+      <div class="skeleton-summary"></div>
+      <div class="skeleton-summary"></div>
+    </section>
+
+    <!-- Research Resources -->
+    <section aria-label="Research resources">
+      <h2 style="margin-bottom:1.25rem">Resources</h2>
+      <div class="research-grid">
+        <a href="evidence/" class="research-card">
+          <div class="icon">📚</div>
+          <h3>Evidence Library</h3>
+          <p>Source materials, verification notes, and primary documentation for every entry in the database.</p>
+        </a>
+        <a href="data-dictionary.html" class="research-card">
+          <div class="icon">📖</div>
+          <h3>Data Dictionary</h3>
+          <p>Complete field-level reference for every field in entries.json. Types, constraints, examples, and valid values.</p>
+        </a>
+        <a href="methodology.html" class="research-card">
+          <div class="icon">🔬</div>
+          <h3>Methodology</h3>
+          <p>How we collect, classify, and verify every entry. Inclusion criteria, classification system, and confidence scoring.</p>
+        </a>
+        <div class="research-card coming-soon">
+          <div class="icon">📊</div>
+          <h3>Reports <span class="badge">Coming Soon</span></h3>
+          <p>Quarterly analysis reports synthesizing trends, patterns, and insights from the dataset.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="methodology.html">Methodology</a>
+        <a href="api/entries.json">JSON API</a>
+        <a href="api/entries.csv">Download CSV</a>
+        <a href="api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="evidence/">Evidence</a>
+        <a href="sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+
+<script>
+(function(){
+  'use strict';
+
+  function updateFooterDate(meta) {
+    var el = document.getElementById('footer-updated');
+    if (el && meta && meta.last_updated) {
+      var d = new Date(meta.last_updated);
+      el.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+  }
+
+  function renderStatsSummary(data) {
+    var entries = data.entries || [];
+    var totalJobs = 0;
+    var companies = {};
+    var countries = {};
+    var industries = {};
+
+    entries.forEach(function(e) {
+      totalJobs += e.jobs_lost || 0;
+      companies[e.company] = true;
+      countries[e.country] = true;
+      industries[e.industry] = true;
+    });
+
+    var newest = '';
+    entries.forEach(function(e) {
+      if (e.date > newest) newest = e.date;
+    });
+
+    var summary = document.getElementById('stats-summary');
+    if (!summary) return;
+    summary.innerHTML =
+      '<div class="summary-card">' +
+        '<div class="val">' + totalJobs.toLocaleString() + '</div>' +
+        '<div class="lbl">Total Jobs Impacted</div>' +
+      '</div>' +
+      '<div class="summary-card">' +
+        '<div class="val">' + Object.keys(companies).length + '</div>' +
+        '<div class="lbl">Companies Tracked</div>' +
+      '</div>' +
+      '<div class="summary-card">' +
+        '<div class="val">' + Object.keys(countries).length + '</div>' +
+        '<div class="lbl">Countries</div>' +
+      '</div>' +
+      '<div class="summary-card">' +
+        '<div class="val">' + Object.keys(industries).length + '</div>' +
+        '<div class="lbl">Industries</div>' +
+      '</div>' +
+      '<div class="summary-card">' +
+        '<div class="val">' + entries.length + '</div>' +
+        '<div class="lbl">Total Entries</div>' +
+      '</div>';
+  }
+
+  fetch('api/entries.json')
+    .then(function(res) {
+      if (!res.ok) throw new Error('Failed to load data: ' + res.status);
+      return res.json();
+    })
+    .then(function(data) {
+      renderStatsSummary(data);
+      if (data.meta) updateFooterDate(data.meta);
+    })
+    .catch(function(err) {
+      console.error('Research Hub: ' + err.message);
+      var summary = document.getElementById('stats-summary');
+      if (summary) {
+        summary.innerHTML = '<p style="text-align:center;color:var(--accent);grid-column:1/-1;padding:2rem;">⚠ Failed to load dataset statistics. Please try again later.</p>';
+      }
+    });
+
+})();
+</script>
+</body>
+</html>

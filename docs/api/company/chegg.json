@@ -15,6 +15,8 @@
   "impact_percent": 20,
   "classification": "MARKET_DISRUPTION",
   "confidence_score": 90,
+  "source_quality": "PRIMARY_SOURCE",
+  "research_notes": "",
   "verified": true,
   "summary": "Chegg laid off 441 employees (20% of workforce) after ChatGPT's launch significantly reduced demand for its homework help and tutoring services. CEO Dan Rosensweig directly attributed the revenue decline to students shifting to free AI tools.",
   "ceo_quote": "Since March we saw a significant spike in student interest in ChatGPT. We believe it's having an impact on our new customer growth rate.",
@@ -55,5 +57,7 @@
     "Sales"
   ],
   "ai_technology": "Competitive displacement by ChatGPT",
-  "public_trade_status": "public"
+  "public_trade_status": "public",
+  "created_date": "2024-06-17",
+  "updated_date": "2026-06-13"
 }
