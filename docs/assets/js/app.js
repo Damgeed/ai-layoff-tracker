@@ -116,6 +116,14 @@
         <span>Updated ${formatDate(state.stats.last_updated)}</span>
       `;
     }
+
+    // Populate browse-by counts
+    const bCompany = $('#browse-companies');
+    const bCountry = $('#browse-countries');
+    const bIndustry = $('#browse-industries');
+    if (bCompany) bCompany.textContent = state.stats.companies.toLocaleString();
+    if (bCountry) bCountry.textContent = state.stats.countries.toLocaleString();
+    if (bIndustry) bIndustry.textContent = state.stats.industries.toLocaleString();
   }
 
   // --- Stats Dashboard ---------------------------------------------------

@@ -232,9 +232,6 @@ def generate_company_pages(data):
     <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
-      <a href="company/">Companies</a>
-      <a href="country/">Countries</a>
-      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -258,9 +255,6 @@ def generate_company_pages(data):
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
       <a href="methodology.html">Methodology</a>
-      <a href="company/">Companies</a>
-      <a href="country/">Countries</a>
-      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -499,9 +493,6 @@ def generate_entry_pages(data):
     <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
-      <a href="company/">Companies</a>
-      <a href="country/">Countries</a>
-      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -525,9 +516,6 @@ def generate_entry_pages(data):
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
       <a href="methodology.html">Methodology</a>
-      <a href="company/">Companies</a>
-      <a href="country/">Countries</a>
-      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -703,9 +691,6 @@ def generate_industry_pages(data):
     <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
-      <a href="company/">Companies</a>
-      <a href="country/">Countries</a>
-      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -729,9 +714,6 @@ def generate_industry_pages(data):
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
       <a href="methodology.html">Methodology</a>
-      <a href="company/">Companies</a>
-      <a href="country/">Countries</a>
-      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -903,9 +885,6 @@ def generate_country_pages(data):
     <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
-      <a href="company/">Companies</a>
-      <a href="country/">Countries</a>
-      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -929,9 +908,6 @@ def generate_country_pages(data):
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
       <a href="methodology.html">Methodology</a>
-      <a href="company/">Companies</a>
-      <a href="country/">Countries</a>
-      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
