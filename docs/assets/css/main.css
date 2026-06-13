@@ -939,7 +939,10 @@ pre{
   .hero { padding: 3.5rem 0 3rem; }
   .counter-card { padding: 1.75rem 1.5rem; }
   .counter-meta { gap: 1rem; font-size: 0.8125rem; }
-  .stats-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+  .stat-card { padding: 1rem 0.75rem; }
+  .stat-value { font-size: 1.75rem; }
+  .stat-label { font-size: 0.675rem; }
   .charts-grid { grid-template-columns: 1fr; }
   .download-grid { grid-template-columns: 1fr; }
   .filters-bar { flex-direction: column; align-items: stretch; }
