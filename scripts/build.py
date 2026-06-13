@@ -232,7 +232,10 @@ def generate_company_pages(data):
     <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
-      <a href="data-dictionary.html">Dictionary</a>
+      <a href="company/">Companies</a>
+      <a href="country/">Countries</a>
+      <a href="industry/">Industries</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
@@ -255,6 +258,9 @@ def generate_company_pages(data):
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
       <a href="methodology.html">Methodology</a>
+      <a href="company/">Companies</a>
+      <a href="country/">Countries</a>
+      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -327,6 +333,14 @@ def generate_company_pages(data):
         <h4>Project</h4>
         <a href="/sitemap.xml">Sitemap</a>
         <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/press/">Press Kit</a>
+        <a href="/research/">Research</a>
+        <a href="/citation-guide/">Citation Guide</a>
+        <a href="/versions/">Versions</a>
+        <a href="/history/">Entry History</a>
       </div>
     </div>
   </div>
@@ -485,7 +499,10 @@ def generate_entry_pages(data):
     <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
-      <a href="data-dictionary.html">Dictionary</a>
+      <a href="company/">Companies</a>
+      <a href="country/">Countries</a>
+      <a href="industry/">Industries</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
@@ -508,6 +525,9 @@ def generate_entry_pages(data):
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
       <a href="methodology.html">Methodology</a>
+      <a href="company/">Companies</a>
+      <a href="country/">Countries</a>
+      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -578,6 +598,14 @@ def generate_entry_pages(data):
         <h4>Project</h4>
         <a href="/sitemap.xml">Sitemap</a>
         <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/press/">Press Kit</a>
+        <a href="/research/">Research</a>
+        <a href="/citation-guide/">Citation Guide</a>
+        <a href="/versions/">Versions</a>
+        <a href="/history/">Entry History</a>
       </div>
     </div>
   </div>
@@ -675,7 +703,10 @@ def generate_industry_pages(data):
     <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
-      <a href="data-dictionary.html">Dictionary</a>
+      <a href="company/">Companies</a>
+      <a href="country/">Countries</a>
+      <a href="industry/">Industries</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
@@ -698,6 +729,9 @@ def generate_industry_pages(data):
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
       <a href="methodology.html">Methodology</a>
+      <a href="company/">Companies</a>
+      <a href="country/">Countries</a>
+      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -753,6 +787,14 @@ def generate_industry_pages(data):
         <h4>Project</h4>
         <a href="/sitemap.xml">Sitemap</a>
         <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/press/">Press Kit</a>
+        <a href="/research/">Research</a>
+        <a href="/citation-guide/">Citation Guide</a>
+        <a href="/versions/">Versions</a>
+        <a href="/history/">Entry History</a>
       </div>
     </div>
   </div>
@@ -861,7 +903,10 @@ def generate_country_pages(data):
     <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="methodology.html">Methodology</a>
-      <a href="data-dictionary.html">Dictionary</a>
+      <a href="company/">Companies</a>
+      <a href="country/">Countries</a>
+      <a href="industry/">Industries</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
@@ -884,6 +929,9 @@ def generate_country_pages(data):
   <div class="mobile-nav-panel">
     <nav class="mobile-nav-links">
       <a href="methodology.html">Methodology</a>
+      <a href="company/">Companies</a>
+      <a href="country/">Countries</a>
+      <a href="industry/">Industries</a>
       <a href="data-dictionary.html">Data Dictionary</a>
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
@@ -940,6 +988,14 @@ def generate_country_pages(data):
         <a href="/sitemap.xml">Sitemap</a>
         <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
       </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/press/">Press Kit</a>
+        <a href="/research/">Research</a>
+        <a href="/citation-guide/">Citation Guide</a>
+        <a href="/versions/">Versions</a>
+        <a href="/history/">Entry History</a>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
@@ -990,6 +1046,21 @@ def generate_sitemap(data):
     urls = [
         "https://ailayofftracker.com/",
         "https://ailayofftracker.com/methodology.html",
+        "https://ailayofftracker.com/data-dictionary.html",
+        "https://ailayofftracker.com/changelog.html",
+        "https://ailayofftracker.com/corrections.html",
+        "https://ailayofftracker.com/api/",
+        "https://ailayofftracker.com/evidence/",
+        "https://ailayofftracker.com/company/",
+        "https://ailayofftracker.com/country/",
+        "https://ailayofftracker.com/industry/",
+        "https://ailayofftracker.com/citation-guide/",
+        "https://ailayofftracker.com/disputed/",
+        "https://ailayofftracker.com/history/",
+        "https://ailayofftracker.com/pending-review/",
+        "https://ailayofftracker.com/press/",
+        "https://ailayofftracker.com/research/",
+        "https://ailayofftracker.com/versions/",
     ]
     for e in data["entries"]:
         urls.append(f'https://ailayofftracker.com/company/{e["slug"]}/')

@@ -127,7 +127,7 @@ body{
   animation:pulse 2s ease-in-out infinite;
 }
 @keyframes pulse{0%,100%{box-shadow:0 0 14px var(--accent-glow)}50%{box-shadow:0 0 24px var(--accent-glow),0 0 40px rgba(255,71,71,0.2)}}
-.site-header nav{display:flex;gap:2rem}
+.site-header nav{display:flex;gap:1.25rem}
 .site-header nav a{
   font-size:0.8125rem;color:var(--text-dim);text-decoration:none;font-weight:500;
   transition:color .15s;position:relative;
