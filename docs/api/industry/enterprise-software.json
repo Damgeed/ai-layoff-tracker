@@ -60,12 +60,122 @@
       ],
       "ai_technology": "SAP Joule AI copilot, SAP Business AI",
       "public_trade_status": "public"
+    },
+    {
+      "id": "autodesk-2024-02",
+      "company": "Autodesk",
+      "slug": "autodesk",
+      "date": "2024-02-27",
+      "country": "United States",
+      "industry": "Enterprise Software",
+      "jobs_lost": 1350,
+      "workforce_before": 14000,
+      "workforce_after": 12650,
+      "impact_percent": 10,
+      "classification": "AI_REALLOCATION",
+      "confidence_score": 75,
+      "verified": true,
+      "summary": "Autodesk laid off 1,350 employees (~10% of workforce), explicitly stating the cuts were to redirect investment toward AI and cloud platform development.",
+      "source": {
+        "title": "Autodesk to lay off 1,350 employees to focus on AI",
+        "url": "https://www.cnbc.com/2024/02/27/autodesk-layoffs-2024-restructuring.html",
+        "publisher": "CNBC",
+        "published_date": "2024-02-27",
+        "retrieved_date": "2026-06-13",
+        "archive_url": "https://web.archive.org/web/*/https://www.cnbc.com/2024/02/27/autodesk-layoffs-2024-restructuring.html"
+      },
+      "evidence": [
+        {
+          "type": "COMPANY_STATEMENT",
+          "description": "Official press release cited AI and cloud as investment targets for reallocation."
+        }
+      ],
+      "tags": [
+        "cad",
+        "design-software",
+        "cloud"
+      ]
+    },
+    {
+      "id": "intuit-2024-07",
+      "company": "Intuit",
+      "slug": "intuit",
+      "date": "2024-07-10",
+      "country": "United States",
+      "industry": "Enterprise Software",
+      "jobs_lost": 1800,
+      "workforce_before": 18000,
+      "workforce_after": 16200,
+      "impact_percent": 10,
+      "classification": "AI_REALLOCATION",
+      "confidence_score": 90,
+      "verified": true,
+      "summary": "Intuit laid off 1,800 employees (10% of workforce) while announcing plans to hire 1,800 new employees for AI-focused roles, explicitly citing AI restructuring.",
+      "ceo_quote": "We are reallocating resources to accelerate innovation in AI.",
+      "source": {
+        "title": "Intuit to lay off 1,800 employees, plans to rehire in AI roles",
+        "url": "https://www.reuters.com/technology/intuit-lay-off-1800-employees-plans-rehire-ai-roles-2024-07-10/",
+        "publisher": "Reuters",
+        "published_date": "2024-07-10",
+        "retrieved_date": "2026-06-13",
+        "archive_url": "https://web.archive.org/web/*/https://www.reuters.com/technology/intuit-lay-off-1800-employees-plans-rehire-ai-roles-2024-07-10/"
+      },
+      "evidence": [
+        {
+          "type": "COMPANY_STATEMENT",
+          "description": "Official company announcement and CEO statement about AI restructuring."
+        }
+      ],
+      "tags": [
+        "enterprise-software",
+        "ai-reallocation",
+        "restructuring"
+      ]
+    },
+    {
+      "id": "salesforce-2024-08",
+      "company": "Salesforce",
+      "slug": "salesforce",
+      "date": "2024-08-01",
+      "country": "United States",
+      "industry": "Enterprise Software",
+      "jobs_lost": 300,
+      "workforce_before": 72000,
+      "workforce_after": 71700,
+      "impact_percent": 1,
+      "classification": "AI_REALLOCATION",
+      "confidence_score": 80,
+      "verified": true,
+      "summary": "Salesforce cut approximately 300 roles while simultaneously planning to hire 1,000+ new positions focused on AI agent sales, explicitly citing the shift to autonomous AI agents.",
+      "ceo_quote": "We are hiring 1,000 new people to sell our AI agents.",
+      "source": {
+        "title": "Salesforce cuts 300 roles while hiring 1,000 for AI agent sales",
+        "url": "https://www.cnbc.com/2024/08/01/salesforce-cuts-300-roles-hiring-for-ai-agent-sales.html",
+        "publisher": "CNBC",
+        "published_date": "2024-08-01",
+        "retrieved_date": "2026-06-13",
+        "archive_url": "https://web.archive.org/web/*/https://www.cnbc.com/2024/08/01/salesforce-cuts-300-roles-hiring-for-ai-agent-sales.html"
+      },
+      "evidence": [
+        {
+          "type": "COMPANY_STATEMENT",
+          "description": "Company confirmed layoffs and AI agent hiring push."
+        }
+      ],
+      "tags": [
+        "enterprise-software",
+        "ai-agents",
+        "sales"
+      ]
     }
   ],
-  "total_jobs": 8000,
+  "total_jobs": 11450,
   "companies": [
-    "SAP"
+    "Autodesk",
+    "Intuit",
+    "SAP",
+    "Salesforce"
   ],
-  "company_count": 1,
-  "entry_count": 1
+  "company_count": 4,
+  "entry_count": 4
 }

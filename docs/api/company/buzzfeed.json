@@ -1,0 +1,36 @@
+{
+  "id": "buzzfeed-2023-04",
+  "company": "BuzzFeed",
+  "slug": "buzzfeed",
+  "date": "2023-04-20",
+  "country": "United States",
+  "industry": "Media",
+  "jobs_lost": 180,
+  "workforce_before": 1200,
+  "workforce_after": 1020,
+  "impact_percent": 15,
+  "classification": "DIRECT_AI_REPLACEMENT",
+  "confidence_score": 85,
+  "verified": true,
+  "summary": "BuzzFeed shut down BuzzFeed News and laid off 180 staff (15% of workforce). CEO Jonah Peretti cited AI content generation as a key part of the company's future strategy.",
+  "ceo_quote": "AI will be used to enhance the quiz experience, inform our brainstorming, and personalize our content.",
+  "source": {
+    "title": "BuzzFeed shuts down news division, lays off 180",
+    "url": "https://www.theverge.com/2023/4/20/23690345/buzzfeed-news-shutting-down-layoffs",
+    "publisher": "The Verge",
+    "published_date": "2023-04-20",
+    "retrieved_date": "2026-06-13",
+    "archive_url": "https://web.archive.org/web/*/https://www.theverge.com/2023/4/20/23690345/buzzfeed-news-shutting-down-layoffs"
+  },
+  "evidence": [
+    {
+      "type": "CEO_STATEMENT",
+      "description": "CEO explicitly positioned AI content generation as company's future."
+    }
+  ],
+  "tags": [
+    "media",
+    "news",
+    "content-generation"
+  ]
+}

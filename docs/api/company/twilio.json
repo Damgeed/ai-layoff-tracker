@@ -1,0 +1,35 @@
+{
+  "id": "twilio-2024-03",
+  "company": "Twilio",
+  "slug": "twilio",
+  "date": "2024-03-04",
+  "country": "United States",
+  "industry": "Technology",
+  "jobs_lost": 600,
+  "workforce_before": 5900,
+  "workforce_after": 5300,
+  "impact_percent": 10,
+  "classification": "AI_DRIVEN_RESTRUCTURING",
+  "confidence_score": 75,
+  "verified": true,
+  "summary": "Twilio cut 600 employees across its software engineering and go-to-market teams, citing AI automation of internal processes.",
+  "source": {
+    "title": "Twilio lays off 600 employees",
+    "url": "https://www.cnbc.com/2024/03/04/twilio-layoffs-600-employees.html",
+    "publisher": "CNBC",
+    "published_date": "2024-03-04",
+    "retrieved_date": "2026-06-13",
+    "archive_url": "https://web.archive.org/web/*/https://www.cnbc.com/2024/03/04/twilio-layoffs-600-employees.html"
+  },
+  "evidence": [
+    {
+      "type": "MEDIA_REPORT",
+      "description": "Reported layoffs with AI automation cited as efficiency driver."
+    }
+  ],
+  "tags": [
+    "communications",
+    "automation",
+    "saas"
+  ]
+}

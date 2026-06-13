@@ -3,6 +3,53 @@
   "slug": "education-technology",
   "entries": [
     {
+      "id": "duolingo-2024-01",
+      "company": "Duolingo",
+      "slug": "duolingo",
+      "date": "2024-01-08",
+      "announcement_date": "2024-01-08",
+      "effective_date": "2024-01-15",
+      "country": "United States",
+      "headquarters": "Pittsburgh, Pennsylvania, USA",
+      "industry": "Education Technology",
+      "sector": "Language Learning",
+      "jobs_lost": 60,
+      "workforce_before": 720,
+      "workforce_after": 660,
+      "impact_percent": 8,
+      "classification": "AI_DRIVEN_RESTRUCTURING",
+      "confidence_score": 75,
+      "verified": true,
+      "summary": "Duolingo reduced its contractor workforce by approximately 10% as AI translation and content generation tools reduced the need for human translators and content creators. The company emphasized it was not replacing core employees but shifting toward AI-augmented content production.",
+      "ceo_quote": null,
+      "source": {
+        "title": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation",
+        "published_date": "2024-01-08",
+        "publisher": "Bloomberg",
+        "archive_url": "https://web.archive.org/web/*/https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation",
+        "retrieved_date": "2026-06-13"
+      },
+      "evidence": [
+        {
+          "type": "COMPANY_STATEMENT",
+          "description": "Company confirmed shift toward AI-generated content reduced need for human contractors."
+        }
+      ],
+      "tags": [
+        "translation",
+        "content-creation",
+        "language",
+        "contractors"
+      ],
+      "departments_affected": [
+        "Content",
+        "Translation"
+      ],
+      "ai_technology": "GPT-4 for content generation and translation",
+      "public_trade_status": "public"
+    },
+    {
       "id": "chegg-2024-06",
       "company": "Chegg",
       "slug": "chegg",
@@ -59,53 +106,6 @@
         "Sales"
       ],
       "ai_technology": "Competitive displacement by ChatGPT",
-      "public_trade_status": "public"
-    },
-    {
-      "id": "duolingo-2024-01",
-      "company": "Duolingo",
-      "slug": "duolingo",
-      "date": "2024-01-08",
-      "announcement_date": "2024-01-08",
-      "effective_date": "2024-01-15",
-      "country": "United States",
-      "headquarters": "Pittsburgh, Pennsylvania, USA",
-      "industry": "Education Technology",
-      "sector": "Language Learning",
-      "jobs_lost": 60,
-      "workforce_before": 720,
-      "workforce_after": 660,
-      "impact_percent": 8,
-      "classification": "AI_DRIVEN_RESTRUCTURING",
-      "confidence_score": 75,
-      "verified": true,
-      "summary": "Duolingo reduced its contractor workforce by approximately 10% as AI translation and content generation tools reduced the need for human translators and content creators. The company emphasized it was not replacing core employees but shifting toward AI-augmented content production.",
-      "ceo_quote": null,
-      "source": {
-        "title": "Bloomberg",
-        "url": "https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation",
-        "published_date": "2024-01-08",
-        "publisher": "Bloomberg",
-        "archive_url": "https://web.archive.org/web/*/https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation",
-        "retrieved_date": "2026-06-13"
-      },
-      "evidence": [
-        {
-          "type": "COMPANY_STATEMENT",
-          "description": "Company confirmed shift toward AI-generated content reduced need for human contractors."
-        }
-      ],
-      "tags": [
-        "translation",
-        "content-creation",
-        "language",
-        "contractors"
-      ],
-      "departments_affected": [
-        "Content",
-        "Translation"
-      ],
-      "ai_technology": "GPT-4 for content generation and translation",
       "public_trade_status": "public"
     }
   ],

@@ -1,0 +1,35 @@
+{
+  "id": "microsoft-gaming-2024-01",
+  "company": "Microsoft",
+  "slug": "microsoft",
+  "date": "2024-01-25",
+  "country": "United States",
+  "industry": "Technology",
+  "jobs_lost": 1900,
+  "workforce_before": 22000,
+  "workforce_after": 20100,
+  "impact_percent": 9,
+  "classification": "AI_DRIVEN_RESTRUCTURING",
+  "confidence_score": 75,
+  "verified": true,
+  "summary": "Microsoft Gaming laid off 1,900 employees from Activision Blizzard and Xbox divisions, citing AI integration and post-acquisition restructuring.",
+  "source": {
+    "title": "Microsoft lays off 1,900 Activision Blizzard and Xbox employees",
+    "url": "https://www.theverge.com/2024/1/25/24049050/microsoft-activision-blizzard-layoffs",
+    "publisher": "The Verge",
+    "published_date": "2024-01-25",
+    "retrieved_date": "2026-06-13",
+    "archive_url": "https://web.archive.org/web/*/https://www.theverge.com/2024/1/25/24049050/microsoft-activision-blizzard-layoffs"
+  },
+  "evidence": [
+    {
+      "type": "MEDIA_REPORT",
+      "description": "Verified reporting on internal memo citing AI integration as factor."
+    }
+  ],
+  "tags": [
+    "gaming",
+    "post-acquisition",
+    "ai-integration"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "intuit-2024-07",
+  "company": "Intuit",
+  "slug": "intuit",
+  "date": "2024-07-10",
+  "country": "United States",
+  "industry": "Enterprise Software",
+  "jobs_lost": 1800,
+  "workforce_before": 18000,
+  "workforce_after": 16200,
+  "impact_percent": 10,
+  "classification": "AI_REALLOCATION",
+  "confidence_score": 90,
+  "verified": true,
+  "summary": "Intuit laid off 1,800 employees (10% of workforce) while announcing plans to hire 1,800 new employees for AI-focused roles, explicitly citing AI restructuring.",
+  "ceo_quote": "We are reallocating resources to accelerate innovation in AI.",
+  "source": {
+    "title": "Intuit to lay off 1,800 employees, plans to rehire in AI roles",
+    "url": "https://www.reuters.com/technology/intuit-lay-off-1800-employees-plans-rehire-ai-roles-2024-07-10/",
+    "publisher": "Reuters",
+    "published_date": "2024-07-10",
+    "retrieved_date": "2026-06-13",
+    "archive_url": "https://web.archive.org/web/*/https://www.reuters.com/technology/intuit-lay-off-1800-employees-plans-rehire-ai-roles-2024-07-10/"
+  },
+  "evidence": [
+    {
+      "type": "COMPANY_STATEMENT",
+      "description": "Official company announcement and CEO statement about AI restructuring."
+    }
+  ],
+  "tags": [
+    "enterprise-software",
+    "ai-reallocation",
+    "restructuring"
+  ]
+}

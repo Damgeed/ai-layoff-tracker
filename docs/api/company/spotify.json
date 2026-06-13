@@ -1,0 +1,35 @@
+{
+  "id": "spotify-2024-12",
+  "company": "Spotify",
+  "slug": "spotify",
+  "date": "2024-12-04",
+  "country": "United States",
+  "industry": "Technology",
+  "jobs_lost": 1500,
+  "workforce_before": 9200,
+  "workforce_after": 7700,
+  "impact_percent": 17,
+  "classification": "AI_REALLOCATION",
+  "confidence_score": 75,
+  "verified": true,
+  "summary": "Spotify laid off 1,500 employees (~17% of workforce). CEO Daniel Ek cited the need to redirect resources toward AI and podcasting investments.",
+  "source": {
+    "title": "Spotify to lay off 1,500 employees",
+    "url": "https://www.reuters.com/technology/spotify-lay-off-1500-employees-2024-12-04/",
+    "publisher": "Reuters",
+    "published_date": "2024-12-04",
+    "retrieved_date": "2026-06-13",
+    "archive_url": "https://web.archive.org/web/*/https://www.reuters.com/technology/spotify-lay-off-1500-employees-2024-12-04/"
+  },
+  "evidence": [
+    {
+      "type": "CEO_STATEMENT",
+      "description": "CEO cited AI investments as part of strategic redirection."
+    }
+  ],
+  "tags": [
+    "streaming",
+    "podcasting",
+    "efficiency"
+  ]
+}

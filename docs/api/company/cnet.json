@@ -1,0 +1,35 @@
+{
+  "id": "cnet-2024-01",
+  "company": "CNET",
+  "slug": "cnet",
+  "date": "2024-01-18",
+  "country": "United States",
+  "industry": "Media",
+  "jobs_lost": 20,
+  "workforce_before": 200,
+  "workforce_after": 180,
+  "impact_percent": 10,
+  "classification": "DIRECT_AI_REPLACEMENT",
+  "confidence_score": 80,
+  "verified": true,
+  "summary": "CNET laid off journalists after it was revealed the publication had been using AI to write articles without clear disclosure, reducing the need for human writers.",
+  "source": {
+    "title": "CNET laid off staff after using AI to write articles",
+    "url": "https://www.theverge.com/2024/1/18/24042244/cnet-layoffs-ai-written-articles",
+    "publisher": "The Verge",
+    "published_date": "2024-01-18",
+    "retrieved_date": "2026-06-13",
+    "archive_url": "https://web.archive.org/web/*/https://www.theverge.com/2024/1/18/24042244/cnet-layoffs-ai-written-articles"
+  },
+  "evidence": [
+    {
+      "type": "MEDIA_REPORT",
+      "description": "Verified reporting linking AI content generation to editorial layoffs."
+    }
+  ],
+  "tags": [
+    "media",
+    "journalism",
+    "content-generation"
+  ]
+}

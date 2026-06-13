@@ -1,0 +1,48 @@
+{
+  "country": "India",
+  "slug": "india",
+  "entries": [
+    {
+      "id": "dukaan-2023-07",
+      "company": "Dukaan",
+      "slug": "dukaan",
+      "date": "2023-07-10",
+      "country": "India",
+      "industry": "Technology",
+      "jobs_lost": 27,
+      "workforce_before": 30,
+      "workforce_after": 3,
+      "impact_percent": 90,
+      "classification": "DIRECT_AI_REPLACEMENT",
+      "confidence_score": 95,
+      "verified": true,
+      "summary": "CEO Suumit Shah replaced 90% of customer support staff with an AI chatbot, reducing support resolution time from 2 hours to 3 minutes.",
+      "ceo_quote": "We had to lay off 90% of our support team because of this AI chatbot.",
+      "source": {
+        "title": "CEO Suumit Shah (@suumitshah) on X",
+        "url": "https://twitter.com/suumitshah/status/1678345825605349376",
+        "publisher": "X (Twitter)",
+        "published_date": "2023-07-10",
+        "retrieved_date": "2026-06-13",
+        "archive_url": "https://web.archive.org/web/*/https://twitter.com/suumitshah/status/1678345825605349376"
+      },
+      "evidence": [
+        {
+          "type": "CEO_STATEMENT",
+          "description": "CEO publicly announced the layoffs and explicitly attributed them to AI chatbot replacement."
+        }
+      ],
+      "tags": [
+        "customer-support",
+        "ai-chatbot",
+        "small-business"
+      ]
+    }
+  ],
+  "total_jobs": 27,
+  "companies": [
+    "Dukaan"
+  ],
+  "company_count": 1,
+  "entry_count": 1
+}

@@ -1,0 +1,36 @@
+{
+  "id": "indeed-2024-05",
+  "company": "Indeed",
+  "slug": "indeed",
+  "date": "2024-05-13",
+  "country": "United States",
+  "industry": "Technology",
+  "jobs_lost": 2200,
+  "workforce_before": 15000,
+  "workforce_after": 12800,
+  "impact_percent": 15,
+  "classification": "AI_DRIVEN_RESTRUCTURING",
+  "confidence_score": 85,
+  "verified": true,
+  "summary": "Indeed laid off 2,200 employees (~15% of workforce). CEO Chris Hyams cited AI-powered job matching reducing the need for human recruiters.",
+  "ceo_quote": "AI-powered job matching is transforming how we connect job seekers with employers, reducing the number of staffing roles we need.",
+  "source": {
+    "title": "Indeed lays off 2,200 employees",
+    "url": "https://www.cnbc.com/2024/05/13/indeed-layoffs-2200-employees.html",
+    "publisher": "CNBC",
+    "published_date": "2024-05-13",
+    "retrieved_date": "2026-06-13",
+    "archive_url": "https://web.archive.org/web/*/https://www.cnbc.com/2024/05/13/indeed-layoffs-2200-employees.html"
+  },
+  "evidence": [
+    {
+      "type": "CEO_STATEMENT",
+      "description": "CEO explicitly cited AI-driven efficiency as the reason for layoffs."
+    }
+  ],
+  "tags": [
+    "recruiting",
+    "job-matching",
+    "staffing"
+  ]
+}

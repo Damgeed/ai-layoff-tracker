@@ -1,0 +1,35 @@
+{
+  "id": "autodesk-2024-02",
+  "company": "Autodesk",
+  "slug": "autodesk",
+  "date": "2024-02-27",
+  "country": "United States",
+  "industry": "Enterprise Software",
+  "jobs_lost": 1350,
+  "workforce_before": 14000,
+  "workforce_after": 12650,
+  "impact_percent": 10,
+  "classification": "AI_REALLOCATION",
+  "confidence_score": 75,
+  "verified": true,
+  "summary": "Autodesk laid off 1,350 employees (~10% of workforce), explicitly stating the cuts were to redirect investment toward AI and cloud platform development.",
+  "source": {
+    "title": "Autodesk to lay off 1,350 employees to focus on AI",
+    "url": "https://www.cnbc.com/2024/02/27/autodesk-layoffs-2024-restructuring.html",
+    "publisher": "CNBC",
+    "published_date": "2024-02-27",
+    "retrieved_date": "2026-06-13",
+    "archive_url": "https://web.archive.org/web/*/https://www.cnbc.com/2024/02/27/autodesk-layoffs-2024-restructuring.html"
+  },
+  "evidence": [
+    {
+      "type": "COMPANY_STATEMENT",
+      "description": "Official press release cited AI and cloud as investment targets for reallocation."
+    }
+  ],
+  "tags": [
+    "cad",
+    "design-software",
+    "cloud"
+  ]
+}

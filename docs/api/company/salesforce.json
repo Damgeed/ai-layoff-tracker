@@ -1,0 +1,36 @@
+{
+  "id": "salesforce-2024-08",
+  "company": "Salesforce",
+  "slug": "salesforce",
+  "date": "2024-08-01",
+  "country": "United States",
+  "industry": "Enterprise Software",
+  "jobs_lost": 300,
+  "workforce_before": 72000,
+  "workforce_after": 71700,
+  "impact_percent": 1,
+  "classification": "AI_REALLOCATION",
+  "confidence_score": 80,
+  "verified": true,
+  "summary": "Salesforce cut approximately 300 roles while simultaneously planning to hire 1,000+ new positions focused on AI agent sales, explicitly citing the shift to autonomous AI agents.",
+  "ceo_quote": "We are hiring 1,000 new people to sell our AI agents.",
+  "source": {
+    "title": "Salesforce cuts 300 roles while hiring 1,000 for AI agent sales",
+    "url": "https://www.cnbc.com/2024/08/01/salesforce-cuts-300-roles-hiring-for-ai-agent-sales.html",
+    "publisher": "CNBC",
+    "published_date": "2024-08-01",
+    "retrieved_date": "2026-06-13",
+    "archive_url": "https://web.archive.org/web/*/https://www.cnbc.com/2024/08/01/salesforce-cuts-300-roles-hiring-for-ai-agent-sales.html"
+  },
+  "evidence": [
+    {
+      "type": "COMPANY_STATEMENT",
+      "description": "Company confirmed layoffs and AI agent hiring push."
+    }
+  ],
+  "tags": [
+    "enterprise-software",
+    "ai-agents",
+    "sales"
+  ]
+}

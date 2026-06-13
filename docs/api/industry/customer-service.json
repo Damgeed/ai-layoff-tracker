@@ -1,0 +1,47 @@
+{
+  "industry": "Customer Service",
+  "slug": "customer-service",
+  "entries": [
+    {
+      "id": "teleperformance-2024-01",
+      "company": "Teleperformance",
+      "slug": "teleperformance",
+      "date": "2024-01-30",
+      "country": "France",
+      "industry": "Customer Service",
+      "jobs_lost": 4000,
+      "workforce_before": null,
+      "workforce_after": null,
+      "impact_percent": null,
+      "classification": "DIRECT_AI_REPLACEMENT",
+      "confidence_score": 85,
+      "verified": true,
+      "summary": "Teleperformance, one of the world's largest call center operators, announced AI would replace approximately 4,000 roles as customers increasingly prefer AI-powered customer service.",
+      "source": {
+        "title": "Teleperformance says AI will replace thousands of call center jobs",
+        "url": "https://www.reuters.com/technology/teleperformance-says-ai-will-replace-thousands-call-center-jobs-2024-01-30/",
+        "publisher": "Reuters",
+        "published_date": "2024-01-30",
+        "retrieved_date": "2026-06-13",
+        "archive_url": "https://web.archive.org/web/*/https://www.reuters.com/technology/teleperformance-says-ai-will-replace-thousands-call-center-jobs-2024-01-30/"
+      },
+      "evidence": [
+        {
+          "type": "COMPANY_STATEMENT",
+          "description": "Company publicly announced AI would replace call center roles."
+        }
+      ],
+      "tags": [
+        "customer-service",
+        "call-center",
+        "chatbots"
+      ]
+    }
+  ],
+  "total_jobs": 4000,
+  "companies": [
+    "Teleperformance"
+  ],
+  "company_count": 1,
+  "entry_count": 1
+}

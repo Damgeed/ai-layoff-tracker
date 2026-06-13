@@ -3,6 +3,54 @@
   "slug": "fintech",
   "entries": [
     {
+      "id": "paypal-2024-01",
+      "company": "PayPal",
+      "slug": "paypal",
+      "date": "2024-01-30",
+      "announcement_date": "2024-01-30",
+      "effective_date": "2024-04-01",
+      "country": "United States",
+      "headquarters": "San Jose, California, USA",
+      "industry": "Fintech",
+      "sector": "Digital Payments",
+      "jobs_lost": 2000,
+      "workforce_before": 29900,
+      "workforce_after": 27900,
+      "impact_percent": 7,
+      "classification": "AI_DRIVEN_RESTRUCTURING",
+      "confidence_score": 70,
+      "verified": true,
+      "summary": "PayPal announced 2,000 job cuts as part of a restructuring that CEO Alex Chriss framed around AI-driven efficiency. The company stated AI automation of routine payment processing and fraud detection tasks would reduce operational headcount needs.",
+      "ceo_quote": "We are doing this to right-size our business, allowing us to move with the speed needed to deliver for our customers and drive profitable growth through AI-powered automation.",
+      "source": {
+        "title": "Reuters",
+        "url": "https://www.reuters.com/technology/paypal-lay-off-2000-employees-2024-01-30/",
+        "published_date": "2024-01-30",
+        "publisher": "Reuters",
+        "archive_url": "https://web.archive.org/web/*/https://www.reuters.com/technology/paypal-lay-off-2000-employees-2024-01-30/",
+        "retrieved_date": "2026-06-13"
+      },
+      "evidence": [
+        {
+          "type": "CEO_STATEMENT",
+          "description": "CEO cited AI-powered automation as driver of operational restructuring."
+        }
+      ],
+      "tags": [
+        "fintech",
+        "payments",
+        "automation",
+        "restructuring"
+      ],
+      "departments_affected": [
+        "Operations",
+        "Engineering",
+        "Fraud Detection"
+      ],
+      "ai_technology": "AI-powered fraud detection and payment automation",
+      "public_trade_status": "public"
+    },
+    {
       "id": "klarna-2024-08",
       "company": "Klarna",
       "slug": "klarna",
@@ -59,54 +107,6 @@
       ],
       "ai_technology": "OpenAI-powered customer service AI assistant",
       "public_trade_status": "private"
-    },
-    {
-      "id": "paypal-2024-01",
-      "company": "PayPal",
-      "slug": "paypal",
-      "date": "2024-01-30",
-      "announcement_date": "2024-01-30",
-      "effective_date": "2024-04-01",
-      "country": "United States",
-      "headquarters": "San Jose, California, USA",
-      "industry": "Fintech",
-      "sector": "Digital Payments",
-      "jobs_lost": 2000,
-      "workforce_before": 29900,
-      "workforce_after": 27900,
-      "impact_percent": 7,
-      "classification": "AI_DRIVEN_RESTRUCTURING",
-      "confidence_score": 70,
-      "verified": true,
-      "summary": "PayPal announced 2,000 job cuts as part of a restructuring that CEO Alex Chriss framed around AI-driven efficiency. The company stated AI automation of routine payment processing and fraud detection tasks would reduce operational headcount needs.",
-      "ceo_quote": "We are doing this to right-size our business, allowing us to move with the speed needed to deliver for our customers and drive profitable growth through AI-powered automation.",
-      "source": {
-        "title": "Reuters",
-        "url": "https://www.reuters.com/technology/paypal-lay-off-2000-employees-2024-01-30/",
-        "published_date": "2024-01-30",
-        "publisher": "Reuters",
-        "archive_url": "https://web.archive.org/web/*/https://www.reuters.com/technology/paypal-lay-off-2000-employees-2024-01-30/",
-        "retrieved_date": "2026-06-13"
-      },
-      "evidence": [
-        {
-          "type": "CEO_STATEMENT",
-          "description": "CEO cited AI-powered automation as driver of operational restructuring."
-        }
-      ],
-      "tags": [
-        "fintech",
-        "payments",
-        "automation",
-        "restructuring"
-      ],
-      "departments_affected": [
-        "Operations",
-        "Engineering",
-        "Fraud Detection"
-      ],
-      "ai_technology": "AI-powered fraud detection and payment automation",
-      "public_trade_status": "public"
     }
   ],
   "total_jobs": 4000,
