@@ -313,7 +313,7 @@ def generate_company_pages(data):
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-info">
-      <p>AI Layoff Tracker — Documented AI workforce reductions.</p>
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
     </div>
     <div class="footer-links">
       <div class="footer-col">
@@ -332,7 +332,7 @@ def generate_company_pages(data):
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <small>Updated <span id="footer-updated">—</span>.</small>
+      <small>Updated <span id="footer-updated">—</span>. Public research resource.</small>
     </div>
   </div>
 </footer>
@@ -564,7 +564,7 @@ def generate_entry_pages(data):
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-info">
-      <p>AI Layoff Tracker — Documented AI workforce reductions.</p>
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
     </div>
     <div class="footer-links">
       <div class="footer-col">
@@ -583,7 +583,7 @@ def generate_entry_pages(data):
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <small>Updated <span id="footer-updated">—</span>.</small>
+      <small>Updated <span id="footer-updated">—</span>. Public research resource.</small>
     </div>
   </div>
 </footer>
@@ -739,7 +739,7 @@ def generate_industry_pages(data):
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-info">
-      <p>AI Layoff Tracker — Documented AI workforce reductions.</p>
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
     </div>
     <div class="footer-links">
       <div class="footer-col">
@@ -758,7 +758,7 @@ def generate_industry_pages(data):
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <small>Updated <span id="footer-updated">—</span>.</small>
+      <small>Updated <span id="footer-updated">—</span>. Public research resource.</small>
     </div>
   </div>
 </footer>
@@ -925,7 +925,7 @@ def generate_country_pages(data):
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-info">
-      <p>AI Layoff Tracker — Documented AI workforce reductions.</p>
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
     </div>
     <div class="footer-links">
       <div class="footer-col">
@@ -944,7 +944,7 @@ def generate_country_pages(data):
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <small>Updated <span id="footer-updated">—</span>.</small>
+      <small>Updated <span id="footer-updated">—</span>. Public research resource.</small>
     </div>
   </div>
 </footer>
