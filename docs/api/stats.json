@@ -1,0 +1,84 @@
+{
+  "total_jobs_lost": 65117,
+  "companies": 15,
+  "countries": 3,
+  "industries": 6,
+  "total_entries": 15,
+  "by_classification": {
+    "DIRECT_AI_REPLACEMENT": {
+      "jobs": 2000,
+      "entries": 1
+    },
+    "AI_DRIVEN_RESTRUCTURING": {
+      "jobs": 36076,
+      "entries": 8
+    },
+    "MARKET_DISRUPTION": {
+      "jobs": 541,
+      "entries": 2
+    },
+    "AI_REALLOCATION": {
+      "jobs": 26500,
+      "entries": 4
+    }
+  },
+  "by_industry": {
+    "Technology": {
+      "jobs": 35616,
+      "entries": 8
+    },
+    "Logistics": {
+      "jobs": 12000,
+      "entries": 1
+    },
+    "Enterprise Software": {
+      "jobs": 8000,
+      "entries": 1
+    },
+    "Healthcare": {
+      "jobs": 5000,
+      "entries": 1
+    },
+    "Fintech": {
+      "jobs": 4000,
+      "entries": 2
+    },
+    "Education Technology": {
+      "jobs": 501,
+      "entries": 2
+    }
+  },
+  "by_country": {
+    "United States": {
+      "jobs": 55117,
+      "entries": 13
+    },
+    "Germany": {
+      "jobs": 8000,
+      "entries": 1
+    },
+    "Sweden": {
+      "jobs": 2000,
+      "entries": 1
+    }
+  },
+  "date_range": {
+    "oldest": "2023-01-20",
+    "newest": "2024-08-27"
+  },
+  "monthly_rate": 3388,
+  "annualized_projection": 40656,
+  "last_updated": "2026-06-13T01:24:06Z",
+  "classification_counts": {
+    "DIRECT_AI_REPLACEMENT": 1,
+    "AI_DRIVEN_RESTRUCTURING": 8,
+    "MARKET_DISRUPTION": 2,
+    "AI_REALLOCATION": 4
+  },
+  "classification_jobs": {
+    "DIRECT_AI_REPLACEMENT": 2000,
+    "AI_DRIVEN_RESTRUCTURING": 36076,
+    "MARKET_DISRUPTION": 541,
+    "AI_REALLOCATION": 26500
+  }
+}

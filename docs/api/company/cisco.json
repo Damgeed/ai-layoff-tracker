@@ -1,0 +1,53 @@
+{
+  "id": "cisco-2024-02",
+  "company": "Cisco",
+  "slug": "cisco",
+  "date": "2024-02-14",
+  "announcement_date": "2024-02-14",
+  "effective_date": "2024-04-30",
+  "country": "United States",
+  "headquarters": "San Jose, California, USA",
+  "industry": "Technology",
+  "sector": "Networking & Enterprise Hardware",
+  "jobs_lost": 4000,
+  "workforce_before": 84900,
+  "workforce_after": 80900,
+  "impact_percent": 5,
+  "classification": "AI_REALLOCATION",
+  "confidence_score": 75,
+  "verified": true,
+  "summary": "Cisco laid off 4,000 employees while announcing a strategic shift toward AI networking infrastructure. CEO Chuck Robbins stated the restructuring would free up resources for AI-focused product development and the company's $28 billion Splunk acquisition, which was positioned as a data platform for AI workloads.",
+  "ceo_quote": null,
+  "source": {
+    "title": "CNBC",
+    "url": "https://www.cnbc.com/2024/02/14/cisco-layoffs-4000-jobs.html",
+    "published_date": "2024-02-14",
+    "publisher": "CNBC"
+  },
+  "secondary_sources": [
+    {
+      "title": "Cisco to cut thousands of jobs as it shifts focus to AI",
+      "url": "https://www.reuters.com/technology/cisco-cut-thousands-jobs-shift-focus-ai-2024-02-14/",
+      "publisher": "Reuters"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "COMPANY_STATEMENT",
+      "description": "Company confirmed restructuring for AI infrastructure pivot."
+    }
+  ],
+  "tags": [
+    "networking",
+    "infrastructure",
+    "ai-pivot",
+    "enterprise"
+  ],
+  "departments_affected": [
+    "Hardware",
+    "Operations",
+    "Sales"
+  ],
+  "ai_technology": "AI networking infrastructure, Splunk data platform",
+  "public_trade_status": "public"
+}

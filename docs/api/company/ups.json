@@ -1,0 +1,53 @@
+{
+  "id": "ups-2024-01",
+  "company": "UPS",
+  "slug": "ups",
+  "date": "2024-01-30",
+  "announcement_date": "2024-01-30",
+  "effective_date": "2024-06-01",
+  "country": "United States",
+  "headquarters": "Atlanta, Georgia, USA",
+  "industry": "Logistics",
+  "sector": "Shipping & Supply Chain",
+  "jobs_lost": 12000,
+  "workforce_before": 500000,
+  "workforce_after": 488000,
+  "impact_percent": 2,
+  "classification": "AI_DRIVEN_RESTRUCTURING",
+  "confidence_score": 70,
+  "verified": true,
+  "summary": "UPS announced 12,000 job cuts as part of a cost-reduction plan that prominently featured AI-driven logistics optimization. CEO Carol Tomé stated the company was deploying AI tools for route optimization, package sorting, and back-office automation that would reduce the need for management and administrative staff.",
+  "ceo_quote": "We are using AI to transform our network, making our operations more efficient and reducing our management layers.",
+  "source": {
+    "title": "CNN Business",
+    "url": "https://www.cnn.com/2024/01/30/business/ups-layoffs/index.html",
+    "published_date": "2024-01-30",
+    "publisher": "CNN Business"
+  },
+  "secondary_sources": [
+    {
+      "title": "UPS to cut 12,000 jobs amid AI automation push",
+      "url": "https://www.cnbc.com/2024/01/30/ups-layoffs-12000-jobs.html",
+      "publisher": "CNBC"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "CEO_STATEMENT",
+      "description": "CEO cited AI deployment as key driver of operational cost reduction and management cuts."
+    }
+  ],
+  "tags": [
+    "logistics",
+    "automation",
+    "management",
+    "route-optimization"
+  ],
+  "departments_affected": [
+    "Management",
+    "Administration",
+    "Operations"
+  ],
+  "ai_technology": "AI route optimization, automated sorting systems",
+  "public_trade_status": "public"
+}

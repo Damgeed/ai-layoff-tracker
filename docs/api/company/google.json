@@ -1,0 +1,58 @@
+{
+  "id": "google-2023-01",
+  "company": "Google",
+  "slug": "google",
+  "date": "2023-01-20",
+  "announcement_date": "2023-01-20",
+  "effective_date": "2023-03-31",
+  "country": "United States",
+  "headquarters": "Mountain View, California, USA",
+  "industry": "Technology",
+  "sector": "Internet & Cloud Services",
+  "jobs_lost": 12000,
+  "workforce_before": 187000,
+  "workforce_after": 175000,
+  "impact_percent": 6,
+  "classification": "AI_REALLOCATION",
+  "confidence_score": 75,
+  "verified": true,
+  "summary": "Google laid off 12,000 employees as part of a major restructuring that CEO Sundar Pichai framed as a pivot toward AI priorities. Pichai stated the company needed to redirect resources and talent toward artificial intelligence development, particularly in response to competitive pressure from OpenAI and Microsoft.",
+  "ceo_quote": "We have a substantial opportunity in front of us with AI across our products and are prepared to approach it boldly and responsibly. This will mean making tough choices about how we allocate our resources.",
+  "source": {
+    "title": "Google Blog (The Keyword)",
+    "url": "https://blog.google/inside-google/message-ceo/january-update/",
+    "published_date": "2023-01-20",
+    "publisher": "Google"
+  },
+  "secondary_sources": [
+    {
+      "title": "Google to cut 12,000 jobs in latest tech layoffs",
+      "url": "https://www.bbc.com/news/business-64349321",
+      "publisher": "BBC News"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "CEO_STATEMENT",
+      "description": "CEO explicitly cited need to redirect resources toward AI as reason for layoffs."
+    },
+    {
+      "type": "COMPANY_STATEMENT",
+      "description": "Official memo confirmed AI-focused restructuring."
+    }
+  ],
+  "tags": [
+    "ai-pivot",
+    "restructuring",
+    "big-tech",
+    "resource-reallocation"
+  ],
+  "departments_affected": [
+    "Multiple",
+    "Recruiting",
+    "Engineering",
+    "Product"
+  ],
+  "ai_technology": "Google Bard/Gemini, DeepMind integration",
+  "public_trade_status": "public"
+}

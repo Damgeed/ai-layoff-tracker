@@ -1,0 +1,57 @@
+{
+  "id": "chegg-2024-06",
+  "company": "Chegg",
+  "slug": "chegg",
+  "date": "2024-06-17",
+  "announcement_date": "2024-06-17",
+  "effective_date": "2024-07-01",
+  "country": "United States",
+  "headquarters": "Santa Clara, California, USA",
+  "industry": "Education Technology",
+  "sector": "EdTech",
+  "jobs_lost": 441,
+  "workforce_before": 2200,
+  "workforce_after": 1759,
+  "impact_percent": 20,
+  "classification": "MARKET_DISRUPTION",
+  "confidence_score": 90,
+  "verified": true,
+  "summary": "Chegg laid off 441 employees (20% of workforce) after ChatGPT's launch significantly reduced demand for its homework help and tutoring services. CEO Dan Rosensweig directly attributed the revenue decline to students shifting to free AI tools.",
+  "ceo_quote": "Since March we saw a significant spike in student interest in ChatGPT. We believe it's having an impact on our new customer growth rate.",
+  "source": {
+    "title": "Reuters",
+    "url": "https://www.reuters.com/technology/chegg-shares-plunge-company-says-chatgpt-is-hurting-its-business-2024-06-17/",
+    "published_date": "2024-06-17",
+    "publisher": "Reuters"
+  },
+  "secondary_sources": [
+    {
+      "title": "Chegg stock drops 48% after ChatGPT threat",
+      "url": "https://www.cnbc.com/2024/06/17/chegg-stock-drops-chatgpt-threat.html",
+      "publisher": "CNBC"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "CEO_STATEMENT",
+      "description": "CEO directly cited ChatGPT as cause of customer loss and subsequent layoffs."
+    },
+    {
+      "type": "EARNINGS_REPORT",
+      "description": "Q1 2024 earnings showed 7% YoY revenue decline attributed to AI competition."
+    }
+  ],
+  "tags": [
+    "chatgpt",
+    "market-disruption",
+    "education",
+    "generative-ai"
+  ],
+  "departments_affected": [
+    "Content",
+    "Engineering",
+    "Sales"
+  ],
+  "ai_technology": "Competitive displacement by ChatGPT",
+  "public_trade_status": "public"
+}

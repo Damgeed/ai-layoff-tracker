@@ -1,0 +1,46 @@
+{
+  "id": "linkedin-2023-10",
+  "company": "LinkedIn",
+  "slug": "linkedin",
+  "date": "2023-10-16",
+  "announcement_date": "2023-10-16",
+  "effective_date": "2023-11-30",
+  "country": "United States",
+  "headquarters": "Sunnyvale, California, USA",
+  "industry": "Technology",
+  "sector": "Professional Networking & Recruitment",
+  "jobs_lost": 716,
+  "workforce_before": 20000,
+  "workforce_after": 19284,
+  "impact_percent": 4,
+  "classification": "AI_DRIVEN_RESTRUCTURING",
+  "confidence_score": 75,
+  "verified": true,
+  "summary": "LinkedIn laid off 716 employees in its second round of 2023 cuts, with the company citing the need to shift toward AI-powered recruiting tools and reduced demand for traditional HR services. The company simultaneously announced investments in AI features for recruiters.",
+  "ceo_quote": null,
+  "source": {
+    "title": "CNBC",
+    "url": "https://www.cnbc.com/2023/10/16/linkedin-lays-off-more-than-700-employees.html",
+    "published_date": "2023-10-16",
+    "publisher": "CNBC"
+  },
+  "evidence": [
+    {
+      "type": "COMPANY_STATEMENT",
+      "description": "Company cited shift toward AI-powered products as driver of restructuring."
+    }
+  ],
+  "tags": [
+    "recruiting",
+    "hr-tech",
+    "ai-tools",
+    "restructuring"
+  ],
+  "departments_affected": [
+    "Engineering",
+    "Product",
+    "Sales"
+  ],
+  "ai_technology": "LinkedIn AI-powered recruiting assistant, collaborative articles",
+  "public_trade_status": "subsidiary"
+}

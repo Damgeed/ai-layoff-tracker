@@ -1,0 +1,52 @@
+{
+  "id": "amazon-alexa-2023-11",
+  "company": "Amazon",
+  "slug": "amazon",
+  "date": "2023-11-17",
+  "announcement_date": "2023-11-17",
+  "effective_date": "2023-12-31",
+  "country": "United States",
+  "headquarters": "Seattle, Washington, USA",
+  "industry": "Technology",
+  "sector": "E-commerce & Cloud Computing",
+  "jobs_lost": 500,
+  "workforce_before": 1520000,
+  "workforce_after": 1519500,
+  "impact_percent": 0.03,
+  "classification": "AI_REALLOCATION",
+  "confidence_score": 80,
+  "verified": true,
+  "summary": "Amazon laid off several hundred employees in its Alexa voice assistant division as the company pivoted from the legacy Alexa service toward generative AI-powered capabilities. The cuts targeted teams working on older Alexa features while Amazon reinvested in building an LLM-powered Alexa.",
+  "ceo_quote": null,
+  "source": {
+    "title": "Reuters",
+    "url": "https://www.reuters.com/technology/amazon-cuts-jobs-alexa-unit-2023-11-17/",
+    "published_date": "2023-11-17",
+    "publisher": "Reuters"
+  },
+  "secondary_sources": [
+    {
+      "title": "Amazon cuts jobs in Alexa division to focus on generative AI",
+      "url": "https://www.theverge.com/2023/11/17/23965243/amazon-alexa-layoffs-generative-ai",
+      "publisher": "The Verge"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "COMPANY_STATEMENT",
+      "description": "Company confirmed Alexa division restructuring for generative AI pivot."
+    }
+  ],
+  "tags": [
+    "voice-assistant",
+    "alexa",
+    "generative-ai",
+    "ai-pivot"
+  ],
+  "departments_affected": [
+    "Alexa Division",
+    "AI/ML"
+  ],
+  "ai_technology": "LLM-powered Alexa (internal generative AI project)",
+  "public_trade_status": "public"
+}

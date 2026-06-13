@@ -1,0 +1,46 @@
+{
+  "id": "dropbox-2023-04",
+  "company": "Dropbox",
+  "slug": "dropbox",
+  "date": "2023-04-27",
+  "announcement_date": "2023-04-27",
+  "effective_date": "2023-06-01",
+  "country": "United States",
+  "headquarters": "San Francisco, California, USA",
+  "industry": "Technology",
+  "sector": "Cloud Storage & Collaboration",
+  "jobs_lost": 500,
+  "workforce_before": 3100,
+  "workforce_after": 2600,
+  "impact_percent": 16,
+  "classification": "AI_DRIVEN_RESTRUCTURING",
+  "confidence_score": 80,
+  "verified": true,
+  "summary": "Dropbox laid off 500 employees (16% of workforce) as part of a restructuring to focus on AI-powered products. CEO Drew Houston stated the company needed to redirect resources toward 'the next stage of growth driven by AI.'",
+  "ceo_quote": "In an ideal world, we'd simply shift people from one team to another. And we've done that wherever possible. However, our next stage of growth requires a different mix of skill sets, particularly in AI and early-stage product development.",
+  "source": {
+    "title": "Dropbox Blog",
+    "url": "https://blog.dropbox.com/topics/company/a-message-from-drew",
+    "published_date": "2023-04-27",
+    "publisher": "Dropbox"
+  },
+  "evidence": [
+    {
+      "type": "CEO_STATEMENT",
+      "description": "CEO explicitly cited AI strategy pivot as reason for restructuring and layoffs."
+    }
+  ],
+  "tags": [
+    "restructuring",
+    "ai-pivot",
+    "saas",
+    "cloud"
+  ],
+  "departments_affected": [
+    "Operations",
+    "Sales",
+    "Marketing"
+  ],
+  "ai_technology": "Dropbox Dash, Dropbox AI (internal AI products)",
+  "public_trade_status": "public"
+}

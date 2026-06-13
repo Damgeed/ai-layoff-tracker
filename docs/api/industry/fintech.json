@@ -1,0 +1,115 @@
+{
+  "industry": "Fintech",
+  "slug": "fintech",
+  "entries": [
+    {
+      "id": "klarna-2024-08",
+      "company": "Klarna",
+      "slug": "klarna",
+      "date": "2024-08-27",
+      "announcement_date": "2024-08-27",
+      "effective_date": "2024-10-01",
+      "country": "Sweden",
+      "headquarters": "Stockholm, Sweden",
+      "industry": "Fintech",
+      "sector": "Financial Services",
+      "jobs_lost": 2000,
+      "workforce_before": 5000,
+      "workforce_after": 3000,
+      "impact_percent": 40,
+      "classification": "DIRECT_AI_REPLACEMENT",
+      "confidence_score": 95,
+      "verified": true,
+      "summary": "Klarna CEO Sebastian Siemiatkowski stated the company reduced its workforce from 5,000 to 3,000 by leveraging AI for customer service operations, claiming AI agents now handle the work of 700 human agents.",
+      "ceo_quote": "We can do the same amount of work with 2,000 employees that we previously did with 5,000 people.",
+      "source": {
+        "title": "BBC News",
+        "url": "https://www.bbc.com/news/articles/c4gpqp4v4q2o",
+        "published_date": "2024-08-27",
+        "publisher": "BBC News"
+      },
+      "secondary_sources": [
+        {
+          "title": "Klarna CEO Says AI Can Do the Job of 700 Workers",
+          "url": "https://fortune.com/2024/08/27/klarna-ai-job-cuts/",
+          "publisher": "Fortune"
+        }
+      ],
+      "evidence": [
+        {
+          "type": "CEO_STATEMENT",
+          "description": "CEO explicitly attributed workforce reduction to AI efficiency gains in customer service operations."
+        },
+        {
+          "type": "EARNINGS_REPORT",
+          "description": "Company financial filings confirm reduced headcount while maintaining revenue levels."
+        }
+      ],
+      "tags": [
+        "customer-support",
+        "generative-ai",
+        "chatbots",
+        "automation"
+      ],
+      "departments_affected": [
+        "Customer Service",
+        "Operations"
+      ],
+      "ai_technology": "OpenAI-powered customer service AI assistant",
+      "public_trade_status": "private"
+    },
+    {
+      "id": "paypal-2024-01",
+      "company": "PayPal",
+      "slug": "paypal",
+      "date": "2024-01-30",
+      "announcement_date": "2024-01-30",
+      "effective_date": "2024-04-01",
+      "country": "United States",
+      "headquarters": "San Jose, California, USA",
+      "industry": "Fintech",
+      "sector": "Digital Payments",
+      "jobs_lost": 2000,
+      "workforce_before": 29900,
+      "workforce_after": 27900,
+      "impact_percent": 7,
+      "classification": "AI_DRIVEN_RESTRUCTURING",
+      "confidence_score": 70,
+      "verified": true,
+      "summary": "PayPal announced 2,000 job cuts as part of a restructuring that CEO Alex Chriss framed around AI-driven efficiency. The company stated AI automation of routine payment processing and fraud detection tasks would reduce operational headcount needs.",
+      "ceo_quote": "We are doing this to right-size our business, allowing us to move with the speed needed to deliver for our customers and drive profitable growth through AI-powered automation.",
+      "source": {
+        "title": "Reuters",
+        "url": "https://www.reuters.com/technology/paypal-lay-off-2000-employees-2024-01-30/",
+        "published_date": "2024-01-30",
+        "publisher": "Reuters"
+      },
+      "evidence": [
+        {
+          "type": "CEO_STATEMENT",
+          "description": "CEO cited AI-powered automation as driver of operational restructuring."
+        }
+      ],
+      "tags": [
+        "fintech",
+        "payments",
+        "automation",
+        "restructuring"
+      ],
+      "departments_affected": [
+        "Operations",
+        "Engineering",
+        "Fraud Detection"
+      ],
+      "ai_technology": "AI-powered fraud detection and payment automation",
+      "public_trade_status": "public"
+    }
+  ],
+  "total_jobs": 4000,
+  "companies": [
+    "Klarna",
+    "PayPal"
+  ],
+  "company_count": 2,
+  "entry_count": 2
+}

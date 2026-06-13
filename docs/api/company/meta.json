@@ -1,0 +1,58 @@
+{
+  "id": "meta-2023-03",
+  "company": "Meta",
+  "slug": "meta",
+  "date": "2023-03-14",
+  "announcement_date": "2023-03-14",
+  "effective_date": "2023-05-31",
+  "country": "United States",
+  "headquarters": "Menlo Park, California, USA",
+  "industry": "Technology",
+  "sector": "Social Media & Advertising",
+  "jobs_lost": 10000,
+  "workforce_before": 86000,
+  "workforce_after": 76000,
+  "impact_percent": 12,
+  "classification": "AI_REALLOCATION",
+  "confidence_score": 75,
+  "verified": true,
+  "summary": "Meta laid off 10,000 employees in its 'Year of Efficiency' restructuring, with CEO Mark Zuckerberg explicitly linking the cuts to increased AI investment. Meta simultaneously announced massive spending on AI infrastructure, including custom AI chips and generative AI research teams.",
+  "ceo_quote": "Our single largest investment is advancing AI and building it into every one of our products. We have the infrastructure to do this at unprecedented scale.",
+  "source": {
+    "title": "Meta Newsroom",
+    "url": "https://about.fb.com/news/2023/03/mark-zuckerberg-meta-year-of-efficiency/",
+    "published_date": "2023-03-14",
+    "publisher": "Meta"
+  },
+  "secondary_sources": [
+    {
+      "title": "Meta announces 10,000 more layoffs",
+      "url": "https://www.cnbc.com/2023/03/14/meta-layoffs.html",
+      "publisher": "CNBC"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "CEO_STATEMENT",
+      "description": "CEO explicitly tied layoffs to AI-driven restructuring and efficiency."
+    },
+    {
+      "type": "COMPANY_STATEMENT",
+      "description": "Earnings calls confirmed AI investment acceleration alongside headcount reduction."
+    }
+  ],
+  "tags": [
+    "ai-pivot",
+    "restructuring",
+    "big-tech",
+    "efficiency"
+  ],
+  "departments_affected": [
+    "Multiple",
+    "Recruiting",
+    "Business",
+    "Engineering"
+  ],
+  "ai_technology": "LLaMA models, generative AI, custom AI chips (MTIA)",
+  "public_trade_status": "public"
+}

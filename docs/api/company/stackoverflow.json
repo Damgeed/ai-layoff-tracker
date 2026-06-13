@@ -1,0 +1,57 @@
+{
+  "id": "stackoverflow-2023-10",
+  "company": "Stack Overflow",
+  "slug": "stackoverflow",
+  "date": "2023-10-16",
+  "announcement_date": "2023-10-16",
+  "effective_date": "2023-11-01",
+  "country": "United States",
+  "headquarters": "New York City, New York, USA",
+  "industry": "Technology",
+  "sector": "Developer Tools & Knowledge",
+  "jobs_lost": 100,
+  "workforce_before": 550,
+  "workforce_after": 450,
+  "impact_percent": 18,
+  "classification": "MARKET_DISRUPTION",
+  "confidence_score": 85,
+  "verified": true,
+  "summary": "Stack Overflow laid off approximately 100 employees (18% of workforce) following a significant decline in traffic after the launch of ChatGPT and GitHub Copilot, as developers increasingly turned to AI for coding answers instead of the Q&A platform.",
+  "ceo_quote": null,
+  "source": {
+    "title": "The Verge",
+    "url": "https://www.theverge.com/2023/10/16/23919004/stack-overflow-layoffs-ai-traffic-decline",
+    "published_date": "2023-10-16",
+    "publisher": "The Verge"
+  },
+  "secondary_sources": [
+    {
+      "title": "Stack Overflow traffic drops as developers turn to AI",
+      "url": "https://arstechnica.com/tech-policy/2023/10/stack-overflow-lays-off-28-percent-of-staff-amid-ai-disruption/",
+      "publisher": "Ars Technica"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "COMPANY_STATEMENT",
+      "description": "Company confirmed traffic decline from AI tools necessitated workforce reduction."
+    },
+    {
+      "type": "TRAFFIC_ANALYSIS",
+      "description": "Third-party traffic analysis confirmed 35%+ decline in Stack Overflow page views since ChatGPT launch."
+    }
+  ],
+  "tags": [
+    "chatgpt",
+    "github-copilot",
+    "market-disruption",
+    "developer-tools"
+  ],
+  "departments_affected": [
+    "Engineering",
+    "Product",
+    "Sales"
+  ],
+  "ai_technology": "Competitive displacement by ChatGPT and GitHub Copilot",
+  "public_trade_status": "private"
+}

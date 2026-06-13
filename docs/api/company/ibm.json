@@ -1,0 +1,57 @@
+{
+  "id": "ibm-2024-05",
+  "company": "IBM",
+  "slug": "ibm",
+  "date": "2024-05-20",
+  "announcement_date": "2024-05-20",
+  "effective_date": "2024-12-31",
+  "country": "United States",
+  "headquarters": "Armonk, New York, USA",
+  "industry": "Technology",
+  "sector": "Enterprise IT & Cloud",
+  "jobs_lost": 7800,
+  "workforce_before": 288000,
+  "workforce_after": 280200,
+  "impact_percent": 3,
+  "classification": "AI_DRIVEN_RESTRUCTURING",
+  "confidence_score": 85,
+  "verified": true,
+  "summary": "IBM announced plans to pause hiring for roles it believes AI can perform, affecting approximately 7,800 back-office positions. CEO Arvind Krishna stated AI will replace many non-customer-facing roles over the next five years.",
+  "ceo_quote": "I could easily see 30 percent of [back-office roles] getting replaced by AI and automation over a five-year period.",
+  "source": {
+    "title": "Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2024-05-20/ibm-to-pause-hiring-for-jobs-that-ai-could-do",
+    "published_date": "2024-05-20",
+    "publisher": "Bloomberg"
+  },
+  "secondary_sources": [
+    {
+      "title": "IBM pauses hiring for 7,800 jobs that could be replaced by AI",
+      "url": "https://www.cnbc.com/2024/05/20/ibm-pauses-hiring-for-jobs-ai-could-replace.html",
+      "publisher": "CNBC"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "CEO_STATEMENT",
+      "description": "CEO explicitly stated hiring freeze targets roles AI can perform."
+    },
+    {
+      "type": "COMPANY_STATEMENT",
+      "description": "Official company announcement confirmed AI-driven workforce strategy."
+    }
+  ],
+  "tags": [
+    "back-office",
+    "hiring-freeze",
+    "hr",
+    "automation"
+  ],
+  "departments_affected": [
+    "Human Resources",
+    "Finance",
+    "Administration"
+  ],
+  "ai_technology": "Internal IBM watsonx AI platform",
+  "public_trade_status": "public"
+}

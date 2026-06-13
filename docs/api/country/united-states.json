@@ -1,68 +1,7 @@
 {
-  "meta": {
-    "version": "2.0.0",
-    "last_updated": "2026-06-13T01:24:06Z",
-    "total_entries": 15,
-    "maintainer": "AI Layoff Tracker",
-    "methodology_url": "/methodology.html"
-  },
+  "country": "United States",
+  "slug": "united-states",
   "entries": [
-    {
-      "id": "klarna-2024-08",
-      "company": "Klarna",
-      "slug": "klarna",
-      "date": "2024-08-27",
-      "announcement_date": "2024-08-27",
-      "effective_date": "2024-10-01",
-      "country": "Sweden",
-      "headquarters": "Stockholm, Sweden",
-      "industry": "Fintech",
-      "sector": "Financial Services",
-      "jobs_lost": 2000,
-      "workforce_before": 5000,
-      "workforce_after": 3000,
-      "impact_percent": 40,
-      "classification": "DIRECT_AI_REPLACEMENT",
-      "confidence_score": 95,
-      "verified": true,
-      "summary": "Klarna CEO Sebastian Siemiatkowski stated the company reduced its workforce from 5,000 to 3,000 by leveraging AI for customer service operations, claiming AI agents now handle the work of 700 human agents.",
-      "ceo_quote": "We can do the same amount of work with 2,000 employees that we previously did with 5,000 people.",
-      "source": {
-        "title": "BBC News",
-        "url": "https://www.bbc.com/news/articles/c4gpqp4v4q2o",
-        "published_date": "2024-08-27",
-        "publisher": "BBC News"
-      },
-      "secondary_sources": [
-        {
-          "title": "Klarna CEO Says AI Can Do the Job of 700 Workers",
-          "url": "https://fortune.com/2024/08/27/klarna-ai-job-cuts/",
-          "publisher": "Fortune"
-        }
-      ],
-      "evidence": [
-        {
-          "type": "CEO_STATEMENT",
-          "description": "CEO explicitly attributed workforce reduction to AI efficiency gains in customer service operations."
-        },
-        {
-          "type": "EARNINGS_REPORT",
-          "description": "Company financial filings confirm reduced headcount while maintaining revenue levels."
-        }
-      ],
-      "tags": [
-        "customer-support",
-        "generative-ai",
-        "chatbots",
-        "automation"
-      ],
-      "departments_affected": [
-        "Customer Service",
-        "Operations"
-      ],
-      "ai_technology": "OpenAI-powered customer service AI assistant",
-      "public_trade_status": "private"
-    },
     {
       "id": "ibm-2024-05",
       "company": "IBM",
@@ -587,63 +526,6 @@
       "public_trade_status": "public"
     },
     {
-      "id": "sap-2024-01",
-      "company": "SAP",
-      "slug": "sap",
-      "date": "2024-01-23",
-      "announcement_date": "2024-01-23",
-      "effective_date": "2024-06-30",
-      "country": "Germany",
-      "headquarters": "Walldorf, Germany",
-      "industry": "Enterprise Software",
-      "sector": "ERP & Business Applications",
-      "jobs_lost": 8000,
-      "workforce_before": 108000,
-      "workforce_after": 100000,
-      "impact_percent": 7,
-      "classification": "AI_DRIVEN_RESTRUCTURING",
-      "confidence_score": 80,
-      "verified": true,
-      "summary": "SAP announced plans to restructure 8,000 positions as part of a €2 billion transformation program focused on embedding AI across its enterprise software suite. The company stated it would retrain some employees for AI roles while others would depart through voluntary programs.",
-      "ceo_quote": "SAP is opening the next chapter: with our transformation program, we are intensifying the shift of investments to strategic growth areas, above all AI.",
-      "source": {
-        "title": "SAP News",
-        "url": "https://www.sap.com/news/2024-01-23-sap-restructuring-ai-focus.html",
-        "published_date": "2024-01-23",
-        "publisher": "SAP"
-      },
-      "secondary_sources": [
-        {
-          "title": "SAP to restructure 8,000 jobs in push toward AI",
-          "url": "https://www.reuters.com/technology/sap-restructure-8000-jobs-push-toward-ai-2024-01-23/",
-          "publisher": "Reuters"
-        }
-      ],
-      "evidence": [
-        {
-          "type": "COMPANY_STATEMENT",
-          "description": "Official press release explicitly stated AI transformation as reason for restructuring."
-        },
-        {
-          "type": "CEO_STATEMENT",
-          "description": "CEO directly cited AI as primary investment area driving restructuring."
-        }
-      ],
-      "tags": [
-        "enterprise-software",
-        "erp",
-        "restructuring",
-        "ai-transformation"
-      ],
-      "departments_affected": [
-        "Multiple",
-        "Administration",
-        "Operations"
-      ],
-      "ai_technology": "SAP Joule AI copilot, SAP Business AI",
-      "public_trade_status": "public"
-    },
-    {
       "id": "ups-2024-01",
       "company": "UPS",
       "slug": "ups",
@@ -795,44 +677,22 @@
       "public_trade_status": "public"
     }
   ],
-  "classifications": {
-    "DIRECT_AI_REPLACEMENT": {
-      "label": "Direct AI Replacement",
-      "description": "Company explicitly stated AI replaced human-performed work.",
-      "color": "#ff4444",
-      "count": 1
-    },
-    "AI_DRIVEN_RESTRUCTURING": {
-      "label": "AI-Driven Restructuring",
-      "description": "Company cited AI efficiency as a major factor in workforce reduction.",
-      "color": "#ff8844",
-      "count": 7
-    },
-    "AI_REALLOCATION": {
-      "label": "AI Reallocation",
-      "description": "Jobs cut while resources and investment shifted toward AI development.",
-      "color": "#ffaa44",
-      "count": 4
-    },
-    "MARKET_DISRUPTION": {
-      "label": "Market Disruption",
-      "description": "Company lost revenue or market share because customers switched to AI alternatives.",
-      "color": "#ffcc44",
-      "count": 2
-    }
-  },
-  "industries": [
-    "Technology",
-    "Financial Technology",
-    "Fintech",
-    "Education Technology",
-    "Enterprise Software",
-    "Logistics",
-    "Healthcare"
+  "total_jobs": 55117,
+  "companies": [
+    "Amazon",
+    "CVS Health",
+    "Chegg",
+    "Cisco",
+    "Dropbox",
+    "Duolingo",
+    "Google",
+    "IBM",
+    "LinkedIn",
+    "Meta",
+    "PayPal",
+    "Stack Overflow",
+    "UPS"
   ],
-  "countries": [
-    "United States",
-    "Sweden",
-    "Germany"
-  ]
+  "company_count": 13,
+  "entry_count": 13
 }
