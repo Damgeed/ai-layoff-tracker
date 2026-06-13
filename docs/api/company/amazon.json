@@ -54,5 +54,30 @@
   "ai_technology": "LLM-powered Alexa (internal generative AI project)",
   "public_trade_status": "public",
   "created_date": "2023-11-17",
-  "updated_date": "2026-06-13"
+  "updated_date": "2026-06-13",
+  "confidence_breakdown": [
+    {
+      "factor": "Base score",
+      "points": 30
+    },
+    {
+      "factor": "Official company statement",
+      "points": 15
+    },
+    {
+      "factor": "Archived source",
+      "points": 10
+    },
+    {
+      "factor": "Contextual corroboration",
+      "points": 25
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification"
+    }
+  ]
 }

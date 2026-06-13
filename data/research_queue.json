@@ -1,0 +1,13 @@
+{
+  "_schema": "Research queue — entries discovered but not yet verified",
+  "_fields": {
+    "id": "Unique identifier (e.g. company-slug-date)",
+    "company": "Company name",
+    "discovery_date": "ISO date when discovered",
+    "status": "DISCOVERED | IN_RESEARCH | VERIFIED | REJECTED",
+    "researcher": "Name or handle of researcher",
+    "notes": "Free-text research notes",
+    "source_urls": ["List of URLs discovered"]
+  },
+  "queue": []
+}

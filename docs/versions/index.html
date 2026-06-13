@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dataset Versions — AI Layoff Tracker</title>
+  <meta name="description" content="Version history of the AI Layoff Tracker dataset. Track every release, entry count changes, and schema updates.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/versions/">
+
+  <meta property="og:title" content="Dataset Versions — AI Layoff Tracker">
+  <meta property="og:description" content="Version history of the dataset. Track every release, entry count changes, and schema updates.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/versions/">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content" class="methodology">
+  <div class="container">
+
+    <h1>Dataset Versions</h1>
+    <p class="hero-subtitle" style="text-align:left; max-width:none;">Every released version of the AI Layoff Tracker dataset, with entry counts, changes, and release notes. Use version numbers in citations to anchor your reference to a specific snapshot.</p>
+
+    <!-- About Versioning -->
+    <h2>Versioning Policy</h2>
+    <p>The AI Layoff Tracker dataset follows <strong>semantic versioning</strong> (SemVer):</p>
+    <ul>
+      <li><strong>Major versions (v2.0, v3.0…):</strong> Schema changes, reclassification sweeps, or substantial restructuring. Breaking changes to downstream consumers.</li>
+      <li><strong>Minor versions (v1.1, v1.2…):</strong> New entries added to the dataset. No breaking schema changes.</li>
+      <li><strong>Patch versions (v1.0.1, v1.0.2…):</strong> Corrections to existing entries. Data fixes only.</li>
+    </ul>
+    <p>Each release is accompanied by a changelog entry. For individual entry-level changes between releases, see the <a href="history/">Entry History</a> page. For corrections applied to specific entries, see the <a href="corrections.html">Corrections</a> page.</p>
+
+    <!-- Version Timeline -->
+    <h2>Release History</h2>
+
+    <!-- Only v1.0 exists — show prominently -->
+    <div style="background: var(--card-bg); border: 2px solid var(--accent); border-radius: var(--radius-lg, 8px); padding: 2rem; margin-top: 1.5rem;">
+      <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+        <span style="background: var(--accent); color: #fff; font-weight: 800; font-size: 1rem; padding: 0.2rem 0.8rem; border-radius: 4px;">v1.0</span>
+        <span style="font-family: var(--mono); font-size: 0.9rem; color: var(--text-muted);">June 13, 2026</span>
+        <span style="background: rgba(0,230,122,0.15); color: #00e67a; font-size: 0.75rem; font-weight: 600; padding: 0.15rem 0.6rem; border-radius: 3px;">Current</span>
+      </div>
+      <h3 style="margin-top: 0.5rem;">Initial Release</h3>
+      <p>The first public release of the AI Layoff Tracker dataset. This version establishes the schema, classification system, and verification standards that underpin all future releases.</p>
+      <table class="methodology-table" aria-label="v1.0 release details" style="margin-top: 1rem;">
+        <thead>
+          <tr><th>Metric</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Entries</td><td>27</td></tr>
+          <tr><td>Total documented jobs</td><td>80,794</td></tr>
+          <tr><td>Companies</td><td>27</td></tr>
+          <tr><td>Countries</td><td>5</td></tr>
+          <tr><td>Industries</td><td>8</td></tr>
+          <tr><td>Date range</td><td>January 2023 – December 2024</td></tr>
+          <tr><td>Schema version</td><td>3.0.0 (entries.json)</td></tr>
+          <tr><td>License</td><td>CC0 1.0 Universal</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 1rem;"><a href="api/entries.json">Download v1.0 dataset (JSON)</a> · <a href="api/entries.csv">Download CSV</a></p>
+    </div>
+
+    <!-- Future Versions Placeholder -->
+    <h2>Future Versions</h2>
+    <p>This dataset is actively maintained. Future versions will appear here as they are released. The table structure for future releases will include:</p>
+
+    <table class="methodology-table" aria-label="Version table structure">
+      <thead>
+        <tr><th>Column</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Version</strong></td><td>SemVer version number (e.g., v1.1, v2.0)</td></tr>
+        <tr><td><strong>Release Date</strong></td><td>Date the version was published</td></tr>
+        <tr><td><strong>Entries Added</strong></td><td>Number of new entries in this version</td></tr>
+        <tr><td><strong>Entries Removed</strong></td><td>Number of entries removed (e.g., after corrections)</td></tr>
+        <tr><td><strong>Notes</strong></td><td>Summary of changes, schema updates, or notable corrections</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); color: var(--text-muted); font-size: 0.8125rem;">
+      Dataset versions last reviewed: June 13, 2026. Changelog: <a href="changelog.html">changelog</a>. Entry audit trail: <a href="history/">history</a>.
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/versions/" aria-current="page">Versions</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citation Guide — AI Layoff Tracker</title>
+  <meta name="description" content="How to cite the AI Layoff Tracker in APA, MLA, and Chicago formats. Includes instructions for citing individual entries and dataset versioning.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/citation-guide/">
+
+  <meta property="og:title" content="Citation Guide — AI Layoff Tracker">
+  <meta property="og:description" content="Citation formats for the AI Layoff Tracker: APA, MLA, Chicago, and how to cite individual entries.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/citation-guide/">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content" class="methodology">
+  <div class="container">
+
+    <h1>Citation Guide</h1>
+    <p class="hero-subtitle" style="text-align:left; max-width:none;">How to cite the AI Layoff Tracker in academic papers, news articles, and research publications. The dataset is CC0 — attribution is appreciated but not legally required.</p>
+
+    <!-- General Guidance -->
+    <h2>General Guidance</h2>
+    <p>The AI Layoff Tracker dataset is dedicated to the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</a>. You may use, modify, and redistribute the data for any purpose. While attribution is not legally required, we strongly recommend citing the dataset in your work. Citing the dataset:</p>
+    <ul>
+      <li>Allows readers to verify your claims against the source data.</li>
+      <li>Credits the researchers who verified each entry.</li>
+      <li>Enables reproducibility — readers can retrieve the exact version you used.</li>
+    </ul>
+    <p><strong>Always include the version number and retrieval date</strong> when citing the dataset. The dataset is updated on a rolling basis and version numbers anchor your citation to a specific snapshot.</p>
+
+    <!-- APA Format -->
+    <h2>APA Format (7th Edition)</h2>
+    <p>Use the following format to cite the full dataset in APA style:</p>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; margin: 1rem 0;">
+      <p style="margin: 0; font-size: 0.95rem; line-height: 1.7;">
+        AI Layoff Tracker. (2026). <em>AI Layoff Tracker database</em> (Version 1.0) [Data set]. Retrieved June 13, 2026, from <code>https://damgeed.github.io/ai-layoff-tracker/api/entries.json</code>
+      </p>
+    </div>
+
+    <p>In-text citation: <strong>(AI Layoff Tracker, 2026)</strong></p>
+
+    <!-- MLA Format -->
+    <h2>MLA Format (9th Edition)</h2>
+    <p>Use the following format to cite the full dataset in MLA style:</p>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; margin: 1rem 0;">
+      <p style="margin: 0; font-size: 0.95rem; line-height: 1.7;">
+        "AI Layoff Tracker Database." <em>AI Layoff Tracker</em>, version 1.0, 13 June 2026, damgeed.github.io/ai-layoff-tracker/api/entries.json. Accessed 13 June 2026.
+      </p>
+    </div>
+
+    <p>In-text citation: <strong>("AI Layoff Tracker Database")</strong></p>
+
+    <!-- Chicago Format -->
+    <h2>Chicago Manual of Style (17th Edition, Notes &amp; Bibliography)</h2>
+
+    <p><strong>Note (first citation):</strong></p>
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; margin: 1rem 0;">
+      <p style="margin: 0; font-size: 0.95rem; line-height: 1.7;">
+        1. "AI Layoff Tracker Database," AI Layoff Tracker, version 1.0 (2026), accessed June 13, 2026, <code>https://damgeed.github.io/ai-layoff-tracker/api/entries.json</code>.
+      </p>
+    </div>
+
+    <p><strong>Bibliography:</strong></p>
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; margin: 1rem 0;">
+      <p style="margin: 0; font-size: 0.95rem; line-height: 1.7;">
+        AI Layoff Tracker. "AI Layoff Tracker Database." Version 1.0. Accessed June 13, 2026. <code>https://damgeed.github.io/ai-layoff-tracker/api/entries.json</code>.
+      </p>
+    </div>
+
+    <!-- Citing Individual Entries -->
+    <h2>How to Cite Individual Entries</h2>
+    <p>To cite a specific entry rather than the full dataset, reference the entry's dedicated page. Each entry has a stable URL that will not change. For example, to cite the Klarna entry:</p>
+
+    <p><strong>APA — Individual Entry:</strong></p>
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; margin: 1rem 0;">
+      <p style="margin: 0; font-size: 0.95rem; line-height: 1.7;">
+        AI Layoff Tracker. (2026). Klarna (Entry ID: klarna-2024-08). In <em>AI Layoff Tracker database</em> (Version 1.0). Retrieved June 13, 2026, from <code>https://damgeed.github.io/ai-layoff-tracker/entry/klarna-2024-08/</code>
+      </p>
+    </div>
+
+    <p><strong>MLA — Individual Entry:</strong></p>
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; margin: 1rem 0;">
+      <p style="margin: 0; font-size: 0.95rem; line-height: 1.7;">
+        "Klarna (Entry ID: klarna-2024-08)." <em>AI Layoff Tracker</em>, version 1.0, 2026, damgeed.github.io/ai-layoff-tracker/entry/klarna-2024-08/. Accessed 13 June 2026.
+      </p>
+    </div>
+
+    <p>Replace <code>klarna-2024-08</code> with the entry ID of the specific entry you are citing. Every entry page includes the full citation-ready metadata.</p>
+
+    <!-- Dataset Versioning -->
+    <h2>Dataset Versioning</h2>
+    <p>The AI Layoff Tracker uses semantic versioning for the dataset. The current version is <strong>v1.0</strong> (initial release, 27 entries, 80,794 documented jobs, June 13, 2026). When citing the dataset, always note the version number and your retrieval date. This ensures your citation points to the exact snapshot you analyzed, even if entries are added or modified later.</p>
+    <p>Future versions will follow this scheme:</p>
+    <ul>
+      <li><strong>Patch versions (v1.0.1, v1.0.2…):</strong> Corrections to existing entries.</li>
+      <li><strong>Minor versions (v1.1, v1.2…):</strong> New entries added, no breaking schema changes.</li>
+      <li><strong>Major versions (v2.0, v3.0…):</strong> Schema changes, reclassifications, or substantial restructuring.</li>
+    </ul>
+    <p>All dataset releases are documented on the <a href="versions/">Dataset Versions</a> page. All entry-level changes are logged in the <a href="changelog.html">Changelog</a> and the <a href="history/">Entry History</a> audit trail.</p>
+
+    <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); color: var(--text-muted); font-size: 0.8125rem;">
+      Last updated: June 13, 2026. Questions? <a href="https://github.com/Damgeed/ai-layoff-tracker">Contact via GitHub</a>.
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/citation-guide/" aria-current="page">Citation Guide</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+</body>
+</html>

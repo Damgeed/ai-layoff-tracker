@@ -48,5 +48,34 @@
   "ai_technology": "Dropbox Dash, Dropbox AI (internal AI products)",
   "public_trade_status": "public",
   "created_date": "2023-04-27",
-  "updated_date": "2026-06-13"
+  "updated_date": "2026-06-13",
+  "confidence_breakdown": [
+    {
+      "factor": "Base score",
+      "points": 30
+    },
+    {
+      "factor": "CEO statement",
+      "points": 25
+    },
+    {
+      "factor": "Archived source",
+      "points": 10
+    },
+    {
+      "factor": "Primary source",
+      "points": 5
+    },
+    {
+      "factor": "Contextual corroboration",
+      "points": 10
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification"
+    }
+  ]
 }

@@ -40,7 +40,36 @@
         "content-generation"
       ],
       "created_date": "2023-04-20",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 15
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "cnet-2024-01",
@@ -79,7 +108,28 @@
         "content-generation"
       ],
       "created_date": "2024-01-18",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 40
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     }
   ],
   "total_jobs": 200,

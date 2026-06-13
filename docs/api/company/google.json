@@ -60,5 +60,38 @@
   "ai_technology": "Google Bard/Gemini, DeepMind integration",
   "public_trade_status": "public",
   "created_date": "2023-01-20",
-  "updated_date": "2026-06-13"
+  "updated_date": "2026-06-13",
+  "confidence_breakdown": [
+    {
+      "factor": "Base score",
+      "points": 15
+    },
+    {
+      "factor": "CEO statement",
+      "points": 25
+    },
+    {
+      "factor": "Official company statement",
+      "points": 15
+    },
+    {
+      "factor": "Archived source",
+      "points": 10
+    },
+    {
+      "factor": "Multiple sources",
+      "points": 5
+    },
+    {
+      "factor": "Primary source",
+      "points": 5
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification"
+    }
+  ]
 }

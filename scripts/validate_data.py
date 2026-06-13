@@ -343,6 +343,38 @@ def check_source_quality(entries):
 
 
 # ═══════════════════════════════════════════════════════════════════════════
+#  CHECK 8: confidence breakdowns
+# ═══════════════════════════════════════════════════════════════════════════
+def check_confidence_breakdowns(entries):
+    broken = []
+    for e in entries:
+        breakdown = e.get("confidence_breakdown", [])
+        if not breakdown:
+            broken.append({"entry": e["company"], "error": "No confidence breakdown"})
+            continue
+        total = sum(b.get("points", 0) for b in breakdown)
+        expected = e.get("confidence_score", 0)
+        if abs(total - expected) > 5:
+            broken.append({
+                "entry": e["company"],
+                "error": f"Breakdown sum ({total}) ≠ confidence_score ({expected})"
+            })
+    return broken
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+#  CHECK 9: entry history
+# ═══════════════════════════════════════════════════════════════════════════
+def check_entry_history(entries):
+    broken = []
+    for e in entries:
+        history = e.get("history", [])
+        if not history:
+            broken.append({"entry": e["company"], "error": "No history entries"})
+    return broken
+
+
+# ═══════════════════════════════════════════════════════════════════════════
 #  REPORT & MAIN
 # ═══════════════════════════════════════════════════════════════════════════
 
@@ -407,6 +439,8 @@ def main():
         ("5. Confidence Scores (0–100)",   ("PASS", lambda: check_confidence_scores(entries))),
         ("6. Valid Classifications",       ("PASS", lambda: check_classifications(entries))),
         ("7. Valid source_quality",        ("PASS", lambda: check_source_quality(entries))),
+        ("8. Confidence Breakdowns",       ("PASS", lambda: check_confidence_breakdowns(entries))),
+        ("9. Entry History",               ("PASS", lambda: check_entry_history(entries))),
     ])
 
     total_broken = 0
@@ -428,6 +462,28 @@ def main():
 
     # ── Summary ─────────────────────────────────────────────────────────
     print_header("SUMMARY")
+
+    # ── Weekly Report ──────────────────────────────────────────────────
+    report_path = Path(__file__).parent.parent / "docs" / "api" / "weekly-validation-report.json"
+    report = {
+        "generated": datetime.utcnow().isoformat() + "Z",
+        "dataset": {
+            "total_entries": len(entries),
+            "total_jobs": sum(e.get("jobs_lost", 0) for e in entries),
+            "companies": len(set(e["company"] for e in entries)),
+            "countries": len(set(e.get("country", "") for e in entries)),
+            "industries": len(set(e.get("industry", "") for e in entries)),
+        },
+        "checks": {name: {"status": "PASS" if name not in all_failed_checks else "FAIL", "issues": sum(1 for b in broken if b) if name in all_failed_checks else 0} for name, (_, broken) in zip(checks.keys(), [(None, [])] * len(checks))},
+        "overall": {"passed": len(checks) - len(all_failed_checks), "total": len(checks), "all_pass": len(all_failed_checks) == 0},
+    }
+    # Fix check result data
+    for check_name, (_, check_fn) in checks.items():
+        result = check_fn()
+        report["checks"][check_name] = {"status": "PASS" if not result else "FAIL", "issues": len(result) if result else 0}
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    json.dump(report, open(report_path, "w"), indent=2)
+    print(f"\n  📄 Weekly report: {report_path}")
 
     if not all_failed_checks:
         print("  🎉 ALL CHECKS PASSED")

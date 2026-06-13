@@ -1,0 +1,730 @@
+{
+  "meta": {
+    "version": "3.0.0",
+    "last_updated": "2026-06-13T11:59:43Z",
+    "total_entries": 27,
+    "scoring_methodology": {
+      "base": 30,
+      "bonuses": {
+        "CEO_STATEMENT": 25,
+        "EARNINGS_CALL_or_SEC_FILING": 20,
+        "OFFICIAL_STATEMENT_or_COMPANY_PRESS_RELEASE": 15,
+        "archived_source": 10,
+        "multiple_sources": 5,
+        "primary_source": 5
+      }
+    }
+  },
+  "summary": {
+    "mean_confidence": 79.6,
+    "min_confidence": 65,
+    "max_confidence": 95,
+    "confidence_range": "65–95"
+  },
+  "entries": [
+    {
+      "id": "google-2023-01",
+      "company": "Google",
+      "confidence_score": 75,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 15
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "breakdown_total": 75
+    },
+    {
+      "id": "meta-2023-03",
+      "company": "Meta",
+      "confidence_score": 75,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 15
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "breakdown_total": 75
+    },
+    {
+      "id": "buzzfeed-2023-04",
+      "company": "BuzzFeed",
+      "confidence_score": 85,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 15
+        }
+      ],
+      "breakdown_total": 85
+    },
+    {
+      "id": "dropbox-2023-04",
+      "company": "Dropbox",
+      "confidence_score": 80,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 10
+        }
+      ],
+      "breakdown_total": 80
+    },
+    {
+      "id": "dukaan-2023-07",
+      "company": "Dukaan",
+      "confidence_score": 95,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 25
+        }
+      ],
+      "breakdown_total": 95
+    },
+    {
+      "id": "stackoverflow-2023-10",
+      "company": "Stack Overflow",
+      "confidence_score": 85,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 25
+        }
+      ],
+      "breakdown_total": 85
+    },
+    {
+      "id": "linkedin-2023-10",
+      "company": "LinkedIn",
+      "confidence_score": 75,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 20
+        }
+      ],
+      "breakdown_total": 75
+    },
+    {
+      "id": "amazon-alexa-2023-11",
+      "company": "Amazon",
+      "confidence_score": 80,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 25
+        }
+      ],
+      "breakdown_total": 80
+    },
+    {
+      "id": "duolingo-2024-01",
+      "company": "Duolingo",
+      "confidence_score": 75,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 20
+        }
+      ],
+      "breakdown_total": 75
+    },
+    {
+      "id": "unity-2024-01",
+      "company": "Unity",
+      "confidence_score": 75,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 20
+        }
+      ],
+      "breakdown_total": 75
+    },
+    {
+      "id": "cnet-2024-01",
+      "company": "CNET",
+      "confidence_score": 80,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 40
+        }
+      ],
+      "breakdown_total": 80
+    },
+    {
+      "id": "sap-2024-01",
+      "company": "SAP",
+      "confidence_score": 80,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 20
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "breakdown_total": 80
+    },
+    {
+      "id": "microsoft-gaming-2024-01",
+      "company": "Microsoft",
+      "confidence_score": 75,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 35
+        }
+      ],
+      "breakdown_total": 75
+    },
+    {
+      "id": "paypal-2024-01",
+      "company": "PayPal",
+      "confidence_score": 70,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "breakdown_total": 70
+    },
+    {
+      "id": "ups-2024-01",
+      "company": "UPS",
+      "confidence_score": 70,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "breakdown_total": 70
+    },
+    {
+      "id": "teleperformance-2024-01",
+      "company": "Teleperformance",
+      "confidence_score": 85,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 30
+        }
+      ],
+      "breakdown_total": 85
+    },
+    {
+      "id": "cisco-2024-02",
+      "company": "Cisco",
+      "confidence_score": 75,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 20
+        }
+      ],
+      "breakdown_total": 75
+    },
+    {
+      "id": "autodesk-2024-02",
+      "company": "Autodesk",
+      "confidence_score": 75,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 20
+        }
+      ],
+      "breakdown_total": 75
+    },
+    {
+      "id": "twilio-2024-03",
+      "company": "Twilio",
+      "confidence_score": 75,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 35
+        }
+      ],
+      "breakdown_total": 75
+    },
+    {
+      "id": "cvs-health-2024-03",
+      "company": "CVS Health",
+      "confidence_score": 65,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 10
+        }
+      ],
+      "breakdown_total": 65
+    },
+    {
+      "id": "indeed-2024-05",
+      "company": "Indeed",
+      "confidence_score": 85,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 15
+        }
+      ],
+      "breakdown_total": 85
+    },
+    {
+      "id": "ibm-2024-05",
+      "company": "IBM",
+      "confidence_score": 85,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "breakdown_total": 90
+    },
+    {
+      "id": "chegg-2024-06",
+      "company": "Chegg",
+      "confidence_score": 90,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Earnings/financial disclosure",
+          "points": 20
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "breakdown_total": 95
+    },
+    {
+      "id": "intuit-2024-07",
+      "company": "Intuit",
+      "confidence_score": 90,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 35
+        }
+      ],
+      "breakdown_total": 90
+    },
+    {
+      "id": "salesforce-2024-08",
+      "company": "Salesforce",
+      "confidence_score": 80,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 25
+        }
+      ],
+      "breakdown_total": 80
+    },
+    {
+      "id": "klarna-2024-08",
+      "company": "Klarna",
+      "confidence_score": 95,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Earnings/financial disclosure",
+          "points": 20
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "breakdown_total": 95
+    },
+    {
+      "id": "spotify-2024-12",
+      "company": "Spotify",
+      "confidence_score": 75,
+      "breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "breakdown_total": 70
+    }
+  ]
+}

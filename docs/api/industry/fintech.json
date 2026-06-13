@@ -52,7 +52,32 @@
       "ai_technology": "AI-powered fraud detection and payment automation",
       "public_trade_status": "public",
       "created_date": "2024-01-30",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "klarna-2024-08",
@@ -114,7 +139,40 @@
       "ai_technology": "OpenAI-powered customer service AI assistant",
       "public_trade_status": "private",
       "created_date": "2024-08-27",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Earnings/financial disclosure",
+          "points": 20
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     }
   ],
   "total_jobs": 4000,

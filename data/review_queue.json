@@ -1,0 +1,13 @@
+{
+  "_schema": "Review queue — submissions awaiting approval or rejection",
+  "_fields": {
+    "submission_id": "Unique submission identifier",
+    "company": "Company name",
+    "submitted_date": "ISO date of submission",
+    "status": "PENDING | APPROVED | REJECTED",
+    "reviewer": "Name or handle of reviewer",
+    "review_date": "ISO date of review",
+    "rejection_reason": "Reason if rejected"
+  },
+  "queue": []
+}

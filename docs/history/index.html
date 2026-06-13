@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entry History — AI Layoff Tracker</title>
+  <meta name="description" content="Complete audit trail of all AI Layoff Tracker dataset changes. View creation dates, last updates, and change counts for every entry.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/history/">
+
+  <meta property="og:title" content="Entry History — AI Layoff Tracker">
+  <meta property="og:description" content="Complete audit trail of all dataset changes. Every entry, creation date, last update, and change count.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/history/">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+
+  <style>
+    .history-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .history-stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg, 8px);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .history-stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: var(--mono);
+      color: var(--accent);
+    }
+    .history-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+    .history-table th,
+    .history-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .history-table th {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      background: var(--surface);
+    }
+    .history-table td {
+      font-size: 0.9rem;
+    }
+    .history-table tbody tr:hover {
+      background: rgba(255,255,255,0.02);
+    }
+    .history-company-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .history-company-link:hover {
+      text-decoration: underline;
+    }
+    .history-changes {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .no-history {
+      text-align: center;
+      color: var(--text-muted);
+      padding: 3rem 1rem;
+    }
+    .no-history-error {
+      text-align: center;
+      color: var(--accent);
+      padding: 3rem 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content" class="methodology">
+  <div class="container">
+
+    <h1>Entry History</h1>
+    <p class="hero-subtitle" style="text-align:left; max-width:none;">Complete audit trail of all dataset changes. Every entry's creation date, last update, and change count — transparent and verifiable.</p>
+
+    <!-- About Audit Trail -->
+    <h2>About This Page</h2>
+    <p>This page provides a complete audit trail for every entry in the AI Layoff Tracker dataset. Each row shows the company, the date the entry was first created, the date it was last modified, and the number of recorded changes. Click any company name to view its full entry page with source links and classification details.</p>
+    <p>The audit trail is loaded live from the <a href="api/entries.json">entries.json</a> API. If an entry's data changes, the <code>updated_date</code> field reflects the change date. For detailed changelogs, see the <a href="changelog.html">Changelog</a> page.</p>
+
+    <!-- Summary Stats (loaded by JS) -->
+    <h2>Summary</h2>
+    <div class="history-stats" id="history-stats">
+      <div class="history-stat-card">
+        <div class="history-stat-value" id="stat-entries">—</div>
+        <div class="history-stat-label">Total Entries</div>
+      </div>
+      <div class="history-stat-card">
+        <div class="history-stat-value" id="stat-updated">—</div>
+        <div class="history-stat-label">Last Updated</div>
+      </div>
+    </div>
+
+    <!-- Entry History Table -->
+    <h2>All Entries</h2>
+    <div style="overflow-x: auto;">
+      <table class="history-table" aria-label="Entry audit trail">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Entry ID</th>
+            <th>Created</th>
+            <th>Last Updated</th>
+            <th>Changes</th>
+          </tr>
+        </thead>
+        <tbody id="history-tbody">
+          <tr>
+            <td colspan="5" class="no-history">Loading entry history…</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); color: var(--text-muted); font-size: 0.8125rem;">
+      Audit trail last updated: <span id="footer-updated">—</span>. Full changelog: <a href="changelog.html">changelog</a>.
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/history/" aria-current="page">History</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+
+<!-- Inline history page logic -->
+<script>
+(function(){
+  'use strict';
+
+  function formatDate(dateStr) {
+    if (!dateStr) return '—';
+    var d = new Date(dateStr + 'T00:00:00');
+    if (isNaN(d.getTime())) return dateStr;
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+  function escapeHTML(str) {
+    if (!str) return '';
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  function buildRow(entry) {
+    var company = escapeHTML(entry.company);
+    var id = escapeHTML(entry.id);
+    var created = formatDate(entry.created_date);
+    var updated = formatDate(entry.updated_date);
+
+    // Count changes: if created_date !== updated_date and both exist, count as 1+ changes.
+    // For v1.0 initial release, most entries have matching dates. Show change count.
+    var changes = 0;
+    if (entry.created_date && entry.updated_date && entry.created_date !== entry.updated_date) {
+      changes = 1; // At minimum one change. In future, this could come from a changes array.
+    }
+
+    var changesDisplay = changes > 0
+      ? '<span class="history-changes" style="color: var(--amber, #f39c12);">' + changes + '</span>'
+      : '<span class="history-changes" style="color: var(--text-muted);">0</span>';
+
+    return '<tr>' +
+      '<td><a href="entry/' + id + '/" class="history-company-link">' + company + '</a></td>' +
+      '<td style="font-family: var(--mono); font-size: 0.8rem; color: var(--text-muted);">' + id + '</td>' +
+      '<td>' + created + '</td>' +
+      '<td>' + updated + '</td>' +
+      '<td>' + changesDisplay + '</td>' +
+      '</tr>';
+  }
+
+  function updateStats(meta) {
+    var elEntries = document.getElementById('stat-entries');
+    var elUpdated = document.getElementById('stat-updated');
+    if (elEntries && meta && meta.total_entries != null) {
+      elEntries.textContent = meta.total_entries;
+    }
+    if (elUpdated && meta && meta.last_updated) {
+      var d = meta.last_updated.split('T')[0];
+      elUpdated.textContent = formatDate(d);
+      var footerEl = document.getElementById('footer-updated');
+      if (footerEl) footerEl.textContent = formatDate(d);
+    }
+  }
+
+  function renderHistory(entries) {
+    var tbody = document.getElementById('history-tbody');
+    if (!tbody) return;
+
+    if (entries.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="no-history">No entries found.</td></tr>';
+      return;
+    }
+
+    // Sort by date newest first
+    entries.sort(function(a, b) {
+      return (b.date || '').localeCompare(a.date || '');
+    });
+
+    tbody.innerHTML = entries.map(buildRow).join('');
+  }
+
+  // Fetch and render
+  fetch('api/entries.json')
+    .then(function(res) {
+      if (!res.ok) throw new Error('Failed to load entries: ' + res.status);
+      return res.json();
+    })
+    .then(function(data) {
+      var entries = data.entries || [];
+      updateStats(data.meta);
+      renderHistory(entries);
+    })
+    .catch(function(err) {
+      console.error('Entry History: ' + err.message);
+      var tbody = document.getElementById('history-tbody');
+      if (tbody) {
+        tbody.innerHTML = '<tr><td colspan="5" class="no-history-error">⚠ Failed to load entry history. Please try again later.</td></tr>';
+      }
+    });
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disputed Entries — AI Layoff Tracker</title>
+  <meta name="description" content="Entries under review or with challenged claims in the AI Layoff Tracker database. Track disputes and resolution status.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/disputed/">
+
+  <meta property="og:title" content="Disputed Entries — AI Layoff Tracker">
+  <meta property="og:description" content="Entries under review or with challenged claims. Track disputes and resolution status.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/disputed/">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content" class="methodology">
+  <div class="container">
+
+    <h1>Disputed Entries</h1>
+    <p class="hero-subtitle" style="text-align:left; max-width:none;">Entries under review or with challenged claims. The AI Layoff Tracker maintains a transparent dispute log so researchers and journalists can assess the reliability of every data point.</p>
+
+    <!-- About Disputes -->
+    <h2>About This Page</h2>
+    <p>This page lists entries in the AI Layoff Tracker database that have received formal dispute submissions. A dispute may be filed when an external party — such as a company representative, a researcher, or a journalist — challenges the accuracy or classification of an entry. Disputes are reviewed against the same evidentiary standards as our <a href="corrections.html">corrections process</a>.</p>
+    <p>Each dispute is logged with the company name, classification, the specific reason for the challenge, the current review status, and the date the dispute was filed. Resolved disputes include a link to the outcome.</p>
+
+    <!-- Dispute Process -->
+    <h2>Dispute Process</h2>
+    <ol>
+      <li><strong>Submission.</strong> A dispute is submitted via email to <a href="mailto:corrections@ailayofftracker.com">corrections@ailayofftracker.com</a> with supporting evidence.</li>
+      <li><strong>Acknowledgment.</strong> The submitter receives confirmation within 72 hours, along with a tracking identifier.</li>
+      <li><strong>Review.</strong> Our team evaluates the dispute against the original source material and any newly provided evidence. Classification is reassessed if the dispute concerns tier assignment.</li>
+      <li><strong>Resolution.</strong> The dispute is either accepted (entry updated), rejected (entry unchanged, with explanation), or held pending additional evidence. All resolutions are published in the <a href="changelog.html">changelog</a>.</li>
+    </ol>
+
+    <!-- Disputed Entries Table -->
+    <h2>Current Disputes</h2>
+    <p>No entries are currently disputed. All 27 entries in the dataset are verified and sourced.</p>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 2rem; text-align: center; margin-top: 1rem;">
+      <p style="font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem;">✅ No Active Disputes</p>
+      <p style="color: var(--text-muted); margin: 0;">Every entry in the current v1.0 dataset has been verified against its primary sources. When disputes are filed, they will appear here with full transparency — including the challenge, evidence, and resolution.</p>
+    </div>
+
+    <!-- Future Dispute Table Structure -->
+    <h2>Table Structure</h2>
+    <p>When disputes are logged, each row in the disputes table will include the following columns. This structure is stable and can be relied upon for automated monitoring:</p>
+
+    <table class="methodology-table" aria-label="Dispute table column structure">
+      <thead>
+        <tr><th>Column</th><th>Description</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Company</strong></td>
+          <td>Name of the company whose entry is disputed</td>
+          <td>Example Corp</td>
+        </tr>
+        <tr>
+          <td><strong>Classification</strong></td>
+          <td>Current classification tier of the disputed entry</td>
+          <td>AI-Driven Restructuring</td>
+        </tr>
+        <tr>
+          <td><strong>Dispute Reason</strong></td>
+          <td>Summary of the challenge — what is claimed to be incorrect</td>
+          <td>Job-loss figure disputed; source reporting 500 jobs, entry shows 1,000</td>
+        </tr>
+        <tr>
+          <td><strong>Status</strong></td>
+          <td>Current review status</td>
+          <td>Under Review / Resolved / Rejected</td>
+        </tr>
+        <tr>
+          <td><strong>Date</strong></td>
+          <td>Date the dispute was formally filed</td>
+          <td>2026-07-15</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); color: var(--text-muted); font-size: 0.8125rem;">
+      Last reviewed: June 13, 2026. To file a dispute, email <a href="mailto:corrections@ailayofftracker.com">corrections@ailayofftracker.com</a>.
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/disputed/" aria-current="page">Disputed</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+</body>
+</html>

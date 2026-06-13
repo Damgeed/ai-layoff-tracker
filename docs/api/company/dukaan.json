@@ -36,5 +36,34 @@
     "small-business"
   ],
   "created_date": "2023-07-10",
-  "updated_date": "2026-06-13"
+  "updated_date": "2026-06-13",
+  "confidence_breakdown": [
+    {
+      "factor": "Base score",
+      "points": 30
+    },
+    {
+      "factor": "CEO statement",
+      "points": 25
+    },
+    {
+      "factor": "Archived source",
+      "points": 10
+    },
+    {
+      "factor": "Primary source",
+      "points": 5
+    },
+    {
+      "factor": "Contextual corroboration",
+      "points": 25
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification"
+    }
+  ]
 }

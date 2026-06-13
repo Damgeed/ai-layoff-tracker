@@ -64,7 +64,40 @@
       "ai_technology": "Google Bard/Gemini, DeepMind integration",
       "public_trade_status": "public",
       "created_date": "2023-01-20",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 15
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "meta-2023-03",
@@ -128,7 +161,40 @@
       "ai_technology": "LLaMA models, generative AI, custom AI chips (MTIA)",
       "public_trade_status": "public",
       "created_date": "2023-03-14",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 15
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "buzzfeed-2023-04",
@@ -168,7 +234,36 @@
         "content-generation"
       ],
       "created_date": "2023-04-20",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 15
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "dropbox-2023-04",
@@ -220,7 +315,36 @@
       "ai_technology": "Dropbox Dash, Dropbox AI (internal AI products)",
       "public_trade_status": "public",
       "created_date": "2023-04-27",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 10
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "stackoverflow-2023-10",
@@ -283,7 +407,36 @@
       "ai_technology": "Competitive displacement by ChatGPT and GitHub Copilot",
       "public_trade_status": "private",
       "created_date": "2023-10-16",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 25
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "linkedin-2023-10",
@@ -335,7 +488,32 @@
       "ai_technology": "LinkedIn AI-powered recruiting assistant, collaborative articles",
       "public_trade_status": "subsidiary",
       "created_date": "2023-10-16",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 20
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "amazon-alexa-2023-11",
@@ -393,7 +571,32 @@
       "ai_technology": "LLM-powered Alexa (internal generative AI project)",
       "public_trade_status": "public",
       "created_date": "2023-11-17",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 25
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "duolingo-2024-01",
@@ -444,7 +647,32 @@
       "ai_technology": "GPT-4 for content generation and translation",
       "public_trade_status": "public",
       "created_date": "2024-01-08",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 20
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "unity-2024-01",
@@ -483,7 +711,32 @@
         "developer-tools"
       ],
       "created_date": "2024-01-08",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 20
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "cnet-2024-01",
@@ -522,7 +775,28 @@
         "content-generation"
       ],
       "created_date": "2024-01-18",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 40
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "microsoft-gaming-2024-01",
@@ -561,7 +835,28 @@
         "ai-integration"
       ],
       "created_date": "2024-01-25",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 35
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "paypal-2024-01",
@@ -613,7 +908,32 @@
       "ai_technology": "AI-powered fraud detection and payment automation",
       "public_trade_status": "public",
       "created_date": "2024-01-30",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "ups-2024-01",
@@ -672,7 +992,32 @@
       "ai_technology": "AI route optimization, automated sorting systems",
       "public_trade_status": "public",
       "created_date": "2024-01-30",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "cisco-2024-02",
@@ -731,7 +1076,32 @@
       "ai_technology": "AI networking infrastructure, Splunk data platform",
       "public_trade_status": "public",
       "created_date": "2024-02-14",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 20
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "autodesk-2024-02",
@@ -770,7 +1140,32 @@
         "cloud"
       ],
       "created_date": "2024-02-27",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 20
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "twilio-2024-03",
@@ -809,7 +1204,28 @@
         "saas"
       ],
       "created_date": "2024-03-04",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 35
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "cvs-health-2024-03",
@@ -861,7 +1277,32 @@
       "ai_technology": "AI claims processing and prior authorization automation",
       "public_trade_status": "public",
       "created_date": "2024-03-15",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 10
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "indeed-2024-05",
@@ -901,7 +1342,36 @@
         "staffing"
       ],
       "created_date": "2024-05-13",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 15
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "ibm-2024-05",
@@ -964,7 +1434,40 @@
       "ai_technology": "Internal IBM watsonx AI platform",
       "public_trade_status": "public",
       "created_date": "2024-05-20",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "chegg-2024-06",
@@ -1027,7 +1530,40 @@
       "ai_technology": "Competitive displacement by ChatGPT",
       "public_trade_status": "public",
       "created_date": "2024-06-17",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Earnings/financial disclosure",
+          "points": 20
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Multiple sources",
+          "points": 5
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "intuit-2024-07",
@@ -1067,7 +1603,32 @@
         "restructuring"
       ],
       "created_date": "2024-07-10",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 35
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "salesforce-2024-08",
@@ -1107,7 +1668,32 @@
         "sales"
       ],
       "created_date": "2024-08-01",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "Official company statement",
+          "points": 15
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Contextual corroboration",
+          "points": 25
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     },
     {
       "id": "spotify-2024-12",
@@ -1146,7 +1732,32 @@
         "efficiency"
       ],
       "created_date": "2024-12-04",
-      "updated_date": "2026-06-13"
+      "updated_date": "2026-06-13",
+      "confidence_breakdown": [
+        {
+          "factor": "Base score",
+          "points": 30
+        },
+        {
+          "factor": "CEO statement",
+          "points": 25
+        },
+        {
+          "factor": "Archived source",
+          "points": 10
+        },
+        {
+          "factor": "Primary source",
+          "points": 5
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-06-13",
+          "event": "Entry created",
+          "details": "Added to dataset with initial verification"
+        }
+      ]
     }
   ],
   "total_jobs": 66767,

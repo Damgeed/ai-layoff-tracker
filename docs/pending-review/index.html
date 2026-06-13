@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pending Review — AI Layoff Tracker</title>
+  <meta name="description" content="Entries awaiting verification before inclusion in the AI Layoff Tracker database. Transparent review queue for submitted workforce reduction data.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/pending-review/">
+
+  <meta property="og:title" content="Pending Review — AI Layoff Tracker">
+  <meta property="og:description" content="Entries awaiting verification before inclusion in the database. Transparent review queue.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/pending-review/">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content" class="methodology">
+  <div class="container">
+
+    <h1>Pending Review</h1>
+    <p class="hero-subtitle" style="text-align:left; max-width:none;">Entries awaiting verification. Every submission undergoes a structured review before appearing in the dataset.</p>
+
+    <!-- About the Review Queue -->
+    <h2>How the Review Queue Works</h2>
+    <p>Before any workforce reduction event is added to the AI Layoff Tracker, it passes through a verification pipeline. Submissions are held here until they meet all <a href="methodology.html">inclusion criteria</a>: a public source, a documented workforce reduction, explicit AI attribution, and a verifiable date.</p>
+    <p>The review process follows the six-step verification protocol described in our <a href="methodology.html#verification-process">methodology</a>. Entries that fail review are rejected with an explanation. Those that pass are published to the dataset and removed from this queue.</p>
+
+    <!-- Current Queue -->
+    <h2>Current Review Queue</h2>
+    <p>No entries are currently pending review. All entries have been verified.</p>
+
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 2rem; text-align: center; margin-top: 1rem;">
+      <p style="font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem;">✅ Review Queue Empty</p>
+      <p style="color: var(--text-muted); margin: 0;">All 27 entries in the current dataset have passed verification. New submissions and crowd-sourced tips are processed on a rolling basis. When entries enter the queue, they will be listed here with full transparency.</p>
+    </div>
+
+    <!-- Submission Info -->
+    <h2>Submit an Entry</h2>
+    <p>If you have evidence of a workforce reduction linked to AI that is not yet in the database, you can submit it for review. Submissions must include:</p>
+    <ul>
+      <li><strong>Company name</strong> — the organization that made the reduction.</li>
+      <li><strong>Date</strong> — when the reduction was announced or implemented (at minimum, month and year).</li>
+      <li><strong>Jobs affected</strong> — the number of positions eliminated, if known.</li>
+      <li><strong>Source URL</strong> — a publicly accessible link to the primary source (news article, company press release, SEC filing, etc.).</li>
+      <li><strong>AI connection</strong> — a brief explanation of how AI was cited as a factor.</li>
+    </ul>
+    <p>Send submissions to <a href="mailto:submit@ailayofftracker.com"><strong>submit@ailayofftracker.com</strong></a>. All submissions are reviewed by a human; no automated ingestion is used.</p>
+
+    <!-- Queue Table Structure -->
+    <h2>Queue Table Structure</h2>
+    <p>When entries are pending review, each row in the queue will include the following columns:</p>
+
+    <table class="methodology-table" aria-label="Review queue column structure">
+      <thead>
+        <tr><th>Column</th><th>Description</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Submission ID</strong></td>
+          <td>Unique identifier assigned upon submission</td>
+          <td>SUB-2026-0042</td>
+        </tr>
+        <tr>
+          <td><strong>Company</strong></td>
+          <td>Name of the company associated with the submission</td>
+          <td>Example Inc.</td>
+        </tr>
+        <tr>
+          <td><strong>Date Submitted</strong></td>
+          <td>Date the submission was received</td>
+          <td>2026-07-15</td>
+        </tr>
+        <tr>
+          <td><strong>Status</strong></td>
+          <td>Current stage in the review pipeline</td>
+          <td>Awaiting Source Verification / Under Review / Rejected</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); color: var(--text-muted); font-size: 0.8125rem;">
+      Last reviewed: June 13, 2026. Questions about the review process? <a href="mailto:submit@ailayofftracker.com">submit@ailayofftracker.com</a>
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/pending-review/" aria-current="page">Pending Review</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+</body>
+</html>

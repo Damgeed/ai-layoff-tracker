@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press Kit — AI Layoff Tracker</title>
+  <meta name="description" content="Press kit and media resources for the AI Layoff Tracker. Key statistics, methodology overview, citation instructions, FAQ, and download links.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/press/">
+
+  <meta property="og:title" content="Press Kit — AI Layoff Tracker">
+  <meta property="og:description" content="Press kit and media resources. Key statistics: 80,794 jobs documented across 27 companies, 5 countries, and 8 industries.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/press/">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/entries.json">API</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main-content" class="methodology">
+  <div class="container">
+
+    <h1>Press Kit</h1>
+    <p class="hero-subtitle" style="text-align:left; max-width:none;">Everything journalists, researchers, and analysts need to cite and understand the AI Layoff Tracker.</p>
+
+    <!-- Project Overview -->
+    <h2>Project Overview</h2>
+    <p>The AI Layoff Tracker is a public research database documenting workforce reductions where artificial intelligence or automation was explicitly cited as a contributing factor. Each entry is classified into one of four tiers based on the directness of the AI attribution, assigned a confidence score, and backed by publicly accessible primary sources. The project does not editorialize or advocate — it records, classifies, and cites. The dataset is freely available in JSON, CSV, and RSS formats under a <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 public domain dedication</a>.</p>
+
+    <!-- Key Statistics -->
+    <h2>Key Statistics</h2>
+    <p>These figures reflect the v1.0 dataset as of June 13, 2026. All numbers are computed directly from verified entries.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; text-align: center;">
+        <div style="font-size: 2.2rem; font-weight: 700; font-family: var(--mono); color: var(--accent);">80,794</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Total Documented Jobs</div>
+      </div>
+      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; text-align: center;">
+        <div style="font-size: 2.2rem; font-weight: 700; font-family: var(--mono); color: var(--accent);">27</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Entries</div>
+      </div>
+      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; text-align: center;">
+        <div style="font-size: 2.2rem; font-weight: 700; font-family: var(--mono); color: var(--accent);">27</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Companies</div>
+      </div>
+      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; text-align: center;">
+        <div style="font-size: 2.2rem; font-weight: 700; font-family: var(--mono); color: var(--accent);">5</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Countries</div>
+      </div>
+      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; text-align: center;">
+        <div style="font-size: 2.2rem; font-weight: 700; font-family: var(--mono); color: var(--accent);">8</div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Industries</div>
+      </div>
+    </div>
+
+    <!-- Methodology -->
+    <h2>Methodology</h2>
+    <p>Every entry in the AI Layoff Tracker must meet four inclusion criteria: a public source, a documented workforce reduction, explicit AI attribution, and a verifiable date. Entries are classified into four tiers — Direct AI Replacement, AI-Driven Restructuring, AI Reallocation, and Market Disruption — and assigned a confidence score from 0 to 100 based on evidence strength.</p>
+    <p>Read the full methodology: <a href="methodology.html">Methodology page</a>.</p>
+
+    <!-- Contact -->
+    <h2>Contact</h2>
+    <p>For press inquiries, data questions, or to reach the project maintainer, please use GitHub. The project is independently maintained and not affiliated with any tracked company.</p>
+    <ul>
+      <li><strong>GitHub:</strong> <a href="https://github.com/Damgeed/ai-layoff-tracker">github.com/Damgeed/ai-layoff-tracker</a></li>
+      <li><strong>Corrections:</strong> <a href="mailto:corrections@ailayofftracker.com">corrections@ailayofftracker.com</a></li>
+      <li><strong>Submissions:</strong> <a href="mailto:submit@ailayofftracker.com">submit@ailayofftracker.com</a></li>
+    </ul>
+
+    <!-- Citation Instructions -->
+    <h2>Citation Instructions</h2>
+    <p>We recommend citing the AI Layoff Tracker with the dataset version and retrieval date. Full citation formats (APA, MLA, Chicago) are available on the <a href="citation-guide/">Citation Guide</a> page.</p>
+
+    <!-- Download Links -->
+    <h2>Download Links</h2>
+    <p>All data is freely available with no registration required. Use these links in articles, research papers, or data analysis pipelines:</p>
+
+    <table class="methodology-table" aria-label="Download links">
+      <thead>
+        <tr><th>Format</th><th>URL</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>JSON API</strong></td>
+          <td><a href="api/entries.json"><code>/api/entries.json</code></a></td>
+          <td>Full dataset with all fields, metadata, and classification breakdowns</td>
+        </tr>
+        <tr>
+          <td><strong>CSV</strong></td>
+          <td><a href="api/entries.csv"><code>/api/entries.csv</code></a></td>
+          <td>Flat-file export, compatible with Excel, Google Sheets, and pandas</td>
+        </tr>
+        <tr>
+          <td><strong>Aggregated Stats</strong></td>
+          <td><a href="api/stats.json"><code>/api/stats.json</code></a></td>
+          <td>Pre-computed totals by industry, country, and classification</td>
+        </tr>
+        <tr>
+          <td><strong>RSS Feed</strong></td>
+          <td><a href="api/feed.xml"><code>/api/feed.xml</code></a></td>
+          <td>Latest entries in RSS 2.0 format for news readers</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Fact Sheet -->
+    <h2>Fact Sheet</h2>
+    <table class="methodology-table" aria-label="Quick reference fact sheet">
+      <thead>
+        <tr><th>Attribute</th><th>Value</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Project name</td><td>AI Layoff Tracker</td></tr>
+        <tr><td>Dataset version</td><td>v1.0 (June 13, 2026)</td></tr>
+        <tr><td>Total entries</td><td>27</td></tr>
+        <tr><td>Total jobs documented</td><td>80,794</td></tr>
+        <tr><td>Companies covered</td><td>27</td></tr>
+        <tr><td>Countries represented</td><td>5 (France, Germany, India, Sweden, United States)</td></tr>
+        <tr><td>Industries represented</td><td>8 (Customer Service, Education Technology, Enterprise Software, Fintech, Healthcare, Logistics, Media, Technology)</td></tr>
+        <tr><td>Classification tiers</td><td>4 (Direct AI Replacement, AI-Driven Restructuring, AI Reallocation, Market Disruption)</td></tr>
+        <tr><td>Date range</td><td>January 2023 – December 2024</td></tr>
+        <tr><td>License</td><td>CC0 1.0 Universal (Public Domain Dedication)</td></tr>
+        <tr><td>Update frequency</td><td>Rolling — entries added as verified</td></tr>
+        <tr><td>Source requirement</td><td>All entries backed by at least one publicly accessible primary source</td></tr>
+      </tbody>
+    </table>
+
+    <!-- FAQ -->
+    <h2>Frequently Asked Questions</h2>
+
+    <div style="margin-top: 1.5rem;">
+      <h3>1. How does the AI Layoff Tracker determine that AI was the cause of a layoff?</h3>
+      <p>We do not independently determine causation. An entry is included only when the company itself or a credible third-party source explicitly cites AI, automation, or machine learning as a contributing factor to the workforce reduction. The entry's classification tier reflects <em>how directly</em> AI was cited, not our judgment of whether AI was the true cause. Read more on the <a href="methodology.html">methodology page</a>.</p>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <h3>2. How do you choose which sources to trust?</h3>
+      <p>We maintain a domain whitelist of trusted sources that includes major news organizations (Reuters, Bloomberg, BBC, CNBC, The Verge, Ars Technica), company primary sources (press releases, official blogs, SEC filings), and government regulatory filings. Submissions referencing sources outside this whitelist undergo additional manual review. Every source is linked in the entry so you can evaluate it yourself.</p>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <h3>3. How often is the dataset updated?</h3>
+      <p>Updates occur on a rolling basis. New entries are added as workforce reductions are announced and verified — there is no fixed publication schedule. Significant updates are versioned for citability. The dataset's <code>last_updated</code> timestamp in the JSON metadata always reflects the most recent change.</p>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <h3>4. Can I use this data in my research paper or article?</h3>
+      <p>Yes. The dataset is dedicated to the public domain under CC0 1.0 Universal. You may use, modify, and redistribute it for any purpose without permission. We request (but do not require) that you cite the project using the formats provided in our <a href="citation-guide/">Citation Guide</a>. If you publish research using this data, we would appreciate a link so we can reference your work.</p>
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <h3>5. What is <em>not</em> included in this database?</h3>
+      <p>We explicitly exclude: general economic layoffs without AI mention, rumors or unverified claims, speculative projections about future AI job losses, normal workforce turnover, and offshoring without AI involvement. The <a href="methodology.html">methodology page</a> lists all exclusion criteria in detail. This intentional selectivity means the dataset <em>undercounts</em> total tech layoffs — it is not a layoffs tracker, it is an AI-attributed layoffs tracker.</p>
+    </div>
+
+    <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); color: var(--text-muted); font-size: 0.8125rem;">
+      Press kit last updated: June 13, 2026. Questions? <a href="https://github.com/Damgeed/ai-layoff-tracker">Contact via GitHub</a>.
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/press/" aria-current="page">Press Kit</a>
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+</body>
+</html>

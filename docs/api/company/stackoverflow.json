@@ -59,5 +59,34 @@
   "ai_technology": "Competitive displacement by ChatGPT and GitHub Copilot",
   "public_trade_status": "private",
   "created_date": "2023-10-16",
-  "updated_date": "2026-06-13"
+  "updated_date": "2026-06-13",
+  "confidence_breakdown": [
+    {
+      "factor": "Base score",
+      "points": 30
+    },
+    {
+      "factor": "Official company statement",
+      "points": 15
+    },
+    {
+      "factor": "Archived source",
+      "points": 10
+    },
+    {
+      "factor": "Multiple sources",
+      "points": 5
+    },
+    {
+      "factor": "Contextual corroboration",
+      "points": 25
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification"
+    }
+  ]
 }

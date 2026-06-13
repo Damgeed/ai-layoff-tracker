@@ -1,0 +1,21 @@
+{
+  "_schema": "Research sources — domains monitored for AI workforce reduction news",
+  "sources": [
+    {"domain": "reuters.com", "type": "NEWS_WIRE", "priority": "HIGH"},
+    {"domain": "bloomberg.com", "type": "FINANCIAL_NEWS", "priority": "HIGH"},
+    {"domain": "bbc.com", "type": "NEWS", "priority": "HIGH"},
+    {"domain": "cnbc.com", "type": "FINANCIAL_NEWS", "priority": "HIGH"},
+    {"domain": "wsj.com", "type": "FINANCIAL_NEWS", "priority": "HIGH"},
+    {"domain": "theverge.com", "type": "TECH_NEWS", "priority": "MEDIUM"},
+    {"domain": "arstechnica.com", "type": "TECH_NEWS", "priority": "MEDIUM"},
+    {"domain": "techcrunch.com", "type": "TECH_NEWS", "priority": "MEDIUM"},
+    {"domain": "theguardian.com", "type": "NEWS", "priority": "MEDIUM"},
+    {"domain": "nytimes.com", "type": "NEWS", "priority": "MEDIUM"},
+    {"domain": "washingtonpost.com", "type": "NEWS", "priority": "MEDIUM"},
+    {"domain": "businessinsider.com", "type": "TECH_NEWS", "priority": "MEDIUM"},
+    {"domain": "forbes.com", "type": "BUSINESS_NEWS", "priority": "MEDIUM"},
+    {"domain": "fortune.com", "type": "BUSINESS_NEWS", "priority": "MEDIUM"},
+    {"domain": "ft.com", "type": "FINANCIAL_NEWS", "priority": "MEDIUM"},
+    {"domain": "economist.com", "type": "BUSINESS_NEWS", "priority": "LOW"}
+  ]
+}

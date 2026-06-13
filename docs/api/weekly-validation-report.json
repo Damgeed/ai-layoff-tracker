@@ -1,0 +1,53 @@
+{
+  "generated": "2026-06-13T12:27:55.040013Z",
+  "dataset": {
+    "total_entries": 27,
+    "total_jobs": 80794,
+    "companies": 27,
+    "countries": 5,
+    "industries": 8
+  },
+  "checks": {
+    "1. Required Fields": {
+      "status": "PASS",
+      "issues": 0
+    },
+    "2. Duplicate IDs / Company+Date": {
+      "status": "PASS",
+      "issues": 0
+    },
+    "3. Source URLs (HTTP 200)": {
+      "status": "PASS",
+      "issues": 0
+    },
+    "4. Valid Archive URLs": {
+      "status": "PASS",
+      "issues": 0
+    },
+    "5. Confidence Scores (0\u2013100)": {
+      "status": "PASS",
+      "issues": 0
+    },
+    "6. Valid Classifications": {
+      "status": "PASS",
+      "issues": 0
+    },
+    "7. Valid source_quality": {
+      "status": "PASS",
+      "issues": 0
+    },
+    "8. Confidence Breakdowns": {
+      "status": "PASS",
+      "issues": 0
+    },
+    "9. Entry History": {
+      "status": "PASS",
+      "issues": 0
+    }
+  },
+  "overall": {
+    "passed": 9,
+    "total": 9,
+    "all_pass": true
+  }
+}
