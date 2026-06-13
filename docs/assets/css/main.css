@@ -12,7 +12,7 @@
   --border: #2a2a2a;
   --text-primary: #f5f5f5;
   --text-secondary: #a0a0a0;
-  --text-muted: #666666;
+  --text-muted: #888888;
   --accent: #ff4444;
   --accent-hover: #cc3333;
 
@@ -200,10 +200,10 @@ small { font-size: 0.8125rem; color: var(--text-muted); }
 }
 .btn-primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--bg);
   border-color: var(--accent);
 }
-.btn-primary:hover { background: var(--accent-hover); color: #fff; text-decoration: none; }
+.btn-primary:hover { background: var(--accent-hover); color: var(--bg); text-decoration: none; }
 .btn-secondary {
   background: transparent;
   color: var(--text-secondary);

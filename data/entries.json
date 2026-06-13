@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "2.0.0",
-    "last_updated": "2026-06-13T01:24:06Z",
+    "last_updated": "2026-06-13T06:42:08Z",
     "total_entries": 15,
     "maintainer": "AI Layoff Tracker",
     "methodology_url": "/methodology.html"
@@ -806,24 +806,23 @@
       "label": "AI-Driven Restructuring",
       "description": "Company cited AI efficiency as a major factor in workforce reduction.",
       "color": "#ff8844",
-      "count": 7
+      "count": 8
     },
     "AI_REALLOCATION": {
       "label": "AI Reallocation",
       "description": "Jobs cut while resources and investment shifted toward AI development.",
       "color": "#ffaa44",
-      "count": 4
+      "count": 2
     },
     "MARKET_DISRUPTION": {
       "label": "Market Disruption",
       "description": "Company lost revenue or market share because customers switched to AI alternatives.",
       "color": "#ffcc44",
-      "count": 2
+      "count": 4
     }
   },
   "industries": [
     "Technology",
-    "Financial Technology",
     "Fintech",
     "Education Technology",
     "Enterprise Software",

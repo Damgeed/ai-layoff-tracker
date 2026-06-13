@@ -178,13 +178,14 @@ def generate_entry_pages(data):
 <link rel="stylesheet" href="/assets/css/timeline.css">
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header">
   <div class="container">
     <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
     <nav><a href="/methodology.html">Methodology</a><a href="/api/stats.json">API</a></nav>
   </div>
 </header>
-<main class="container">
+<main class="container" id="main-content" role="main">
   <nav class="breadcrumb"><a href="/">← Back to tracker</a></nav>
   <article class="entry-detail">
     <div class="entry-header">
@@ -238,7 +239,7 @@ def generate_entry_pages(data):
     <p><a href="/methodology.html">Methodology</a> · <a href="/api/entries.json">JSON API</a> · <a href="/api/entries.csv">Download CSV</a></p>
   </div>
 </footer>
-<script src="/assets/js/share.js"></script>
+<script src="/assets/js/share.js" defer></script>
 </body>
 </html>'''
         with open(page_dir / "index.html", "w") as f:

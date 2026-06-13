@@ -437,7 +437,9 @@
     const filterToggle = $('.filter-toggle');
     if (filterToggle) {
       filterToggle.addEventListener('click', () => {
-        $('.filters-bar').classList.toggle('open');
+        const filtersBar = $('.filters-bar');
+        const expanded = filtersBar.classList.toggle('open');
+        filterToggle.setAttribute('aria-expanded', expanded.toString());
       });
     }
 
