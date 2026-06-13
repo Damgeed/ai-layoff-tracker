@@ -197,6 +197,7 @@ def generate_company_pages(data):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{entry["company"]} — {entry["jobs_lost"]:,} Jobs Impacted | AI Layoff Tracker</title>
 <meta name="description" content="{entry["summary"]}">
@@ -206,8 +207,8 @@ def generate_company_pages(data):
 <meta property="og:url" content="https://ailayofftracker.com/company/{slug}/">
 <meta property="og:site_name" content="AI Layoff Tracker">
 <link rel="canonical" href="https://ailayofftracker.com/company/{slug}/">
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="/assets/css/timeline.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/timeline.css">
 </head>
 <body>
 
@@ -301,7 +302,7 @@ def generate_company_pages(data):
     </div>
   </div>
 </footer>
-<script src="/assets/js/share.js" defer></script>
+<script src="assets/js/share.js" defer></script>
 </body>
 </html>'''
         with open(page_dir / "index.html", "w") as f:
@@ -410,6 +411,7 @@ def generate_entry_pages(data):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{entry["company"]}: {entry["jobs_lost"]:,} Jobs Impacted | AI Layoff Tracker</title>
 <meta name="description" content="{desc}">
@@ -419,8 +421,8 @@ def generate_entry_pages(data):
 <meta property="og:url" content="https://ailayofftracker.com/entry/{eid}/">
 <meta property="og:site_name" content="AI Layoff Tracker">
 <link rel="canonical" href="https://ailayofftracker.com/entry/{eid}/">
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="/assets/css/timeline.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/timeline.css">
 <script type="application/ld+json">
 {json.dumps(jsonld, ensure_ascii=False)}
 </script>
@@ -566,6 +568,7 @@ def generate_industry_pages(data):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{ind_data["industry"]} — AI Workforce Reductions | AI Layoff Tracker</title>
 <meta name="description" content="{desc}">
@@ -575,8 +578,8 @@ def generate_industry_pages(data):
 <meta property="og:url" content="https://ailayofftracker.com/industry/{ind_slug}/">
 <meta property="og:site_name" content="AI Layoff Tracker">
 <link rel="canonical" href="https://ailayofftracker.com/industry/{ind_slug}/">
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="/assets/css/timeline.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/timeline.css">
 </head>
 <body>
 
@@ -715,6 +718,7 @@ def generate_country_pages(data):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{c_data["country"]} — AI Workforce Reductions | AI Layoff Tracker</title>
 <meta name="description" content="{desc}">
@@ -724,8 +728,8 @@ def generate_country_pages(data):
 <meta property="og:url" content="https://ailayofftracker.com/country/{c_slug}/">
 <meta property="og:site_name" content="AI Layoff Tracker">
 <link rel="canonical" href="https://ailayofftracker.com/country/{c_slug}/">
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="/assets/css/timeline.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/timeline.css">
 </head>
 <body>
 
