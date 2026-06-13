@@ -38,27 +38,11 @@
     }
     .data-dictionary li { margin-bottom: 0.5rem; line-height: 1.6; }
 
-    .dd-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1.25rem 0;
-    }
-    .dd-table th, .dd-table td {
-      padding: 0.75rem 1rem;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.875rem;
-    }
-    .dd-table th {
-      font-weight: 600;
-      color: var(--text-primary);
-      background: var(--surface);
-    }
-    .dd-table td { color: var(--text-secondary); }
+    /* Tables inherit global styles from main.css — only column-specific formatting here */
     .dd-table td:first-child {
       font-family: var(--font-mono);
       font-size: 0.8125rem;
-      color: var(--text-primary);
+      color: var(--text);
       white-space: nowrap;
     }
     .dd-table td:nth-child(2) {
@@ -68,16 +52,20 @@
       white-space: nowrap;
     }
     .dd-table td:nth-child(3) {
-      text-align: center;
-      white-space: nowrap;
+      max-width: 320px;
+      min-width: 120px;
+    }
+    .dd-table td:nth-child(4) {
+      max-width: 280px;
+      min-width: 100px;
     }
     .dd-table td:nth-child(5) {
       font-family: var(--font-mono);
       font-size: 0.8125rem;
       color: var(--text-muted);
       max-width: 200px;
-      word-break: break-all;
     }
+    /* Status lifecycle badges */
 
     .required-yes {
       color: var(--accent);
