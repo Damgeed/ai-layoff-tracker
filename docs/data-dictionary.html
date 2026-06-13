@@ -67,6 +67,62 @@
     }
     /* Status lifecycle badges */
 
+    /* Mobile: stacked cards (no horizontal scroll needed) */
+    @media (max-width: 768px) {
+      .dd-table,
+      .dd-table tbody,
+      .dd-table tr,
+      .dd-table td { display: block; }
+      .dd-table thead { display: none; }
+      .dd-table tr {
+        margin-bottom: 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        background: var(--surface);
+        overflow: hidden;
+      }
+      .dd-table tr:hover { background: rgba(255,71,71,0.03); }
+      .dd-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.5rem 0.85rem;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.8125rem;
+        text-align: right;
+        max-width: none !important;
+        min-width: unset !important;
+        white-space: normal !important;
+      }
+      .dd-table td:last-child { border-bottom: none; }
+      .dd-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        font-size: 0.6875rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        text-align: left;
+        flex-shrink: 0;
+        max-width: 35%;
+      }
+      .dd-table td:first-child {
+        background: rgba(255,71,71,0.04);
+        font-weight: 700;
+        font-size: 0.9375rem;
+      }
+      .dd-table td:first-child::before {
+        font-weight: 600;
+        color: var(--accent);
+      }
+    }
+    /* Desktop: restore native table layout */
+    @media (min-width: 769px) {
+      .dd-table { display: table; overflow-x: visible; width: 100%; }
+      .dd-table td::before { content: none; }
+    }
+
     .required-yes {
       color: var(--accent);
       font-weight: 700;
@@ -207,84 +263,84 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Unique identifier for the entry, combining company slug and date (YYYY-MM).</td>
-          <td>klarna-2024-08</td>
-          <td>Pattern: <code>{slug}-{YYYY}-{MM}</code>. Must be unique across all entries.</td>
+          <td data-label="Constraints">id</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Unique identifier for the entry, combining company slug and date (YYYY-MM).</td>
+          <td data-label="Type">klarna-2024-08</td>
+          <td data-label="Field Name">Pattern: <code>{slug}-{YYYY}-{MM}</code>. Must be unique across all entries.</td>
         </tr>
         <tr>
-          <td>company</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Full legal or public-facing company name.</td>
-          <td>Klarna</td>
-          <td>Must match a known public company. Case-sensitive.</td>
+          <td data-label="Constraints">company</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Full legal or public-facing company name.</td>
+          <td data-label="Type">Klarna</td>
+          <td data-label="Field Name">Must match a known public company. Case-sensitive.</td>
         </tr>
         <tr>
-          <td>slug</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>URL-safe company identifier. Used for routing and lookups.</td>
-          <td>klarna</td>
-          <td>Lowercase alphanumeric with hyphens. Must match <code>/company/{slug}/</code>.</td>
+          <td data-label="Constraints">slug</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">URL-safe company identifier. Used for routing and lookups.</td>
+          <td data-label="Type">klarna</td>
+          <td data-label="Field Name">Lowercase alphanumeric with hyphens. Must match <code>/company/{slug}/</code>.</td>
         </tr>
         <tr>
-          <td>date</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Primary date of the workforce reduction announcement or event.</td>
-          <td>2024-08-27</td>
-          <td>ISO 8601 date format (YYYY-MM-DD).</td>
+          <td data-label="Constraints">date</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Primary date of the workforce reduction announcement or event.</td>
+          <td data-label="Type">2024-08-27</td>
+          <td data-label="Field Name">ISO 8601 date format (YYYY-MM-DD).</td>
         </tr>
         <tr>
-          <td>country</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Country where the affected workforce is primarily located.</td>
-          <td>Sweden</td>
-          <td>Must be a valid value from the <a href="#valid-countries">countries list</a>.</td>
+          <td data-label="Constraints">country</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Country where the affected workforce is primarily located.</td>
+          <td data-label="Type">Sweden</td>
+          <td data-label="Field Name">Must be a valid value from the <a href="#valid-countries">countries list</a>.</td>
         </tr>
         <tr>
-          <td>industry</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Primary industry classification for the company.</td>
-          <td>Fintech</td>
-          <td>Must be a valid value from the <a href="#valid-industries">industries list</a>.</td>
+          <td data-label="Constraints">industry</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Primary industry classification for the company.</td>
+          <td data-label="Type">Fintech</td>
+          <td data-label="Field Name">Must be a valid value from the <a href="#valid-industries">industries list</a>.</td>
         </tr>
         <tr>
-          <td>jobs_lost</td>
-          <td>number</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Total number of jobs affected by the workforce reduction.</td>
-          <td>2000</td>
-          <td>Integer. Must be ≥ 1. For hiring freezes, this is the estimated roles affected.</td>
+          <td data-label="Constraints">jobs_lost</td>
+          <td data-label="Example">number</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Total number of jobs affected by the workforce reduction.</td>
+          <td data-label="Type">2000</td>
+          <td data-label="Field Name">Integer. Must be ≥ 1. For hiring freezes, this is the estimated roles affected.</td>
         </tr>
         <tr>
-          <td>workforce_before</td>
-          <td>number</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Company workforce headcount before the reduction.</td>
-          <td>5000</td>
-          <td>Integer. Must be ≥ jobs_lost. Used to calculate impact_percent.</td>
+          <td data-label="Constraints">workforce_before</td>
+          <td data-label="Example">number</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Company workforce headcount before the reduction.</td>
+          <td data-label="Type">5000</td>
+          <td data-label="Field Name">Integer. Must be ≥ jobs_lost. Used to calculate impact_percent.</td>
         </tr>
         <tr>
-          <td>workforce_after</td>
-          <td>number</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Company workforce headcount after the reduction.</td>
-          <td>3000</td>
-          <td>Integer. Should equal <code>workforce_before - jobs_lost</code> for layoffs. May differ for hiring freezes.</td>
+          <td data-label="Constraints">workforce_after</td>
+          <td data-label="Example">number</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Company workforce headcount after the reduction.</td>
+          <td data-label="Type">3000</td>
+          <td data-label="Field Name">Integer. Should equal <code>workforce_before - jobs_lost</code> for layoffs. May differ for hiring freezes.</td>
         </tr>
         <tr>
-          <td>impact_percent</td>
-          <td>number</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Percentage of total workforce affected, rounded to nearest integer.</td>
-          <td>40</td>
-          <td>0–100. Calculated as <code>round((jobs_lost / workforce_before) × 100)</code>.</td>
+          <td data-label="Constraints">impact_percent</td>
+          <td data-label="Example">number</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Percentage of total workforce affected, rounded to nearest integer.</td>
+          <td data-label="Type">40</td>
+          <td data-label="Field Name">0–100. Calculated as <code>round((jobs_lost / workforce_before) × 100)</code>.</td>
         </tr>
       </tbody>
     </table>
@@ -306,36 +362,36 @@
       </thead>
       <tbody>
         <tr>
-          <td>classification</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>The classification tier indicating how directly AI was cited as a factor.</td>
-          <td>DIRECT_AI_REPLACEMENT</td>
-          <td>Must be one of: <code>DIRECT_AI_REPLACEMENT</code>, <code>AI_DRIVEN_RESTRUCTURING</code>, <code>AI_REALLOCATION</code>, <code>MARKET_DISRUPTION</code>.</td>
+          <td data-label="Constraints">classification</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">The classification tier indicating how directly AI was cited as a factor.</td>
+          <td data-label="Type">DIRECT_AI_REPLACEMENT</td>
+          <td data-label="Field Name">Must be one of: <code>DIRECT_AI_REPLACEMENT</code>, <code>AI_DRIVEN_RESTRUCTURING</code>, <code>AI_REALLOCATION</code>, <code>MARKET_DISRUPTION</code>.</td>
         </tr>
         <tr>
-          <td>confidence_score</td>
-          <td>number</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Evidence strength score reflecting how directly and unambiguously AI is linked to the workforce reduction.</td>
-          <td>95</td>
-          <td>Integer 0–100. Minimum 50 for publication. See <a href="#classification-reference">Classification Reference</a> for tier thresholds.</td>
+          <td data-label="Constraints">confidence_score</td>
+          <td data-label="Example">number</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Evidence strength score reflecting how directly and unambiguously AI is linked to the workforce reduction.</td>
+          <td data-label="Type">95</td>
+          <td data-label="Field Name">Integer 0–100. Minimum 50 for publication. See <a href="#classification-reference">Classification Reference</a> for tier thresholds.</td>
         </tr>
         <tr>
-          <td>verified</td>
-          <td>boolean</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Whether the entry has passed verification review against primary sources.</td>
-          <td>true</td>
-          <td><code>true</code> for published entries. <code>false</code> indicates the entry is in a pre-verification state. See <a href="#status-lifecycle">Status Lifecycle</a>.</td>
+          <td data-label="Constraints">verified</td>
+          <td data-label="Example">boolean</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Whether the entry has passed verification review against primary sources.</td>
+          <td data-label="Type">true</td>
+          <td data-label="Field Name"><code>true</code> for published entries. <code>false</code> indicates the entry is in a pre-verification state. See <a href="#status-lifecycle">Status Lifecycle</a>.</td>
         </tr>
         <tr>
-          <td>evidence</td>
-          <td>array</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Array of evidence objects documenting the types of source material supporting this entry.</td>
-          <td>[{"type":"CEO_STATEMENT","description":"..."}]</td>
-          <td>At least one evidence object required. Each object must have <code>type</code> (valid evidence type) and <code>description</code> (string).</td>
+          <td data-label="Constraints">evidence</td>
+          <td data-label="Example">array</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Array of evidence objects documenting the types of source material supporting this entry.</td>
+          <td data-label="Type">[{"type":"CEO_STATEMENT","description":"..."}]</td>
+          <td data-label="Field Name">At least one evidence object required. Each object must have <code>type</code> (valid evidence type) and <code>description</code> (string).</td>
         </tr>
       </tbody>
     </table>
@@ -357,52 +413,52 @@
       </thead>
       <tbody>
         <tr>
-          <td>source.title</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Title of the news article, press release, filing, or source document.</td>
-          <td>BBC News</td>
-          <td>Should reflect the original publication's headline or a concise descriptive title.</td>
+          <td data-label="Constraints">source.title</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Title of the news article, press release, filing, or source document.</td>
+          <td data-label="Type">BBC News</td>
+          <td data-label="Field Name">Should reflect the original publication's headline or a concise descriptive title.</td>
         </tr>
         <tr>
-          <td>source.url</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Direct URL to the original source document.</td>
-          <td>https://www.bbc.com/news/articles/c4gpqp4v4q2o</td>
-          <td>Must be a valid, publicly accessible HTTPS URL. Domain should be on the trusted-source whitelist.</td>
+          <td data-label="Constraints">source.url</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Direct URL to the original source document.</td>
+          <td data-label="Type">https://www.bbc.com/news/articles/c4gpqp4v4q2o</td>
+          <td data-label="Field Name">Must be a valid, publicly accessible HTTPS URL. Domain should be on the trusted-source whitelist.</td>
         </tr>
         <tr>
-          <td>source.publisher</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>The organization or entity that published the source.</td>
-          <td>BBC News</td>
-          <td>Should be a recognized news organization, company, or regulatory body.</td>
+          <td data-label="Constraints">source.publisher</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">The organization or entity that published the source.</td>
+          <td data-label="Type">BBC News</td>
+          <td data-label="Field Name">Should be a recognized news organization, company, or regulatory body.</td>
         </tr>
         <tr>
-          <td>source.published_date</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Publication date of the source document.</td>
-          <td>2024-08-27</td>
-          <td>ISO 8601 date format (YYYY-MM-DD).</td>
+          <td data-label="Constraints">source.published_date</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Publication date of the source document.</td>
+          <td data-label="Type">2024-08-27</td>
+          <td data-label="Field Name">ISO 8601 date format (YYYY-MM-DD).</td>
         </tr>
         <tr>
-          <td>source.retrieved_date</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Date the source was last accessed and verified by the maintainer.</td>
-          <td>2026-06-13</td>
-          <td>ISO 8601 date format (YYYY-MM-DD).</td>
+          <td data-label="Constraints">source.retrieved_date</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Date the source was last accessed and verified by the maintainer.</td>
+          <td data-label="Type">2026-06-13</td>
+          <td data-label="Field Name">ISO 8601 date format (YYYY-MM-DD).</td>
         </tr>
         <tr>
-          <td>source.archive_url</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>Permalink to an archived copy of the source (e.g., Internet Archive Wayback Machine).</td>
-          <td>https://web.archive.org/web/*/https://www.bbc.com/…</td>
-          <td>Must be a valid URL. Ensures long-term citability even if the original page changes.</td>
+          <td data-label="Constraints">source.archive_url</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">Permalink to an archived copy of the source (e.g., Internet Archive Wayback Machine).</td>
+          <td data-label="Type">https://web.archive.org/web/*/https://www.bbc.com/…</td>
+          <td data-label="Field Name">Must be a valid URL. Ensures long-term citability even if the original page changes.</td>
         </tr>
       </tbody>
     </table>
@@ -424,28 +480,28 @@
       </thead>
       <tbody>
         <tr>
-          <td>summary</td>
-          <td>string</td>
-          <td><span class="required-yes">Yes</span></td>
-          <td>A factual, editorial-free summary of the workforce reduction and its AI attribution.</td>
-          <td>Klarna CEO stated the company reduced its workforce from 5,000 to 3,000 by leveraging AI…</td>
-          <td>Should not contain opinion or speculation. Based solely on verified source material.</td>
+          <td data-label="Constraints">summary</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-yes">Yes</span></td>
+          <td data-label="Required">A factual, editorial-free summary of the workforce reduction and its AI attribution.</td>
+          <td data-label="Type">Klarna CEO stated the company reduced its workforce from 5,000 to 3,000 by leveraging AI…</td>
+          <td data-label="Field Name">Should not contain opinion or speculation. Based solely on verified source material.</td>
         </tr>
         <tr>
-          <td>ceo_quote</td>
-          <td>string</td>
-          <td><span class="required-no">No</span></td>
-          <td>Direct verbatim quote from a company executive explicitly linking AI to the workforce reduction.</td>
-          <td>We can do the same amount of work with 2,000 employees that we previously did with 5,000 people.</td>
-          <td>Only included when a direct, attributable quote exists. May be null or empty string.</td>
+          <td data-label="Constraints">ceo_quote</td>
+          <td data-label="Example">string</td>
+          <td data-label="Description"><span class="required-no">No</span></td>
+          <td data-label="Required">Direct verbatim quote from a company executive explicitly linking AI to the workforce reduction.</td>
+          <td data-label="Type">We can do the same amount of work with 2,000 employees that we previously did with 5,000 people.</td>
+          <td data-label="Field Name">Only included when a direct, attributable quote exists. May be null or empty string.</td>
         </tr>
         <tr>
-          <td>tags</td>
-          <td>array</td>
-          <td><span class="required-no">No</span></td>
-          <td>Array of lowercase keyword tags for filtering and discovery.</td>
-          <td>["customer-support", "generative-ai", "chatbots", "automation"]</td>
-          <td>Lowercase, hyphenated strings. No spaces. Common tags: automation, generative-ai, restructuring, chatbots, ai-pivot, etc.</td>
+          <td data-label="Constraints">tags</td>
+          <td data-label="Example">array</td>
+          <td data-label="Description"><span class="required-no">No</span></td>
+          <td data-label="Required">Array of lowercase keyword tags for filtering and discovery.</td>
+          <td data-label="Type">["customer-support", "generative-ai", "chatbots", "automation"]</td>
+          <td data-label="Field Name">Lowercase, hyphenated strings. No spaces. Common tags: automation, generative-ai, restructuring, chatbots, ai-pivot, etc.</td>
         </tr>
       </tbody>
     </table>
@@ -475,28 +531,28 @@
       </thead>
       <tbody>
         <tr>
-          <td><span class="class-badge" style="background:var(--amber-bg);color:var(--amber);">PENDING</span></td>
-          <td><code>false</code></td>
-          <td>Entry has been submitted or identified but has not yet undergone full verification. Not publicly visible.</td>
-          <td>Default state for new entries. Moves to VERIFIED upon passing verification.</td>
+          <td data-label="Transition Rules"><span class="class-badge" style="background:var(--amber-bg);color:var(--amber);">PENDING</span></td>
+          <td data-label="Description"><code>false</code></td>
+          <td data-label="verified">Entry has been submitted or identified but has not yet undergone full verification. Not publicly visible.</td>
+          <td data-label="Status">Default state for new entries. Moves to VERIFIED upon passing verification.</td>
         </tr>
         <tr>
-          <td><span class="class-badge" style="background:var(--green-bg);color:var(--green);">VERIFIED</span></td>
-          <td><code>true</code></td>
-          <td>Entry has passed verification: primary source confirmed, cross-referenced, classification assigned, and confidence scored. Publicly visible.</td>
-          <td>Can be moved to DISPUTED if a credible challenge is raised. Cannot revert to PENDING.</td>
+          <td data-label="Transition Rules"><span class="class-badge" style="background:var(--green-bg);color:var(--green);">VERIFIED</span></td>
+          <td data-label="Description"><code>true</code></td>
+          <td data-label="verified">Entry has passed verification: primary source confirmed, cross-referenced, classification assigned, and confidence scored. Publicly visible.</td>
+          <td data-label="Status">Can be moved to DISPUTED if a credible challenge is raised. Cannot revert to PENDING.</td>
         </tr>
         <tr>
-          <td><span class="class-badge" style="background:var(--orange-bg);color:var(--orange);">DISPUTED</span></td>
-          <td><code>true</code></td>
-          <td>A credible challenge has been raised against the entry's classification, data, or evidence. Under re-review. Remains publicly visible with a dispute notice.</td>
-          <td>Can return to VERIFIED if challenge is resolved in favor of original entry, or move to RETRACTED if challenge is upheld.</td>
+          <td data-label="Transition Rules"><span class="class-badge" style="background:var(--orange-bg);color:var(--orange);">DISPUTED</span></td>
+          <td data-label="Description"><code>true</code></td>
+          <td data-label="verified">A credible challenge has been raised against the entry's classification, data, or evidence. Under re-review. Remains publicly visible with a dispute notice.</td>
+          <td data-label="Status">Can return to VERIFIED if challenge is resolved in favor of original entry, or move to RETRACTED if challenge is upheld.</td>
         </tr>
         <tr>
-          <td><span class="class-badge" style="background:rgba(255,68,68,0.12);color:var(--accent);">RETRACTED</span></td>
-          <td><code>false</code></td>
-          <td>Entry has been retracted due to discredited evidence, factual error, or withdrawal by the source. Not publicly visible. Retained for audit trail.</td>
-          <td>Final state. Once retracted, an entry cannot be re-published; a new entry ID must be created if warranted.</td>
+          <td data-label="Transition Rules"><span class="class-badge" style="background:rgba(255,68,68,0.12);color:var(--accent);">RETRACTED</span></td>
+          <td data-label="Description"><code>false</code></td>
+          <td data-label="verified">Entry has been retracted due to discredited evidence, factual error, or withdrawal by the source. Not publicly visible. Retained for audit trail.</td>
+          <td data-label="Status">Final state. Once retracted, an entry cannot be re-published; a new entry ID must be created if warranted.</td>
         </tr>
       </tbody>
     </table>
@@ -520,28 +576,28 @@
       </thead>
       <tbody>
         <tr>
-          <td><span class="class-badge tier-1">Tier 1</span></td>
-          <td><code>DIRECT_AI_REPLACEMENT</code></td>
-          <td>Company explicitly states AI systems replaced specific human work, resulting in workforce reduction.</td>
-          <td>80+</td>
+          <td data-label="Confidence Threshold"><span class="class-badge tier-1">Tier 1</span></td>
+          <td data-label="Definition"><code>DIRECT_AI_REPLACEMENT</code></td>
+          <td data-label="Classification Value">Company explicitly states AI systems replaced specific human work, resulting in workforce reduction.</td>
+          <td data-label="Tier">80+</td>
         </tr>
         <tr>
-          <td><span class="class-badge tier-2">Tier 2</span></td>
-          <td><code>AI_DRIVEN_RESTRUCTURING</code></td>
-          <td>Company cites AI efficiency or automation as a major factor in a restructuring that included layoffs.</td>
-          <td>70+</td>
+          <td data-label="Confidence Threshold"><span class="class-badge tier-2">Tier 2</span></td>
+          <td data-label="Definition"><code>AI_DRIVEN_RESTRUCTURING</code></td>
+          <td data-label="Classification Value">Company cites AI efficiency or automation as a major factor in a restructuring that included layoffs.</td>
+          <td data-label="Tier">70+</td>
         </tr>
         <tr>
-          <td><span class="class-badge tier-3">Tier 3</span></td>
-          <td><code>AI_REALLOCATION</code></td>
-          <td>Jobs cut while the company simultaneously announced increased investment in AI, with resources redirected toward AI priorities.</td>
-          <td>70+</td>
+          <td data-label="Confidence Threshold"><span class="class-badge tier-3">Tier 3</span></td>
+          <td data-label="Definition"><code>AI_REALLOCATION</code></td>
+          <td data-label="Classification Value">Jobs cut while the company simultaneously announced increased investment in AI, with resources redirected toward AI priorities.</td>
+          <td data-label="Tier">70+</td>
         </tr>
         <tr>
-          <td><span class="class-badge tier-4">Tier 4</span></td>
-          <td><code>MARKET_DISRUPTION</code></td>
-          <td>Company lost revenue or market position because customers switched to AI-powered alternatives, leading to workforce reductions.</td>
-          <td>80+</td>
+          <td data-label="Confidence Threshold"><span class="class-badge tier-4">Tier 4</span></td>
+          <td data-label="Definition"><code>MARKET_DISRUPTION</code></td>
+          <td data-label="Classification Value">Company lost revenue or market position because customers switched to AI-powered alternatives, leading to workforce reductions.</td>
+          <td data-label="Tier">80+</td>
         </tr>
       </tbody>
     </table>
@@ -560,39 +616,39 @@
       </thead>
       <tbody>
         <tr>
-          <td><code>CEO_STATEMENT</code></td>
-          <td>Public statement by the company's CEO or equivalent executive directly addressing AI's role in workforce changes.</td>
-          <td>Earnings call, media interview, company blog post by CEO</td>
+          <td data-label="Typical Source Example"><code>CEO_STATEMENT</code></td>
+          <td data-label="Definition">Public statement by the company's CEO or equivalent executive directly addressing AI's role in workforce changes.</td>
+          <td data-label="Type Value">Earnings call, media interview, company blog post by CEO</td>
         </tr>
         <tr>
-          <td><code>COMPANY_STATEMENT</code></td>
-          <td>Official company press release, blog post, or spokesperson statement.</td>
-          <td>Press release, official company blog, spokesperson quote to media</td>
+          <td data-label="Typical Source Example"><code>COMPANY_STATEMENT</code></td>
+          <td data-label="Definition">Official company press release, blog post, or spokesperson statement.</td>
+          <td data-label="Type Value">Press release, official company blog, spokesperson quote to media</td>
         </tr>
         <tr>
-          <td><code>EARNINGS_REPORT</code></td>
-          <td>Quarterly or annual earnings filing, investor presentation, or shareholder letter.</td>
-          <td>Quarterly earnings call transcript, investor deck, annual report</td>
+          <td data-label="Typical Source Example"><code>EARNINGS_REPORT</code></td>
+          <td data-label="Definition">Quarterly or annual earnings filing, investor presentation, or shareholder letter.</td>
+          <td data-label="Type Value">Quarterly earnings call transcript, investor deck, annual report</td>
         </tr>
         <tr>
-          <td><code>SEC_FILING</code></td>
-          <td>Filing with the U.S. Securities and Exchange Commission.</td>
-          <td>10-K, 10-Q, 8-K, S-1, DEF 14A</td>
+          <td data-label="Typical Source Example"><code>SEC_FILING</code></td>
+          <td data-label="Definition">Filing with the U.S. Securities and Exchange Commission.</td>
+          <td data-label="Type Value">10-K, 10-Q, 8-K, S-1, DEF 14A</td>
         </tr>
         <tr>
-          <td><code>MEDIA_REPORT</code></td>
-          <td>Verified reporting by a recognized news organization with named sources.</td>
-          <td>Reuters, Bloomberg, BBC, CNBC, The Verge, Ars Technica</td>
+          <td data-label="Typical Source Example"><code>MEDIA_REPORT</code></td>
+          <td data-label="Definition">Verified reporting by a recognized news organization with named sources.</td>
+          <td data-label="Type Value">Reuters, Bloomberg, BBC, CNBC, The Verge, Ars Technica</td>
         </tr>
         <tr>
-          <td><code>REGULATORY_FILING</code></td>
-          <td>Filing with government agencies outside the U.S., including workforce reduction notifications.</td>
-          <td>WARN Act notice (U.S. states), EU collective redundancy notification, country-specific labor filings</td>
+          <td data-label="Typical Source Example"><code>REGULATORY_FILING</code></td>
+          <td data-label="Definition">Filing with government agencies outside the U.S., including workforce reduction notifications.</td>
+          <td data-label="Type Value">WARN Act notice (U.S. states), EU collective redundancy notification, country-specific labor filings</td>
         </tr>
         <tr>
-          <td><code>TRAFFIC_ANALYSIS</code></td>
-          <td>Third-party web/app traffic data showing measurable decline linked to AI competition. Used primarily for Tier 4 entries.</td>
-          <td>SimilarWeb, Sensor Tower, App Annie, company-reported user metrics</td>
+          <td data-label="Typical Source Example"><code>TRAFFIC_ANALYSIS</code></td>
+          <td data-label="Definition">Third-party web/app traffic data showing measurable decline linked to AI competition. Used primarily for Tier 4 entries.</td>
+          <td data-label="Type Value">SimilarWeb, Sensor Tower, App Annie, company-reported user metrics</td>
         </tr>
       </tbody>
     </table>
