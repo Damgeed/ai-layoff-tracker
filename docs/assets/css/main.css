@@ -558,7 +558,7 @@ body{
     align-items: center;
     text-align: center;
   }
-  .footer-info { flex: none; margin-top: 0.1rem; }
+  .footer-info { flex: none; margin-top: 0.35rem; }
   .footer-info p {
     font-size: 0.65rem;
     line-height: 1.3;
