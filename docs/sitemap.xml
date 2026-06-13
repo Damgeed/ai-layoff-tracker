@@ -1,44 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://ailayofftracker.com/</loc></url>
-  <url><loc>https://ailayofftracker.com/methodology.html</loc></url>
-  <url><loc>https://ailayofftracker.com/data-dictionary.html</loc></url>
-  <url><loc>https://ailayofftracker.com/changelog.html</loc></url>
-  <url><loc>https://ailayofftracker.com/corrections.html</loc></url>
   <url><loc>https://ailayofftracker.com/api/</loc></url>
-  <url><loc>https://ailayofftracker.com/evidence/</loc></url>
+  <url><loc>https://ailayofftracker.com/changelog.html</loc></url>
   <url><loc>https://ailayofftracker.com/citation-guide/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/amazon/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/autodesk/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/buzzfeed/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/chegg/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/cisco/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/cnet/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/cvshealth/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/dropbox/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/dukaan/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/duolingo/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/google/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/ibm/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/indeed/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/intuit/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/klarna/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/linkedin/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/meta/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/microsoft/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/paypal/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/salesforce/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/sap/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/spotify/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/stackoverflow/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/teleperformance/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/twilio/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/unity/</loc></url>
+  <url><loc>https://ailayofftracker.com/company/ups/</loc></url>
+  <url><loc>https://ailayofftracker.com/corrections.html</loc></url>
+  <url><loc>https://ailayofftracker.com/data-dictionary.html</loc></url>
   <url><loc>https://ailayofftracker.com/disputed/</loc></url>
-  <url><loc>https://ailayofftracker.com/history/</loc></url>
-  <url><loc>https://ailayofftracker.com/pending-review/</loc></url>
-  <url><loc>https://ailayofftracker.com/press/</loc></url>
-  <url><loc>https://ailayofftracker.com/research/</loc></url>
-  <url><loc>https://ailayofftracker.com/versions/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/google-2023-01/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/meta-2023-03/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/amazon-alexa-2023-11/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/autodesk-2024-02/</loc></url>
   <url><loc>https://ailayofftracker.com/entry/buzzfeed-2023-04/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/chegg-2024-06/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/cisco-2024-02/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/cnet-2024-01/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/cvs-health-2024-03/</loc></url>
   <url><loc>https://ailayofftracker.com/entry/dropbox-2023-04/</loc></url>
   <url><loc>https://ailayofftracker.com/entry/dukaan-2023-07/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/stackoverflow-2023-10/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/linkedin-2023-10/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/amazon-alexa-2023-11/</loc></url>
   <url><loc>https://ailayofftracker.com/entry/duolingo-2024-01/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/unity-2024-01/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/cnet-2024-01/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/sap-2024-01/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/google-2023-01/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/ibm-2024-05/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/indeed-2024-05/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/intuit-2024-07/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/klarna-2024-08/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/linkedin-2023-10/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/meta-2023-03/</loc></url>
   <url><loc>https://ailayofftracker.com/entry/microsoft-gaming-2024-01/</loc></url>
   <url><loc>https://ailayofftracker.com/entry/paypal-2024-01/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/ups-2024-01/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/teleperformance-2024-01/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/cisco-2024-02/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/autodesk-2024-02/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/twilio-2024-03/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/cvs-health-2024-03/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/indeed-2024-05/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/ibm-2024-05/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/chegg-2024-06/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/intuit-2024-07/</loc></url>
   <url><loc>https://ailayofftracker.com/entry/salesforce-2024-08/</loc></url>
-  <url><loc>https://ailayofftracker.com/entry/klarna-2024-08/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/sap-2024-01/</loc></url>
   <url><loc>https://ailayofftracker.com/entry/spotify-2024-12/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/stackoverflow-2023-10/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/teleperformance-2024-01/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/twilio-2024-03/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/unity-2024-01/</loc></url>
+  <url><loc>https://ailayofftracker.com/entry/ups-2024-01/</loc></url>
+  <url><loc>https://ailayofftracker.com/evidence/</loc></url>
+  <url><loc>https://ailayofftracker.com/history/</loc></url>
+  <url><loc>https://ailayofftracker.com/methodology.html</loc></url>
+  <url><loc>https://ailayofftracker.com/pending-review/</loc></url>
+  <url><loc>https://ailayofftracker.com/press/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/2023/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/2024/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/ai-driven-restructuring/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/ai-reallocation/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/customer-service/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/direct-ai-replacement/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/education-technology/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/enterprise-software/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/fintech/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/france/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/germany/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/healthcare/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/india/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/logistics/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/market-disruption/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/media/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/sweden/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/technology/</loc></url>
+  <url><loc>https://ailayofftracker.com/reports/united-states/</loc></url>
+  <url><loc>https://ailayofftracker.com/research/</loc></url>
+  <url><loc>https://ailayofftracker.com/versions/</loc></url>
 </urlset>

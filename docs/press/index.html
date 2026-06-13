@@ -14,12 +14,27 @@
   <title>Press Kit — AI Layoff Tracker</title>
   <meta name="description" content="Press kit and media resources for the AI Layoff Tracker. Key statistics, methodology overview, citation instructions, FAQ, and download links.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/press/">
+  <link rel="canonical" href="https://ailayofftracker.com/press/">
 
   <meta property="og:title" content="Press Kit — AI Layoff Tracker">
   <meta property="og:description" content="Press kit and media resources. Key statistics: 80,794 jobs documented across 27 companies, 5 countries, and 8 industries.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/press/">
+  <meta property="og:url" content="https://ailayofftracker.com/press/">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AI Layoff Tracker",
+    "url": "https://ailayofftracker.com",
+    "description": "A public research database documenting workforce reductions where artificial intelligence or automation was explicitly cited as a contributing factor.",
+    "sameAs": [
+      "https://github.com/Damgeed/ai-layoff-tracker",
+      "https://ailayofftracker.com"
+    ]
+  }
+  </script>
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/timeline.css">
@@ -87,33 +102,50 @@
     <h2>Key Statistics</h2>
     <p>These figures reflect the v1.0 dataset as of June 13, 2026. All numbers are computed directly from verified entries.</p>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
-      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 700; font-family: var(--mono); color: var(--accent);">80,794</div>
-        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Total Documented Jobs</div>
-      </div>
-      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 700; font-family: var(--mono); color: var(--accent);">27</div>
-        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Entries</div>
-      </div>
-      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 700; font-family: var(--mono); color: var(--accent);">27</div>
-        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Companies</div>
-      </div>
-      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 700; font-family: var(--mono); color: var(--accent);">5</div>
-        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Countries</div>
-      </div>
-      <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius-lg, 8px); padding: 1.5rem; text-align: center;">
-        <div style="font-size: 2.2rem; font-weight: 700; font-family: var(--mono); color: var(--accent);">8</div>
-        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Industries</div>
-      </div>
+    <div id="press-stats" class="stats-grid" style="margin: 1.5rem 0;">
+      <div class="stat-card"><div class="stat-value" data-stat="total_jobs_lost">80,794</div><div class="stat-label">Total Documented Jobs</div></div>
+      <div class="stat-card"><div class="stat-value" data-stat="total_entries">27</div><div class="stat-label">Entries</div></div>
+      <div class="stat-card"><div class="stat-value" data-stat="companies">27</div><div class="stat-label">Companies</div></div>
+      <div class="stat-card"><div class="stat-value" data-stat="countries">5</div><div class="stat-label">Countries</div></div>
+      <div class="stat-card"><div class="stat-value" data-stat="industries">8</div><div class="stat-label">Industries</div></div>
     </div>
+
+    <script>
+      (function() {
+        var container = document.getElementById('press-stats');
+        if (!container) return;
+        fetch('/api/stats.json')
+          .then(function(r) { return r.json(); })
+          .then(function(s) {
+            var els = container.querySelectorAll('[data-stat]');
+            for (var i = 0; i < els.length; i++) {
+              var el = els[i];
+              var key = el.getAttribute('data-stat');
+              var val = s[key];
+              if (val != null) {
+                el.textContent = typeof val === 'number' ? val.toLocaleString() : val;
+              }
+            }
+          })
+          .catch(function() {
+            /* Silently keep hardcoded fallback values on error */
+          });
+      })();
+    </script>
 
     <!-- Methodology -->
     <h2>Methodology</h2>
     <p>Every entry in the AI Layoff Tracker must meet four inclusion criteria: a public source, a documented workforce reduction, explicit AI attribution, and a verifiable date. Entries are classified into four tiers — Direct AI Replacement, AI-Driven Restructuring, AI Reallocation, and Market Disruption — and assigned a confidence score from 0 to 100 based on evidence strength.</p>
     <p>Read the full methodology: <a href="methodology.html">Methodology page</a>.</p>
+
+    <!-- Founder & Project Lead -->
+    <h2>Founder &amp; Project Lead</h2>
+    <p>The AI Layoff Tracker was created and is independently maintained by <strong>Damgeed</strong>, a researcher focused on documenting the intersection of artificial intelligence and workforce displacement. The project is not affiliated with any tracked company, government agency, or advocacy organization.</p>
+    <ul>
+      <li><strong>GitHub:</strong> <a href="https://github.com/Damgeed">github.com/Damgeed</a></li>
+      <li><strong>Project Repository:</strong> <a href="https://github.com/Damgeed/ai-layoff-tracker">github.com/Damgeed/ai-layoff-tracker</a></li>
+      <li><strong>Role:</strong> Research, data collection, classification, verification, and site maintenance.</li>
+    </ul>
 
     <!-- Contact -->
     <h2>Contact</h2>
@@ -127,6 +159,18 @@
     <!-- Citation Instructions -->
     <h2>Citation Instructions</h2>
     <p>We recommend citing the AI Layoff Tracker with the dataset version and retrieval date. Full citation formats (APA, MLA, Chicago) are available on the <a href="citation-guide/">Citation Guide</a> page.</p>
+
+    <!-- Logos & Brand Assets -->
+    <h2>Logos &amp; Brand Assets</h2>
+    <p>High-resolution logo files and brand assets are available for use in media coverage, presentations, and research publications. These assets are provided under the same CC0 public domain dedication as the dataset.</p>
+    <div style="background: var(--card-bg); border: 1px dashed var(--border); border-radius: var(--radius-lg, 8px); padding: 2rem; text-align: center; margin: 1.5rem 0;">
+      <p style="color: var(--text-muted); margin:0;">
+        <!-- TODO: Add logo image assets here -->
+        Logo files in PNG and SVG formats will be added here.<br>
+        Formats: Square (1:1), Horizontal (4:1), Icon-only.<br>
+        Sizes: 512px, 1024px, 2048px.
+      </p>
+    </div>
 
     <!-- Download Links -->
     <h2>Download Links</h2>
@@ -160,6 +204,18 @@
       </tbody>
     </table>
 
+    <!-- Screenshots -->
+    <h2>Screenshots</h2>
+    <p>Screenshots of the AI Layoff Tracker interface are available for media use. These images may be used without permission in articles, presentations, and research about the project.</p>
+    <div style="background: var(--card-bg); border: 1px dashed var(--border); border-radius: var(--radius-lg, 8px); padding: 2rem; text-align: center; margin: 1.5rem 0;">
+      <p style="color: var(--text-muted); margin:0;">
+        <!-- TODO: Add screenshot images here -->
+        Screenshots will be added here.<br>
+        Planned views: Homepage dashboard, company detail page, interactive timeline, and data table.<br>
+        Recommended resolution: 2880×1800 (Retina) and 1920×1080 (standard).
+      </p>
+    </div>
+
     <!-- Fact Sheet -->
     <h2>Fact Sheet</h2>
     <table class="methodology-table" aria-label="Quick reference fact sheet">
@@ -181,6 +237,16 @@
         <tr><td>Source requirement</td><td>All entries backed by at least one publicly accessible primary source</td></tr>
       </tbody>
     </table>
+
+    <!-- Media Coverage -->
+    <h2>Media Coverage</h2>
+    <p>No media coverage yet. This section will be updated as outlets cite the dataset.</p>
+    <div style="background: var(--card-bg); border: 1px dashed var(--border); border-radius: var(--radius-lg, 8px); padding: 2rem; text-align: center; margin: 1.5rem 0;">
+      <p style="color: var(--text-muted); margin:0;">
+        When news organizations, research papers, or other publications cite the AI Layoff Tracker,<br>
+        links and attribution details will be listed here.
+      </p>
+    </div>
 
     <!-- FAQ -->
     <h2>Frequently Asked Questions</h2>

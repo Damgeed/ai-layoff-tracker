@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <script>(function(){var t=localStorage.getItem('ai-layoff-tracker-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Reports — AI Layoff Tracker</title>
+<meta name="description" content="Research reports and analysis on AI-related workforce reductions. Automated reports by year, industry, country, and classification tier.">
+<link rel="canonical" href="https://ailayofftracker.com/reports/">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/timeline.css">
+</head>
+<body>
+<div class="bg-mesh" aria-hidden="true"></div><div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme"><span class="icon-sun">☀️</span><span class="icon-moon">🌙</span></button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div><div class="mobile-nav-panel"><nav class="mobile-nav-links"><a href="methodology.html">Methodology</a><a href="data-dictionary.html">Data Dictionary</a><a href="changelog.html">Changelog</a><a href="corrections.html">Corrections</a><a href="evidence/">Evidence</a><a href="api/">API</a></nav></div>
+</div>
+<main class="container" id="main-content" role="main">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">← Back to tracker</a></nav>
+  <h1>Research Reports</h1>
+  <p class="lead">Automated research reports generated from the AI Layoff Tracker dataset. These are programmatic pages built from the live data — updated with every rebuild.</p>
+  <h2>By Year</h2>
+  <ul><li><a href="reports/2023/">2023 Report</a></li><li><a href="reports/2024/">2024 Report</a></li></ul>
+  <h2>By Industry</h2>
+  <ul id="industry-reports"><li>Loading…</li></ul>
+  <h2>By Country</h2>
+  <ul id="country-reports"><li>Loading…</li></ul>
+  <h2>By Classification</h2>
+  <ul id="classification-reports"><li>Loading…</li></ul>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="container"><div class="footer-info"><p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p></div><div class="footer-links"><div class="footer-col"><h4>Data</h4><a href="methodology.html">Methodology</a><a href="api/">JSON API</a><a href="api/entries.csv">Download CSV</a><a href="api/feed.xml">RSS Feed</a></div><div class="footer-col"><h4>Resources</h4><a href="press/">Press Kit</a><a href="research/">Research</a><a href="citation-guide/">Citation Guide</a><a href="versions/">Versions</a><a href="history/">Entry History</a></div></div></div>
+  <div class="footer-bottom"><div class="container"><small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource.</small></div></div>
+</footer>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+<script>
+fetch('api/stats.json').then(r=>r.json()).then(s=>{
+  document.getElementById('industry-reports').innerHTML=Object.keys(s.by_industry).map(i=>'<li><a href="reports/'+i.toLowerCase().replace(/ /g,'-').replace(/&/g,'and')+'/">'+i+' ('+s.by_industry[i].entries.toLocaleString()+' entries)</a></li>').join('');
+  document.getElementById('country-reports').innerHTML=Object.keys(s.by_country).map(c=>'<li><a href="reports/'+c.toLowerCase().replace(/ /g,'-')+'/">'+c+' ('+s.by_country[c].entries.toLocaleString()+' entries)</a></li>').join('');
+  fetch('api/entries.json').then(r=>r.json()).then(d=>{
+    var cls={}; d.entries.forEach(e=>{cls[e.classification]=(cls[e.classification]||0)+1;});
+    var labels={}; Object.keys(d.classifications||{}).forEach(k=>{labels[k]=d.classifications[k].label;});
+    document.getElementById('classification-reports').innerHTML=Object.keys(cls).map(k=>'<li><a href="reports/'+k.toLowerCase().replace(/_/g,'-')+'/">'+(labels[k]||k)+' ('+cls[k]+' entries)</a></li>').join('');
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <!-- Inline theme script BEFORE CSS to prevent flash of wrong theme -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Evidence — AI Layoff Tracker</title>
+  <meta name="description" content="Submit workforce reduction evidence to the AI Layoff Tracker. Community submissions are reviewed before being added to the public dataset.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/submit/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Submit Evidence — AI Layoff Tracker">
+  <meta property="og:description" content="Help document AI-related workforce reductions. Submit verified evidence for review by our team.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/submit/">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/timeline.css">
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AI Layoff Tracker — Community Submission",
+    "url": "https://damgeed.github.io/ai-layoff-tracker/submit/",
+    "description": "Submit workforce reduction evidence to the AI Layoff Tracker. Submissions are reviewed before being added to the public dataset.",
+    "applicationCategory": "DatabaseApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <style>
+    /* ── Submit Page — Form Styles ────────────────────────────────── */
+    .submit-section {
+      padding: 3rem 0;
+    }
+    .submit-hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .submit-hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .submit-hero .lead {
+      color: var(--text-dim);
+      font-size: 1rem;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+    .review-notice {
+      background: rgba(255,71,71,0.06);
+      border: 1px solid rgba(255,71,71,0.15);
+      border-radius: var(--r);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .review-notice .notice-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .review-notice strong {
+      color: var(--text);
+    }
+
+    /* Form container */
+    .submit-form-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--r);
+      padding: 2rem 2.25rem;
+      backdrop-filter: blur(12px);
+    }
+    [data-theme="light"] .submit-form-wrap {
+      background: rgba(255,255,255,0.6);
+      border-color: rgba(0,0,0,0.08);
+    }
+
+    /* Form groups */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group:last-of-type {
+      margin-bottom: 2rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+    .form-group label .required {
+      color: var(--accent);
+      margin-left: 2px;
+    }
+    .form-group label .optional {
+      color: var(--text-muted);
+      font-weight: 400;
+      font-size: 0.75rem;
+      margin-left: 0.375rem;
+    }
+
+    /* Shared input styles */
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      transition: all .25s var(--ease);
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    [data-theme="light"] .form-group input,
+    [data-theme="light"] .form-group textarea {
+      background: rgba(0,0,0,0.02);
+      border-color: rgba(0,0,0,0.12);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(255,71,71,0.1);
+      outline: none;
+      background: rgba(255,255,255,0.05);
+    }
+    [data-theme="light"] .form-group input:focus,
+    [data-theme="light"] .form-group textarea:focus {
+      background: rgba(255,255,255,0.9);
+    }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .form-group .input-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.375rem;
+    }
+
+    /* Date input — custom dark calendar styling */
+    .form-group input[type="date"] {
+      color-scheme: dark;
+    }
+    [data-theme="light"] .form-group input[type="date"] {
+      color-scheme: light;
+    }
+
+    /* Validation styling */
+    .form-group input:invalid:not(:placeholder-shown):not(:focus),
+    .form-group textarea:invalid:not(:placeholder-shown):not(:focus) {
+      border-color: rgba(255,71,71,0.4);
+      box-shadow: 0 0 0 2px rgba(255,71,71,0.08);
+    }
+
+    /* Submit button row */
+    .form-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .form-actions .btn-submit {
+      background: linear-gradient(135deg, var(--gradient-1) 0%, var(--gradient-2) 100%);
+      color: #fff;
+      box-shadow: 0 4px 20px var(--accent-glow);
+      border: none;
+      border-radius: 100px;
+      padding: 0.85rem 2rem;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: all .3s var(--ease);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .form-actions .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px var(--accent-glow);
+    }
+    .form-actions .btn-submit:active {
+      transform: translateY(0);
+    }
+    .form-actions .btn-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Tracking link */
+    .submit-track-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-dim);
+    }
+    .submit-track-link a {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .submit-track-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Success message */
+    .submit-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+    .submit-success.show {
+      display: block;
+    }
+    .submit-success .success-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .submit-success h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    .submit-success p {
+      color: var(--text-dim);
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Hide form when success shown */
+    .submit-form-wrap.hidden {
+      display: none;
+    }
+
+    /* ── Responsive ─────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .submit-form-wrap {
+        padding: 1.5rem 1.25rem;
+      }
+      .form-actions {
+        flex-direction: column;
+      }
+      .form-actions .btn-submit {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    @media (max-width: 480px) {
+      .submit-section {
+        padding: 2rem 0;
+      }
+      .submit-hero {
+        margin-bottom: 1.5rem;
+      }
+      .review-notice {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.875rem 1rem;
+        font-size: 0.8125rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+
+<!-- Skip to Content (a11y) -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Header -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/">API</a>
+      <a href="submit/" aria-current="page">Submit</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/">API</a>
+      <a href="submit/" aria-current="page">Submit</a>
+    </nav>
+  </div>
+</div>
+
+<!-- Main Content -->
+<main id="main-content">
+  <section class="submit-section" aria-labelledby="submit-heading">
+    <div class="container">
+
+      <div class="submit-hero">
+        <h1 id="submit-heading">Submit Evidence</h1>
+        <p class="lead">Help build the public record. Share documented workforce reductions where AI or automation was explicitly cited as a contributing factor.</p>
+      </div>
+
+      <!-- Review Notice -->
+      <div class="review-notice">
+        <span class="notice-icon" aria-hidden="true">📋</span>
+        <p>Community submissions are reviewed before being added to the public dataset. Submissions that include <strong>verified source URLs</strong> and <strong>clear AI attribution</strong> are prioritized.</p>
+      </div>
+
+      <!-- Form -->
+      <div class="submit-form-wrap" id="submit-form-wrap">
+        <form id="submission-form" novalidate>
+          <!-- Company Name -->
+          <div class="form-group">
+            <label for="company-name">Company Name <span class="required" aria-hidden="true">*</span></label>
+            <input type="text" id="company-name" name="company_name" required
+                   placeholder="e.g., Acme Corp"
+                   autocomplete="organization" maxlength="200">
+          </div>
+
+          <!-- Date of Layoff -->
+          <div class="form-group">
+            <label for="layoff-date">Date of Layoff <span class="required" aria-hidden="true">*</span></label>
+            <input type="date" id="layoff-date" name="layoff_date" required>
+            <span class="input-hint">Month and year at minimum — exact date preferred if known.</span>
+          </div>
+
+          <!-- Number of Jobs Reported -->
+          <div class="form-group">
+            <label for="jobs-reported">Number of Jobs Reported <span class="required" aria-hidden="true">*</span></label>
+            <input type="number" id="jobs-reported" name="jobs_reported" required
+                   min="1" step="1" placeholder="e.g., 500"
+                   inputmode="numeric">
+            <span class="input-hint">Where a range is reported (e.g., 800–1,200), enter the midpoint or lower bound.</span>
+          </div>
+
+          <!-- Source URL -->
+          <div class="form-group">
+            <label for="source-url">Source URL <span class="required" aria-hidden="true">*</span></label>
+            <input type="url" id="source-url" name="source_url" required
+                   placeholder="https://example.com/news/ai-layoffs-announcement"
+                   autocomplete="url">
+            <span class="input-hint">Link to the news article, press release, SEC filing, or earnings transcript where AI was cited.</span>
+          </div>
+
+          <!-- AI Connection -->
+          <div class="form-group">
+            <label for="ai-connection">AI Connection — How Was AI Cited? <span class="required" aria-hidden="true">*</span></label>
+            <textarea id="ai-connection" name="ai_connection" required
+                      placeholder="Describe how the company or source connected AI to the workforce reduction. Include quotes if available. Example: &quot;CEO stated in earnings call that AI-powered tools eliminated the need for 200 customer service roles.&quot;"
+                      rows="4"></textarea>
+            <span class="input-hint">The stronger and more direct the AI attribution, the faster the review.</span>
+          </div>
+
+          <!-- Submitter Name (optional) -->
+          <div class="form-group">
+            <label for="submitter-name">Your Name <span class="optional">(optional)</span></label>
+            <input type="text" id="submitter-name" name="submitter_name"
+                   placeholder="Your name"
+                   autocomplete="name" maxlength="150">
+          </div>
+
+          <!-- Submitter Email (optional) -->
+          <div class="form-group">
+            <label for="submitter-email">Your Email <span class="optional">(optional)</span></label>
+            <input type="email" id="submitter-email" name="submitter_email"
+                   placeholder="you@example.com"
+                   autocomplete="email">
+            <span class="input-hint">Only used if we need to follow up for clarification. Never published.</span>
+          </div>
+
+          <!-- Notes -->
+          <div class="form-group">
+            <label for="notes">Notes / Additional Context <span class="optional">(optional)</span></label>
+            <textarea id="notes" name="notes"
+                      placeholder="Any other context — multiple rounds of layoffs, union involvement, executive quotes, related articles, etc."
+                      rows="3"></textarea>
+          </div>
+
+          <!-- Actions -->
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">
+              <span>📤</span> Submit for Review
+            </button>
+            <span style="font-size:0.75rem;color:var(--text-muted);">
+              Reviewed within 5 business days
+            </span>
+          </div>
+        </form>
+
+        <!-- Tracking link -->
+        <p class="submit-track-link">
+          Submitted previously? <a href="/pending-review/">Track your submission →</a>
+        </p>
+      </div>
+
+      <!-- Success Message (hidden by default) -->
+      <div class="submit-success" id="submit-success" role="status" aria-live="polite">
+        <div class="success-icon" aria-hidden="true">✅</div>
+        <h2>Submission Received</h2>
+        <p>Thank you for contributing to the AI Layoff Tracker. Your submission has been received and will be reviewed by our team.</p>
+        <p style="font-size:0.875rem;color:var(--text-muted);">
+          Submissions with verified source URLs and clear AI attribution are typically reviewed within 5 business days. You can track the status of your submission on the <strong>pending review</strong> page.
+        </p>
+        <div style="margin-top:1.5rem;display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+          <a href="./" class="btn btn-primary">← Back to Tracker</a>
+          <a href="/pending-review/" class="btn btn-secondary">Track Submissions</a>
+          <button class="btn btn-secondary" onclick="document.getElementById('submit-form-wrap').classList.remove('hidden');document.getElementById('submit-success').classList.remove('show');document.getElementById('submission-form').reset();">Submit Another</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/api/">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/press/">Press Kit</a>
+        <a href="/research/">Research</a>
+        <a href="/citation-guide/">Citation Guide</a>
+        <a href="/versions/">Versions</a>
+        <a href="/history/">Entry History</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+
+<script>
+  /* ── Submission Form Handler ──────────────────────────────────── */
+  (function() {
+    'use strict';
+    var form = document.getElementById('submission-form');
+    var formWrap = document.getElementById('submit-form-wrap');
+    var successMsg = document.getElementById('submit-success');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Basic HTML5 validation
+      if (!form.checkValidity()) {
+        // Trigger native validation UI
+        form.reportValidity();
+        return;
+      }
+
+      // Collect form data
+      var data = {
+        company_name: form.company_name.value.trim(),
+        layoff_date: form.layoff_date.value,
+        jobs_reported: parseInt(form.jobs_reported.value, 10),
+        source_url: form.source_url.value.trim(),
+        ai_connection: form.ai_connection.value.trim(),
+        submitter_name: form.submitter_name.value.trim() || null,
+        submitter_email: form.submitter_email.value.trim() || null,
+        notes: form.notes.value.trim() || null,
+        submitted_at: new Date().toISOString()
+      };
+
+      // For a static site, we store in localStorage as a submission queue
+      // In production, this would POST to an API endpoint
+      try {
+        var submissions = [];
+        var stored = localStorage.getItem('ailt-submissions');
+        if (stored) {
+          submissions = JSON.parse(stored);
+        }
+        submissions.push(data);
+        localStorage.setItem('ailt-submissions', JSON.stringify(submissions));
+      } catch (err) {
+        // localStorage may be full or unavailable — still show success
+        console.warn('Could not persist submission to localStorage:', err);
+      }
+
+      // Dispatch a custom event that a server endpoint could listen for
+      // In a deployed scenario, a service worker or external script could
+      // intercept this and POST to a backend
+      if (window.CustomEvent) {
+        var event = new CustomEvent('ailt-submission', { detail: data });
+        window.dispatchEvent(event);
+      }
+
+      // Show success
+      formWrap.classList.add('hidden');
+      successMsg.classList.add('show');
+
+      // Scroll to success message
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Focus the back-to-tracker link for keyboard users
+      var firstLink = successMsg.querySelector('a');
+      if (firstLink) {
+        setTimeout(function() { firstLink.focus(); }, 100);
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

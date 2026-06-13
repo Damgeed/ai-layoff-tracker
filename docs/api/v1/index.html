@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <script>
+    (function(){var t=localStorage.getItem('ai-layoff-tracker-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');})();
+  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API v1 Reference — AI Layoff Tracker</title>
+<meta name="description" content="Formal API v1 reference for the AI Layoff Tracker dataset. Rate limits, attribution requirements, endpoint documentation, code examples, and schema reference.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ailayofftracker.com/api/v1/">
+<meta property="og:title" content="API v1 Reference — AI Layoff Tracker">
+<meta property="og:description" content="Formal API v1 reference. Rate limits, attribution, code examples, and full schema documentation.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ailayofftracker.com/api/v1/">
+<meta property="og:site_name" content="AI Layoff Tracker">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/timeline.css">
+<style>
+  pre { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 1rem 1.25rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8rem; line-height: 1.6; margin: 0.75rem 0; }
+  code { font-family: var(--mono); font-size: 0.85em; color: var(--accent); }
+  pre code { color: inherit; }
+  .api-section { margin-bottom: 2.5rem; }
+  .api-endpoint {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--r);
+    padding: 1.25rem 1.5rem; margin-bottom: 0.75rem; display: flex; align-items: center;
+    gap: 1rem; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.15s;
+  }
+  .api-endpoint:hover { border-color: var(--accent); transform: translateX(4px); }
+  .api-method { font-family: var(--mono); font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+    padding: 0.25rem 0.6rem; border-radius: 4px; background: var(--accent); color: #0a0a0a; flex-shrink: 0; }
+  .api-path { font-family: var(--mono); font-size: 0.9rem; color: var(--accent); flex: 1; }
+  .api-desc { font-size: 0.8rem; color: var(--text-muted); max-width: 24rem; text-align: right; flex-shrink: 0; }
+  .field-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  .field-table th, .field-table td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+  .field-table th { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .field-table td:first-child { font-family: var(--mono); font-size: 0.85em; color: var(--accent); }
+  @media (max-width: 600px) { .api-endpoint { flex-wrap: wrap; } .api-desc { text-align: left; flex-basis: 100%; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "AI Layoff Tracker API v1 Reference",
+  "description": "Formal API v1 reference with rate limits, attribution requirements, endpoint documentation, code examples, and schema reference.",
+  "url": "https://ailayofftracker.com/api/v1/",
+  "author": {"@type": "Organization", "name": "AI Layoff Tracker", "url": "https://ailayofftracker.com"},
+  "publisher": {"@type": "Organization", "name": "AI Layoff Tracker", "url": "https://ailayofftracker.com"}
+}
+</script>
+</head>
+<body>
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme"><span class="icon-sun">☀️</span><span class="icon-moon">🌙</span></button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a><a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a><a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a><a href="api/">API</a>
+    </nav>
+  </div>
+</div>
+<main class="container" id="main-content" role="main">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="api/">← API Overview</a> · <a href="./">← Home</a></nav>
+  <h1>API v1 Reference</h1>
+  <p class="lead">Version 1 of the AI Layoff Tracker public API. All endpoints are read-only, require no authentication, and serve data under a <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 public domain dedication</a>.</p>
+
+  <div class="api-section">
+    <h2>Base URL</h2>
+    <pre><code>https://ailayofftracker.com</code></pre>
+    <p>All endpoints return <code>Content-Type: application/json</code> unless noted. CORS is enabled. UTF-8 throughout.</p>
+  </div>
+
+  <div class="api-section">
+    <h2>Rate Limits</h2>
+    <p>This API is served from GitHub Pages (static files). There are no server-side rate limits — but please be reasonable. If you plan to hit endpoints at high frequency, <strong>download the full dataset once</strong> and work locally:</p>
+    <pre><code>curl -O https://ailayofftracker.com/api/entries.json  # ~200KB gzipped</code></pre>
+  </div>
+
+  <div class="api-section">
+    <h2>Attribution</h2>
+    <p>The dataset is CC0 — attribution is <strong>not required</strong>. However, we request:</p>
+    <ul>
+      <li>Cite as: <em>"AI Layoff Tracker, retrieved [DATE], https://ailayofftracker.com"</em></li>
+      <li>If you publish research using this data, <a href="https://github.com/Damgeed/ai-layoff-tracker">let us know</a> so we can reference your work</li>
+      <li>Link back to <code>ailayofftracker.com</code> when using in articles</li>
+    </ul>
+  </div>
+
+  <div class="api-section">
+    <h2>Endpoints</h2>
+
+    <h3>Dataset</h3>
+    <a class="api-endpoint" href="api/entries.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/entries.json</span>
+      <span class="api-desc">Full dataset — all verified entries with evidence, sources, and classification</span>
+    </a>
+    <pre><code>curl https://ailayofftracker.com/api/entries.json | jq '.entries | length'  # 27</code></pre>
+
+    <a class="api-endpoint" href="api/entries.csv">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/entries.csv</span>
+      <span class="api-desc">Downloadable CSV — Excel, Sheets, pandas compatible</span>
+    </a>
+    <pre><code>import pandas as pd
+df = pd.read_csv("https://ailayofftracker.com/api/entries.csv")
+print(f"{len(df)} entries, {df['jobs_lost'].sum():,} jobs")</code></pre>
+
+    <a class="api-endpoint" href="api/feed.xml">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/feed.xml</span>
+      <span class="api-desc">RSS 2.0 feed — all entries with full metadata</span>
+    </a>
+
+    <h3 style="margin-top:1.5rem;">Statistics</h3>
+    <a class="api-endpoint" href="api/stats.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/stats.json</span>
+      <span class="api-desc">Computed statistics — totals, breakdowns, trends</span>
+    </a>
+
+    <a class="api-endpoint" href="api/confidence.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/confidence.json</span>
+      <span class="api-desc">Confidence methodology — scoring rules per entry</span>
+    </a>
+
+    <h3 style="margin-top:1.5rem;">Per-Entity</h3>
+    <a class="api-endpoint" href="api/company/klarna.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/company/{slug}.json</span>
+      <span class="api-desc">Per-company data (27 available)</span>
+    </a>
+    <pre><code># List all company slugs
+curl -s https://ailayofftracker.com/api/entries.json | jq -r '.entries[].slug' | sort -u</code></pre>
+
+    <a class="api-endpoint" href="api/industry/fintech.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/industry/{slug}.json</span>
+      <span class="api-desc">Per-industry data (8 available)</span>
+    </a>
+
+    <a class="api-endpoint" href="api/country/united-states.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/country/{slug}.json</span>
+      <span class="api-desc">Per-country data (5 available)</span>
+    </a>
+
+    <h3 style="margin-top:1.5rem;">Transparency</h3>
+    <a class="api-endpoint" href="api/changelog.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/changelog.json</span>
+      <span class="api-desc">Dataset changelog and version history</span>
+    </a>
+    <a class="api-endpoint" href="api/corrections-schema.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/corrections-schema.json</span>
+      <span class="api-desc">Corrections submission format</span>
+    </a>
+    <a class="api-endpoint" href="api/weekly-validation-report.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/weekly-validation-report.json</span>
+      <span class="api-desc">Automated data quality report (9 checks)</span>
+    </a>
+  </div>
+
+  <div class="api-section">
+    <h2>Entry Schema</h2>
+    <p>Each entry in <code>/api/entries.json</code> has this structure:</p>
+    <table class="field-table" aria-label="Entry schema fields">
+      <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>id</td><td>string</td><td>Unique identifier (e.g. "klarna-2024-05")</td></tr>
+        <tr><td>company</td><td>string</td><td>Company name</td></tr>
+        <tr><td>slug</td><td>string</td><td>URL-safe identifier (e.g. "klarna")</td></tr>
+        <tr><td>date</td><td>string</td><td>ISO date (YYYY-MM-DD)</td></tr>
+        <tr><td>country</td><td>string</td><td>Country where layoffs occurred</td></tr>
+        <tr><td>industry</td><td>string</td><td>Industry classification</td></tr>
+        <tr><td>jobs_lost</td><td>integer</td><td>Number of jobs affected</td></tr>
+        <tr><td>impact_percent</td><td>integer</td><td>% of company workforce affected</td></tr>
+        <tr><td>classification</td><td>string</td><td>One of: DIRECT_AI_REPLACEMENT, AI_DRIVEN_RESTRUCTURING, AI_REALLOCATION, MARKET_DISRUPTION</td></tr>
+        <tr><td>confidence_score</td><td>integer</td><td>0-100 based on evidence quality</td></tr>
+        <tr><td>summary</td><td>string</td><td>Human-readable summary of the event</td></tr>
+        <tr><td>evidence</td><td>array</td><td>Evidence items [{type, description}]</td></tr>
+        <tr><td>source</td><td>object</td><td>{url, title, publisher, archive_url}</td></tr>
+        <tr><td>ceo_quote</td><td>string|null</td><td>CEO statement mentioning AI (if available)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="api-section">
+    <h2>Code Examples</h2>
+
+    <h3>Python</h3>
+    <pre><code>import requests, json
+
+# Fetch full dataset
+data = requests.get("https://ailayofftracker.com/api/entries.json").json()
+entries = data["entries"]
+
+# Filter: Tier 1 only
+tier1 = [e for e in entries if e["classification"] == "DIRECT_AI_REPLACEMENT"]
+print(f"Tier 1 (Direct AI Replacement): {sum(e['jobs_lost'] for e in tier1):,} jobs")
+
+# Stats endpoint
+stats = requests.get("https://ailayofftracker.com/api/stats.json").json()
+print(f"Total: {stats['total_jobs_lost']:,} | Monthly rate: {stats['monthly_rate']:,}")</code></pre>
+
+    <h3>JavaScript</h3>
+    <pre><code>const resp = await fetch("https://ailayofftracker.com/api/entries.json");
+const data = await resp.json();
+
+// Group by industry
+const byIndustry = {};
+data.entries.forEach(e => {
+  byIndustry[e.industry] = (byIndustry[e.industry] || 0) + e.jobs_lost;
+});
+console.log(byIndustry);</code></pre>
+
+    <h3>curl + jq</h3>
+    <pre><code># Top 5 companies by jobs lost
+curl -s https://ailayofftracker.com/api/entries.json | \\
+  jq '[.entries | group_by(.company)[] | {company: .[0].company, jobs: (map(.jobs_lost) | add)}] | sort_by(-.jobs) | .[0:5]'</code></pre>
+  </div>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="methodology.html">Methodology</a>
+        <a href="api/">JSON API</a>
+        <a href="api/entries.csv">Download CSV</a>
+        <a href="api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="press/">Press Kit</a>
+        <a href="research/">Research</a>
+        <a href="citation-guide/">Citation Guide</a>
+        <a href="versions/">Versions</a>
+        <a href="history/">Entry History</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+</body>
+</html>
