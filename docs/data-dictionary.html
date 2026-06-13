@@ -67,62 +67,6 @@
     }
     /* Status lifecycle badges */
 
-    /* Mobile: stacked cards (no horizontal scroll needed) */
-    @media (max-width: 768px) {
-      .dd-table,
-      .dd-table tbody,
-      .dd-table tr,
-      .dd-table td { display: block; }
-      .dd-table thead { display: none; }
-      .dd-table tr {
-        margin-bottom: 1rem;
-        border: 1px solid var(--border);
-        border-radius: var(--r);
-        background: var(--surface);
-        overflow: hidden;
-      }
-      .dd-table tr:hover { background: rgba(255,71,71,0.03); }
-      .dd-table td {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 0.75rem;
-        padding: 0.5rem 0.85rem;
-        border-bottom: 1px solid var(--border);
-        font-size: 0.8125rem;
-        text-align: right;
-        max-width: none !important;
-        min-width: unset !important;
-        white-space: normal !important;
-      }
-      .dd-table td:last-child { border-bottom: none; }
-      .dd-table td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        font-size: 0.6875rem;
-        color: var(--text-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        text-align: left;
-        flex-shrink: 0;
-        max-width: 35%;
-      }
-      .dd-table td:first-child {
-        background: rgba(255,71,71,0.04);
-        font-weight: 700;
-        font-size: 0.9375rem;
-      }
-      .dd-table td:first-child::before {
-        font-weight: 600;
-        color: var(--accent);
-      }
-    }
-    /* Desktop: restore native table layout */
-    @media (min-width: 769px) {
-      .dd-table { display: table; overflow-x: visible; width: 100%; }
-      .dd-table td::before { content: none; }
-    }
-
     .required-yes {
       color: var(--accent);
       font-weight: 700;

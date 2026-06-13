@@ -624,7 +624,7 @@ tbody tr:hover td {
 tbody tr:last-child td { border-bottom: none; }
 
 /* Table scroll wrapper (mobile-only) */
-.table-wrap, .methodology-table, .evidence-table,
+.table-wrap, .methodology-table, .dd-table, .evidence-table,
 .changelog-table, .history-table, .version-table, .press-table {
   display: block;
   overflow-x: auto;
@@ -635,7 +635,7 @@ tbody tr:last-child td { border-bottom: none; }
   position: relative;
 }
 /* Scroll fade indicator on right edge */
-.table-wrap::after, .methodology-table::after,
+.table-wrap::after, .methodology-table::after, .dd-table::after,
 .evidence-table::after, .changelog-table::after, .history-table::after {
   content: "";
   position: sticky;
@@ -647,16 +647,39 @@ tbody tr:last-child td { border-bottom: none; }
 }
 
 @media (min-width: 769px) {
-  .table-wrap, .methodology-table, .evidence-table,
+  .table-wrap, .methodology-table, .dd-table, .evidence-table,
   .changelog-table, .history-table, .version-table, .press-table {
     display: table;
     overflow-x: visible;
     width: 100%;
+    border: none;
+    border-radius: 0;
+    background: transparent;
   }
-  .table-wrap::after, .methodology-table::after,
+  .table-wrap::after, .methodology-table::after, .dd-table::after,
   .evidence-table::after, .changelog-table::after, .history-table::after {
     display: none;
   }
+}
+
+/* Smooth scrollbar for WebKit */
+.table-wrap::-webkit-scrollbar, .methodology-table::-webkit-scrollbar,
+.dd-table::-webkit-scrollbar, .evidence-table::-webkit-scrollbar,
+.changelog-table::-webkit-scrollbar, .history-table::-webkit-scrollbar {
+  height: 4px;
+}
+.table-wrap::-webkit-scrollbar-thumb, .methodology-table::-webkit-scrollbar-thumb,
+.dd-table::-webkit-scrollbar-thumb, .evidence-table::-webkit-scrollbar-thumb,
+.changelog-table::-webkit-scrollbar-thumb, .history-table::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0.5;
+}
+.table-wrap::-webkit-scrollbar-track, .methodology-table::-webkit-scrollbar-track,
+.dd-table::-webkit-scrollbar-track, .evidence-table::-webkit-scrollbar-track,
+.changelog-table::-webkit-scrollbar-track, .history-table::-webkit-scrollbar-track {
+  background: var(--border);
+  border-radius: 2px;
 }
 /* --- Toast + Overlay ------------------------------------------------- */
 .toast {
