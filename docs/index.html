@@ -55,6 +55,14 @@
 </head>
 <body>
 
+<!-- Animated Background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+
 <!-- Skip to Content (a11y) -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -77,10 +85,13 @@
   <!-- Hero -->
   <section class="hero" aria-labelledby="hero-heading">
     <div class="container">
-      <h1 id="hero-heading">AI Layoff Tracker</h1>
+      <div class="hero-badge" aria-hidden="true">
+        <span class="hero-badge-dot"></span> Data refreshed live from public sources
+      </div>
+      <h1 id="hero-heading"><span class="hero-gradient">AI Layoff Tracker</span></h1>
       <p class="hero-subtitle">Tracking documented workforce reductions linked to artificial intelligence and automation. These are the documented cases. Read the sources and decide.</p>
 
-      <div class="counter-wrapper">
+      <div class="counter-card">
         <span class="counter-label">Total documented jobs impacted</span>
         <div class="counter-value" aria-live="polite">—</div>
         <div class="counter-meta">
@@ -101,7 +112,7 @@
   </section>
 
   <!-- Statistics Dashboard -->
-  <section class="stats-dashboard" aria-labelledby="stats-heading">
+  <section class="stats-section" aria-labelledby="stats-heading">
     <div class="container">
       <h2 id="stats-heading" class="sr-only">Key Statistics</h2>
       <div class="stats-grid">
