@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology — AI Layoff Tracker</title>
+  <meta name="description" content="How we classify, verify, and source every entry in the AI Layoff Tracker database. Transparent methodology for researchers and journalists.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/methodology.html">
+
+  <meta property="og:title" content="Methodology — AI Layoff Tracker">
+  <meta property="og:description" content="Transparent methodology for tracking documented workforce reductions linked to artificial intelligence.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/methodology.html">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/timeline.css">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/methodology.html" aria-current="page">Methodology</a>
+      <a href="/api/entries.json">API</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" class="methodology">
+  <div class="container">
+
+    <h1>Methodology</h1>
+    <p class="hero-subtitle" style="text-align:left; max-width:none;">How we collect, classify, and verify every entry. This page protects the integrity of the project.</p>
+
+    <!-- Mission -->
+    <h2>Mission</h2>
+    <p>The AI Layoff Tracker is a public research database documenting workforce reductions where artificial intelligence or automation was explicitly cited as a contributing factor. We do not editorialize. We do not advocate. We record, classify, and cite.</p>
+    <blockquote>
+      <p>"These are the documented cases. Read the sources and decide."</p>
+    </blockquote>
+
+    <!-- Inclusion Criteria -->
+    <h2>Inclusion Criteria</h2>
+    <p>An entry is added to the database only when <strong>all</strong> of the following conditions are met:</p>
+    <ol>
+      <li><strong>Public source required.</strong> The workforce reduction must be documented in at least one publicly accessible source — a news article, company press release, SEC filing, earnings call transcript, or official regulatory document.</li>
+      <li><strong>Workforce reduction documented.</strong> There must be a specific, identifiable reduction in headcount (layoffs, hiring freezes that target specific roles, contractor reductions, or department eliminations).</li>
+      <li><strong>AI explicitly referenced.</strong> The company or a credible third-party source must explicitly cite artificial intelligence, automation, or machine learning as a contributing factor to the workforce reduction.</li>
+      <li><strong>Verifiable date.</strong> The announcement or implementation must have a specific date (at minimum, month and year).</li>
+    </ol>
+
+    <!-- Exclusion Criteria -->
+    <h2>Exclusion Criteria</h2>
+    <p>The following are <strong>not</strong> included in the database:</p>
+    <ul>
+      <li><strong>General economic layoffs</strong> — workforce reductions attributed solely to market conditions, cost-cutting, or restructuring without AI being mentioned.</li>
+      <li><strong>Rumors or anonymous claims</strong> — unverified reports, social media speculation, or anonymous sources without corroboration.</li>
+      <li><strong>Speculative projections</strong> — studies predicting future AI-related job losses without specific, documented company actions.</li>
+      <li><strong>Normal turnover</strong> — routine attrition, retirement, or voluntary departures not linked to AI.</li>
+      <li><strong>Offshoring without AI</strong> — jobs moved to other countries for cost reasons without AI being a stated factor.</li>
+    </ul>
+
+    <!-- Classification System -->
+    <h2>Classification System</h2>
+    <p>Every entry is assigned to one of four tiers. This distinction is the foundation of the database's credibility. Journalists and researchers can filter by tier to match their editorial standards.</p>
+
+    <table class="methodology-table" aria-label="Classification tiers">
+      <thead>
+        <tr><th>Tier</th><th>Classification</th><th>Definition</th><th>Confidence Required</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="class-badge tier-1">Tier 1</span></td>
+          <td><strong>Direct AI Replacement</strong></td>
+          <td>Company explicitly states AI systems replaced specific human work, resulting in workforce reduction.</td>
+          <td>80+</td>
+        </tr>
+        <tr>
+          <td><span class="class-badge tier-2">Tier 2</span></td>
+          <td><strong>AI-Driven Restructuring</strong></td>
+          <td>Company cites AI efficiency or automation as a major factor in a restructuring that included layoffs.</td>
+          <td>70+</td>
+        </tr>
+        <tr>
+          <td><span class="class-badge tier-3">Tier 3</span></td>
+          <td><strong>AI Reallocation</strong></td>
+          <td>Jobs cut while the company simultaneously announced increased investment in AI, with resources redirected toward AI priorities.</td>
+          <td>70+</td>
+        </tr>
+        <tr>
+          <td><span class="class-badge tier-4">Tier 4</span></td>
+          <td><strong>Market Disruption</strong></td>
+          <td>Company lost revenue or market position because customers switched to AI-powered alternatives, leading to workforce reductions.</td>
+          <td>80+</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Classification Examples -->
+    <h3>Classification Examples</h3>
+
+    <div class="example-entry">
+      <h4>Klarna — <span class="class-badge tier-1">Tier 1 · Direct AI Replacement</span></h4>
+      <p>Klarna CEO stated the company reduced its workforce from 5,000 to 3,000 because "we can do the same amount of work with 2,000 employees that we previously did with 5,000 people," citing AI-powered customer service as the enabling technology. <strong>Confidence: 95/100.</strong></p>
+    </div>
+
+    <div class="example-entry">
+      <h4>IBM — <span class="class-badge tier-2">Tier 2 · AI-Driven Restructuring</span></h4>
+      <p>IBM CEO Arvind Krishna announced a hiring pause for approximately 7,800 back-office roles, stating "I could easily see 30 percent of [back-office roles] getting replaced by AI and automation over a five-year period." AI was cited as the primary driver of workforce strategy change. <strong>Confidence: 85/100.</strong></p>
+    </div>
+
+    <div class="example-entry">
+      <h4>Google — <span class="class-badge tier-3">Tier 3 · AI Reallocation</span></h4>
+      <p>Google laid off 12,000 employees while CEO Sundar Pichai stated the company needed to "redirect resources toward AI priorities." Jobs were cut across multiple departments as investment shifted to AI development. <strong>Confidence: 75/100.</strong></p>
+    </div>
+
+    <div class="example-entry">
+      <h4>Chegg — <span class="class-badge tier-4">Tier 4 · Market Disruption</span></h4>
+      <p>Chegg laid off 441 employees (20% of workforce) after ChatGPT's launch caused a "significant spike in student interest" in free AI tools, directly reducing demand for Chegg's homework help services. <strong>Confidence: 90/100.</strong></p>
+    </div>
+
+    <!-- Confidence Scores -->
+    <h2>Confidence Scores</h2>
+    <p>Each entry receives a confidence score from 0 to 100, reflecting the strength and directness of the evidence linking AI to the workforce reduction.</p>
+    <table class="methodology-table" aria-label="Confidence score ranges">
+      <thead>
+        <tr><th>Score Range</th><th>Rating</th><th>Criteria</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>90–100</td><td><span class="confidence-dot high" style="display:inline-block"></span> High</td><td>CEO or official company statement directly and unambiguously attributes workforce reduction to AI. Multiple corroborating sources.</td></tr>
+        <tr><td>70–89</td><td><span class="confidence-dot medium" style="display:inline-block"></span> Medium</td><td>Company statement cites AI as a factor, but with less direct causal language. Or strong third-party reporting with named sources.</td></tr>
+        <tr><td>50–69</td><td><span class="confidence-dot low" style="display:inline-block"></span> Low</td><td>AI mentioned in context of broader restructuring. Single source. Inferred connection.</td></tr>
+        <tr><td>Below 50</td><td>Insufficient</td><td>Entry does not meet our threshold for publication. May be held in review queue.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Evidence Types -->
+    <h2>Evidence Types</h2>
+    <p>Entries are tagged with one or more evidence types that describe the nature of the source material:</p>
+    <ul>
+      <li><strong>CEO_STATEMENT</strong> — Public statement by the company's CEO or equivalent executive.</li>
+      <li><strong>COMPANY_STATEMENT</strong> — Official company press release, blog post, or spokesperson statement.</li>
+      <li><strong>EARNINGS_REPORT</strong> — Quarterly or annual earnings filing, investor presentation, or shareholder letter.</li>
+      <li><strong>SEC_FILING</strong> — Filing with the U.S. Securities and Exchange Commission (10-K, 10-Q, 8-K, etc.).</li>
+      <li><strong>MEDIA_REPORT</strong> — Verified reporting by a recognized news organization.</li>
+      <li><strong>REGULATORY_FILING</strong> — Filing with government agencies outside the U.S. (WARN Act notices, EU collective redundancy notifications, etc.).</li>
+      <li><strong>TRAFFIC_ANALYSIS</strong> — Third-party web/app traffic data showing measurable decline linked to AI competition.</li>
+    </ul>
+
+    <!-- Verification Process -->
+    <h2>Verification Process</h2>
+    <ol>
+      <li><strong>Source collection.</strong> Entry is submitted or identified through monitoring of news, company announcements, and public filings.</li>
+      <li><strong>Primary source verification.</strong> The original source (press release, SEC filing, earnings call transcript) is located and reviewed.</li>
+      <li><strong>Classification assessment.</strong> Based on the directness of the AI attribution, the entry is classified into one of four tiers.</li>
+      <li><strong>Cross-reference.</strong> At least one additional source is located to corroborate the primary source (where available).</li>
+      <li><strong>Confidence scoring.</strong> A score is assigned based on evidence strength, source quality, and clarity of AI attribution.</li>
+      <li><strong>Publication.</strong> Entry is added to the database with full source links and metadata.</li>
+    </ol>
+
+    <!-- Data Sources -->
+    <h2>Data Sources</h2>
+    <p>Our data is drawn from verified public sources including but not limited to:</p>
+    <ul>
+      <li>Company press releases and official blogs</li>
+      <li>SEC filings (10-K, 10-Q, 8-K)</li>
+      <li>Earnings call transcripts</li>
+      <li>Verified media reporting (Reuters, Bloomberg, BBC, CNBC, The Verge, Ars Technica, etc.)</li>
+      <li>Government regulatory filings (WARN Act notices, EU directives)</li>
+      <li>Investor presentations and shareholder letters</li>
+    </ul>
+    <p>We maintain a <strong>domain whitelist</strong> of trusted sources. Submissions referencing sources outside this whitelist are held for manual review.</p>
+
+    <!-- Corrections Policy -->
+    <h2>Corrections Policy</h2>
+    <p>We are committed to accuracy. If you believe an entry contains an error:</p>
+    <ol>
+      <li>Email <strong>corrections@ailayofftracker.com</strong> with the entry ID, the specific error, and supporting sources.</li>
+      <li>Corrections are reviewed within 72 hours.</li>
+      <li>Accepted corrections are published with a changelog entry documenting what was changed, when, and why.</li>
+      <li>All corrections are logged in our public changelog.</li>
+    </ol>
+
+    <!-- Transparency Statement -->
+    <h2>Transparency Statement</h2>
+    <ul>
+      <li><strong>No AI is used to classify entries.</strong> Every classification decision is made by human review.</li>
+      <li><strong>No automated scraping populates the database.</strong> Every entry is manually reviewed before publication.</li>
+      <li><strong>No funding from companies tracked in this database.</strong> This project is independently maintained.</li>
+      <li><strong>No paywall.</strong> All data is freely available in JSON, CSV, and RSS formats.</li>
+      <li><strong>Full source attribution.</strong> Every entry includes links to original sources.</li>
+      <li><strong>Dataset versioning.</strong> Each significant update is versioned for citability.</li>
+    </ul>
+
+    <p style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border); color: var(--text-muted); font-size: 0.8125rem;">
+      Last reviewed: June 13, 2026. Questions? <a href="mailto:methodology@ailayofftracker.com">methodology@ailayofftracker.com</a>
+    </p>
+
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <nav aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/methodology.html" aria-current="page">Methodology</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

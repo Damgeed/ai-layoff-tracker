@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Layoff Tracker — Documented Workforce Reductions Linked to AI</title>
+  <meta name="description" content="The definitive public database of workforce reductions linked to artificial intelligence and automation. 65,117 jobs documented across 15 companies. Searchable, citable, transparent.">
+  <meta name="keywords" content="AI layoffs, artificial intelligence jobs, automation workforce, AI job replacement, AI employment impact, layoffs database, workforce reduction tracker">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://damgeed.github.io/ai-layoff-tracker/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Layoff Tracker — Documented Workforce Reductions Linked to AI">
+  <meta property="og:description" content="65,117 jobs documented across 15 companies. The definitive public database of AI-related workforce reductions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://damgeed.github.io/ai-layoff-tracker/">
+  <meta property="og:site_name" content="AI Layoff Tracker">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Layoff Tracker">
+  <meta name="twitter:description" content="Tracking documented workforce reductions linked to artificial intelligence and automation.">
+
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AI Layoff Tracker",
+    "url": "https://damgeed.github.io/ai-layoff-tracker/",
+    "description": "Tracking documented workforce reductions linked to artificial intelligence and automation."
+  }
+  </script>
+
+  <!-- Structured Data: Dataset -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "AI Layoff Tracker Database",
+    "description": "A structured, verified database of workforce reductions where artificial intelligence or automation was explicitly cited as a contributing factor.",
+    "url": "https://damgeed.github.io/ai-layoff-tracker/api/entries.json",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "isAccessibleForFree": true,
+    "dateModified": "2026-06-13",
+    "creator": {
+      "@type": "Organization",
+      "name": "AI Layoff Tracker"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/timeline.css">
+</head>
+<body>
+
+<!-- Skip to Content (a11y) -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Header -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
+    <nav aria-label="Main navigation">
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/entries.json">API</a>
+      <a href="/api/entries.csv">CSV</a>
+      <a href="/api/feed.xml">RSS</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main id="main-content">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="container">
+      <h1 id="hero-heading">AI Layoff Tracker</h1>
+      <p class="hero-subtitle">Tracking documented workforce reductions linked to artificial intelligence and automation. These are the documented cases. Read the sources and decide.</p>
+
+      <div class="counter-wrapper">
+        <span class="counter-label">Total documented jobs impacted</span>
+        <div class="counter-value" aria-live="polite">—</div>
+        <div class="counter-meta">
+          <span>— Companies</span>
+          <span>— Countries</span>
+          <span>— Industries</span>
+          <span>Updated —</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="/methodology.html" class="btn btn-secondary">📋 View Methodology</a>
+        <a href="/api/entries.csv" class="btn btn-secondary">📥 Download CSV</a>
+        <a href="/api/feed.xml" class="btn btn-secondary">📡 RSS Feed</a>
+        <a href="mailto:submit@ailayofftracker.com" class="btn btn-primary">📤 Submit Evidence</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Dashboard -->
+  <section class="stats-dashboard" aria-labelledby="stats-heading">
+    <div class="container">
+      <h2 id="stats-heading" class="sr-only">Key Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value skeleton-counter skeleton" aria-busy="true">—</div>
+          <div class="stat-label">Total Jobs Impacted</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">—</div>
+          <div class="stat-label">Companies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">—</div>
+          <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">—</div>
+          <div class="stat-label">Industries</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search + Filters -->
+  <section class="search-section" aria-labelledby="search-heading">
+    <div class="container">
+      <div class="search-bar">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="search" id="search-input" placeholder="Search company, industry, keyword…" aria-label="Search entries" autocomplete="off">
+      </div>
+
+      <button class="filter-toggle" aria-expanded="false" aria-controls="filters-panel">⚙ Filters</button>
+
+      <div class="filters-bar" id="filters-panel" role="group" aria-label="Filter and sort entries">
+        <!-- Classification chips -->
+        <button class="filter-chip" data-classification="DIRECT_AI_REPLACEMENT" aria-pressed="false">Tier 1 · Direct AI Replacement</button>
+        <button class="filter-chip" data-classification="AI_DRIVEN_RESTRUCTURING" aria-pressed="false">Tier 2 · AI Restructuring</button>
+        <button class="filter-chip" data-classification="AI_REALLOCATION" aria-pressed="false">Tier 3 · AI Reallocation</button>
+        <button class="filter-chip" data-classification="MARKET_DISRUPTION" aria-pressed="false">Tier 4 · Market Disruption</button>
+
+        <select id="filter-country" aria-label="Filter by country">
+          <option value="">All Countries</option>
+        </select>
+
+        <select id="filter-industry" aria-label="Filter by industry">
+          <option value="">All Industries</option>
+        </select>
+
+        <input type="date" id="filter-date-from" aria-label="From date" title="From date">
+        <input type="date" id="filter-date-to" aria-label="To date" title="To date">
+
+        <input type="number" id="filter-min-jobs" placeholder="Min jobs" min="0" aria-label="Minimum jobs lost" style="width:100px">
+
+        <select id="filter-sort" aria-label="Sort order">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="largest">Largest Impact</option>
+          <option value="impact">Highest Workforce %</option>
+        </select>
+
+        <button class="btn-clear" id="btn-clear-filters">Clear All</button>
+      </div>
+
+      <div class="results-count" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline-section" aria-labelledby="timeline-heading">
+    <div class="container">
+      <h2 id="timeline-heading">Timeline</h2>
+      <div class="timeline" role="list" aria-label="AI workforce reduction entries">
+        <!-- Populated by JS; skeleton cards shown during load -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Charts -->
+  <section class="charts-section" aria-labelledby="charts-heading">
+    <div class="container">
+      <h2 id="charts-heading">Analysis</h2>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Jobs Impacted by Industry</h3>
+          <canvas id="chart-industry" role="img" aria-label="Bar chart of jobs impacted by industry"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>By Classification</h3>
+          <canvas id="chart-classification" role="img" aria-label="Donut chart of classification distribution"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Monthly Trend</h3>
+          <canvas id="chart-timeline" role="img" aria-label="Line chart of monthly jobs impacted"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Dataset -->
+  <section class="download-section" aria-labelledby="download-heading">
+    <div class="container">
+      <h2 id="download-heading">Download Dataset</h2>
+      <p>All data is freely available. No registration required.</p>
+      <div class="download-grid">
+        <div class="download-card">
+          <h4>entries.json</h4>
+          <p>Full dataset, all fields</p>
+          <code class="api-url">/api/entries.json</code>
+          <button class="btn btn-secondary btn-copy-api" data-api-url="/api/entries.json">📋 Copy URL</button>
+        </div>
+        <div class="download-card">
+          <h4>entries.csv</h4>
+          <p>Spreadsheet-ready</p>
+          <code class="api-url">/api/entries.csv</code>
+          <a href="/api/entries.csv" class="btn btn-secondary">📥 Download</a>
+        </div>
+        <div class="download-card">
+          <h4>stats.json</h4>
+          <p>Aggregated statistics</p>
+          <code class="api-url">/api/stats.json</code>
+          <button class="btn btn-secondary btn-copy-api" data-api-url="/api/stats.json">📋 Copy URL</button>
+        </div>
+        <div class="download-card">
+          <h4>RSS Feed</h4>
+          <p>Latest entries</p>
+          <code class="api-url">/api/feed.xml</code>
+          <button class="btn btn-secondary btn-copy-api" data-api-url="/api/feed.xml">📋 Copy URL</button>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:1.5rem">
+        <button class="btn btn-secondary" onclick="exportFilteredCSV()">📥 Export Filtered Results to CSV</button>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    <p><small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small></p>
+    <nav aria-label="Footer navigation">
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/entries.json">JSON API</a>
+      <a href="/api/entries.csv">Download CSV</a>
+      <a href="/api/feed.xml">RSS Feed</a>
+      <a href="/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Share Overlay (hidden) -->
+<div class="share-overlay" role="dialog" aria-modal="true" aria-label="Share entry">
+  <div class="share-overlay-content">
+    <h3>Share This Entry</h3>
+    <img id="share-image" src="" alt="Social share card" loading="lazy">
+    <div class="share-actions">
+      <button class="btn btn-secondary" id="copy-share-image">📋 Copy Image</button>
+      <button class="btn btn-secondary" id="download-share-image">💾 Download PNG</button>
+      <button class="btn btn-secondary" id="copy-share-link">🔗 Copy Link</button>
+      <button class="btn btn-secondary" id="close-share">✕ Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts (progressive enhancement — site works without JS) -->
+<script src="/assets/js/app.js" defer></script>
+<script src="/assets/js/filters.js" defer></script>
+<script src="/assets/js/search.js" defer></script>
+<script src="/assets/js/share.js" defer></script>
+<script src="/assets/js/charts.js" defer></script>
+
+<!-- Screen-reader-only helper -->
+<style>
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+</style>
+</body>
+</html>
