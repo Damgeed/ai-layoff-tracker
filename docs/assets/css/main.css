@@ -554,7 +554,7 @@ body{
   .site-footer { padding: 1rem 0 0.65rem; }
   .site-footer .container {
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.15rem;
     align-items: center;
     text-align: center;
   }
