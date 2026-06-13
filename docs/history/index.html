@@ -119,7 +119,7 @@
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
     <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
@@ -143,7 +143,7 @@
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
   </div>
 </div>
@@ -157,7 +157,7 @@
     <!-- About Audit Trail -->
     <h2>About This Page</h2>
     <p>This page provides a complete audit trail for every entry in the AI Layoff Tracker dataset. Each row shows the company, the date the entry was first created, the date it was last modified, and the number of recorded changes. Click any company name to view its full entry page with source links and classification details.</p>
-    <p>The audit trail is loaded live from the <a href="api/entries.json">entries.json</a> API. If an entry's data changes, the <code>updated_date</code> field reflects the change date. For detailed changelogs, see the <a href="changelog.html">Changelog</a> page.</p>
+    <p>The audit trail is loaded live from the <a href="api/">entries.json</a> API. If an entry's data changes, the <code>updated_date</code> field reflects the change date. For detailed changelogs, see the <a href="changelog.html">Changelog</a> page.</p>
 
     <!-- Summary Stats (loaded by JS) -->
     <h2>Summary</h2>
@@ -202,15 +202,28 @@
 
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <nav aria-label="Footer navigation">
-      <a href="/">Home</a>
-      <a href="/history/" aria-current="page">History</a>
-      <a href="/methodology.html">Methodology</a>
-      <a href="/api/entries.json">JSON API</a>
-      <a href="/api/entries.csv">Download CSV</a>
-      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
-    </nav>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/api/">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
 

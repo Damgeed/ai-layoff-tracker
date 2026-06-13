@@ -44,7 +44,7 @@
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
     <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
@@ -68,7 +68,7 @@
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
   </div>
 </div>
@@ -146,15 +146,28 @@
 
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <nav aria-label="Footer navigation">
-      <a href="/">Home</a>
-      <a href="/methodology.html">Methodology</a>
-      <a href="/pending-review/" aria-current="page">Pending Review</a>
-      <a href="/api/entries.json">JSON API</a>
-      <a href="/api/entries.csv">Download CSV</a>
-      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
-    </nav>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/api/">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
 <script src="assets/js/theme.js" defer></script>

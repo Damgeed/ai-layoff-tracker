@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API — AI Layoff Tracker</title>
+<meta name="description" content="Public API for the AI Layoff Tracker dataset. Access structured data on documented AI-related workforce reductions.">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/timeline.css">
+<style>
+  .api-section { margin-bottom: 2.5rem; }
+  .api-endpoint {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .api-endpoint:hover { border-color: var(--accent); transform: translateX(4px); }
+  .api-method {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #0a0a0a;
+    flex-shrink: 0;
+  }
+  .api-path {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    color: var(--accent);
+    flex: 1;
+  }
+  .api-desc { font-size: 0.8rem; color: var(--text-muted); max-width: 24rem; text-align: right; flex-shrink: 0; }
+  @media (max-width: 600px) {
+    .api-endpoint { flex-wrap: wrap; }
+    .api-desc { text-align: left; flex-basis: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+  <div class="particle"></div><div class="particle"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+</div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/" class="active">API</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" role="dialog" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mobile-nav-backdrop"></div>
+  <div class="mobile-nav-panel">
+    <nav class="mobile-nav-links">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/">API</a>
+    </nav>
+  </div>
+</div>
+<main class="container" id="main-content" role="main">
+  <header class="hero-section">
+    <h1>API</h1>
+    <p class="hero-subtitle">Structured access to the AI Layoff Tracker dataset. All endpoints are public, no authentication required.</p>
+  </header>
+
+  <div class="api-section">
+    <h2>Dataset</h2>
+    <a class="api-endpoint" href="api/">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/entries.json</span>
+      <span class="api-desc">Full dataset — all 27 verified entries with evidence, sources, and confidence breakdowns</span>
+    </a>
+    <a class="api-endpoint" href="api/entries.csv">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/entries.csv</span>
+      <span class="api-desc">Downloadable CSV — import into Excel, Sheets, or data analysis tools</span>
+    </a>
+    <a class="api-endpoint" href="api/feed.xml">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/feed.xml</span>
+      <span class="api-desc">RSS feed — subscribe for new entry notifications</span>
+    </a>
+  </div>
+
+  <div class="api-section">
+    <h2>Statistics</h2>
+    <a class="api-endpoint" href="api/stats.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/stats.json</span>
+      <span class="api-desc">Computed statistics — totals, breakdowns by classification, industry, country</span>
+    </a>
+    <a class="api-endpoint" href="api/confidence.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/confidence.json</span>
+      <span class="api-desc">Confidence methodology — scoring rules and per-entry breakdowns</span>
+    </a>
+    <a class="api-endpoint" href="api/weekly-validation-report.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/weekly-validation-report.json</span>
+      <span class="api-desc">Weekly validation report — automated quality checks (9 checks)</span>
+    </a>
+  </div>
+
+  <div class="api-section">
+    <h2>Per-Entity</h2>
+    <a class="api-endpoint" href="api/company/klarna.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/company/{slug}.json</span>
+      <span class="api-desc">Per-company data — all entries for a single company (27 available)</span>
+    </a>
+    <a class="api-endpoint" href="api/industry/fintech.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/industry/{slug}.json</span>
+      <span class="api-desc">Per-industry data — all entries in a sector (8 available)</span>
+    </a>
+    <a class="api-endpoint" href="api/country/united-states.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/country/{slug}.json</span>
+      <span class="api-desc">Per-country data — all entries in a country (5 available)</span>
+    </a>
+  </div>
+
+  <div class="api-section">
+    <h2>Transparency</h2>
+    <a class="api-endpoint" href="api/changelog.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/changelog.json</span>
+      <span class="api-desc">Changelog — dataset version history and change log</span>
+    </a>
+    <a class="api-endpoint" href="api/corrections-schema.json">
+      <span class="api-method">GET</span>
+      <span class="api-path">/api/corrections-schema.json</span>
+      <span class="api-desc">Corrections schema — how to submit corrections</span>
+    </a>
+  </div>
+
+  <div class="hero-section" style="margin-top:3rem;">
+    <h2>Usage Notes</h2>
+    <ul>
+      <li>No API key required — all endpoints are public</li>
+      <li>CORS enabled — fetch from any domain</li>
+      <li>Content-Type: <code>application/json</code> (except CSV and RSS)</li>
+      <li>UTF-8 encoding throughout</li>
+      <li>Dataset updated as new verified entries are added</li>
+    </ul>
+  </div>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/api/">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/theme.js" defer></script>
+<script src="assets/js/mobile-nav.js" defer></script>
+</body>
+<!-- build:2026-06-13T13:34:08Z -->
+</html>

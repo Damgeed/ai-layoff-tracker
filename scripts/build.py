@@ -236,7 +236,7 @@ def generate_company_pages(data):
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
     <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
@@ -259,7 +259,7 @@ def generate_company_pages(data):
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
   </div>
 </div>
@@ -318,19 +318,21 @@ def generate_company_pages(data):
     <div class="footer-links">
       <div class="footer-col">
         <h4>Data</h4>
-        <a href="/api/entries.json">JSON API</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/api/">JSON API</a>
         <a href="/api/entries.csv">Download CSV</a>
         <a href="/api/feed.xml">RSS Feed</a>
       </div>
       <div class="footer-col">
         <h4>Project</h4>
-        <a href="/methodology.html">Methodology</a>
         <a href="/sitemap.xml">Sitemap</a>
         <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
     </div>
   </div>
 </footer>
@@ -487,7 +489,7 @@ def generate_entry_pages(data):
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
     <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
@@ -510,7 +512,7 @@ def generate_entry_pages(data):
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
   </div>
 </div>
@@ -567,19 +569,21 @@ def generate_entry_pages(data):
     <div class="footer-links">
       <div class="footer-col">
         <h4>Data</h4>
-        <a href="/api/entries.json">JSON API</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/api/">JSON API</a>
         <a href="/api/entries.csv">Download CSV</a>
         <a href="/api/feed.xml">RSS Feed</a>
       </div>
       <div class="footer-col">
         <h4>Project</h4>
-        <a href="/methodology.html">Methodology</a>
         <a href="/sitemap.xml">Sitemap</a>
         <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
     </div>
   </div>
 </footer>
@@ -675,7 +679,7 @@ def generate_industry_pages(data):
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
     <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
@@ -698,7 +702,7 @@ def generate_industry_pages(data):
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
   </div>
 </div>
@@ -740,19 +744,21 @@ def generate_industry_pages(data):
     <div class="footer-links">
       <div class="footer-col">
         <h4>Data</h4>
-        <a href="/api/entries.json">JSON API</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/api/">JSON API</a>
         <a href="/api/entries.csv">Download CSV</a>
         <a href="/api/feed.xml">RSS Feed</a>
       </div>
       <div class="footer-col">
         <h4>Project</h4>
-        <a href="/methodology.html">Methodology</a>
         <a href="/sitemap.xml">Sitemap</a>
         <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
     </div>
   </div>
 </footer>
@@ -859,7 +865,7 @@ def generate_country_pages(data):
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
     <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
@@ -882,7 +888,7 @@ def generate_country_pages(data):
       <a href="changelog.html">Changelog</a>
       <a href="corrections.html">Corrections</a>
       <a href="evidence/">Evidence</a>
-      <a href="api/entries.json">API</a>
+      <a href="api/">API</a>
     </nav>
   </div>
 </div>
@@ -924,19 +930,21 @@ def generate_country_pages(data):
     <div class="footer-links">
       <div class="footer-col">
         <h4>Data</h4>
-        <a href="/api/entries.json">JSON API</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/api/">JSON API</a>
         <a href="/api/entries.csv">Download CSV</a>
         <a href="/api/feed.xml">RSS Feed</a>
       </div>
       <div class="footer-col">
         <h4>Project</h4>
-        <a href="/methodology.html">Methodology</a>
         <a href="/sitemap.xml">Sitemap</a>
         <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
     </div>
   </div>
 </footer>
