@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AI Layoff Tracker — Static Site Generator v2.0
+AI Layoff Tracker — Static Site Generator v3.0
 Reads data/entries.json → generates complete static site in public/
 """
 import json, os, shutil, sys
@@ -142,32 +142,57 @@ def generate_api(data, stats):
             f.write(",".join(row) + "\n")
 
 def generate_company_pages(data):
-    """Generate individual company pages."""
+    """Generate individual company pages using v3.0 CSS design system."""
     company_dir = PUBLIC_DIR / "company"
     entries = data["entries"]
-    
+
+    # Classification → v3.0 tier mapping
+    CLASSIFICATION_TIER = {
+        "DIRECT_AI_REPLACEMENT": "tier1",
+        "AI_DRIVEN_RESTRUCTURING": "tier2",
+        "AI_REALLOCATION": "tier3",
+        "MARKET_DISRUPTION": "tier4",
+    }
+    TIER_LABELS = {
+        "tier1": "Direct AI Replacement",
+        "tier2": "AI-Driven Restructuring",
+        "tier3": "AI Reallocation",
+        "tier4": "Market Disruption",
+    }
+
     for entry in entries:
         slug = entry["slug"]
         page_dir = company_dir / slug
         os.makedirs(page_dir, exist_ok=True)
-        
+
         class_info = data["classifications"].get(entry["classification"], {})
-        
+        tier = CLASSIFICATION_TIER.get(entry["classification"], "tier4")
+        tier_label = class_info.get("label", TIER_LABELS.get(tier, entry["classification"]))
+
+        # Confidence dot class mapping
+        conf = entry["confidence_score"]
+        if conf >= 80:
+            conf_class = "high"
+        elif conf >= 60:
+            conf_class = "medium"
+        else:
+            conf_class = "low"
+
         evidence_html = ""
         for ev in entry.get("evidence", []):
             evidence_html += f'<li class="evidence-item"><strong>{ev["type"].replace("_", " ").title()}:</strong> {ev["description"]}</li>'
-        
+
         secondary_html = ""
         for src in entry.get("secondary_sources", []):
-            secondary_html += f'<li><a href="{src["url"]}" target="_blank" rel="noopener">{src["title"]} <span class="source-pub">({src["publisher"]})</span></a></li>'
-        
+            secondary_html += f'<li><a href="{src["url"]}" target="_blank" rel="noopener" class="entry-source">{src["title"]} <small>({src["publisher"]})</small></a></li>'
+
         archive_html = ""
         source_obj = entry.get("source", {})
         if source_obj.get("archive_url"):
-            archive_html = f'<li>📦 <a href="{source_obj["archive_url"]}" target="_blank" rel="noopener">Archived Source <span class="source-pub">(archive.org)</span></a></li>'
-        
-        tags_html = " ".join(f'<span class="tag">{t}</span>' for t in entry.get("tags", []))
-        
+            archive_html = f'<li>📦 <a href="{source_obj["archive_url"]}" target="_blank" rel="noopener" class="entry-source">Archived Source <small>(archive.org)</small></a></li>'
+
+        tags_html = "".join(f'<span class="entry-tag">{t}</span>' for t in entry.get("tags", []))
+
         html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -179,38 +204,43 @@ def generate_company_pages(data):
 <meta property="og:description" content="{entry["summary"][:200]}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ailayofftracker.com/company/{slug}/">
+<meta property="og:site_name" content="AI Layoff Tracker">
+<link rel="canonical" href="https://ailayofftracker.com/company/{slug}/">
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/timeline.css">
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
-    <nav><a href="/methodology.html">Methodology</a><a href="/api/stats.json">API</a></nav>
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/entries.json">API</a>
+      <a href="/api/entries.csv">CSV</a>
+      <a href="/api/feed.xml">RSS</a>
+    </nav>
   </div>
 </header>
 <main class="container" id="main-content" role="main">
-  <nav class="breadcrumb"><a href="/">← Back to tracker</a></nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a></nav>
   <article class="entry-detail">
-    <div class="entry-header">
-      <div class="entry-classification" style="background:{class_info.get("color", "#ff4444")}">
-        {class_info.get("label", entry["classification"])}
-      </div>
+    <header class="entry-header">
+      <span class="class-badge {tier}"><span class="badge-dot {tier}"></span>{tier_label}</span>
       <h1>{entry["company"]}</h1>
-      <div class="entry-stats">
-        <div class="stat">
-          <span class="stat-value">{entry["jobs_lost"]:,}</span>
-          <span class="stat-label">Jobs Lost</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">{entry["impact_percent"]}%</span>
-          <span class="stat-label">of Workforce</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">{entry["confidence_score"]}/100</span>
-          <span class="stat-label">Confidence</span>
-        </div>
+    </header>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">{entry["jobs_lost"]:,}</div>
+        <div class="stat-label">Jobs Lost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">{entry["impact_percent"]}%</div>
+        <div class="stat-label">of Workforce</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value"><span class="confidence-dot {conf_class}"></span>{conf}/100</div>
+        <div class="stat-label">Confidence</div>
       </div>
     </div>
     <div class="entry-meta">
@@ -220,14 +250,14 @@ def generate_company_pages(data):
       <span>📊 {entry["public_trade_status"].title()}</span>
     </div>
     <div class="entry-body">
-      <p class="summary">{entry["summary"]}</p>
+      <p class="entry-summary">{entry["summary"]}</p>
       {f'<blockquote class="ceo-quote"><p>"{entry["ceo_quote"]}"</p><cite>— {entry["company"]} CEO</cite></blockquote>' if entry.get("ceo_quote") else ""}
-      <div class="tags">{tags_html}</div>
+      <div class="entry-tags">{tags_html}</div>
       <h2>Evidence</h2>
       <ul class="evidence-list">{evidence_html}</ul>
       <h2>Sources</h2>
       <ul class="source-list">
-        <li><a href="{entry["source"]["url"]}" target="_blank" rel="noopener">{entry["source"]["title"]} <span class="source-pub">({entry["source"]["publisher"]})</span></a></li>
+        <li><a href="{entry["source"]["url"]}" target="_blank" rel="noopener" class="entry-source">{entry["source"]["title"]} <small>({entry["source"]["publisher"]})</small></a></li>
         {archive_html}
         {secondary_html}
       </ul>
@@ -236,13 +266,31 @@ def generate_company_pages(data):
     </div>
   </article>
   <div class="share-section">
-    <button onclick="shareEntry('{entry["company"]}', {entry["jobs_lost"]}, '{entry["classification"]}')" class="btn-share">📤 Share This Entry</button>
+    <button onclick="shareEntry('{entry["company"]}', {entry["jobs_lost"]}, '{entry["classification"]}')" class="btn btn-primary">📤 Share This Entry</button>
   </div>
 </main>
-<footer class="site-footer">
+<footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <p><a href="/methodology.html">Methodology</a> · <a href="/api/entries.json">JSON API</a> · <a href="/api/entries.csv">Download CSV</a></p>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/api/entries.json">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
 <script src="/assets/js/share.js" defer></script>
@@ -252,9 +300,23 @@ def generate_company_pages(data):
             f.write(html)
 
 def generate_entry_pages(data):
-    """Generate individual entry pages at /entry/{id}/index.html."""
+    """Generate individual entry pages at /entry/{id}/index.html using v3.0 CSS."""
     entry_dir = PUBLIC_DIR / "entry"
     entries = data["entries"]
+
+    # Classification → v3.0 tier mapping
+    CLASSIFICATION_TIER = {
+        "DIRECT_AI_REPLACEMENT": "tier1",
+        "AI_DRIVEN_RESTRUCTURING": "tier2",
+        "AI_REALLOCATION": "tier3",
+        "MARKET_DISRUPTION": "tier4",
+    }
+    TIER_LABELS = {
+        "tier1": "Direct AI Replacement",
+        "tier2": "AI-Driven Restructuring",
+        "tier3": "AI Reallocation",
+        "tier4": "Market Disruption",
+    }
 
     # Build lookup maps
     by_company = {}
@@ -275,6 +337,8 @@ def generate_entry_pages(data):
         os.makedirs(page_dir, exist_ok=True)
 
         class_info = data["classifications"].get(entry["classification"], {})
+        tier = CLASSIFICATION_TIER.get(entry["classification"], "tier4")
+        tier_label = class_info.get("label", TIER_LABELS.get(tier, entry["classification"]))
 
         # Evidence list
         evidence_html = ""
@@ -288,10 +352,10 @@ def generate_entry_pages(data):
 
         # Source links
         source_obj = entry.get("source", {})
-        source_html = f'<li><a href="{source_obj.get("url", "#")}" target="_blank" rel="noopener">{source_obj.get("title", "Source")} <span class="source-pub">({source_obj.get("publisher", "Unknown")})</span></a></li>'
+        source_html = f'<li><a href="{source_obj.get("url", "#")}" target="_blank" rel="noopener" class="entry-source">{source_obj.get("title", "Source")} <small>({source_obj.get("publisher", "Unknown")})</small></a></li>'
         archive_html = ""
         if source_obj.get("archive_url"):
-            archive_html = f'<li>📦 <a href="{source_obj["archive_url"]}" target="_blank" rel="noopener">Archived Source <span class="source-pub">(archive.org)</span></a></li>'
+            archive_html = f'<li>📦 <a href="{source_obj["archive_url"]}" target="_blank" rel="noopener" class="entry-source">Archived Source <small>(archive.org)</small></a></li>'
 
         # Timeline: Other entries from same company
         company_entries = sorted(by_company.get(entry["company"], []), key=lambda x: x["date"], reverse=True)
@@ -309,14 +373,14 @@ def generate_entry_pages(data):
                 industry_timeline += f'<li><a href="/entry/{ie["id"]}/">{ie["date"]} — {ie["company"]}: {ie["jobs_lost"]:,} jobs</a></li>'
         industry_timeline_html = f'<ul class="timeline-list">{industry_timeline}</ul>' if industry_timeline else "<p>No other entries for this industry.</p>"
 
-        # Confidence dot color
+        # Confidence dot class
         conf = entry["confidence_score"]
         if conf >= 80:
-            conf_color = "#44ff44"
+            conf_class = "high"
         elif conf >= 60:
-            conf_color = "#ffcc44"
+            conf_class = "medium"
         else:
-            conf_color = "#ff4444"
+            conf_class = "low"
 
         # JSON-LD Dataset schema
         jsonld = {
@@ -345,6 +409,7 @@ def generate_entry_pages(data):
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ailayofftracker.com/entry/{eid}/">
+<meta property="og:site_name" content="AI Layoff Tracker">
 <link rel="canonical" href="https://ailayofftracker.com/entry/{eid}/">
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/timeline.css">
@@ -356,31 +421,34 @@ def generate_entry_pages(data):
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
-    <nav role="navigation" aria-label="Main navigation"><a href="/methodology.html">Methodology</a><a href="/api/stats.json">API</a></nav>
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/entries.json">API</a>
+      <a href="/api/entries.csv">CSV</a>
+      <a href="/api/feed.xml">RSS</a>
+    </nav>
   </div>
 </header>
 <main class="container" id="main-content" role="main">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a> · <a href="/company/{entry["slug"]}/">← {entry["company"]} page</a></nav>
   <article class="entry-detail">
-    <div class="entry-header">
-      <div class="entry-classification" style="background:{class_info.get("color", "#ff4444")}">
-        {class_info.get("label", entry["classification"])}
-      </div>
+    <header class="entry-header">
+      <span class="class-badge {tier}"><span class="badge-dot {tier}"></span>{tier_label}</span>
       <h1>{entry["company"]}: {entry["jobs_lost"]:,} Jobs Impacted</h1>
-      <div class="entry-stats">
-        <div class="stat">
-          <span class="stat-value">{entry["jobs_lost"]:,}</span>
-          <span class="stat-label">Jobs Lost</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">{entry["impact_percent"]}%</span>
-          <span class="stat-label">of Workforce</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value"><span class="confidence-dot" style="display:inline-block;width:12px;height:12px;border-radius:50%;background:{conf_color};margin-right:6px;"></span>{conf}/100</span>
-          <span class="stat-label">Confidence</span>
-        </div>
+    </header>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">{entry["jobs_lost"]:,}</div>
+        <div class="stat-label">Jobs Lost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">{entry["impact_percent"]}%</div>
+        <div class="stat-label">of Workforce</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value"><span class="confidence-dot {conf_class}"></span>{conf}/100</div>
+        <div class="stat-label">Confidence</div>
       </div>
     </div>
     <div class="entry-meta">
@@ -389,7 +457,7 @@ def generate_entry_pages(data):
       <span>🏭 {entry["industry"]}</span>
     </div>
     <div class="entry-body">
-      <p class="summary">{entry["summary"]}</p>
+      <p class="entry-summary">{entry["summary"]}</p>
       {ceo_html}
       <h2>Evidence</h2>
       <ul class="evidence-list">{evidence_html}</ul>
@@ -409,8 +477,26 @@ def generate_entry_pages(data):
 </main>
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <p><a href="/methodology.html">Methodology</a> · <a href="/api/entries.json">JSON API</a> · <a href="/api/entries.csv">Download CSV</a></p>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/api/entries.json">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
 </body>
@@ -419,7 +505,7 @@ def generate_entry_pages(data):
             f.write(html)
 
 def generate_industry_pages(data):
-    """Generate industry pages at /industry/{slug}/index.html."""
+    """Generate industry pages at /industry/{slug}/index.html using v3.0 CSS."""
     industry_dir = PUBLIC_DIR / "industry"
     entries = data["entries"]
 
@@ -471,6 +557,7 @@ def generate_industry_pages(data):
 <meta property="og:description" content="{desc[:200]}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ailayofftracker.com/industry/{ind_slug}/">
+<meta property="og:site_name" content="AI Layoff Tracker">
 <link rel="canonical" href="https://ailayofftracker.com/industry/{ind_slug}/">
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/timeline.css">
@@ -479,25 +566,30 @@ def generate_industry_pages(data):
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
-    <nav role="navigation" aria-label="Main navigation"><a href="/methodology.html">Methodology</a><a href="/api/stats.json">API</a></nav>
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/entries.json">API</a>
+      <a href="/api/entries.csv">CSV</a>
+      <a href="/api/feed.xml">RSS</a>
+    </nav>
   </div>
 </header>
 <main class="container" id="main-content" role="main">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a></nav>
   <h1>{ind_data["industry"]} — AI Workforce Reductions</h1>
-  <div class="entry-stats">
-    <div class="stat">
-      <span class="stat-value">{ind_data["total_jobs"]:,}</span>
-      <span class="stat-label">Total Jobs Lost</span>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">{ind_data["total_jobs"]:,}</div>
+      <div class="stat-label">Total Jobs Lost</div>
     </div>
-    <div class="stat">
-      <span class="stat-value">{len(ind_data["companies"])}</span>
-      <span class="stat-label">Companies</span>
+    <div class="stat-card">
+      <div class="stat-value">{len(ind_data["companies"])}</div>
+      <div class="stat-label">Companies</div>
     </div>
-    <div class="stat">
-      <span class="stat-value">{len(ind_data["entries"])}</span>
-      <span class="stat-label">Entries</span>
+    <div class="stat-card">
+      <div class="stat-value">{len(ind_data["entries"])}</div>
+      <div class="stat-label">Entries</div>
     </div>
   </div>
   <section aria-label="Companies in this industry">
@@ -515,8 +607,26 @@ def generate_industry_pages(data):
 </main>
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <p><a href="/methodology.html">Methodology</a> · <a href="/api/entries.json">JSON API</a> · <a href="/api/entries.csv">Download CSV</a></p>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/api/entries.json">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
 </body>
@@ -525,7 +635,7 @@ def generate_industry_pages(data):
             f.write(html)
 
 def generate_country_pages(data):
-    """Generate country pages at /country/{slug}/index.html."""
+    """Generate country pages at /country/{slug}/index.html using v3.0 CSS."""
     country_dir = PUBLIC_DIR / "country"
     entries = data["entries"]
 
@@ -588,6 +698,7 @@ def generate_country_pages(data):
 <meta property="og:description" content="{desc[:200]}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ailayofftracker.com/country/{c_slug}/">
+<meta property="og:site_name" content="AI Layoff Tracker">
 <link rel="canonical" href="https://ailayofftracker.com/country/{c_slug}/">
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="/assets/css/timeline.css">
@@ -596,25 +707,30 @@ def generate_country_pages(data):
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
-    <nav role="navigation" aria-label="Main navigation"><a href="/methodology.html">Methodology</a><a href="/api/stats.json">API</a></nav>
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav aria-label="Main navigation">
+      <a href="/methodology.html">Methodology</a>
+      <a href="/api/entries.json">API</a>
+      <a href="/api/entries.csv">CSV</a>
+      <a href="/api/feed.xml">RSS</a>
+    </nav>
   </div>
 </header>
 <main class="container" id="main-content" role="main">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a></nav>
   <h1>{c_data["country"]} — AI Workforce Reductions</h1>
-  <div class="entry-stats">
-    <div class="stat">
-      <span class="stat-value">{c_data["total_jobs"]:,}</span>
-      <span class="stat-label">Total Jobs Lost</span>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">{c_data["total_jobs"]:,}</div>
+      <div class="stat-label">Total Jobs Lost</div>
     </div>
-    <div class="stat">
-      <span class="stat-value">{len(c_data["companies"])}</span>
-      <span class="stat-label">Companies</span>
+    <div class="stat-card">
+      <div class="stat-value">{len(c_data["companies"])}</div>
+      <div class="stat-label">Companies</div>
     </div>
-    <div class="stat">
-      <span class="stat-value">{len(c_data["entries"])}</span>
-      <span class="stat-label">Entries</span>
+    <div class="stat-card">
+      <div class="stat-value">{len(c_data["entries"])}</div>
+      <div class="stat-label">Entries</div>
     </div>
   </div>
   <section aria-label="Industry breakdown">
@@ -632,8 +748,26 @@ def generate_country_pages(data):
 </main>
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <p><a href="/methodology.html">Methodology</a> · <a href="/api/entries.json">JSON API</a> · <a href="/api/entries.csv">Download CSV</a></p>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/api/entries.json">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
 </body>
@@ -706,7 +840,7 @@ def generate_sitemap(data):
         f.write(xml)
 
 def main():
-    print("🔨 AI Layoff Tracker — Static Site Generator v2.0")
+    print("🔨 AI Layoff Tracker — Static Site Generator v3.0")
     print(f"   Root: {ROOT}")
     
     # Load data
@@ -751,6 +885,7 @@ def main():
     
     # Update last_updated in data file
     data["meta"]["last_updated"] = stats["last_updated"]
+    data["meta"]["version"] = "3.0.0"
     with open(DATA_DIR / "entries.json", "w") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     

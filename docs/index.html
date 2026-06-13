@@ -61,7 +61,7 @@
 <!-- Header -->
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="/" class="logo" aria-label="AI Layoff Tracker home">AI<span class="logo-accent">LAYOFF</span>TRACKER</a>
+    <a href="/" class="logo" aria-label="AI Layoff Tracker home"><span class="logo-dot"></span>AI Layoff Tracker</a>
     <nav aria-label="Main navigation">
       <a href="/methodology.html">Methodology</a>
       <a href="/api/entries.json">API</a>
@@ -84,10 +84,10 @@
         <span class="counter-label">Total documented jobs impacted</span>
         <div class="counter-value" aria-live="polite">—</div>
         <div class="counter-meta">
-          <span>— Companies</span>
-          <span>— Countries</span>
-          <span>— Industries</span>
-          <span>Updated —</span>
+          <span><strong>—</strong> Companies</span>
+          <span><strong>—</strong> Countries</span>
+          <span><strong>—</strong> Industries</span>
+          <span>Updated <strong>—</strong></span>
         </div>
       </div>
 
@@ -142,11 +142,11 @@
         <button class="filter-chip" data-classification="AI_REALLOCATION" aria-pressed="false">Tier 3 · AI Reallocation</button>
         <button class="filter-chip" data-classification="MARKET_DISRUPTION" aria-pressed="false">Tier 4 · Market Disruption</button>
 
-        <select id="filter-country" aria-label="Filter by country">
+        <select id="filter-country" class="filter-select" aria-label="Filter by country">
           <option value="">All Countries</option>
         </select>
 
-        <select id="filter-industry" aria-label="Filter by industry">
+        <select id="filter-industry" class="filter-select" aria-label="Filter by industry">
           <option value="">All Industries</option>
         </select>
 
@@ -155,14 +155,14 @@
 
         <input type="number" id="filter-min-jobs" placeholder="Min jobs" min="0" aria-label="Minimum jobs lost" style="width:100px">
 
-        <select id="filter-sort" aria-label="Sort order">
+        <select id="filter-sort" class="filter-select" aria-label="Sort order">
           <option value="newest">Newest First</option>
           <option value="oldest">Oldest First</option>
           <option value="largest">Largest Impact</option>
           <option value="impact">Highest Workforce %</option>
         </select>
 
-        <button class="btn-clear" id="btn-clear-filters">Clear All</button>
+        <button class="filter-clear" id="btn-clear-filters">Clear All</button>
       </div>
 
       <div class="results-count" aria-live="polite"></div>
@@ -184,15 +184,15 @@
     <div class="container">
       <h2 id="charts-heading">Analysis</h2>
       <div class="charts-grid">
-        <div class="chart-card">
+        <div class="chart-container">
           <h3>Jobs Impacted by Industry</h3>
           <canvas id="chart-industry" role="img" aria-label="Bar chart of jobs impacted by industry"></canvas>
         </div>
-        <div class="chart-card">
+        <div class="chart-container">
           <h3>By Classification</h3>
           <canvas id="chart-classification" role="img" aria-label="Donut chart of classification distribution"></canvas>
         </div>
-        <div class="chart-card">
+        <div class="chart-container">
           <h3>Monthly Trend</h3>
           <canvas id="chart-timeline" role="img" aria-label="Line chart of monthly jobs impacted"></canvas>
         </div>
@@ -201,7 +201,7 @@
   </section>
 
   <!-- Download Dataset -->
-  <section class="download-section" aria-labelledby="download-heading">
+  <section class="downloads-section" aria-labelledby="download-heading">
     <div class="container">
       <h2 id="download-heading">Download Dataset</h2>
       <p>All data is freely available. No registration required.</p>
@@ -242,22 +242,34 @@
 <!-- Footer -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
-    <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
-    <p><small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small></p>
-    <nav aria-label="Footer navigation">
-      <a href="/methodology.html">Methodology</a>
-      <a href="/api/entries.json">JSON API</a>
-      <a href="/api/entries.csv">Download CSV</a>
-      <a href="/api/feed.xml">RSS Feed</a>
-      <a href="/sitemap.xml">Sitemap</a>
-      <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
-    </nav>
+    <div class="footer-info">
+      <p>AI Layoff Tracker — Tracking documented workforce reductions linked to AI and automation.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Data</h4>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/api/entries.json">JSON API</a>
+        <a href="/api/entries.csv">Download CSV</a>
+        <a href="/api/feed.xml">RSS Feed</a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/Damgeed/ai-layoff-tracker">GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
+    </div>
   </div>
 </footer>
 
 <!-- Share Overlay (hidden) -->
 <div class="share-overlay" role="dialog" aria-modal="true" aria-label="Share entry">
-  <div class="share-overlay-content">
+  <div class="share-card">
     <h3>Share This Entry</h3>
     <img id="share-image" src="" alt="Social share card" loading="lazy">
     <div class="share-actions">
