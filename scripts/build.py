@@ -332,7 +332,7 @@ def generate_company_pages(data):
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <small>Updated <span id="footer-updated">—</span>. Public research resource.</small>
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
     </div>
   </div>
 </footer>
@@ -583,7 +583,7 @@ def generate_entry_pages(data):
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <small>Updated <span id="footer-updated">—</span>. Public research resource.</small>
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
     </div>
   </div>
 </footer>
@@ -758,7 +758,7 @@ def generate_industry_pages(data):
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <small>Updated <span id="footer-updated">—</span>. Public research resource.</small>
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
     </div>
   </div>
 </footer>
@@ -944,7 +944,7 @@ def generate_country_pages(data):
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <small>Updated <span id="footer-updated">—</span>. Public research resource.</small>
+      <small>Dataset last updated: <span id="footer-updated">—</span>. This project is a public research resource. All data is sourced from public statements, earnings reports, and verified media coverage.</small>
     </div>
   </div>
 </footer>
