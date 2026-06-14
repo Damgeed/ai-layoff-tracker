@@ -29,7 +29,8 @@
     var c = document.getElementById(id);
     if (!c) return null;
     var w = c.parentElement ? c.parentElement.clientWidth : 300;
-    var h = Math.round(w * 0.6);   /* 5:3 aspect – tweak per chart */
+    var ratio = window.innerWidth <= 768 ? 0.42 : 0.6;  /* shorter on mobile */
+    var h = Math.round(w * ratio);
     c.style.width  = w + 'px';
     c.style.height = h + 'px';
     c.width  = Math.round(w * DPR);
