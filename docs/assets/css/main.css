@@ -470,7 +470,7 @@ body{
 /* --- Charts --------------------------------------------------------- */
 .charts-section{padding:3rem 0;border-top:1px solid var(--border)}
 .charts-section h2{margin-bottom:2rem;text-align:center}
-.charts-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.25rem}
+.charts-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:1.25rem}
 .chart-container{
   background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);
   border-radius:var(--r);padding:1.5rem;backdrop-filter:blur(12px);
