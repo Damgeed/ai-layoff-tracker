@@ -154,8 +154,13 @@
       return;
     }
 
+    const isMobile = window.innerWidth <= 768;
+    const MOBILE_LIMIT = 5;
+    const displayEntries = isMobile ? entries.slice(0, MOBILE_LIMIT) : entries;
+    const remaining = entries.length - MOBILE_LIMIT;
+
     let html = '';
-    entries.forEach((entry, i) => {
+    displayEntries.forEach((entry, i) => {
       const tierClass = getTierClass(entry.classification);
       const classLabel = getClassLabel(entry.classification);
       const confClass = entry.confidence_score >= 80 ? 'high' : entry.confidence_score >= 60 ? 'medium' : 'low';
@@ -196,6 +201,60 @@
 
     timeline.innerHTML = html;
 
+    // Mobile: add "Show all" toggle if entries are truncated
+    if (isMobile && remaining > 0) {
+      timeline.innerHTML += `
+        <div class="timeline-toggle" style="text-align:center;padding:1.5rem 0">
+          <button class="btn btn-secondary" id="btn-show-all" style="font-size:0.85rem">
+            📋 Show all ${entries.length} entries
+          </button>
+        </div>`;
+      document.getElementById('btn-show-all').addEventListener('click', function() {
+        // Inject remaining entries below the current batch
+        const remainingHtml = entries.slice(MOBILE_LIMIT).map((entry, i) => {
+          const idx = i + MOBILE_LIMIT;
+          const tierClass = getTierClass(entry.classification);
+          const classLabel = getClassLabel(entry.classification);
+          const confClass = entry.confidence_score >= 80 ? 'high' : entry.confidence_score >= 60 ? 'medium' : 'low';
+          const sourceUrl = entry.source?.url || '#';
+          const sourceName = entry.source?.title || 'Source';
+          const slug = entry.slug || '';
+          return `<article class="entry-card animate-in" data-index="${idx % 10}" data-classification="${entry.classification}" data-country="${entry.country}" data-industry="${entry.industry}">
+          <div class="entry-card-header">
+            <div>
+              <h3 class="entry-card-company">${escHtml(entry.company)}</h3>
+              <div class="entry-card-meta">
+                <span>📅 ${entry.date || '—'}</span>
+                <span>📍 ${escHtml(entry.country || '—')}</span>
+                <span>🏭 ${escHtml(entry.industry || '—')}</span>
+                <span class="class-badge ${tierClass}">${classLabel}</span>
+              </div>
+            </div>
+            <div class="entry-card-jobs">
+              ${(entry.jobs_lost || 0).toLocaleString()}
+              <span class="entry-card-jobs-label">Jobs impacted</span>
+            </div>
+          </div>
+          <p class="entry-card-summary">${escHtml(truncate(entry.summary || '', 200))}</p>
+          <div class="impact-bar">
+            <div class="impact-bar-fill ${tierClass}" style="width:${Math.min(entry.impact_percent || 0, 100)}%"></div>
+          </div>
+          <div class="entry-card-footer">
+            <span class="confidence-dot ${confClass}" title="Confidence: ${entry.confidence_score}/100"></span>
+            <span>${entry.confidence_score}/100</span>
+            <a href="${sourceUrl}" target="_blank" rel="noopener noreferrer">📄 ${escHtml(sourceName)}</a>
+            <a href="/company/${slug}/">📋 Full report</a>
+            <button class="btn btn-secondary" onclick="trackerShare('${escAttr(entry.company)}', ${entry.jobs_lost}, '${escAttr(entry.classification)}', '${escAttr(entry.date || '')}')" aria-label="Share ${escAttr(entry.company)}">📤 Share</button>
+          </div>
+        </article>`;
+        }).join('');
+        document.getElementById('btn-show-all').parentElement.insertAdjacentHTML('beforebegin', remainingHtml);
+        document.getElementById('btn-show-all').parentElement.remove();
+        // Animate new cards
+        $$('.entry-card.animate-in:not(.visible)').forEach(card => card.classList.add('visible'));
+      });
+    }
+
     // Observe for animation
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
@@ -215,6 +274,8 @@
 
   // --- Charts (delegated) ------------------------------------------------
   function renderCharts() {
+    // Skip charts on mobile — hidden by CSS, save CPU
+    if (window.innerWidth <= 768) return;
     if (typeof drawIndustryChart === 'function') drawIndustryChart(state.filtered);
     if (typeof drawClassificationChart === 'function') drawClassificationChart(state.filtered);
     if (typeof drawTimelineChart === 'function') drawTimelineChart(state.filtered);

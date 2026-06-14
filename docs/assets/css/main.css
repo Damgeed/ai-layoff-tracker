@@ -944,6 +944,7 @@ pre{
   .stat-value { font-size: 1.75rem; }
   .stat-label { font-size: 0.675rem; }
   .charts-grid { grid-template-columns: 1fr; }
+  .charts-section { display: none; }  /* Hide charts on mobile — too much clutter */
   .download-grid { grid-template-columns: 1fr; }
   .filters-bar { flex-direction: column; align-items: stretch; }
   .entry-card { padding: 1.25rem; }
