@@ -887,18 +887,18 @@ def generate_rss(data, stats):
         items.append(f'''    <item>
       <title>{e["company"]}: {e["jobs_lost"]:,} Jobs Impacted ({classification_label})</title>
       <link>https://ailayofftracker.com/entry/{eid}/</link>
-      <description>&lt;![CDATA[
-        &lt;p&gt;{e["summary"][:300]}&lt;/p&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Jobs Lost:&lt;/strong&gt; {e["jobs_lost"]:,}&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Impact:&lt;/strong&gt; {e["impact_percent"]}% of workforce&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Classification:&lt;/strong&gt; {classification_label}&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Confidence:&lt;/strong&gt; {e["confidence_score"]}/100&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Country:&lt;/strong&gt; {e["country"]}&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Industry:&lt;/strong&gt; {e["industry"]}&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Evidence:&lt;/strong&gt; {evidence_summary}&lt;/li&gt;
-        &lt;/ul&gt;
-        {'&lt;p&gt;&lt;a href="' + source_url + '"&gt;Original Source&lt;/a&gt;&lt;/p&gt;' if source_url else ''}
+      <description><![CDATA[
+        <p>{e["summary"][:300]}</p>
+        <ul>
+          <li><strong>Jobs Lost:</strong> {e["jobs_lost"]:,}</li>
+          <li><strong>Impact:</strong> {e["impact_percent"]}% of workforce</li>
+          <li><strong>Classification:</strong> {classification_label}</li>
+          <li><strong>Confidence:</strong> {e["confidence_score"]}/100</li>
+          <li><strong>Country:</strong> {e["country"]}</li>
+          <li><strong>Industry:</strong> {e["industry"]}</li>
+          <li><strong>Evidence:</strong> {evidence_summary}</li>
+        </ul>
+        {'<p><a href="' + source_url + '">Original Source</a></p>' if source_url else ''}
       ]]></description>
       <pubDate>{e["date"]}T00:00:00Z</pubDate>
       <guid isPermaLink="true">https://ailayofftracker.com/entry/{eid}/</guid>

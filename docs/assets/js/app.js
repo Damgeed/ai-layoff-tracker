@@ -34,8 +34,8 @@
     showSkeletons();
     try {
       const [entriesRes, statsRes] = await Promise.all([
-        fetch('/api/entries.json'),
-        fetch('/api/stats.json')
+        fetch('api/entries.json'),
+        fetch('api/stats.json')
       ]);
       if (!entriesRes.ok || !statsRes.ok) throw new Error('API fetch failed');
       const entriesData = await entriesRes.json();
