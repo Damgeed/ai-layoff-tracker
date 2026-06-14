@@ -370,6 +370,13 @@ body{
 
 /* --- Entry Cards — 3D tilt + accent bar ----------------------------- */
 .timeline-section{padding:3rem 0}
+.timeline{display:grid;grid-template-columns:1fr;gap:1.25rem}
+@media (min-width: 900px) {
+  .timeline{grid-template-columns:repeat(2, 1fr)}
+}
+@media (min-width: 1200px) {
+  .timeline{grid-template-columns:repeat(3, 1fr)}
+}
 .results-count{font-size:0.8125rem;color:var(--text-muted);margin-bottom:1.5rem}
 .results-count strong{color:var(--text);font-weight:600}
 
@@ -943,8 +950,7 @@ pre{
   .stat-card { padding: 1rem 0.75rem; }
   .stat-value { font-size: 1.75rem; }
   .stat-label { font-size: 0.675rem; }
-  .charts-grid { grid-template-columns: 1fr; }
-  .charts-section { display: none; }  /* Hide charts on mobile — too much clutter */
+  .charts-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
   .download-grid { grid-template-columns: 1fr; }
   .filters-bar { flex-direction: column; align-items: stretch; }
   .entry-card { padding: 1.25rem; }
@@ -977,6 +983,7 @@ pre{
   .hero-actions .btn { padding: 0.6rem 0.75rem; font-size: 0.75rem; justify-content: center; white-space: nowrap; }
   .btn { justify-content: center; }
   .counter-value { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .charts-grid { grid-template-columns: 1fr; }  /* Single column at phone size */
 }
 
 /* --- Reduced motion ------------------------------------------------- */

@@ -274,8 +274,6 @@
 
   // --- Charts (delegated) ------------------------------------------------
   function renderCharts() {
-    // Skip charts on mobile — hidden by CSS, save CPU
-    if (window.innerWidth <= 768) return;
     if (typeof drawIndustryChart === 'function') drawIndustryChart(state.filtered);
     if (typeof drawClassificationChart === 'function') drawClassificationChart(state.filtered);
     if (typeof drawTimelineChart === 'function') drawTimelineChart(state.filtered);
