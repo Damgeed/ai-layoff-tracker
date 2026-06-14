@@ -947,6 +947,29 @@ pre{
   .download-grid { grid-template-columns: 1fr; }
   .filters-bar { flex-direction: column; align-items: stretch; }
   .entry-card { padding: 1.25rem; }
+
+  /* ── Mobile text safety: prevent overflow & clipping ── */
+  main, .methodology, article, section, p, li, td, th, blockquote, .lead, .hero-subtitle {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  pre, code { overflow-wrap: normal; word-break: normal; white-space: pre-wrap; }
+  pre { max-width: 100%; }
+
+  /* ── Tables: full-width scroll with breathing room ── */
+  .table-wrap, .methodology-table, .dd-table, .evidence-table,
+  .changelog-table, .history-table, .version-table, .press-table {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    width: calc(100% + 2.5rem);
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  table { min-width: 600px; }
+
+  /* ── Ensure all <main> variants have proper padding ── */
+  main:not(.container) { padding-left: 1.25rem; padding-right: 1.25rem; }
 }
 
 /* --- Header actions group (hamburger + mobile theme toggle) ------------ */

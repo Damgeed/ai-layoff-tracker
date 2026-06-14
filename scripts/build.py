@@ -175,7 +175,7 @@ def generate_company_pages(data, stats):
         timeline_items = ""
         for e in sorted_entries:
             classification_label = data["classifications"].get(e["classification"], {}).get("label", e["classification"])
-            timeline_items += f'''<li><a href="/entry/{e['id']}/"><strong>{e['date']}</strong> — {e['jobs_lost']:,} jobs</a> <span class="badge">{classification_label}</span></li>\n'''
+            timeline_items += f'''<li><a href="entry/{e['id']}/"><strong>{e['date']}</strong> — {e['jobs_lost']:,} jobs</a> <span class="badge">{classification_label}</span></li>\n'''
 
         # Evidence summary
         evidence_sources = set()
@@ -619,7 +619,7 @@ def generate_entry_pages(data):
         company_timeline = ""
         for ce in company_entries:
             if ce["id"] != eid:
-                company_timeline += f'<li><a href="/entry/{ce["id"]}/">{ce["date"]} — {ce["jobs_lost"]:,} jobs</a></li>'
+                company_timeline += f'<li><a href="entry/{ce["id"]}/">{ce["date"]} — {ce["jobs_lost"]:,} jobs</a></li>'
         company_timeline_html = f'<ul class="timeline-list">{company_timeline}</ul>' if company_timeline else "<p>No other entries for this company.</p>"
 
         # Timeline: Other entries from same industry
@@ -627,7 +627,7 @@ def generate_entry_pages(data):
         industry_timeline = ""
         for ie in industry_entries:
             if ie["id"] != eid:
-                industry_timeline += f'<li><a href="/entry/{ie["id"]}/">{ie["date"]} — {ie["company"]}: {ie["jobs_lost"]:,} jobs</a></li>'
+                industry_timeline += f'<li><a href="entry/{ie["id"]}/">{ie["date"]} — {ie["company"]}: {ie["jobs_lost"]:,} jobs</a></li>'
         industry_timeline_html = f'<ul class="timeline-list">{industry_timeline}</ul>' if industry_timeline else "<p>No other entries for this industry.</p>"
 
         # Confidence dot class
@@ -729,7 +729,7 @@ def generate_entry_pages(data):
   </div>
 </div>
 <main class="container" id="main-content" role="main">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">← Back to tracker</a> · <a href="/company/{entry["slug"]}/">← {entry["company"]} page</a></nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./">← Back to tracker</a> · <a href="company/{entry["slug"]}/">← {entry["company"]} page</a></nav>
   <article class="entry-detail">
     <header class="entry-header">
       <span class="class-badge {tier}"><span class="badge-dot {tier}"></span>{tier_label}</span>
@@ -781,18 +781,18 @@ def generate_entry_pages(data):
     <div class="footer-links">
       <div class="footer-col">
         <h4>Data</h4>
-        <a href="/methodology.html">Methodology</a>
-        <a href="/api/">JSON API</a>
-        <a href="/api/entries.csv">Download CSV</a>
-        <a href="/api/feed.xml">RSS Feed</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="api/">JSON API</a>
+        <a href="api/entries.csv">Download CSV</a>
+        <a href="api/feed.xml">RSS Feed</a>
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
-        <a href="/press/">Press Kit</a>
-        <a href="/research/">Research</a>
-        <a href="/citation-guide/">Citation Guide</a>
-        <a href="/versions/">Versions</a>
-        <a href="/history/">Entry History</a>
+        <a href="press/">Press Kit</a>
+        <a href="research/">Research</a>
+        <a href="citation-guide/">Citation Guide</a>
+        <a href="versions/">Versions</a>
+        <a href="history/">Entry History</a>
       </div>
     </div>
   </div>
