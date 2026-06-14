@@ -370,10 +370,14 @@ body{
 
 /* --- Entry Cards — 3D tilt + accent bar ----------------------------- */
 .timeline-section{padding:3rem 0}
-.section-toggle{cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:0.35rem}
+.section-toggle{cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:0.35rem;transition:color .2s}
 .section-toggle:hover{color:var(--accent)}
-.section-toggle[aria-expanded="true"] .arrow{transform:rotate(180deg)}
+.timeline-body{overflow:hidden;max-height:0;transition:max-height .45s cubic-bezier(0.4,0,0.2,1),opacity .35s;opacity:0}
+.timeline-body.open{max-height:8000px;opacity:1}
 .timeline{display:grid;grid-template-columns:1fr;gap:1.25rem}
+.timeline-hide-btn{display:flex;justify-content:center;margin-top:1.25rem}
+.timeline-hide-btn button{background:none;border:1px solid rgba(255,255,255,0.1);color:var(--text-dim);padding:0.35rem 1rem;border-radius:var(--r);cursor:pointer;font-size:0.75rem;transition:all .2s}
+.timeline-hide-btn button:hover{color:var(--accent);border-color:var(--accent)}
 @media (min-width: 900px) {
   .timeline{grid-template-columns:repeat(2, 1fr)}
 }

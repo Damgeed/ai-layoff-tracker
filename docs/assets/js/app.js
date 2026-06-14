@@ -668,16 +668,39 @@
   loadFromURL();
   document.addEventListener('DOMContentLoaded', init);
 
-  // --- Section toggle (Timeline collapse) --------------------------------
+  // --- Section toggle (Timeline collapse/expand) --------------------
   document.addEventListener('DOMContentLoaded', function() {
+    var timelineBody = document.getElementById('timeline-body');
     document.querySelectorAll('.section-toggle').forEach(function(toggle) {
       toggle.addEventListener('click', function() {
-        var target = document.getElementById(this.dataset.target);
-        if (!target) return;
+        if (!timelineBody) return;
         var expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
-        target.style.display = expanded ? 'none' : '';
-        this.innerHTML = 'Timeline ' + (expanded ? '▾' : '▴');
+        if (expanded) {
+          this.setAttribute('aria-expanded', 'false');
+          this.innerHTML = 'Timeline ▾';
+          timelineBody.classList.remove('open');
+          /* remove hide button */
+          var btn = document.getElementById('timeline-hide-btn');
+          if (btn) btn.remove();
+        } else {
+          this.setAttribute('aria-expanded', 'true');
+          this.innerHTML = 'Timeline ▴';
+          timelineBody.classList.add('open');
+          /* add hide button at bottom */
+          if (!document.getElementById('timeline-hide-btn')) {
+            var div = document.createElement('div');
+            div.id = 'timeline-hide-btn';
+            div.className = 'timeline-hide-btn';
+            div.innerHTML = '<button>▲ Hide timeline</button>';
+            div.querySelector('button').addEventListener('click', function(e) {
+              e.stopPropagation();
+              toggle.click();
+              /* smooth scroll back to toggle heading */
+              toggle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+            timelineBody.appendChild(div);
+          }
+        }
       });
     });
   });
