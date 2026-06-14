@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <channel>
   <title>AI Layoff Tracker</title>
-  <link>https://ailayofftracker.com</link>
+  <link>https://damgeed.github.io/ai-layoff-tracker</link>
   <description>Tracking documented workforce reductions linked to artificial intelligence and automation. 80,794 jobs across 27 companies. Updated with every new verified entry.</description>
   <language>en-us</language>
-  <lastBuildDate>2026-06-14T06:35:14Z</lastBuildDate>
-  <atom:link href="https://ailayofftracker.com/api/feed.xml" rel="self" type="application/rss+xml"/>
-  <docs>https://ailayofftracker.com/api/</docs>
-  <webMaster>ailayofftracker.com (AI Layoff Tracker)</webMaster>
+  <lastBuildDate>2026-06-14T08:16:42Z</lastBuildDate>
+  <atom:link href="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml" rel="self" type="application/rss+xml"/>
+  <docs>https://damgeed.github.io/ai-layoff-tracker/api/</docs>
+  <webMaster>damgeed.github.io/ai-layoff-tracker (AI Layoff Tracker)</webMaster>
   <ttl>1440</ttl>
     <item>
       <title>Spotify: 1,500 Jobs Impacted (AI Reallocation)</title>
-      <link>https://ailayofftracker.com/entry/spotify-2024-12/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/spotify-2024-12/</link>
       <description><![CDATA[
         <p>Spotify laid off 1,500 employees (~17% of workforce). CEO Daniel Ek cited the need to redirect resources toward AI and podcasting investments.</p>
         <ul>
@@ -27,14 +27,14 @@
         <p><a href="https://www.reuters.com/technology/spotify-lay-off-1500-employees-2024-12-04/">Original Source</a></p>
       ]]></description>
       <pubDate>2024-12-04T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/spotify-2024-12/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/spotify-2024-12/</guid>
       <category>AI Reallocation</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Klarna: 2,000 Jobs Impacted (Direct AI Replacement)</title>
-      <link>https://ailayofftracker.com/entry/klarna-2024-08/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/klarna-2024-08/</link>
       <description><![CDATA[
         <p>Klarna CEO Sebastian Siemiatkowski stated the company reduced its workforce from 5,000 to 3,000 by leveraging AI for customer service operations, claiming AI agents now handle the work of 700 human agents.</p>
         <ul>
@@ -49,14 +49,14 @@
         <p><a href="https://www.bbc.com/news/articles/c4gpqp4v4q2o">Original Source</a></p>
       ]]></description>
       <pubDate>2024-08-27T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/klarna-2024-08/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/klarna-2024-08/</guid>
       <category>Direct AI Replacement</category>
       <category>Sweden</category>
       <category>Fintech</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Salesforce: 300 Jobs Impacted (AI Reallocation)</title>
-      <link>https://ailayofftracker.com/entry/salesforce-2024-08/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/salesforce-2024-08/</link>
       <description><![CDATA[
         <p>Salesforce cut approximately 300 roles while simultaneously planning to hire 1,000+ new positions focused on AI agent sales, explicitly citing the shift to autonomous AI agents.</p>
         <ul>
@@ -71,14 +71,14 @@
         <p><a href="https://www.cnbc.com/2024/08/01/salesforce-cuts-300-roles-hiring-for-ai-agent-sales.html">Original Source</a></p>
       ]]></description>
       <pubDate>2024-08-01T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/salesforce-2024-08/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/salesforce-2024-08/</guid>
       <category>AI Reallocation</category>
       <category>United States</category>
       <category>Enterprise Software</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Intuit: 1,800 Jobs Impacted (AI Reallocation)</title>
-      <link>https://ailayofftracker.com/entry/intuit-2024-07/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/intuit-2024-07/</link>
       <description><![CDATA[
         <p>Intuit laid off 1,800 employees (10% of workforce) while announcing plans to hire 1,800 new employees for AI-focused roles, explicitly citing AI restructuring.</p>
         <ul>
@@ -93,14 +93,14 @@
         <p><a href="https://www.reuters.com/technology/intuit-lay-off-1800-employees-plans-rehire-ai-roles-2024-07-10/">Original Source</a></p>
       ]]></description>
       <pubDate>2024-07-10T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/intuit-2024-07/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/intuit-2024-07/</guid>
       <category>AI Reallocation</category>
       <category>United States</category>
       <category>Enterprise Software</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Chegg: 441 Jobs Impacted (Market Disruption)</title>
-      <link>https://ailayofftracker.com/entry/chegg-2024-06/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/chegg-2024-06/</link>
       <description><![CDATA[
         <p>Chegg laid off 441 employees (20% of workforce) after ChatGPT's launch significantly reduced demand for its homework help and tutoring services. CEO Dan Rosensweig directly attributed the revenue decline to students shifting to free AI tools.</p>
         <ul>
@@ -115,14 +115,14 @@
         <p><a href="https://www.reuters.com/technology/chegg-shares-plunge-company-says-chatgpt-is-hurting-its-business-2024-06-17/">Original Source</a></p>
       ]]></description>
       <pubDate>2024-06-17T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/chegg-2024-06/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/chegg-2024-06/</guid>
       <category>Market Disruption</category>
       <category>United States</category>
       <category>Education Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>IBM: 7,800 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/ibm-2024-05/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/ibm-2024-05/</link>
       <description><![CDATA[
         <p>IBM announced plans to pause hiring for roles it believes AI can perform, affecting approximately 7,800 back-office positions. CEO Arvind Krishna stated AI will replace many non-customer-facing roles over the next five years.</p>
         <ul>
@@ -137,14 +137,14 @@
         <p><a href="https://www.bloomberg.com/news/articles/2024-05-20/ibm-to-pause-hiring-for-jobs-that-ai-could-do">Original Source</a></p>
       ]]></description>
       <pubDate>2024-05-20T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/ibm-2024-05/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/ibm-2024-05/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Indeed: 2,200 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/indeed-2024-05/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/indeed-2024-05/</link>
       <description><![CDATA[
         <p>Indeed laid off 2,200 employees (~15% of workforce). CEO Chris Hyams cited AI-powered job matching reducing the need for human recruiters.</p>
         <ul>
@@ -159,14 +159,14 @@
         <p><a href="https://www.cnbc.com/2024/05/13/indeed-layoffs-2200-employees.html">Original Source</a></p>
       ]]></description>
       <pubDate>2024-05-13T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/indeed-2024-05/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/indeed-2024-05/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>CVS Health: 5,000 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/cvs-health-2024-03/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/cvs-health-2024-03/</link>
       <description><![CDATA[
         <p>CVS Health announced 5,000 corporate job cuts as part of a cost-reduction initiative that included AI automation of claims processing, prior authorizations, and customer service operations. The company stated AI tools would absorb routine administrative work across its Aetna insurance and pharmacy b</p>
         <ul>
@@ -181,14 +181,14 @@
         <p><a href="https://www.wsj.com/business/healthcare/cvs-health-layoffs-5000-jobs-39752cdc">Original Source</a></p>
       ]]></description>
       <pubDate>2024-03-15T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/cvs-health-2024-03/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/cvs-health-2024-03/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Healthcare</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Twilio: 600 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/twilio-2024-03/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/twilio-2024-03/</link>
       <description><![CDATA[
         <p>Twilio cut 600 employees across its software engineering and go-to-market teams, citing AI automation of internal processes.</p>
         <ul>
@@ -203,14 +203,14 @@
         <p><a href="https://www.cnbc.com/2024/03/04/twilio-layoffs-600-employees.html">Original Source</a></p>
       ]]></description>
       <pubDate>2024-03-04T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/twilio-2024-03/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/twilio-2024-03/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Autodesk: 1,350 Jobs Impacted (AI Reallocation)</title>
-      <link>https://ailayofftracker.com/entry/autodesk-2024-02/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/autodesk-2024-02/</link>
       <description><![CDATA[
         <p>Autodesk laid off 1,350 employees (~10% of workforce), explicitly stating the cuts were to redirect investment toward AI and cloud platform development.</p>
         <ul>
@@ -225,14 +225,14 @@
         <p><a href="https://www.cnbc.com/2024/02/27/autodesk-layoffs-2024-restructuring.html">Original Source</a></p>
       ]]></description>
       <pubDate>2024-02-27T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/autodesk-2024-02/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/autodesk-2024-02/</guid>
       <category>AI Reallocation</category>
       <category>United States</category>
       <category>Enterprise Software</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Cisco: 4,000 Jobs Impacted (AI Reallocation)</title>
-      <link>https://ailayofftracker.com/entry/cisco-2024-02/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/cisco-2024-02/</link>
       <description><![CDATA[
         <p>Cisco laid off 4,000 employees while announcing a strategic shift toward AI networking infrastructure. CEO Chuck Robbins stated the restructuring would free up resources for AI-focused product development and the company's $28 billion Splunk acquisition, which was positioned as a data platform for A</p>
         <ul>
@@ -247,14 +247,14 @@
         <p><a href="https://www.cnbc.com/2024/02/14/cisco-layoffs-4000-jobs.html">Original Source</a></p>
       ]]></description>
       <pubDate>2024-02-14T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/cisco-2024-02/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/cisco-2024-02/</guid>
       <category>AI Reallocation</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>PayPal: 2,000 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/paypal-2024-01/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/paypal-2024-01/</link>
       <description><![CDATA[
         <p>PayPal announced 2,000 job cuts as part of a restructuring that CEO Alex Chriss framed around AI-driven efficiency. The company stated AI automation of routine payment processing and fraud detection tasks would reduce operational headcount needs.</p>
         <ul>
@@ -269,14 +269,14 @@
         <p><a href="https://www.reuters.com/technology/paypal-lay-off-2000-employees-2024-01-30/">Original Source</a></p>
       ]]></description>
       <pubDate>2024-01-30T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/paypal-2024-01/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/paypal-2024-01/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Fintech</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>UPS: 12,000 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/ups-2024-01/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/ups-2024-01/</link>
       <description><![CDATA[
         <p>UPS announced 12,000 job cuts as part of a cost-reduction plan that prominently featured AI-driven logistics optimization. CEO Carol Tomé stated the company was deploying AI tools for route optimization, package sorting, and back-office automation that would reduce the need for management and admini</p>
         <ul>
@@ -291,14 +291,14 @@
         <p><a href="https://www.cnn.com/2024/01/30/business/ups-layoffs/index.html">Original Source</a></p>
       ]]></description>
       <pubDate>2024-01-30T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/ups-2024-01/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/ups-2024-01/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Logistics</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Teleperformance: 4,000 Jobs Impacted (Direct AI Replacement)</title>
-      <link>https://ailayofftracker.com/entry/teleperformance-2024-01/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/teleperformance-2024-01/</link>
       <description><![CDATA[
         <p>Teleperformance, one of the world's largest call center operators, announced AI would replace approximately 4,000 roles as customers increasingly prefer AI-powered customer service.</p>
         <ul>
@@ -313,14 +313,14 @@
         <p><a href="https://www.reuters.com/technology/teleperformance-says-ai-will-replace-thousands-call-center-jobs-2024-01-30/">Original Source</a></p>
       ]]></description>
       <pubDate>2024-01-30T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/teleperformance-2024-01/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/teleperformance-2024-01/</guid>
       <category>Direct AI Replacement</category>
       <category>France</category>
       <category>Customer Service</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Microsoft: 1,900 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/microsoft-gaming-2024-01/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/microsoft-gaming-2024-01/</link>
       <description><![CDATA[
         <p>Microsoft Gaming laid off 1,900 employees from Activision Blizzard and Xbox divisions, citing AI integration and post-acquisition restructuring.</p>
         <ul>
@@ -335,14 +335,14 @@
         <p><a href="https://www.theverge.com/2024/1/25/24049050/microsoft-activision-blizzard-layoffs">Original Source</a></p>
       ]]></description>
       <pubDate>2024-01-25T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/microsoft-gaming-2024-01/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/microsoft-gaming-2024-01/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>SAP: 8,000 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/sap-2024-01/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/sap-2024-01/</link>
       <description><![CDATA[
         <p>SAP announced plans to restructure 8,000 positions as part of a €2 billion transformation program focused on embedding AI across its enterprise software suite. The company stated it would retrain some employees for AI roles while others would depart through voluntary programs.</p>
         <ul>
@@ -357,14 +357,14 @@
         <p><a href="https://www.sap.com/news/2024-01-23-sap-restructuring-ai-focus.html">Original Source</a></p>
       ]]></description>
       <pubDate>2024-01-23T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/sap-2024-01/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/sap-2024-01/</guid>
       <category>AI-Driven Restructuring</category>
       <category>Germany</category>
       <category>Enterprise Software</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>CNET: 20 Jobs Impacted (Direct AI Replacement)</title>
-      <link>https://ailayofftracker.com/entry/cnet-2024-01/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/cnet-2024-01/</link>
       <description><![CDATA[
         <p>CNET laid off journalists after it was revealed the publication had been using AI to write articles without clear disclosure, reducing the need for human writers.</p>
         <ul>
@@ -379,14 +379,14 @@
         <p><a href="https://www.theverge.com/2024/1/18/24042244/cnet-layoffs-ai-written-articles">Original Source</a></p>
       ]]></description>
       <pubDate>2024-01-18T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/cnet-2024-01/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/cnet-2024-01/</guid>
       <category>Direct AI Replacement</category>
       <category>United States</category>
       <category>Media</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Duolingo: 60 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/duolingo-2024-01/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/duolingo-2024-01/</link>
       <description><![CDATA[
         <p>Duolingo reduced its contractor workforce by approximately 10% as AI translation and content generation tools reduced the need for human translators and content creators. The company emphasized it was not replacing core employees but shifting toward AI-augmented content production.</p>
         <ul>
@@ -401,14 +401,14 @@
         <p><a href="https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation">Original Source</a></p>
       ]]></description>
       <pubDate>2024-01-08T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/duolingo-2024-01/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/duolingo-2024-01/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Education Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Unity: 1,800 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/unity-2024-01/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/unity-2024-01/</link>
       <description><![CDATA[
         <p>Unity laid off 1,800 employees (~25% of workforce), the largest round in company history. Restructuring was linked to AI-driven development tools reducing engine engineering needs.</p>
         <ul>
@@ -423,14 +423,14 @@
         <p><a href="https://www.reuters.com/technology/unity-software-lay-off-1800-employees-2024-01-08/">Original Source</a></p>
       ]]></description>
       <pubDate>2024-01-08T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/unity-2024-01/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/unity-2024-01/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Amazon: 500 Jobs Impacted (AI Reallocation)</title>
-      <link>https://ailayofftracker.com/entry/amazon-alexa-2023-11/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/amazon-alexa-2023-11/</link>
       <description><![CDATA[
         <p>Amazon laid off several hundred employees in its Alexa voice assistant division as the company pivoted from the legacy Alexa service toward generative AI-powered capabilities. The cuts targeted teams working on older Alexa features while Amazon reinvested in building an LLM-powered Alexa.</p>
         <ul>
@@ -445,14 +445,14 @@
         <p><a href="https://www.reuters.com/technology/amazon-cuts-jobs-alexa-unit-2023-11-17/">Original Source</a></p>
       ]]></description>
       <pubDate>2023-11-17T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/amazon-alexa-2023-11/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/amazon-alexa-2023-11/</guid>
       <category>AI Reallocation</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Stack Overflow: 100 Jobs Impacted (Market Disruption)</title>
-      <link>https://ailayofftracker.com/entry/stackoverflow-2023-10/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/stackoverflow-2023-10/</link>
       <description><![CDATA[
         <p>Stack Overflow laid off approximately 100 employees (18% of workforce) following a significant decline in traffic after the launch of ChatGPT and GitHub Copilot, as developers increasingly turned to AI for coding answers instead of the Q&A platform.</p>
         <ul>
@@ -467,14 +467,14 @@
         <p><a href="https://www.theverge.com/2023/10/16/23919004/stack-overflow-layoffs-ai-traffic-decline">Original Source</a></p>
       ]]></description>
       <pubDate>2023-10-16T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/stackoverflow-2023-10/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/stackoverflow-2023-10/</guid>
       <category>Market Disruption</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>LinkedIn: 716 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/linkedin-2023-10/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/linkedin-2023-10/</link>
       <description><![CDATA[
         <p>LinkedIn laid off 716 employees in its second round of 2023 cuts, with the company citing the need to shift toward AI-powered recruiting tools and reduced demand for traditional HR services. The company simultaneously announced investments in AI features for recruiters.</p>
         <ul>
@@ -489,14 +489,14 @@
         <p><a href="https://www.cnbc.com/2023/10/16/linkedin-lays-off-more-than-700-employees.html">Original Source</a></p>
       ]]></description>
       <pubDate>2023-10-16T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/linkedin-2023-10/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/linkedin-2023-10/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Dukaan: 27 Jobs Impacted (Direct AI Replacement)</title>
-      <link>https://ailayofftracker.com/entry/dukaan-2023-07/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/dukaan-2023-07/</link>
       <description><![CDATA[
         <p>CEO Suumit Shah replaced 90% of customer support staff with an AI chatbot, reducing support resolution time from 2 hours to 3 minutes.</p>
         <ul>
@@ -511,14 +511,14 @@
         <p><a href="https://twitter.com/suumitshah/status/1678345825605349376">Original Source</a></p>
       ]]></description>
       <pubDate>2023-07-10T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/dukaan-2023-07/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/dukaan-2023-07/</guid>
       <category>Direct AI Replacement</category>
       <category>India</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Dropbox: 500 Jobs Impacted (AI-Driven Restructuring)</title>
-      <link>https://ailayofftracker.com/entry/dropbox-2023-04/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/dropbox-2023-04/</link>
       <description><![CDATA[
         <p>Dropbox laid off 500 employees (16% of workforce) as part of a restructuring to focus on AI-powered products. CEO Drew Houston stated the company needed to redirect resources toward 'the next stage of growth driven by AI.'</p>
         <ul>
@@ -533,14 +533,14 @@
         <p><a href="https://blog.dropbox.com/topics/company/a-message-from-drew">Original Source</a></p>
       ]]></description>
       <pubDate>2023-04-27T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/dropbox-2023-04/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/dropbox-2023-04/</guid>
       <category>AI-Driven Restructuring</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>BuzzFeed: 180 Jobs Impacted (Direct AI Replacement)</title>
-      <link>https://ailayofftracker.com/entry/buzzfeed-2023-04/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/buzzfeed-2023-04/</link>
       <description><![CDATA[
         <p>BuzzFeed shut down BuzzFeed News and laid off 180 staff (15% of workforce). CEO Jonah Peretti cited AI content generation as a key part of the company's future strategy.</p>
         <ul>
@@ -555,14 +555,14 @@
         <p><a href="https://www.theverge.com/2023/4/20/23690345/buzzfeed-news-shutting-down-layoffs">Original Source</a></p>
       ]]></description>
       <pubDate>2023-04-20T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/buzzfeed-2023-04/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/buzzfeed-2023-04/</guid>
       <category>Direct AI Replacement</category>
       <category>United States</category>
       <category>Media</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Meta: 10,000 Jobs Impacted (AI Reallocation)</title>
-      <link>https://ailayofftracker.com/entry/meta-2023-03/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/meta-2023-03/</link>
       <description><![CDATA[
         <p>Meta laid off 10,000 employees in its 'Year of Efficiency' restructuring, with CEO Mark Zuckerberg explicitly linking the cuts to increased AI investment. Meta simultaneously announced massive spending on AI infrastructure, including custom AI chips and generative AI research teams.</p>
         <ul>
@@ -577,14 +577,14 @@
         <p><a href="https://about.fb.com/news/2023/03/mark-zuckerberg-meta-year-of-efficiency/">Original Source</a></p>
       ]]></description>
       <pubDate>2023-03-14T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/meta-2023-03/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/meta-2023-03/</guid>
       <category>AI Reallocation</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>    <item>
       <title>Google: 12,000 Jobs Impacted (AI Reallocation)</title>
-      <link>https://ailayofftracker.com/entry/google-2023-01/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/google-2023-01/</link>
       <description><![CDATA[
         <p>Google laid off 12,000 employees as part of a major restructuring that CEO Sundar Pichai framed as a pivot toward AI priorities. Pichai stated the company needed to redirect resources and talent toward artificial intelligence development, particularly in response to competitive pressure from OpenAI </p>
         <ul>
@@ -599,11 +599,11 @@
         <p><a href="https://blog.google/inside-google/message-ceo/january-update/">Original Source</a></p>
       ]]></description>
       <pubDate>2023-01-20T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/google-2023-01/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/google-2023-01/</guid>
       <category>AI Reallocation</category>
       <category>United States</category>
       <category>Technology</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>
 </channel>
 </rss>

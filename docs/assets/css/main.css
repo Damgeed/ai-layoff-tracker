@@ -370,6 +370,9 @@ body{
 
 /* --- Entry Cards — 3D tilt + accent bar ----------------------------- */
 .timeline-section{padding:3rem 0}
+.section-toggle{cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:0.35rem}
+.section-toggle:hover{color:var(--accent)}
+.section-toggle[aria-expanded="true"] .arrow{transform:rotate(180deg)}
 .timeline{display:grid;grid-template-columns:1fr;gap:1.25rem}
 @media (min-width: 900px) {
   .timeline{grid-template-columns:repeat(2, 1fr)}

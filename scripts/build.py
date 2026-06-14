@@ -886,7 +886,7 @@ def generate_rss(data, stats):
         source_url = e.get("source", {}).get("url", "")
         items.append(f'''    <item>
       <title>{e["company"]}: {e["jobs_lost"]:,} Jobs Impacted ({classification_label})</title>
-      <link>https://ailayofftracker.com/entry/{eid}/</link>
+      <link>https://damgeed.github.io/ai-layoff-tracker/entry/{eid}/</link>
       <description><![CDATA[
         <p>{e["summary"][:300]}</p>
         <ul>
@@ -901,24 +901,24 @@ def generate_rss(data, stats):
         {'<p><a href="' + source_url + '">Original Source</a></p>' if source_url else ''}
       ]]></description>
       <pubDate>{e["date"]}T00:00:00Z</pubDate>
-      <guid isPermaLink="true">https://ailayofftracker.com/entry/{eid}/</guid>
+      <guid isPermaLink="true">https://damgeed.github.io/ai-layoff-tracker/entry/{eid}/</guid>
       <category>{classification_label}</category>
       <category>{e["country"]}</category>
       <category>{e["industry"]}</category>
-      <source url="https://ailayofftracker.com/api/feed.xml">AI Layoff Tracker</source>
+      <source url="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml">AI Layoff Tracker</source>
     </item>''')
     
     feed = f'''<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <channel>
   <title>AI Layoff Tracker</title>
-  <link>https://ailayofftracker.com</link>
+  <link>https://damgeed.github.io/ai-layoff-tracker</link>
   <description>Tracking documented workforce reductions linked to artificial intelligence and automation. {stats["total_jobs_lost"]:,} jobs across {stats["companies"]} companies. Updated with every new verified entry.</description>
   <language>en-us</language>
   <lastBuildDate>{stats["last_updated"]}</lastBuildDate>
-  <atom:link href="https://ailayofftracker.com/api/feed.xml" rel="self" type="application/rss+xml"/>
-  <docs>https://ailayofftracker.com/api/</docs>
-  <webMaster>ailayofftracker.com (AI Layoff Tracker)</webMaster>
+  <atom:link href="https://damgeed.github.io/ai-layoff-tracker/api/feed.xml" rel="self" type="application/rss+xml"/>
+  <docs>https://damgeed.github.io/ai-layoff-tracker/api/</docs>
+  <webMaster>damgeed.github.io/ai-layoff-tracker (AI Layoff Tracker)</webMaster>
   <ttl>1440</ttl>
 {"".join(items)}
 </channel>

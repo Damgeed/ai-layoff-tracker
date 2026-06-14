@@ -667,4 +667,18 @@
   // --- Boot --------------------------------------------------------------
   loadFromURL();
   document.addEventListener('DOMContentLoaded', init);
+
+  // --- Section toggle (Timeline collapse) --------------------------------
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.section-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function() {
+        var target = document.getElementById(this.dataset.target);
+        if (!target) return;
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        target.style.display = expanded ? 'none' : '';
+        this.innerHTML = 'Timeline ' + (expanded ? '▾' : '▴');
+      });
+    });
+  });
 })();
