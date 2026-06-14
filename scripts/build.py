@@ -809,6 +809,71 @@ def generate_entry_pages(data):
         with open(page_dir / "index.html", "w") as f:
             f.write(html)
 
+def generate_quality_scorecard(data):
+    """Generate /api/quality.json scorecard with source health + tier breakdown."""
+    entries = data["entries"]
+    total = len(entries) if entries else 1
+    primary = sum(1 for e in entries if e.get("source_quality") == "PRIMARY_SOURCE")
+    archived = sum(1 for e in entries if e.get("source_quality") == "ARCHIVED_SOURCE")
+    avg_conf = round(sum(e["confidence_score"] for e in entries) / total, 1)
+
+    # Broken sources from source-health.json
+    sh_path = PUBLIC_DIR / "api" / "source-health.json"
+    broken = 0
+    if sh_path.exists():
+        with open(sh_path) as f:
+            sh = json.load(f)
+        broken = len(sh.get("broken_urls", []))
+
+    # Entries by tier (classification → tier mapping)
+    TIER_MAP = {
+        "DIRECT_AI_REPLACEMENT": "tier1",
+        "AI_DRIVEN_RESTRUCTURING": "tier2",
+        "AI_REALLOCATION": "tier3",
+        "MARKET_DISRUPTION": "tier4",
+    }
+    by_tier = {}
+    for e in entries:
+        tier = TIER_MAP.get(e["classification"], "tier4")
+        by_tier[tier] = by_tier.get(tier, 0) + 1
+
+    quality = {
+        "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "total_entries": len(entries),
+        "primary_source_pct": round(primary / total * 100, 1),
+        "archived_source_pct": round(archived / total * 100, 1),
+        "avg_confidence": avg_conf,
+        "broken_source_count": broken,
+        "entries_by_tier": by_tier,
+    }
+    write_json(PUBLIC_DIR / "api" / "quality.json", quality)
+    print(f"   ✅ Quality scorecard: {quality['primary_source_pct']}% primary, {broken} broken sources")
+
+
+def generate_source_health_page():
+    """Generate /source-health/index.html page from source-health.json if missing.
+    The hand-maintained page at docs/source-health/index.html is preferred —
+    this only creates a fallback stub if it doesn't exist."""
+    sh_path = PUBLIC_DIR / "source-health" / "index.html"
+    if sh_path.exists():
+        print("   ℹ️  /source-health/ already exists (skipped)")
+        return
+    os.makedirs(PUBLIC_DIR / "source-health", exist_ok=True)
+    html = """<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Source Health | AI Layoff Tracker</title>
+<link rel="stylesheet" href="assets/css/main.css"></head>
+<body><div class="bg-mesh" aria-hidden="true"></div><div class="bg-grid" aria-hidden="true"></div>
+<header class="site-header" role="banner"><div class="container">
+<a href="./" class="logo"><span class="logo-dot"></span>AI Layoff Tracker</a></div></header>
+<main class="container" id="main-content" role="main"><nav class="breadcrumb"><a href="./">← Back to tracker</a></nav>
+<h1>Source Health Monitor</h1><p>Run <code>scripts/source_monitor.py</code> to generate the source health report.</p>
+</main></body></html>"""
+    with open(sh_path, "w") as f:
+        f.write(html)
+    print("   ✅ Source health stub created (run source_monitor.py to populate)")
+
+
 def generate_rss(data, stats):
     """Generate RSS feed with ALL entries, full metadata."""
     entries = sorted(data["entries"], key=lambda x: x["date"], reverse=True)
@@ -940,7 +1005,44 @@ def main():
     # Generate sitemap
     generate_sitemap(data, stats)
     print("   ✅ Sitemap generated")
-    
+
+    # Generate quality scorecard
+    generate_quality_scorecard(data)
+
+    # Generate source health page
+    generate_source_health_page()
+
+    # Generate /api/versions.json (initial version if missing)
+    versions_path = PUBLIC_DIR / "api" / "versions.json"
+    if not versions_path.exists():
+        write_json(versions_path, {
+            "versions": [{
+                "version": "3.1.0",
+                "date": stats["last_updated"],
+                "entries": len(entries),
+                "total_jobs": stats["total_jobs_lost"],
+                "notes": "Initial version tracking"
+            }]
+        })
+        print("   ✅ Created /api/versions.json")
+    else:
+        print("   ℹ️  /api/versions.json already exists (skipped)")
+
+    # Aggregate entry history into /api/history.json
+    all_history = []
+    for e in entries:
+        for h in e.get("history", []):
+            event = dict(h)  # copy to avoid mutating source data
+            event["entry_id"] = e["id"]
+            event["company"] = e["company"]
+            all_history.append(event)
+    all_history.sort(key=lambda x: x.get("date", ""), reverse=True)
+    write_json(PUBLIC_DIR / "api" / "history.json", {
+        "total_events": len(all_history),
+        "history": all_history
+    })
+    print(f"   ✅ Aggregated {len(all_history)} history events into /api/history.json")
+
     # Update last_updated in data file
     data["meta"]["last_updated"] = stats["last_updated"]
     data["meta"]["version"] = "3.1.0"

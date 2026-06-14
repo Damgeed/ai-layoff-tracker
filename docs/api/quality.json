@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-06-14T05:12:04Z",
+  "total_entries": 27,
+  "primary_source_pct": 48.1,
+  "archived_source_pct": 0.0,
+  "avg_confidence": 79.6,
+  "broken_source_count": 21,
+  "entries_by_tier": {
+    "tier3": 8,
+    "tier1": 5,
+    "tier2": 12,
+    "tier4": 2
+  }
+}

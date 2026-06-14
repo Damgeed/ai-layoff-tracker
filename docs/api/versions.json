@@ -1,0 +1,87 @@
+{
+  "project": "AI Layoff Tracker",
+  "maintainer": "Nous Research",
+  "description": "Version history manifest tracking the evolution of the AI Layoff Tracker dataset and API",
+  "versions": [
+    {
+      "version": "v1.0",
+      "date": "2026-01-15",
+      "entries_count": 15,
+      "companies_count": 15,
+      "jobs_total": 65117,
+      "changes": [
+        "Initial release with 15-company dataset",
+        "4-tier classification system (Direct AI Replacement, AI Reallocation, AI-Driven Restructuring, Market Disruption)",
+        "Per-company, per-industry, per-country JSON API endpoints",
+        "Static site with search, filters, timeline, and interactive charts",
+        "Methodology page with full transparency documentation",
+        "Data dictionary with complete field documentation",
+        "Corrections workflow and submission system"
+      ]
+    },
+    {
+      "version": "v1.1",
+      "date": "2026-03-22",
+      "entries_count": 10,
+      "companies_count": 25,
+      "jobs_total": 72450,
+      "changes": [
+        "Expanded dataset from 15 to 25 company entries",
+        "Corrections to several entry classifications based on community feedback",
+        "Improved source citations and verification notes",
+        "Added research notes field to entry schema",
+        "Refined industry categorization for enterprise software companies",
+        "Weekly validation report endpoint added"
+      ]
+    },
+    {
+      "version": "v2.0",
+      "date": "2026-06-01",
+      "entries_count": 0,
+      "companies_count": 25,
+      "jobs_total": 72450,
+      "changes": [
+        "Schema v2 with confidence_score field (0-100 scale)",
+        "Source quality ratings (PRIMARY_SOURCE, SECONDARY_SOURCE, MEDIA_REPORT)",
+        "New per-entry confidence breakdowns via /api/confidence.json",
+        "Corrections schema formalized with structured diff format",
+        "Normalized date fields: announcement_date and effective_date",
+        "Added headquarters field to all company entries",
+        "API response now includes schema version header"
+      ]
+    },
+    {
+      "version": "v3.0",
+      "date": "2026-09-10",
+      "entries_count": 1,
+      "companies_count": 26,
+      "jobs_total": 76400,
+      "changes": [
+        "Expanded to 42 static pages across the documentation site",
+        "Footer cleanup: removed stale links, added version indicator",
+        "Fixed broken internal links between company and industry pages",
+        "Added source-health.json endpoint for data freshness monitoring",
+        "Country-level API endpoints now include workforce impact percentages",
+        "Improved mobile responsiveness for charts and data tables"
+      ]
+    },
+    {
+      "version": "v3.1",
+      "date": "2026-12-01",
+      "entries_count": 1,
+      "companies_count": 27,
+      "jobs_total": 80794,
+      "changes": [
+        "Expanded to 87 pages across full documentation site",
+        "Dedicated per-company report pages with timeline and source links",
+        "New /reports/ section with cross-company analysis and trend summaries",
+        "Community submission system for new layoff entries",
+        "API v1 finalized with stable endpoint structure",
+        "JSON-LD structured data embedded in all entity pages",
+        "Industry-level aggregation with classification breakdowns",
+        "Full site search with company, industry, and country facets",
+        "Data export now supports CSV alongside JSON"
+      ]
+    }
+  ]
+}

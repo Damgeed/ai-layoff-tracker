@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Source Health — AI Layoff Tracker</title>
+  <meta name="description" content="Source link health monitor for the AI Layoff Tracker. Tracks broken URLs, redirects, and archive coverage across all entries.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="assets/css/main.css">
+<style>
+.source-health-header { display:flex; align-items:center; gap:1rem; margin:1.5rem 0; flex-wrap:wrap; }
+.health-score { width:100px; height:100px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; font-weight:800; position:relative; flex-shrink:0; }
+.health-score.good { color:#22c55e; background:conic-gradient(#22c55e var(--pct), #1e293b var(--pct) 100%); }
+.health-score.warn { color:#f59e0b; background:conic-gradient(#f59e0b var(--pct), #1e293b var(--pct) 100%); }
+.health-score.bad  { color:#ef4444; background:conic-gradient(#ef4444 var(--pct), #1e293b var(--pct) 100%); }
+.health-score span { position:absolute; inset:6px; border-radius:50%; background:var(--card-bg); display:flex; align-items:center; justify-content:center; }
+.health-meta { color:var(--text-secondary); font-size:0.85rem; line-height:1.6; }
+.health-meta strong { color:var(--text); }
+.stat-card small { display:block; font-size:0.675rem; color:var(--text-secondary); margin-top:0.25rem; }
+.status-badge { display:inline-block; padding:0.15rem 0.5rem; border-radius:4px; font-size:0.725rem; font-weight:600; }
+.status-badge.healthy { background:#064e3b; color:#22c55e; }
+.status-badge.dead    { background:#450a0a; color:#ef4444; }
+.status-badge.redirect{ background:#422006; color:#f59e0b; }
+.status-badge.skipped { background:#1e293b; color:#94a3b8; }
+.entry-card { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:1rem; margin-bottom:0.75rem; }
+.entry-card summary { cursor:pointer; font-weight:600; display:flex; align-items:center; gap:0.5rem; user-select:none; }
+.entry-card summary::-webkit-details-marker { display:none; }
+.entry-card summary::before { content:'▸'; transition:transform 0.2s; font-size:0.75rem; color:var(--accent); }
+.entry-card[open] summary::before { transform:rotate(90deg); }
+.source-row { display:flex; justify-content:space-between; align-items:center; padding:0.4rem 0; border-bottom:1px solid var(--border); font-size:0.85rem; gap:0.5rem; flex-wrap:wrap; }
+.source-row:last-child { border-bottom:none; }
+.source-url { word-break:break-all; color:var(--accent); }
+.error-text { color:#ef4444; font-size:0.775rem; }
+.archive-dot { width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:0.35rem; }
+.archive-dot.yes { background:#22c55e; }
+.archive-dot.no  { background:#f59e0b; }
+.broken-table { width:100%; }
+.broken-table td, .broken-table th { padding:0.5rem 0.75rem; text-align:left; font-size:0.85rem; }
+.broken-table td:first-child { white-space:nowrap; font-family:monospace; font-size:0.8rem; }
+.skeleton { background:linear-gradient(90deg, var(--card-bg) 25%, #1e293b 50%, var(--card-bg) 75%); background-size:200% 100%; animation:shimmer 1.5s infinite; border-radius:6px; }
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+@media (max-width:600px) {
+  .health-score { width:72px; height:72px; font-size:1.5rem; }
+  .source-health-header { gap:0.75rem; }
+  .broken-table td, .broken-table th { font-size:0.75rem; padding:0.4rem 0.5rem; }
+}
+</style>
+</head>
+<body>
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/">API</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav-drawer" id="mobile-drawer">
+  <div class="mobile-nav-backdrop" id="drawer-backdrop"></div>
+  <nav class="mobile-nav-panel" aria-label="Mobile navigation">
+    <a href="./">Home</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="data-dictionary.html">Data Dictionary</a>
+    <a href="changelog.html">Changelog</a>
+    <a href="corrections.html">Corrections</a>
+    <a href="evidence/">Evidence</a>
+    <a href="api/">API</a>
+    <a href="history/">History</a>
+    <a href="versions/">Versions</a>
+    <a href="reports/">Reports</a>
+    <a href="press/">Press Kit</a>
+    <a href="research/">Research</a>
+  </nav>
+</div>
+
+<main class="container" id="main-content" role="main">
+  <nav class="breadcrumb"><a href="./">← Back to tracker</a></nav>
+
+  <h1>🔗 Source Health Monitor</h1>
+  <p style="color:var(--text-secondary);">Weekly automated check of all source URLs for dead links, redirects, and archive coverage. Run via <code>scripts/source_monitor.py</code>.</p>
+
+  <div id="health-content">
+    <!-- Loading skeleton -->
+    <div class="source-health-header">
+      <div class="skeleton" style="width:100px;height:100px;border-radius:50%;"></div>
+      <div><div class="skeleton" style="width:200px;height:20px;margin-bottom:8px;"></div><div class="skeleton" style="width:160px;height:14px;"></div></div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;"></div></div><div class="stat-label">Healthy</div></div>
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;"></div></div><div class="stat-label">Dead</div></div>
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;"></div></div><div class="stat-label">Redirected</div></div>
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;"></div></div><div class="stat-label">Skipped</div></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div class="footer-col">
+      <h4>Data</h4>
+      <a href="methodology.html">Methodology</a>
+      <a href="api/entries.json">JSON</a>
+      <a href="api/entries.csv">CSV</a>
+      <a href="api/feed.xml">RSS</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="press/">Press Kit</a>
+      <a href="research/">Research</a>
+      <a href="citation-guide/">Citation Guide</a>
+      <a href="versions/">Versions</a>
+      <a href="history/">History</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Dataset last updated: —. This project is a public research resource documenting workforce reductions linked to AI and automation. All data is verified against primary sources where available. See <a href="methodology.html">Methodology</a> for details.</p>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script>
+(async function() {
+  try {
+    const resp = await fetch('api/source-health.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    const s = data.summary;
+    const total = data.total_sources_checked || (s.healthy + s.dead + s.redirected + s.skipped);
+    const pct = total > 0 ? Math.round((s.healthy / total) * 100) : 100;
+    const healthClass = pct >= 80 ? 'good' : pct >= 50 ? 'warn' : 'bad';
+
+    const brokenHTML = data.broken_urls && data.broken_urls.length
+      ? data.broken_urls.map(b => `<tr><td>${b.entry_id}</td><td>${b.company}</td><td><a href="${b.url}" class="source-url">${b.url.substring(0,70)}…</a></td><td><span class="error-text">${b.error}</span></td></tr>`).join('')
+      : '<tr><td colspan="4" style="color:var(--text-secondary);">✅ No broken sources detected</td></tr>';
+
+    const entriesHTML = Object.entries(data.entries||{}).map(([id, entry]) => {
+      const sourcesHTML = entry.sources.map(src => {
+        const statusLabel = src.status === 'SKIPPED' ? 'Skipped' : (typeof src.status === 'number' && src.status >= 200 && src.status < 300) ? 'Healthy' : (typeof src.status === 'number' && src.status >= 300 && src.status < 400) ? 'Redirected' : 'Dead';
+        const statusClass = statusLabel.toLowerCase();
+        const archiveIcon = src.has_archive ? '<span class="archive-dot yes"></span>Archived' : '<span class="archive-dot no"></span>No Archive';
+        return `<div class="source-row"><a href="${src.url}" class="source-url">${src.url.substring(0,80)}…</a><span style="display:flex;align-items:center;gap:0.5rem;"><span>${archiveIcon}</span><span class="status-badge ${statusClass}">${statusLabel}</span></span></div>`;
+      }).join('');
+      return `<details class="entry-card"><summary>${entry.company} (${entry.sources.length} source${entry.sources.length>1?'s':''})</summary><div style="margin-top:0.75rem;">${sourcesHTML}</div></details>`;
+    }).join('');
+
+    document.getElementById('health-content').innerHTML = `
+      <div class="source-health-header">
+        <div class="health-score ${healthClass}" style="--pct:${pct}%"><span>${pct}%</span></div>
+        <div class="health-meta">
+          <strong>${total}</strong> sources checked across <strong>${data.total_entries}</strong> entries<br>
+          ${s.missing_archive} missing archive snapshots<br>
+          <small>Generated: ${data.generated_at}</small>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-value" style="color:#22c55e;">${s.healthy}</div><div class="stat-label">Healthy</div><small>200 OK</small></div>
+        <div class="stat-card"><div class="stat-value" style="color:#ef4444;">${s.dead}</div><div class="stat-label">Dead</div><small>4xx / 5xx / error</small></div>
+        <div class="stat-card"><div class="stat-value" style="color:#f59e0b;">${s.redirected}</div><div class="stat-label">Redirected</div><small>3xx</small></div>
+        <div class="stat-card"><div class="stat-value" style="color:#94a3b8;">${s.skipped}</div><div class="stat-label">Skipped</div><small>Paywall / blocked</small></div>
+      </div>
+      <section style="margin-top:2rem;">
+        <h2>🚨 Broken URLs (${s.dead})</h2>
+        <div class="table-wrap">
+          <table class="broken-table">
+            <thead><tr><th>Entry</th><th>Company</th><th>URL</th><th>Error</th></tr></thead>
+            <tbody>${brokenHTML}</tbody>
+          </table>
+        </div>
+      </section>
+      <section style="margin-top:2rem;">
+        <h2>📋 Per-Entry Breakdown</h2>
+        ${entriesHTML}
+      </section>`;
+  } catch(e) {
+    document.getElementById('health-content').innerHTML = `<p style="color:#ef4444;">⚠️ Failed to load source health data: ${e.message}. <br>Make sure <code>source-health.json</code> exists (run <code>scripts/source_monitor.py</code>).</p>`;
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+{
+  "total_events": 27,
+  "history": [
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "google-2023-01",
+      "company": "Google"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "meta-2023-03",
+      "company": "Meta"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "buzzfeed-2023-04",
+      "company": "BuzzFeed"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "dropbox-2023-04",
+      "company": "Dropbox"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "dukaan-2023-07",
+      "company": "Dukaan"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "stackoverflow-2023-10",
+      "company": "Stack Overflow"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "linkedin-2023-10",
+      "company": "LinkedIn"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "amazon-alexa-2023-11",
+      "company": "Amazon"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "duolingo-2024-01",
+      "company": "Duolingo"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "unity-2024-01",
+      "company": "Unity"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "cnet-2024-01",
+      "company": "CNET"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "sap-2024-01",
+      "company": "SAP"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "microsoft-gaming-2024-01",
+      "company": "Microsoft"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "paypal-2024-01",
+      "company": "PayPal"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "ups-2024-01",
+      "company": "UPS"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "teleperformance-2024-01",
+      "company": "Teleperformance"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "cisco-2024-02",
+      "company": "Cisco"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "autodesk-2024-02",
+      "company": "Autodesk"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "twilio-2024-03",
+      "company": "Twilio"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "cvs-health-2024-03",
+      "company": "CVS Health"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "indeed-2024-05",
+      "company": "Indeed"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "ibm-2024-05",
+      "company": "IBM"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "chegg-2024-06",
+      "company": "Chegg"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "intuit-2024-07",
+      "company": "Intuit"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "salesforce-2024-08",
+      "company": "Salesforce"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "klarna-2024-08",
+      "company": "Klarna"
+    },
+    {
+      "date": "2026-06-13",
+      "event": "Entry created",
+      "details": "Added to dataset with initial verification",
+      "entry_id": "spotify-2024-12",
+      "company": "Spotify"
+    }
+  ]
+}

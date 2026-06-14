@@ -1,0 +1,563 @@
+{
+  "generated_at": "2026-06-14T05:09:22.344798+00:00",
+  "total_entries": 27,
+  "total_sources_checked": 37,
+  "summary": {
+    "healthy": 4,
+    "dead": 21,
+    "redirected": 0,
+    "skipped": 12,
+    "missing_archive": 10
+  },
+  "entries": {
+    "google-2023-01": {
+      "id": "google-2023-01",
+      "company": "Google",
+      "sources": [
+        {
+          "url": "https://blog.google/inside-google/message-ceo/january-update/",
+          "status": null,
+          "final_url": null,
+          "error": "error: The read operation timed out",
+          "has_archive": true
+        },
+        {
+          "url": "https://www.bbc.com/news/business-64349321",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": false
+        }
+      ]
+    },
+    "meta-2023-03": {
+      "id": "meta-2023-03",
+      "company": "Meta",
+      "sources": [
+        {
+          "url": "https://about.fb.com/news/2023/03/mark-zuckerberg-meta-year-of-efficiency/",
+          "status": 200,
+          "final_url": null,
+          "error": null,
+          "has_archive": true
+        },
+        {
+          "url": "https://www.cnbc.com/2023/03/14/meta-layoffs.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": false
+        }
+      ]
+    },
+    "buzzfeed-2023-04": {
+      "id": "buzzfeed-2023-04",
+      "company": "BuzzFeed",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/2023/4/20/23690345/buzzfeed-news-shutting-down-layoffs",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        }
+      ]
+    },
+    "dropbox-2023-04": {
+      "id": "dropbox-2023-04",
+      "company": "Dropbox",
+      "sources": [
+        {
+          "url": "https://blog.dropbox.com/topics/company/a-message-from-drew",
+          "status": 200,
+          "final_url": null,
+          "error": null,
+          "has_archive": true
+        }
+      ]
+    },
+    "dukaan-2023-07": {
+      "id": "dukaan-2023-07",
+      "company": "Dukaan",
+      "sources": [
+        {
+          "url": "https://twitter.com/suumitshah/status/1678345825605349376",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        }
+      ]
+    },
+    "stackoverflow-2023-10": {
+      "id": "stackoverflow-2023-10",
+      "company": "Stack Overflow",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/2023/10/16/23919004/stack-overflow-layoffs-ai-traffic-decline",
+          "status": 200,
+          "final_url": "https://www.theverge.com/2023/10/16/23919004/stack-overflow-layoff-ai-profitability",
+          "error": "redirected",
+          "has_archive": true
+        },
+        {
+          "url": "https://arstechnica.com/tech-policy/2023/10/stack-overflow-lays-off-28-percent-of-staff-amid-ai-disruption/",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": false
+        }
+      ]
+    },
+    "linkedin-2023-10": {
+      "id": "linkedin-2023-10",
+      "company": "LinkedIn",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2023/10/16/linkedin-lays-off-more-than-700-employees.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        }
+      ]
+    },
+    "amazon-alexa-2023-11": {
+      "id": "amazon-alexa-2023-11",
+      "company": "Amazon",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/technology/amazon-cuts-jobs-alexa-unit-2023-11-17/",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": true
+        },
+        {
+          "url": "https://www.theverge.com/2023/11/17/23965243/amazon-alexa-layoffs-generative-ai",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": false
+        }
+      ]
+    },
+    "duolingo-2024-01": {
+      "id": "duolingo-2024-01",
+      "company": "Duolingo",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2024-01-08/duolingo-cuts-contractors-as-it-shifts-to-ai-for-content-creation",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": true
+        }
+      ]
+    },
+    "unity-2024-01": {
+      "id": "unity-2024-01",
+      "company": "Unity",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/technology/unity-software-lay-off-1800-employees-2024-01-08/",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": true
+        }
+      ]
+    },
+    "cnet-2024-01": {
+      "id": "cnet-2024-01",
+      "company": "CNET",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/2024/1/18/24042244/cnet-layoffs-ai-written-articles",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        }
+      ]
+    },
+    "sap-2024-01": {
+      "id": "sap-2024-01",
+      "company": "SAP",
+      "sources": [
+        {
+          "url": "https://www.sap.com/news/2024-01-23-sap-restructuring-ai-focus.html",
+          "status": 403,
+          "final_url": null,
+          "error": "HTTP_403",
+          "has_archive": true
+        },
+        {
+          "url": "https://www.reuters.com/technology/sap-restructure-8000-jobs-push-toward-ai-2024-01-23/",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": false
+        }
+      ]
+    },
+    "microsoft-gaming-2024-01": {
+      "id": "microsoft-gaming-2024-01",
+      "company": "Microsoft",
+      "sources": [
+        {
+          "url": "https://www.theverge.com/2024/1/25/24049050/microsoft-activision-blizzard-layoffs",
+          "status": 200,
+          "final_url": null,
+          "error": null,
+          "has_archive": true
+        }
+      ]
+    },
+    "paypal-2024-01": {
+      "id": "paypal-2024-01",
+      "company": "PayPal",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/technology/paypal-lay-off-2000-employees-2024-01-30/",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": true
+        }
+      ]
+    },
+    "ups-2024-01": {
+      "id": "ups-2024-01",
+      "company": "UPS",
+      "sources": [
+        {
+          "url": "https://www.cnn.com/2024/01/30/business/ups-layoffs/index.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        },
+        {
+          "url": "https://www.cnbc.com/2024/01/30/ups-layoffs-12000-jobs.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": false
+        }
+      ]
+    },
+    "teleperformance-2024-01": {
+      "id": "teleperformance-2024-01",
+      "company": "Teleperformance",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/technology/teleperformance-says-ai-will-replace-thousands-call-center-jobs-2024-01-30/",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": true
+        }
+      ]
+    },
+    "cisco-2024-02": {
+      "id": "cisco-2024-02",
+      "company": "Cisco",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2024/02/14/cisco-layoffs-4000-jobs.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        },
+        {
+          "url": "https://www.reuters.com/technology/cisco-cut-thousands-jobs-shift-focus-ai-2024-02-14/",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": false
+        }
+      ]
+    },
+    "autodesk-2024-02": {
+      "id": "autodesk-2024-02",
+      "company": "Autodesk",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2024/02/27/autodesk-layoffs-2024-restructuring.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        }
+      ]
+    },
+    "twilio-2024-03": {
+      "id": "twilio-2024-03",
+      "company": "Twilio",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2024/03/04/twilio-layoffs-600-employees.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        }
+      ]
+    },
+    "cvs-health-2024-03": {
+      "id": "cvs-health-2024-03",
+      "company": "CVS Health",
+      "sources": [
+        {
+          "url": "https://www.wsj.com/business/healthcare/cvs-health-layoffs-5000-jobs-39752cdc",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": true
+        }
+      ]
+    },
+    "indeed-2024-05": {
+      "id": "indeed-2024-05",
+      "company": "Indeed",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2024/05/13/indeed-layoffs-2200-employees.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        }
+      ]
+    },
+    "ibm-2024-05": {
+      "id": "ibm-2024-05",
+      "company": "IBM",
+      "sources": [
+        {
+          "url": "https://www.bloomberg.com/news/articles/2024-05-20/ibm-to-pause-hiring-for-jobs-that-ai-could-do",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": true
+        },
+        {
+          "url": "https://www.cnbc.com/2024/05/20/ibm-pauses-hiring-for-jobs-ai-could-replace.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": false
+        }
+      ]
+    },
+    "chegg-2024-06": {
+      "id": "chegg-2024-06",
+      "company": "Chegg",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/technology/chegg-shares-plunge-company-says-chatgpt-is-hurting-its-business-2024-06-17/",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": true
+        },
+        {
+          "url": "https://www.cnbc.com/2024/06/17/chegg-stock-drops-chatgpt-threat.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": false
+        }
+      ]
+    },
+    "intuit-2024-07": {
+      "id": "intuit-2024-07",
+      "company": "Intuit",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/technology/intuit-lay-off-1800-employees-plans-rehire-ai-roles-2024-07-10/",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": true
+        }
+      ]
+    },
+    "salesforce-2024-08": {
+      "id": "salesforce-2024-08",
+      "company": "Salesforce",
+      "sources": [
+        {
+          "url": "https://www.cnbc.com/2024/08/01/salesforce-cuts-300-roles-hiring-for-ai-agent-sales.html",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        }
+      ]
+    },
+    "klarna-2024-08": {
+      "id": "klarna-2024-08",
+      "company": "Klarna",
+      "sources": [
+        {
+          "url": "https://www.bbc.com/news/articles/c4gpqp4v4q2o",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": true
+        },
+        {
+          "url": "https://fortune.com/2024/08/27/klarna-ai-job-cuts/",
+          "status": 404,
+          "final_url": null,
+          "error": "HTTP_404",
+          "has_archive": false
+        }
+      ]
+    },
+    "spotify-2024-12": {
+      "id": "spotify-2024-12",
+      "company": "Spotify",
+      "sources": [
+        {
+          "url": "https://www.reuters.com/technology/spotify-lay-off-1500-employees-2024-12-04/",
+          "status": "SKIPPED",
+          "final_url": null,
+          "error": "paywall_or_blocked",
+          "has_archive": true
+        }
+      ]
+    }
+  },
+  "broken_urls": [
+    {
+      "entry_id": "google-2023-01",
+      "company": "Google",
+      "url": "https://blog.google/inside-google/message-ceo/january-update/",
+      "error": "error: The read operation timed out"
+    },
+    {
+      "entry_id": "google-2023-01",
+      "company": "Google",
+      "url": "https://www.bbc.com/news/business-64349321",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "meta-2023-03",
+      "company": "Meta",
+      "url": "https://www.cnbc.com/2023/03/14/meta-layoffs.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "buzzfeed-2023-04",
+      "company": "BuzzFeed",
+      "url": "https://www.theverge.com/2023/4/20/23690345/buzzfeed-news-shutting-down-layoffs",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "dukaan-2023-07",
+      "company": "Dukaan",
+      "url": "https://twitter.com/suumitshah/status/1678345825605349376",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "stackoverflow-2023-10",
+      "company": "Stack Overflow",
+      "url": "https://arstechnica.com/tech-policy/2023/10/stack-overflow-lays-off-28-percent-of-staff-amid-ai-disruption/",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "linkedin-2023-10",
+      "company": "LinkedIn",
+      "url": "https://www.cnbc.com/2023/10/16/linkedin-lays-off-more-than-700-employees.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "amazon-alexa-2023-11",
+      "company": "Amazon",
+      "url": "https://www.theverge.com/2023/11/17/23965243/amazon-alexa-layoffs-generative-ai",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "cnet-2024-01",
+      "company": "CNET",
+      "url": "https://www.theverge.com/2024/1/18/24042244/cnet-layoffs-ai-written-articles",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "sap-2024-01",
+      "company": "SAP",
+      "url": "https://www.sap.com/news/2024-01-23-sap-restructuring-ai-focus.html",
+      "error": "HTTP_403"
+    },
+    {
+      "entry_id": "ups-2024-01",
+      "company": "UPS",
+      "url": "https://www.cnn.com/2024/01/30/business/ups-layoffs/index.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "ups-2024-01",
+      "company": "UPS",
+      "url": "https://www.cnbc.com/2024/01/30/ups-layoffs-12000-jobs.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "cisco-2024-02",
+      "company": "Cisco",
+      "url": "https://www.cnbc.com/2024/02/14/cisco-layoffs-4000-jobs.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "autodesk-2024-02",
+      "company": "Autodesk",
+      "url": "https://www.cnbc.com/2024/02/27/autodesk-layoffs-2024-restructuring.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "twilio-2024-03",
+      "company": "Twilio",
+      "url": "https://www.cnbc.com/2024/03/04/twilio-layoffs-600-employees.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "indeed-2024-05",
+      "company": "Indeed",
+      "url": "https://www.cnbc.com/2024/05/13/indeed-layoffs-2200-employees.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "ibm-2024-05",
+      "company": "IBM",
+      "url": "https://www.cnbc.com/2024/05/20/ibm-pauses-hiring-for-jobs-ai-could-replace.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "chegg-2024-06",
+      "company": "Chegg",
+      "url": "https://www.cnbc.com/2024/06/17/chegg-stock-drops-chatgpt-threat.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "salesforce-2024-08",
+      "company": "Salesforce",
+      "url": "https://www.cnbc.com/2024/08/01/salesforce-cuts-300-roles-hiring-for-ai-agent-sales.html",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "klarna-2024-08",
+      "company": "Klarna",
+      "url": "https://www.bbc.com/news/articles/c4gpqp4v4q2o",
+      "error": "HTTP_404"
+    },
+    {
+      "entry_id": "klarna-2024-08",
+      "company": "Klarna",
+      "url": "https://fortune.com/2024/08/27/klarna-ai-job-cuts/",
+      "error": "HTTP_404"
+    }
+  ]
+}
