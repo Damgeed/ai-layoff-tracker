@@ -944,8 +944,10 @@ def generate_sitemap(data, stats):
         "https://ailayofftracker.com/research/",
         "https://ailayofftracker.com/versions/",
         "https://ailayofftracker.com/reports/",
+        "https://ailayofftracker.com/source-health/",
+        "https://ailayofftracker.com/entry-history/",
     ]
-    
+
     # Entry pages
     for e in data["entries"]:
         urls.append(f'https://ailayofftracker.com/entry/{e["id"]}/')
