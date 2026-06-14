@@ -474,10 +474,9 @@ body{
 .chart-container{
   background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);
   border-radius:var(--r);padding:1.5rem;backdrop-filter:blur(12px);
-  transition:all .3s var(--ease);
+  transition:background .3s var(--ease),border-color .3s var(--ease);
 }
 .chart-container:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1)}
-.chart-container.full-width{grid-column:1/-1}
 .chart-container h3{font-size:0.875rem;color:var(--text-dim);margin-bottom:1.25rem;font-weight:600}
 
 /* --- Downloads ------------------------------------------------------ */
