@@ -556,6 +556,17 @@ def _make_report_page(title, key, rdata, data, stats, description):
 </body>
 </html>'''
 
+def _make_confidence_breakdown(factors):
+    """Generate HTML for a confidence breakdown list."""
+    if not factors:
+        return "<li>No breakdown available</li>"
+    items = ""
+    for f in factors:
+        sign = "+" if f["points"] > 0 else ""
+        items += '<li><span class="cf-factor">%s</span><span class="cf-points">%s%d</span></li>\n' % (f["factor"], sign, f["points"])
+    return items
+
+
 def generate_entry_pages(data):
     """Generate individual entry pages at /entry/{id}/index.html using v3.0 CSS."""
     entry_dir = PUBLIC_DIR / "entry"
@@ -764,6 +775,15 @@ def generate_entry_pages(data):
         {source_html}
         {archive_html}
       </ul>
+      <h2>Confidence Breakdown</h2>
+      <div class="confidence-breakdown">
+        <div class="confidence-total">
+          <span class="confidence-dot {conf_class}"></span> <strong>{conf}/100</strong>
+        </div>
+        <ul class="confidence-factors">
+          {_make_confidence_breakdown(entry.get('confidence_breakdown', []))}
+        </ul>
+      </div>
     </div>
   </article>
   <section class="related-links" aria-label="Related entries">
@@ -810,20 +830,39 @@ def generate_entry_pages(data):
             f.write(html)
 
 def generate_quality_scorecard(data):
-    """Generate /api/quality.json scorecard with source health + tier breakdown."""
+    """Generate /api/quality.json scorecard with source health + tier breakdown + archive coverage."""
     entries = data["entries"]
     total = len(entries) if entries else 1
     primary = sum(1 for e in entries if e.get("source_quality") == "PRIMARY_SOURCE")
     archived = sum(1 for e in entries if e.get("source_quality") == "ARCHIVED_SOURCE")
     avg_conf = round(sum(e["confidence_score"] for e in entries) / total, 1)
+    conf_coverage = round(sum(1 for e in entries if e.get("confidence_score", 0) >= 60) / total * 100, 1)
+    missing_evidence = sum(1 for e in entries if not e.get("evidence") or len(e.get("evidence", [])) == 0)
+    missing_archives = sum(1 for e in entries if not e.get("source", {}).get("archive_url"))
 
-    # Broken sources from source-health.json
+    # Source health stats
     sh_path = PUBLIC_DIR / "api" / "source-health.json"
     broken = 0
+    healthy = 0
+    skipped = 0
+    archive_coverage_pct = 0.0
+    total_sources_checked = 0
     if sh_path.exists():
         with open(sh_path) as f:
             sh = json.load(f)
         broken = len(sh.get("broken_urls", []))
+        s = sh.get("summary", {})
+        healthy = s.get("healthy", 0)
+        skipped = s.get("skipped", 0)
+        total_sources_checked = sh.get("total_sources_checked", 0) or (healthy + broken + s.get("redirected", 0) + skipped)
+        # Archive coverage from archive-coverage.json
+        ac_path = PUBLIC_DIR / "api" / "archive-coverage.json"
+        if ac_path.exists():
+            with open(ac_path) as f:
+                ac = json.load(f)
+            archive_coverage_pct = ac.get("overall_coverage_pct", 0.0)
+
+    health_pct = round(healthy / max(total_sources_checked, 1) * 100, 1) if total_sources_checked > 0 else 0
 
     # Entries by tier (classification → tier mapping)
     TIER_MAP = {
@@ -839,15 +878,31 @@ def generate_quality_scorecard(data):
 
     quality = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "version": "3.2.0",
         "total_entries": len(entries),
         "primary_source_pct": round(primary / total * 100, 1),
         "archived_source_pct": round(archived / total * 100, 1),
+        "archive_coverage_pct": archive_coverage_pct,
         "avg_confidence": avg_conf,
+        "conf_coverage_pct": conf_coverage,
+        "source_health_pct": health_pct,
         "broken_source_count": broken,
+        "healthy_source_count": healthy,
+        "skipped_source_count": skipped,
+        "missing_evidence_count": missing_evidence,
+        "missing_archives_count": missing_archives,
         "entries_by_tier": by_tier,
+        "targets": {
+            "primary_source_pct": 70.0,
+            "archive_coverage_pct": 100.0,
+            "broken_source_count": 0,
+            "confidence_coverage_pct": 95.0,
+            "total_entries": 50,
+        }
     }
     write_json(PUBLIC_DIR / "api" / "quality.json", quality)
-    print(f"   ✅ Quality scorecard: {quality['primary_source_pct']}% primary, {broken} broken sources")
+    print(f"   ✅ Quality scorecard: {quality['primary_source_pct']}% primary, {quality['archive_coverage_pct']}% archive, {broken} broken")
+    return quality
 
 
 def generate_source_health_page():
@@ -946,6 +1001,7 @@ def generate_sitemap(data, stats):
         "https://ailayofftracker.com/reports/",
         "https://ailayofftracker.com/source-health/",
         "https://ailayofftracker.com/entry-history/",
+        "https://ailayofftracker.com/data-quality/",
     ]
 
     # Entry pages

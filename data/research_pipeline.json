@@ -1,43 +1,63 @@
 {
-  "_schema": "Research pipeline — 27 → 100 verified entries. Each lead must be verified against a primary source before promotion to entries.json.",
+  "_schema": "Research pipeline — 27 → 50 → 100 → 250 verified entries.",
   "_workflow": {
     "1_discover": "Find credible source (news, SEC filing, company statement) citing AI-related layoffs",
     "2_enqueue": "Add to research_queue.json with discovery_date, source_urls, status=DISCOVERED",
     "3_verify": "Find primary source (CEO quote, earnings call, official statement). Set status=IN_RESEARCH",
     "4_review": "Fill full schema fields (confidence_score, classification, evidence, etc.). Set status=VERIFIED",
     "5_promote": "Add to entries.json. Run build.py. Commit.",
-    "6_reject": "If source doesn't hold up, set status=REJECTED with reason. Keep for audit."
+    "6_reject": "If source doesn't hold up, set status=REJECTED with reason. Keep for audit.",
+    "weekly_new_target": 3,
+    "monthly_new_target": 12
   },
-  "_priority_targets": [
-    {"sector": "Customer Support", "rationale": "Highest AI displacement rate. Chatbots replacing human agents.", "keywords": "customer service layoffs AI chatbot automation"},
-    {"sector": "Call Centers", "rationale": "AI voice agents replacing operators. Teleperformance already documented.", "keywords": "call center AI replacement layoffs voice agent"},
-    {"sector": "Translation/Localization", "rationale": "LLMs replacing human translators. Duolingo already documented.", "keywords": "translation AI layoffs localization LLM replacement"},
-    {"sector": "Content Production", "rationale": "AI writing tools replacing writers. BuzzFeed, CNET documented.", "keywords": "content writer AI layoffs journalism copywriter automation"},
-    {"sector": "Recruiting/HR", "rationale": "AI screening tools reducing recruiter headcount.", "keywords": "recruiter layoffs AI screening HR automation"},
-    {"sector": "Finance Operations", "rationale": "AI automating accounting, underwriting, claims processing.", "keywords": "finance AI layoffs accounting automation underwriting"},
-    {"sector": "Administrative Work", "rationale": "AI assistants replacing schedulers, data entry, clerks.", "keywords": "admin layoffs AI assistant clerical automation"},
-    {"sector": "Knowledge Work", "rationale": "Coding, legal, consulting being augmented/replaced by AI.", "keywords": "knowledge worker AI layoffs coding legal consulting"}
+  "_priority_sectors": [
+    {"sector": "Customer Support", "rationale": "Highest AI displacement rate. Chatbots replacing human agents.", "keywords": "customer service layoffs AI chatbot automation", "priority": 1},
+    {"sector": "Call Centers", "rationale": "AI voice agents replacing operators. Teleperformance already documented.", "keywords": "call center AI replacement layoffs voice agent", "priority": 2},
+    {"sector": "Content Production", "rationale": "AI writing tools replacing writers. BuzzFeed, CNET documented.", "keywords": "content writer AI layoffs journalism copywriter automation", "priority": 3},
+    {"sector": "Translation/Localization", "rationale": "LLMs replacing human translators. Duolingo already documented.", "keywords": "translation AI layoffs localization LLM replacement", "priority": 4},
+    {"sector": "Recruiting/HR", "rationale": "AI screening tools reducing recruiter headcount.", "keywords": "recruiter layoffs AI screening HR automation", "priority": 5},
+    {"sector": "Finance Operations", "rationale": "AI automating accounting, underwriting, claims processing.", "keywords": "finance AI layoffs accounting automation underwriting", "priority": 6},
+    {"sector": "Administrative Work", "rationale": "AI assistants replacing schedulers, data entry, clerks.", "keywords": "admin layoffs AI assistant clerical automation", "priority": 7},
+    {"sector": "Knowledge Work", "rationale": "Coding, legal, consulting being augmented/replaced by AI.", "keywords": "knowledge worker AI layoffs coding legal consulting", "priority": 8}
   ],
-  "_suggested_companies": [
-    {"company": "Chegg", "reason": "Already in dataset (T1). ChatGPT directly caused stock drop. Expand entry."},
-    {"company": "Stack Overflow", "reason": "Already in dataset (T3). Traffic dropped 50% due to ChatGPT. Expand."},
-    {"company": "Teleperformance", "reason": "Already in dataset (T2). 28,000 jobs. Major call center player. Expand."},
-    {"company": "Cisco", "reason": "Already in dataset (T2). 4,000 jobs. Follow up on AI shift narrative."},
-    {"company": "Carrefour", "reason": "French retailer — announced AI-driven layoffs in 2024. Not yet tracked."},
-    {"company": "Delivery Hero", "reason": "German food delivery — AI automating customer support. Not yet tracked."},
-    {"company": "Zalando", "reason": "German fashion retailer — AI logistics optimization layoffs. Not yet tracked."},
-    {"company": "Shopify", "reason": "CEO Tobi Lutke AI-forward messaging. Potential restructured roles."},
-    {"company": "EA (Electronic Arts)", "reason": "AI in game development reducing artist/QA headcount. Not yet tracked."},
-    {"company": "ByteDance/TikTok", "reason": "Chinese tech AI content moderation layoffs. Major player."}
+  "_expansion_targets": [
+    {"phase": "Phase 6a", "target": 50, "focus": "Customer support, call centers, content production", "deadline": "2026-Q3"},
+    {"phase": "Phase 6b", "target": 100, "focus": "Finance, admin, recruiting, translation", "deadline": "2026-Q4"},
+    {"phase": "Phase 6c", "target": 250, "focus": "Knowledge work, legal, consulting, healthcare", "deadline": "2027-Q2"}
   ],
+  "_source_recovery_plan": {
+    "dead_urls": 20,
+    "target_recovery": 20,
+    "strategy": [
+      "Run scripts/archive_recovery.py to find Wayback Machine snapshots",
+      "For each dead URL, search for equivalent Reuters/AP/company statement",
+      "Add archive_url to each secondary_source in entries.json",
+      "Track recovery rate in source-health dashboard"
+    ],
+    "priority_urls": [
+      {"entry": "google-2023-01", "url": "https://www.bbc.com/news/business-64349321", "replacement_search": "Google 12000 layoffs 2023 Reuters"},
+      {"entry": "meta-2023-03", "url": "https://www.cnbc.com/2023/03/14/meta-layoffs.html", "replacement_search": "Meta 10000 layoffs March 2023 restructuring"},
+      {"entry": "chegg-2024-06", "url": "https://www.cnbc.com/2024/06/17/chegg-stock-drops-chatgpt-threat.html", "replacement_search": "Chegg stock drop ChatGPT impact layoffs 2024"},
+      {"entry": "klarna-2024-08", "url": "https://www.bbc.com/news/articles/c4gpqp4v4q2o", "replacement_search": "Klarna AI job cuts 2024"},
+      {"entry": "cisco-2024-02", "url": "https://www.cnbc.com/2024/02/14/cisco-layoffs-4000-jobs.html", "replacement_search": "Cisco layoffs 4000 restructuring 2024"}
+    ]
+  },
   "_current_status": {
     "verified_entries": 27,
-    "target_entries": 100,
-    "gap": 73,
+    "target_50": 50,
+    "gap_to_50": 23,
+    "gap_to_100": 73,
     "primary_source_pct": 48.1,
     "target_primary_pct": 70,
     "avg_confidence": 79.6,
-    "weekly_new_target": 3
+    "archive_coverage_pct": 0,
+    "target_archive_pct": 100,
+    "weekly_new_target": 3,
+    "last_updated": "2026-06-15"
+  },
+  "_source_quality_tracking": {
+    "PRIMARY_SOURCE": {"count": 13, "target": 20, "needs_verification": ["stackoverflow-2023-10", "teleperformance-2023-10", "duolingo-2024-01", "intuit-2024-02", "ups-2024-01"]},
+    "SECONDARY_SOURCE": {"count": 14, "target_promotion": 7}
   },
   "queue": []
 }

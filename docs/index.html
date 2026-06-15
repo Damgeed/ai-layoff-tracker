@@ -185,6 +185,25 @@
     </div>
   </section>
 
+  <!-- Source Health Widget (loaded from API) -->
+  <section class="source-health-section" aria-labelledby="sh-heading">
+    <div class="container">
+      <h2 id="sh-heading" class="section-toggle" data-target="sh-body" aria-expanded="true" role="button" tabindex="0">
+        🔗 Source Health ▾
+      </h2>
+      <div id="sh-body">
+        <p style="color:var(--text-secondary);font-size:0.85rem;">Live status of all source URLs. <a href="source-health/" style="color:var(--accent);">Full report →</a></p>
+        <div id="source-health-widget" class="source-health-compact">
+          <div class="sh-stat"><div class="sh-value skeleton" style="width:40px;height:24px;">—</div><div class="sh-label">Healthy</div></div>
+          <div class="sh-stat"><div class="sh-value skeleton" style="width:40px;height:24px;">—</div><div class="sh-label">Dead</div></div>
+          <div class="sh-stat"><div class="sh-value skeleton" style="width:40px;height:24px;">—</div><div class="sh-label">Archived</div></div>
+          <div class="sh-stat"><div class="sh-value skeleton" style="width:40px;height:24px;">—</div><div class="sh-label">Coverage</div></div>
+          <div class="sh-stat"><div class="sh-value skeleton" style="width:40px;height:24px;">—</div><div class="sh-label">Recovery</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Search + Filters -->
   <section class="search-section" aria-labelledby="search-heading">
     <div class="container">
@@ -346,6 +365,36 @@
     </div>
   </div>
 </div>
+
+<!-- Source health widget loader -->
+<script>
+(async function(){
+  try {
+    const resp = await fetch('api/source-health.json');
+    if (!resp.ok) return;
+    const data = await resp.json();
+    const s = data.summary;
+    const total = data.total_sources_checked || (s.healthy + s.dead + s.redirected + s.skipped);
+    const pct = total > 0 ? Math.round((s.healthy / total) * 100) : 100;
+    const archivedPctEl = document.querySelector('#source-health-widget .sh-stat:nth-child(4) .sh-value');
+    const recoveryEl = document.querySelector('#source-health-widget .sh-stat:nth-child(5) .sh-value');
+    document.querySelector('#source-health-widget .sh-stat:nth-child(1) .sh-value').textContent = s.healthy;
+    document.querySelector('#source-health-widget .sh-stat:nth-child(1) .sh-value').style.color = '#22c55e';
+    document.querySelector('#source-health-widget .sh-stat:nth-child(2) .sh-value').textContent = s.dead;
+    document.querySelector('#source-health-widget .sh-stat:nth-child(2) .sh-value').style.color = s.dead > 10 ? '#ef4444' : '#f59e0b';
+    document.querySelector('#source-health-widget .sh-stat:nth-child(3) .sh-value').textContent = data.primary_sources ? data.primary_sources.archived : '—';
+    if (archivedPctEl) { archivedPctEl.textContent = pct + '%'; archivedPctEl.className = 'sh-value ' + (pct >= 80 ? 'good' : pct >= 50 ? 'warn' : 'bad'); }
+    // Recovery rate: dead sources that have an archive
+    if (recoveryEl) {
+      const recovered = data.recovered_count || 0;
+      recoveryEl.textContent = recovered + '/' + s.dead;
+      recoveryEl.className = 'sh-value ' + (recovered > 0 ? 'good' : 'warn');
+    }
+    // Remove skeleton classes
+    document.querySelectorAll('#source-health-widget .sh-value').forEach(el => el.classList.remove('skeleton'));
+  } catch(e) { /* widget stays as skeleton */ }
+})();
+</script>
 
 <!-- Scripts (progressive enhancement — site works without JS) -->
 <script src="assets/js/app.js" defer></script>

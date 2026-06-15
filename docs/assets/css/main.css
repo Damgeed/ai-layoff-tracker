@@ -1131,4 +1131,18 @@ pre{
   transform: translateY(-30px) rotate(-90deg); opacity: 0;
 }
 
-/* --- Nothing here — handled by Responsive: Mobile Menu above ---------- */
+/* --- Confidence Breakdown ---------------------------------------------- */
+.confidence-breakdown{margin-top:1.5rem;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
+.confidence-total{font-size:1.2rem;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
+.confidence-factors{list-style:none;padding:0;margin:0}
+.confidence-factors li{display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.85rem}
+.confidence-factors li:last-child{border-bottom:none}
+.confidence-factors li .cf-factor{color:var(--text-secondary)}
+.confidence-factors li .cf-points{color:var(--accent);font-weight:600;font-family:var(--mono)}
+/* --- Source Health Homepage Widget ------------------------------------- */
+.source-health-compact{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin:1.5rem 0;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
+.source-health-compact .sh-stat{display:flex;flex-direction:column;align-items:center;min-width:80px}
+.source-health-compact .sh-stat .sh-value{font-size:1.4rem;font-weight:700;font-family:var(--mono)}
+.source-health-compact .sh-stat .sh-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-secondary)}
+.sh-value.good{color:#22c55e}.sh-value.warn{color:#f59e0b}.sh-value.bad{color:#ef4444}
+/* --- End of main.css --------------------------------------------------- */

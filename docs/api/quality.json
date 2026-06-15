@@ -1,14 +1,29 @@
 {
-  "generated_at": "2026-06-14T08:16:42Z",
+  "generated_at": "2026-06-15T06:21:37Z",
+  "version": "3.2.0",
   "total_entries": 27,
   "primary_source_pct": 48.1,
   "archived_source_pct": 0.0,
+  "archive_coverage_pct": 0.0,
   "avg_confidence": 79.6,
-  "broken_source_count": 21,
+  "conf_coverage_pct": 100.0,
+  "source_health_pct": 13.5,
+  "broken_source_count": 20,
+  "healthy_source_count": 5,
+  "skipped_source_count": 12,
+  "missing_evidence_count": 0,
+  "missing_archives_count": 0,
   "entries_by_tier": {
     "tier3": 8,
     "tier1": 5,
     "tier2": 12,
     "tier4": 2
+  },
+  "targets": {
+    "primary_source_pct": 70.0,
+    "archive_coverage_pct": 100.0,
+    "broken_source_count": 0,
+    "confidence_coverage_pct": 95.0,
+    "total_entries": 50
   }
 }

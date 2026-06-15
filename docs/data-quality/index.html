@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/ai-layoff-tracker/">
+  <script>
+    (function(){
+      var t=localStorage.getItem('ai-layoff-tracker-theme');
+      document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Quality — AI Layoff Tracker</title>
+  <meta name="description" content="Data quality dashboard for the AI Layoff Tracker. Tracks primary source coverage, archive health, confidence scores, and improvement recommendations.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="assets/css/main.css">
+<style>
+/* ── Data Quality Dashboard Styles ───────────────────────────────────── */
+.dq-header { display:flex; align-items:center; gap:1rem; margin:1.5rem 0; flex-wrap:wrap; }
+.dq-gen-time { color:var(--text-secondary); font-size:0.85rem; }
+.dq-gen-time strong { color:var(--text); }
+
+/* Stat cards — colored accents */
+.stat-card.dq-primary  { border-top:3px solid var(--t1); }
+.stat-card.dq-archive { border-top:3px solid var(--t4); }
+.stat-card.dq-dead    { border-top:3px solid var(--accent); }
+.stat-card.dq-conf    { border-top:3px solid var(--t2); }
+.stat-card.dq-avg-conf{ border-top:3px solid var(--gradient-2); }
+.stat-card.dq-evidence{ border-top:3px solid var(--t3); }
+.stat-card.dq-archives{ border-top:3px solid var(--t1); }
+.stat-card.dq-review  { border-top:3px solid var(--text-muted); }
+
+.stat-card small { display:block; font-size:0.675rem; color:var(--text-secondary); margin-top:0.25rem; }
+
+/* Tier breakdown grid */
+.tier-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin:1.5rem 0; }
+.tier-card {
+  background:var(--card-bg); border:1px solid var(--border); border-radius:8px;
+  padding:1.25rem; backdrop-filter:blur(16px); transition:all .3s var(--ease);
+}
+.tier-card:hover { background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.12); transform:translateY(-2px); }
+.tier-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; }
+.tier-label { font-weight:700; font-size:0.9375rem; }
+.tier-count { font-family:var(--mono); font-size:1.5rem; font-weight:800; }
+.tier-bar { height:6px; border-radius:3px; background:var(--border); overflow:hidden; }
+.tier-bar-fill { height:100%; border-radius:3px; transition:width 0.8s var(--ease); }
+.tier-bar-fill.t1 { background:var(--t1); }
+.tier-bar-fill.t2 { background:var(--t2); }
+.tier-bar-fill.t3 { background:var(--t3); }
+.tier-bar-fill.t4 { background:var(--t4); }
+
+/* Recommendations list */
+.rec-list { list-style:none; padding:0; margin:1.5rem 0; }
+.rec-item {
+  display:flex; align-items:flex-start; gap:0.75rem;
+  background:var(--card-bg); border:1px solid var(--border); border-radius:8px;
+  padding:1rem 1.25rem; margin-bottom:0.75rem;
+  backdrop-filter:blur(16px); transition:all .3s var(--ease);
+}
+.rec-item:hover { background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.12); }
+.rec-icon { flex-shrink:0; width:32px; height:32px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1rem; }
+.rec-icon.critical { background:rgba(239,68,68,0.15); color:#ef4444; }
+.rec-icon.warning { background:rgba(245,158,11,0.15); color:#f59e0b; }
+.rec-icon.ok      { background:rgba(34,197,94,0.15); color:#22c55e; }
+.rec-icon.info    { background:rgba(92,212,255,0.15); color:#5cd4ff; }
+.rec-text { flex:1; }
+.rec-text strong { display:block; font-size:0.875rem; margin-bottom:0.2rem; }
+.rec-text p { margin:0; font-size:0.8125rem; color:var(--text-dim); line-height:1.5; }
+.rec-text code { font-size:0.75rem; }
+
+/* History chart placeholder */
+.chart-placeholder {
+  background:var(--card-bg); border:1px solid var(--border); border-radius:8px;
+  padding:3rem 2rem; text-align:center; margin:1.5rem 0;
+  backdrop-filter:blur(16px);
+}
+.chart-placeholder p { color:var(--text-muted); font-size:0.875rem; margin:0; }
+.chart-placeholder .chart-icon { font-size:2.5rem; margin-bottom:1rem; display:block; opacity:0.5; }
+
+/* Section titles */
+section h2 { margin:2rem 0 0.5rem; font-size:1.35rem; }
+section h2:first-child { margin-top:0; }
+section > p { color:var(--text-dim); font-size:0.875rem; margin-bottom:1rem; }
+
+/* Responsive */
+@media (max-width:768px) {
+  .tier-grid { grid-template-columns:1fr; }
+  .rec-item { flex-direction:column; }
+}
+@media (max-width:600px) {
+  .dq-header { gap:0.75rem; }
+}
+</style>
+</head>
+<body>
+<div class="bg-mesh" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="./" class="logo"><span class="logo-dot"></span>AI Layoff Tracker</a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/">API</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-drawer">
+  <div class="mobile-nav-backdrop" id="drawer-backdrop"></div>
+  <nav class="mobile-nav-panel" aria-label="Mobile navigation">
+    <div class="mobile-nav-links">
+      <a href="./">Home</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="data-dictionary.html">Data Dictionary</a>
+      <a href="changelog.html">Changelog</a>
+      <a href="corrections.html">Corrections</a>
+      <a href="evidence/">Evidence</a>
+      <a href="api/">API</a>
+      <div class="mobile-nav-divider"></div>
+      <a href="history/">History</a>
+      <a href="versions/">Versions</a>
+      <a href="reports/">Reports</a>
+      <a href="press/">Press Kit</a>
+      <a href="research/">Research</a>
+      <a href="source-health/">Source Health</a>
+      <a href="data-quality/" aria-current="page">Data Quality</a>
+    </div>
+  </nav>
+</div>
+
+<main class="container" id="main-content" role="main">
+  <nav class="breadcrumb"><a href="./">← Back to tracker</a></nav>
+
+  <h1>📊 Data Quality Dashboard</h1>
+  <p style="color:var(--text-secondary);">Aggregate quality metrics for the AI Layoff Tracker dataset. Tracks source provenance, archive coverage, confidence scoring, and missing data. Generated by <code>build.py</code> and <code>scripts/source_monitor.py</code>.</p>
+
+  <div id="dq-content">
+    <!-- Loading skeleton -->
+    <div class="dq-header">
+      <div><div class="skeleton" style="width:200px;height:20px;margin-bottom:8px;"></div><div class="skeleton" style="width:160px;height:14px;"></div></div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;margin:0 auto;"></div></div><div class="stat-label">Primary Source</div></div>
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;margin:0 auto;"></div></div><div class="stat-label">Archive Coverage</div></div>
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;margin:0 auto;"></div></div><div class="stat-label">Dead Sources</div></div>
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;margin:0 auto;"></div></div><div class="stat-label">Confidence ≥60</div></div>
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;margin:0 auto;"></div></div><div class="stat-label">Avg Confidence</div></div>
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;margin:0 auto;"></div></div><div class="stat-label">Missing Evidence</div></div>
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;margin:0 auto;"></div></div><div class="stat-label">Missing Archives</div></div>
+      <div class="stat-card"><div class="stat-value"><div class="skeleton" style="width:60px;height:28px;margin:0 auto;"></div></div><div class="stat-label">Needs Review</div></div>
+    </div>
+  </div>
+
+  <!-- Tier Breakdown -->
+  <section id="tier-section" style="margin-top:2rem;display:none;">
+    <h2>🏷️ Breakdown by Classification Tier</h2>
+    <p>Distribution of entries across the four confidence/impact classification tiers used in this dataset.</p>
+    <div id="tier-grid" class="tier-grid"></div>
+  </section>
+
+  <!-- Improvement Recommendations -->
+  <section id="rec-section" style="margin-top:1rem;display:none;">
+    <h2>🔧 Improvement Recommendations</h2>
+    <p>Data-driven recommendations for improving dataset completeness and source health.</p>
+    <div id="rec-list" class="rec-list"></div>
+  </section>
+
+  <!-- History Chart Placeholder -->
+  <section style="margin-top:1rem;">
+    <h2>📈 Quality Over Time</h2>
+    <p>Historical trends for key quality metrics. Chart powered by <code>assets/js/charts.js</code> — coming soon.</p>
+    <div class="chart-placeholder">
+      <span class="chart-icon">📈</span>
+      <p><strong>History chart placeholder</strong><br>Once multiple data points are collected, this section will display trend lines for primary source %, archive coverage, avg confidence, and dead source % over time.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div class="footer-col">
+      <h4>Data</h4>
+      <a href="methodology.html">Methodology</a>
+      <a href="api/entries.json">JSON</a>
+      <a href="api/entries.csv">CSV</a>
+      <a href="api/feed.xml">RSS</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="press/">Press Kit</a>
+      <a href="research/">Research</a>
+      <a href="citation-guide/">Citation Guide</a>
+      <a href="versions/">Versions</a>
+      <a href="history/">History</a>
+    </div>
+    <div class="footer-col">
+      <h4>Health</h4>
+      <a href="source-health/">Source Health</a>
+      <a href="data-quality/">Data Quality</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Dataset last updated: —. This project is a public research resource documenting workforce reductions linked to AI and automation. All data is verified against primary sources where available. See <a href="methodology.html">Methodology</a> for details.</p>
+  </div>
+</footer>
+
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/mobile-nav.js"></script>
+<script>
+(async function() {
+  const dqContent = document.getElementById('dq-content');
+  const tierSection = document.getElementById('tier-section');
+  const tierGrid = document.getElementById('tier-grid');
+  const recSection = document.getElementById('rec-section');
+  const recList = document.getElementById('rec-list');
+
+  const TIER_LABELS = {
+    tier1: { label: 'Tier 1 — Direct AI Replacement', cls: 't1', short: 'Tier 1' },
+    tier2: { label: 'Tier 2 — AI-Driven Restructuring', cls: 't2', short: 'Tier 2' },
+    tier3: { label: 'Tier 3 — AI Reallocation', cls: 't3', short: 'Tier 3' },
+    tier4: { label: 'Tier 4 — Market Disruption', cls: 't4', short: 'Tier 4' }
+  };
+
+  try {
+    const [qualityResp, healthResp, entriesResp] = await Promise.all([
+      fetch('api/quality.json'),
+      fetch('api/source-health.json'),
+      fetch('api/entries.json')
+    ]);
+
+    if (!qualityResp.ok) throw new Error('quality.json HTTP ' + qualityResp.status);
+    if (!healthResp.ok) throw new Error('source-health.json HTTP ' + healthResp.status);
+    if (!entriesResp.ok) throw new Error('entries.json HTTP ' + entriesResp.status);
+
+    const quality = await qualityResp.json();
+    const health = await healthResp.json();
+    const entriesData = await entriesResp.json();
+    const entries = entriesData.entries || entriesData;
+
+    // ── Compute metrics ──────────────────────────────────────────────
+
+    // Primary source % from quality.json
+    const primaryPct = quality.primary_source_pct;
+
+    // Archive coverage % from quality.json
+    const archivePct = quality.archived_source_pct;
+
+    // Dead source % from source-health.json
+    const totalSources = health.total_sources_checked || 0;
+    const deadCount = health.broken_urls ? health.broken_urls.length : (health.summary ? health.summary.dead : 0);
+    const deadPct = totalSources > 0 ? Math.round((deadCount / totalSources) * 100) : 0;
+
+    // Confidence coverage % — entries with avg_confidence >= 60
+    const avgConf = quality.avg_confidence || 0;
+    const confCoveragePct = Math.round(avgConf); // avg_confidence *is* a percentage already
+
+    // Compute entries with missing evidence and missing archives from entries.json
+    let missingEvidence = 0;
+    let missingArchives = 0;
+    for (const entry of entries) {
+      // Missing evidence: no evidence array or empty
+      if (!entry.evidence || !Array.isArray(entry.evidence) || entry.evidence.length === 0) {
+        missingEvidence++;
+      }
+      // Missing archive: source.archive_url is null, missing, or empty string
+      const archiveUrl = entry.source && entry.source.archive_url;
+      if (!archiveUrl || archiveUrl.trim() === '') {
+        missingArchives++;
+      }
+    }
+
+    // Entries needing review — placeholder (0 for now)
+    const needsReview = 0;
+
+    // ── Render stat cards ─────────────────────────────────────────────
+
+    const totalEntries = quality.total_entries || entries.length || 0;
+
+    // Determine confidence coverage % — entries with confidence_score >= 60
+    const confHighCount = entries.filter(e => (e.confidence_score || 0) >= 60).length;
+    const confCoverage = totalEntries > 0 ? Math.round((confHighCount / totalEntries) * 100) : 0;
+
+    dqContent.innerHTML = `
+      <div class="dq-header">
+        <div class="dq-gen-time">
+          <strong>${totalEntries}</strong> entries in dataset<br>
+          <small>Quality: ${quality.generated_at || '—'} &middot; Health: ${health.generated_at || '—'}</small>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card dq-primary">
+          <div class="stat-value" style="color:var(--t1);">${primaryPct}%</div>
+          <div class="stat-label">Primary Source Coverage</div>
+          <small>Entries citing official/primary sources</small>
+        </div>
+        <div class="stat-card dq-archive">
+          <div class="stat-value" style="color:var(--t4);">${archivePct}%</div>
+          <div class="stat-label">Archive Coverage</div>
+          <small>Entries with archived source snapshots</small>
+        </div>
+        <div class="stat-card dq-dead">
+          <div class="stat-value" style="color:var(--accent);">${deadPct}%</div>
+          <div class="stat-label">Dead Source Rate</div>
+          <small>${deadCount} of ${totalSources} sources broken</small>
+        </div>
+        <div class="stat-card dq-conf">
+          <div class="stat-value" style="color:var(--t2);">${confCoverage}%</div>
+          <div class="stat-label">Confidence Coverage</div>
+          <small>Entries with confidence ≥ 60</small>
+        </div>
+        <div class="stat-card dq-avg-conf">
+          <div class="stat-value" style="color:var(--gradient-2);">${avgConf}</div>
+          <div class="stat-label">Average Confidence</div>
+          <small>Out of 100</small>
+        </div>
+        <div class="stat-card dq-evidence">
+          <div class="stat-value" style="color:var(--t3);">${missingEvidence}</div>
+          <div class="stat-label">Missing Evidence</div>
+          <small>Entries with no evidence items</small>
+        </div>
+        <div class="stat-card dq-archives">
+          <div class="stat-value" style="color:var(--accent);">${missingArchives}</div>
+          <div class="stat-label">Missing Archive URLs</div>
+          <small>Entries without Wayback Machine link</small>
+        </div>
+        <div class="stat-card dq-review">
+          <div class="stat-value" style="color:var(--text-muted);">${needsReview}</div>
+          <div class="stat-label">Needs Review</div>
+          <small>Flagged for human review</small>
+        </div>
+      </div>
+    `;
+
+    // ── Render tier breakdown ──────────────────────────────────────────
+
+    const entriesByTier = quality.entries_by_tier || {};
+    const tierTotal = Object.values(entriesByTier).reduce((a, b) => a + b, 0);
+
+    if (tierTotal > 0) {
+      let tierHTML = '';
+      const tierOrder = ['tier1', 'tier2', 'tier3', 'tier4'];
+      for (const key of tierOrder) {
+        const info = TIER_LABELS[key];
+        if (!info) continue;
+        const count = entriesByTier[key] || 0;
+        const pct = tierTotal > 0 ? (count / tierTotal) * 100 : 0;
+        tierHTML += `
+          <div class="tier-card">
+            <div class="tier-header">
+              <span class="tier-label" style="color:var(--${info.cls});">${info.label}</span>
+              <span class="tier-count" style="color:var(--${info.cls});">${count}</span>
+            </div>
+            <div class="tier-bar">
+              <div class="tier-bar-fill ${info.cls}" style="width:${pct}%;"></div>
+            </div>
+          </div>
+        `;
+      }
+      tierGrid.innerHTML = tierHTML;
+      tierSection.style.display = 'block';
+    }
+
+    // ── Render improvement recommendations ────────────────────────────
+
+    let recommendations = [];
+
+    if (archivePct < 50) {
+      recommendations.push({
+        icon: 'critical',
+        title: 'Low archive coverage',
+        detail: `Only ${archivePct}% of entries have archived source snapshots. Run <code>scripts/archive.py</code> to backfill Wayback Machine links for all primary and secondary sources.`
+      });
+    } else if (archivePct < 80) {
+      recommendations.push({
+        icon: 'warning',
+        title: 'Moderate archive coverage',
+        detail: `Archive coverage is at ${archivePct}%. Consider archiving remaining unarchived sources via <code>scripts/archive.py</code>.`
+      });
+    }
+
+    if (primaryPct < 60) {
+      recommendations.push({
+        icon: 'critical',
+        title: 'Low primary source adoption',
+        detail: `Only ${primaryPct}% of entries reference official/primary sources. Prioritize replacing secondary news citations with direct company statements, SEC filings, or official blog posts.`
+      });
+    } else if (primaryPct < 80) {
+      recommendations.push({
+        icon: 'warning',
+        title: 'Moderate primary source coverage',
+        detail: `Primary source coverage is ${primaryPct}%. Review entries with <code>source_quality: "SECONDARY"</code> for potential primary source upgrades.`
+      });
+    }
+
+    if (deadPct > 30) {
+      recommendations.push({
+        icon: 'critical',
+        title: 'High rate of broken sources',
+        detail: `${deadPct}% of all sources are returning errors (${deadCount} of ${totalSources}). Run <code>scripts/source_monitor.py</code> to generate a fresh report, then replace broken URLs with archived alternatives.`
+      });
+    } else if (deadPct > 15) {
+      recommendations.push({
+        icon: 'warning',
+        title: 'Elevated dead source rate',
+        detail: `${deadPct}% of sources are broken. Review the broken URLs report and update or replace failing links.`
+      });
+    }
+
+    if (avgConf < 70) {
+      recommendations.push({
+        icon: 'warning',
+        title: 'Below-target average confidence',
+        detail: `Average confidence score is ${avgConf}/100. Strengthen entries by adding official statements, archived sources, and multiple corroborating sources where possible.`
+      });
+    }
+
+    if (missingEvidence > 0) {
+      recommendations.push({
+        icon: missingEvidence > 5 ? 'critical' : 'warning',
+        title: `${missingEvidence} entr${missingEvidence === 1 ? 'y' : 'ies'} missing evidence items`,
+        detail: missingEvidence === 1
+          ? 'One entry lacks evidence items. Review and add supporting documentation.'
+          : `Add evidence items (CEO statements, company filings, news reports) to ${missingEvidence} entries to improve verifiability.`
+      });
+    }
+
+    if (missingArchives > 0) {
+      recommendations.push({
+        icon: missingArchives > 5 ? 'warning' : 'info',
+        title: `${missingArchives} entr${missingArchives === 1 ? 'y' : 'ies'} without archive URLs`,
+        detail: missingArchives === 1
+          ? 'One entry lacks a Wayback Machine archive link for its primary source.'
+          : `${missingArchives} entries are missing <code>archive_url</code> on their primary source. Run <code>scripts/archive.py</code> to generate these.`
+      });
+    }
+
+    // Always show a default positive recommendation if nothing urgent
+    if (recommendations.length === 0) {
+      recommendations.push({
+        icon: 'ok',
+        title: 'All quality metrics are healthy',
+        detail: 'Primary source coverage, archive coverage, confidence scores, and source health are all within acceptable thresholds.'
+      });
+    }
+
+    let recHTML = '';
+    for (const rec of recommendations) {
+      recHTML += `
+        <div class="rec-item">
+          <div class="rec-icon ${rec.icon}">${rec.icon === 'ok' ? '✓' : rec.icon === 'critical' ? '⚠' : rec.icon === 'warning' ? '⚡' : 'ℹ'}</div>
+          <div class="rec-text">
+            <strong>${rec.title}</strong>
+            <p>${rec.detail}</p>
+          </div>
+        </div>
+      `;
+    }
+    recList.innerHTML = recHTML;
+    recSection.style.display = 'block';
+
+    // ── Footer timestamp update ───────────────────────────────────────
+    const footerNote = document.querySelector('.footer-bottom p');
+    if (footerNote) {
+      const updated = quality.generated_at || health.generated_at || '—';
+      footerNote.innerHTML = `Dataset last updated: ${updated}. This project is a public research resource documenting workforce reductions linked to AI and automation. All data is verified against primary sources where available. See <a href="methodology.html">Methodology</a> for details.`;
+    }
+
+  } catch (e) {
+    dqContent.innerHTML = `<p style="color:#ef4444;">⚠️ Failed to load data quality metrics: ${e.message}. <br>Make sure <code>api/quality.json</code> and <code>api/source-health.json</code> exist (run <code>build.py</code> and <code>scripts/source_monitor.py</code>).</p>`;
+  }
+})();
+</script>
+</body>
+</html>

@@ -184,6 +184,8 @@
         <div class="stat-card"><div class="stat-value" style="color:#ef4444;">${s.dead}</div><div class="stat-label">Dead</div><small>4xx / 5xx / error</small></div>
         <div class="stat-card"><div class="stat-value" style="color:#f59e0b;">${s.redirected}</div><div class="stat-label">Redirected</div><small>3xx</small></div>
         <div class="stat-card"><div class="stat-value" style="color:#94a3b8;">${s.skipped}</div><div class="stat-label">Skipped</div><small>Paywall / blocked</small></div>
+        <div class="stat-card"><div class="stat-value" style="color:${s.missing_archive > 10 ? '#ef4444' : '#22c55e'};">${s.missing_archive}</div><div class="stat-label">No Archive</div><small>Missing snapshots</small></div>
+        <div class="stat-card"><div class="stat-value" style="color:${s.dead > 10 ? '#ef4444' : '#22c55e'};">${data.recovered_count || 0}</div><div class="stat-label">Recovered</div><small>Death → Archive</small></div>
       </div>
       <section style="margin-top:2rem;">
         <h2>🚨 Broken URLs (${s.dead})</h2>
