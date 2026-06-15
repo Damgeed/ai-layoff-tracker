@@ -481,6 +481,7 @@ body{
 .chart-container{
   background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);
   border-radius:var(--r);padding:1.5rem;backdrop-filter:blur(12px);
+  display:flex;flex-direction:column;align-items:center;
   transition:background .3s var(--ease),border-color .3s var(--ease);
 }
 .chart-container:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.1)}

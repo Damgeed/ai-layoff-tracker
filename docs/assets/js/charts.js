@@ -55,6 +55,7 @@
     if (isMobile() && h > 220) h = 220;
     c.style.width  = w + 'px';
     c.style.height = h + 'px';
+    c.style.display = 'block';
     c.width  = Math.round(w * (window.devicePixelRatio || 1));
     c.height = Math.round(h * (window.devicePixelRatio || 1));
     return c;
