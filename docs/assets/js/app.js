@@ -274,6 +274,8 @@
 
   // --- Charts (delegated) ------------------------------------------------
   function renderCharts() {
+    // Clear drawn flags so charts re-render when filters change
+    if (window.clearChartsDrawn) window.clearChartsDrawn();
     if (typeof drawIndustryChart === 'function') drawIndustryChart(state.filtered);
     if (typeof drawClassificationChart === 'function') drawClassificationChart(state.filtered);
     if (typeof drawTimelineChart === 'function') drawTimelineChart(state.filtered);
@@ -359,6 +361,8 @@
     }
 
     state.filtered = entries;
+    // Auto-expand timeline if collapsed and there are active filters
+    autoExpandTimeline();
     renderTimeline();
     renderCharts();
     updateResultsCount();
@@ -663,6 +667,23 @@
     a.click();
     URL.revokeObjectURL(url);
   };
+
+  // --- Auto-expand timeline when filters/search are active -----------
+  function autoExpandTimeline() {
+    var hasFilters = state.filters.search || state.filters.classification.length > 0 ||
+                     state.filters.country || state.filters.industry ||
+                     state.filters.dateFrom || state.filters.dateTo || state.filters.minJobs;
+    if (!hasFilters) return;
+    var toggle = document.querySelector('.section-toggle');
+    var body = document.getElementById('timeline-body');
+    if (!toggle || !body) return;
+    var expanded = toggle.getAttribute('aria-expanded') === 'true';
+    if (!expanded) {
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.innerHTML = 'Timeline ▴';
+      body.classList.add('open');
+    }
+  }
 
   // --- Boot --------------------------------------------------------------
   loadFromURL();

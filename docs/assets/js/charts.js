@@ -460,4 +460,5 @@
   window.drawIndustryChart      = drawIndustryChart;
   window.drawClassificationChart = drawClassificationChart;
   window.drawTimelineChart      = drawTimelineChart;
+  window.clearChartsDrawn       = function() { drawn = {}; };
 })();
