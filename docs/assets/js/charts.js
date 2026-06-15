@@ -26,6 +26,18 @@
   /* track if we've already drawn (avoid double-draw on resize) */
   var drawn = {};
 
+  /* clear drawn flags on resize so charts re-render */
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      drawn = {};
+      if (typeof drawIndustryChart === 'function' && window.drawIndustryChart) {
+        /* re-draw will be triggered by next applyFilters or manual call */
+      }
+    }, 300);
+  });
+
   /* ── helpers ──────────────────────────────────────────────────── */
   function isMobile() { return window.innerWidth <= 768; }
   function isSmall()  { return window.innerWidth <= 480; }
@@ -34,8 +46,10 @@
     var c = document.getElementById(id);
     if (!c) return null;
     var containerW = c.parentElement ? c.parentElement.clientWidth : 300;
+    /* subtract horizontal padding: chart-container has 1.5rem on each side */
+    var padTotal = parseFloat(getComputedStyle(c.parentElement).paddingLeft) + parseFloat(getComputedStyle(c.parentElement).paddingRight);
     var ratio = isMobile() ? 0.45 : 0.58;
-    var w = containerW - (isMobile() ? 0 : 0);  /* use full container width */
+    var w = containerW - padTotal - (isMobile() ? 0 : 0);
     var h = Math.round(w * ratio);
     /* clamp max height */
     if (isMobile() && h > 220) h = 220;
