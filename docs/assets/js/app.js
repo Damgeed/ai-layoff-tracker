@@ -674,7 +674,7 @@
                      state.filters.country || state.filters.industry ||
                      state.filters.dateFrom || state.filters.dateTo || state.filters.minJobs;
     if (!hasFilters) return;
-    var toggle = document.querySelector('.section-toggle');
+    var toggle = document.querySelector('.section-toggle[data-target="timeline-body"]');
     var body = document.getElementById('timeline-body');
     if (!toggle || !body) return;
     var expanded = toggle.getAttribute('aria-expanded') === 'true';
@@ -689,26 +689,31 @@
   loadFromURL();
   document.addEventListener('DOMContentLoaded', init);
 
-  // --- Section toggle (Timeline collapse/expand) --------------------
+  // --- Section toggle (collapse/expand for Timeline, Source Health etc.) ---
   document.addEventListener('DOMContentLoaded', function() {
-    var timelineBody = document.getElementById('timeline-body');
     document.querySelectorAll('.section-toggle').forEach(function(toggle) {
+      var targetId = toggle.getAttribute('data-target');
+      if (!targetId) return;
+      var targetBody = document.getElementById(targetId);
+      if (!targetBody) return;
+      // Extract base heading text without the arrow
+      var baseText = toggle.textContent.replace(/[▾▴]\s*$/, '').trim();
+
       toggle.addEventListener('click', function() {
-        if (!timelineBody) return;
         var expanded = this.getAttribute('aria-expanded') === 'true';
         if (expanded) {
           this.setAttribute('aria-expanded', 'false');
-          this.innerHTML = 'Timeline ▾';
-          timelineBody.classList.remove('open');
-          /* remove hide button */
+          this.innerHTML = baseText + ' ▾';
+          targetBody.classList.remove('open');
+          /* remove hide button if inside timeline */
           var btn = document.getElementById('timeline-hide-btn');
           if (btn) btn.remove();
         } else {
           this.setAttribute('aria-expanded', 'true');
-          this.innerHTML = 'Timeline ▴';
-          timelineBody.classList.add('open');
-          /* add hide button at bottom */
-          if (!document.getElementById('timeline-hide-btn')) {
+          this.innerHTML = baseText + ' ▴';
+          targetBody.classList.add('open');
+          /* add hide button for timeline */
+          if (targetId === 'timeline-body' && !document.getElementById('timeline-hide-btn')) {
             var div = document.createElement('div');
             div.id = 'timeline-hide-btn';
             div.className = 'timeline-hide-btn';
@@ -716,10 +721,9 @@
             div.querySelector('button').addEventListener('click', function(e) {
               e.stopPropagation();
               toggle.click();
-              /* smooth scroll back to toggle heading */
               toggle.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
-            timelineBody.appendChild(div);
+            targetBody.appendChild(div);
           }
         }
       });
